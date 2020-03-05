@@ -27,6 +27,14 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /asset/ // See below to configure properly
+        }
+      }
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',

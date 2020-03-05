@@ -3,62 +3,70 @@
 @import '_backline-mixins';
 @import 'setting';
 
-.root {
+.Root {
   position: relative;
   z-index: 100;
+  background-color: $color-primary-white;
+  color: $color-primary-black;
 }
 
-.wrapper {
+.Wrapper {
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 960px;
-  padding: 1em;
+  // max-width: 960px;
+  padding: spacing(1) spacing(2);
   display: flex;
-
-  @include mq($breakpoint-tablet) {
-    padding: 1.5em 1.5em;
+  background-color: inherit;
+  @include mq($breakpoint-mobileLandscape) {
+    padding: spacing(1) spacing(2);
   }
 }
 
-.branding {
+.Branding {
   font-size: inherit;
   margin: 0;
   flex: 1;
 
   & a {
     display: inline-block;
-    padding: 0.5em;
-    color: inherit;
-    text-decoration: none;
+  }
+}
 
-    @media (hover: hover) {
-      &:hover {
-        text-decoration: underline;
-      }
+.Logo {
+  display: inline-flex;
+  transition: $duration-short $easing-standard;
+  svg {
+    transition: $duration-short $easing-standard;
+    &:hover {
+      transform: scale(1.2);
+      transition: $duration-short $easing-standard;
     }
   }
 }
 
-.toggleNavButton {
-  appearance: none;
-  font-size: 25px;
-  border: none;
-  background: none;
-  margin: 0;
-  padding: calc(14 / 17 / 2 * 1rem);
+.ToggleNavButton {
+  appearance: none; 
   outline: none;
+  display: inherit;
 
   & svg {
     display: block;
   }
 
-  @include mq($breakpoint-tablet) {
+  &:hover {
+    & svg path {
+      fill: $color-primary-red;
+    }
+  }
+
+  @include mq($breakpoint-mobileLandscape) {
     display: none;
   }
 }
 
-.nav {
+.Nav {
   display: none;
+  background-color: inherit;
 
   & ul {
     margin: 0;
@@ -77,13 +85,12 @@
     }
   }
 
-  @include mq(null, $breakpoint-tablet) {
+  @include mq(null, $breakpoint-mobileLandscape) {
     position: absolute;
-    background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     left: 0;
     right: 0;
-    top: 4rem;
+    top: spacing(6);
 
     & ul {
       padding: 1rem 0;
@@ -94,7 +101,7 @@
     }
   }
 
-  @include mq($breakpoint-tablet) {
+  @include mq($breakpoint-mobileLandscape) {
     display: block;
 
     & ul {
@@ -109,6 +116,49 @@
   }
 }
 
+// TODO:
+// Fix focus and active styles
+
+.DarkModeToggle {
+  margin-left: spacing(2);
+
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+
+  svg path {
+    transition: $easing-standard $duration-short;
+  }
+
+  &:hover {
+    .Sun svg path {
+      transition: $easing-standard $duration-short;
+      fill: $color-primary-yellow;
+    }
+
+    .Moon svg path {
+      
+      fill: $color-primary-black;
+    }
+
+    .Moon svg path {
+      transition: $easing-standard $duration-short;
+    }
+  }
+}
+
 .showNav {
   display: block;
+}
+
+.highlight {
+  color: $color-primary-purple;
+}
+
+.isDark {
+  &.Root {
+    background-color: $color-primary-black;
+    color: $color-primary-white;
+  }
 }

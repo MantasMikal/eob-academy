@@ -2,6 +2,9 @@
 @import 'setting';
 @import '_backline-normalize';
 
+//TODO:
+// MAKE SURE ALL ELEMENTS ARE SELECTABLE
+
 :global {
   body {
     font-size: spacing(2); // 16
@@ -14,14 +17,14 @@
   .wf-loading {
     opacity: 0;
   }
-  
+
   .wf-active {
     -webkit-transition: opacity 0.25s ease-in;
     transition: opacity 0.25s ease-in;
     opacity: 1;
   }
-  
+
   .wf-inactive {
     opacity: 1;
-  }  
+  }
 }

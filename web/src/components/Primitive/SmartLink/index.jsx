@@ -1,17 +1,8 @@
 import React from 'react'
 import { func, node, oneOf, string } from 'prop-types'
-import Link from 'next/link'
+import { Link } from 'gatsby'
 
-const SmartLink = ({
-  children,
-  className,
-  href,
-  setRef,
-  to,
-  target,
-  type,
-  ...other
-}) => {
+const SmartLink = ({ children, className, href, setRef, to, target, type, ...other }) => {
   // Standard link, use an `anchor` element
   if (href) {
     return (
@@ -31,9 +22,8 @@ const SmartLink = ({
   // Internal link, use third-party `Link` component from router module
   if (to) {
     return (
-      <Link href={to} ref={setRef} {...other}>
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={className}>{children}</a>
+      <Link to={to} ref={setRef} className={className} {...other}>
+        {children}
       </Link>
     )
   }

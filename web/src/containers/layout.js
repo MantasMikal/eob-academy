@@ -1,6 +1,7 @@
-import { graphql, StaticQuery } from 'gatsby'
 import React, { useState } from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 import Layout from '../components/layout'
+import { DarkContextProvider } from '../components/Context/DarkContext'
 
 const query = graphql`
   query SiteTitleQuery {
@@ -18,12 +19,18 @@ const query = graphql`
   }
 `
 
-function LayoutContainer (props) {
+function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false)
-  function handleShowNav () {
+  const [isDark, setDark] = useState(true)
+
+  function handleDark() {
+    setDark(!isDark)
+  }
+
+  function handleShowNav() {
     setShowNav(true)
   }
-  function handleHideNav () {
+  function handleHideNav() {
     setShowNav(false)
   }
   return (
@@ -41,14 +48,17 @@ function LayoutContainer (props) {
           )
         }
         return (
-          <Layout
-            {...props}
-            showNav={showNav}
-            companyInfo={data.companyInfo}
-            siteTitle={data.site.title}
-            onHideNav={handleHideNav}
-            onShowNav={handleShowNav}
-          />
+          <DarkContextProvider isDark={isDark}>
+            <Layout
+              {...props}
+              showNav={showNav}
+              companyInfo={data.companyInfo}
+              siteTitle={data.site.title}
+              onHideNav={handleHideNav}
+              onShowNav={handleShowNav}
+              onToggleDark={handleDark}
+            />
+          </DarkContextProvider>
         )
       }}
     />
