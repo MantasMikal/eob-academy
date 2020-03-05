@@ -8,6 +8,7 @@
   z-index: 100;
   background-color: $color-primary-white;
   color: $color-primary-black;
+  transition: $easing-standard $duration-short;
 }
 
 .Wrapper {
