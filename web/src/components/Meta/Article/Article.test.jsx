@@ -1,0 +1,35 @@
+// import React from 'react'
+import validatePropTypes from 'validate-prop-types'
+// import { shallow } from 'enzyme'
+import ArticleMeta from '.'
+
+const requiredProps = () => ({
+  description: 'Example description',
+  slug: '/article',
+  title: 'Example Title'
+})
+
+describe('Component: ArticleMeta', function() {
+  test('should return errors if required props missing', function() {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    const actual = validatePropTypes(ArticleMeta.propTypes, {})
+    const expected = {
+      description:
+        'The prop `description` is marked as required in `Component`, but its value is `undefined`.',
+      slug:
+        'The prop `slug` is marked as required in `Component`, but its value is `undefined`.',
+      title:
+        'The prop `title` is marked as required in `Component`, but its value is `undefined`.'
+    }
+    expect(actual).toEqual(expected)
+  })
+
+  test('shouldn’t error if valid default props passed', function() {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    const actual = validatePropTypes(ArticleMeta.propTypes, requiredProps())
+    const expected = undefined
+    expect(actual).toEqual(expected)
+  })
+
+  test.todo('should have additional tests')
+})

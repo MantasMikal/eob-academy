@@ -1,0 +1,21 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.ButtonStandard {
+  padding: spacing(1.25) spacing(2);
+  line-height: spacing(2.5);
+  border-radius: $radius-standard;
+  background-color: $color-primary-base;
+  color: $color-common-white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-primary-dark;
+    color: $color-common-white;
+  }
+}
+
+.disabled {
+  background-color: $color-common-grey50;
+}

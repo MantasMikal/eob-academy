@@ -1,0 +1,12 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.CaptionedMedia {
+  background-color: $color-common-grey95;
+}
+
+// .CaptionedMediaBody {}
+
+.CaptionedMediaCaption {
+  padding: spacing(1);
+}

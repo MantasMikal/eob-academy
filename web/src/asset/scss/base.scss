@@ -1,0 +1,27 @@
+@import '_backline-mixins';
+@import 'setting';
+@import '_backline-normalize';
+
+:global {
+  body {
+    font-size: spacing(2); // 16
+    line-height: spacing(3); // 24
+    font-weight: normal;
+    font-family: $font-body;
+  }
+
+  // Gracefully add Typekit fonts
+  .wf-loading {
+    opacity: 0;
+  }
+  
+  .wf-active {
+    -webkit-transition: opacity 0.25s ease-in;
+    transition: opacity 0.25s ease-in;
+    opacity: 1;
+  }
+  
+  .wf-inactive {
+    opacity: 1;
+  }  
+}

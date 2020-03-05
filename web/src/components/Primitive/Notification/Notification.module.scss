@@ -1,0 +1,14 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Notification {
+  color: $color-common-white;
+  background-color: $color-common-grey50;
+  padding: spacing(2) spacing(3);
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    background-color: $value;
+  }
+}

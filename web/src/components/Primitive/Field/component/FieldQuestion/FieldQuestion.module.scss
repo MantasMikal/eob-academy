@@ -1,0 +1,7 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.FieldQuestion {
+  margin-bottom: spacing(0.5);
+  display: inline-block;
+}

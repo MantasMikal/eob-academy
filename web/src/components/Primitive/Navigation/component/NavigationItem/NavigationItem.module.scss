@@ -1,0 +1,30 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.NavigationItem {
+  list-style: none;
+  margin-left: 0;
+
+  @include mq($breakpoint-tablet) {
+    display: inline-block;
+  }
+}
+
+.NavigationItemLink {
+  display: block;
+  padding: spacing(1) spacing(2);
+  text-decoration: none;
+  color: $color-primary-base;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-primary-light;
+    color: $color-common-white;
+  }
+}
+
+.active {
+  background-color: $color-primary-base;
+  color: $color-common-white;
+}
