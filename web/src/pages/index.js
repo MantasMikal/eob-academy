@@ -2,12 +2,15 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
-import Container from '../components/container'
+import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Type from '../components/Primitive/Type'
+import Icon from 'Primitive/Icon'
+import Hero from 'Common/Hero/Hero'
+import Seperator from 'Primitive/Seprator'
+import DescriptionCard from 'Common/DescriptionCard/DescriptionCard'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -115,24 +118,60 @@ const IndexPage = props => {
     )
   }
 
+  // TODO
+  // make dynamic
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
-      <Type size='h2'>Hello</Type>
-      <Container>
+      <Hero
+        title="EOB Academy the UK's first Esports Academy and Video Games Centre"
+        subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
+      />
+      <Seperator />
+      <div
+        style={{
+          minHeight: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignContent: 'center',
+          flexWrap: 'wrap'
+        }}
+      >
+        <DescriptionCard
+          icon="controller"
+          title="What"
+          description="An Academy that offers small class sizes, creates video games and grassroots esport teams."
+        />
+        <DescriptionCard
+          icon="people"
+          title="Who"
+          description="Young people from all backgrounds working together to push each other to the next level."
+        />
+        <DescriptionCard
+          icon="books"
+          title="The Content"
+          description="Young people from all backgrounds working together to push each other to the next level."
+        />
+        <DescriptionCard
+          icon="play"
+          title="Get Involved"
+          description="Express your interest by clicking the button to get to our contact page – then email us."
+        />
+      </div>
+      <Container size="wide" center gutter>
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
-            title='Latest projects'
+            title="Latest projects"
             nodes={projectNodes}
-            browseMoreHref='/projects/'
+            browseMoreHref="/projects/"
           />
         )}
         {postNodes && (
           <BlogPostPreviewGrid
-            title='Latest blog posts'
+            title="Latest blog posts"
             nodes={postNodes}
-            browseMoreHref='/blog/'
+            browseMoreHref="/blog/"
           />
         )}
       </Container>

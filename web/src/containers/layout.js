@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import useDarkMode from 'use-dark-mode';
 import { graphql, StaticQuery } from 'gatsby'
-import Layout from '../components/layout'
+import Layout from '../components/Layout/Layout'
 import { DarkContextProvider } from '../components/Context/DarkContext'
 
 const query = graphql`
@@ -21,9 +22,11 @@ const query = graphql`
 
 function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false)
-  const [isDark, setDark] = useState(true)
-
+  // const wasDark = typeof window !== undefined && typeof localStorage !== undefined ? JSON.parse(localStorage.getItem('isDark')) : false
+  const [isDark, setDark] = useState(false)
+  
   function handleDark() {
+    // localStorage.setItem('isDark', !isDark)
     setDark(!isDark)
   }
 

@@ -1,12 +1,12 @@
 import React from 'react'
-import { useDarkContext } from '../../Context/DarkContext'
-import { cn } from '../../../lib/helpers'
+import { useDarkContext } from 'Context/DarkContext'
+import { cn } from 'lib/helpers'
 
-import Icone from '../../icons'
-import Type from '../../Primitive/Type'
-import Icon from '../../Primitive/Icon'
-import VisuallyHidden from '../../Primitive/VisuallyHidden'
-import SmartLink from '../../Primitive/SmartLink'
+import Type from 'Primitive/Type'
+import Icon from 'Primitive/Icon'
+import VisuallyHidden from 'Primitive/VisuallyHidden'
+import SmartLink from 'Primitive/SmartLink'
+
 import styles from './Navigation.module.scss'
 
 const LinkWrapper = ({ children, to, className }) => (
@@ -15,24 +15,22 @@ const LinkWrapper = ({ children, to, className }) => (
   </Type>
 )
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark }) => {
+const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) => {
   const isDark = useDarkContext()
   return (
-    <div className={cn(styles.Root, isDark && styles.isDark)}>
-      <VisuallyHidden>
-        <h1>{siteTitle}</h1>
-      </VisuallyHidden>
+    <div className={cn(styles.Root, isDark && styles.isDark)} id={id}>
+      <h1 hidden>{siteTitle}</h1>
       <div className={styles.Wrapper}>
         <div className={styles.Branding}>
           <SmartLink to="/">
-            <Icon className={styles.Logo} type="eob-logo" vAlign="middle" width={40} height={40} />
+            <Icon a11yText='EOB Logo' className={styles.Logo} type="eob-logo" vAlign="middle" width={40} height={40} />
           </SmartLink>
         </div>
         <button className={styles.ToggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
           {showNav ? (
-            <Icon type="close" width={24} height={24} />
+            <Icon a11yText='Close' type="close" width={24} height={24} />
           ) : (
-            <Icon type="burger" width={24} height={24} />
+            <Icon a11yText='Open Menu' type="burger" width={24} height={24} />
           )}
         </button>
         <nav className={cn(styles.Nav, showNav && styles.showNav)}>
@@ -48,9 +46,9 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark }) => {
         </nav>
         <SmartLink className={styles.DarkModeToggle} onClick={onToggleDark}>
           {isDark ? (
-            <Icon className={styles.Sun} type="sun" width={24} height={24} />
+            <Icon a11yText='Turn off dark mode' className={styles.Sun} type="sun" width={24} height={24} />
           ) : (
-            <Icon className={styles.Moon} type="moon" width={24} height={24} />
+            <Icon a11yText='Turn on dark mode' className={styles.Moon} type="moon" width={24} height={24} />
           )}
         </SmartLink>
       </div>

@@ -9,7 +9,10 @@ import Element from '../Element'
 export const sizes = [
   'display2',
   'display1',
+  'title2',
+  'menu',
   'title',
+  'title1',
   'subtitle',
   'base',
   'small'
@@ -18,12 +21,7 @@ export const sizes = [
 const Type = ({ children, className, as, size, tight }) => (
   <Element
     as={as}
-    className={classNames(
-      styles.Type,
-      size && styles[size],
-      tight && styles.tight,
-      className
-    )}
+    className={classNames(styles.Type, size && styles[size], tight && styles.tight, className)}
   >
     {children}
   </Element>

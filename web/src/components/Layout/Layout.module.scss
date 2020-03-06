@@ -1,0 +1,49 @@
+@import '_backline-mixins';
+@import 'setting';
+// @import '../styles/media-queries.css';
+// @import '../styles/vars.css';
+
+.Wrapper {
+  transition: $duration-short $easing-standard;
+}
+
+.Content {
+  min-height: calc(100% - 73px - 152px);
+
+  @include mq($breakpoint-mobileLandscape) {
+    min-height: calc(100% - 90px - 169px);
+  }
+}
+
+.Footer {
+}
+
+.FooterWrapper {
+  box-sizing: border-box;
+  max-width: 960px;
+  padding: spacing(1);
+  margin: 0 auto;
+
+  @include mq($breakpoint-mobileLandscape) {
+    padding: 2em;
+  }
+}
+
+.CompanyAddress {
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.SiteInfo {
+  text-align: center;
+  & a {
+    color: inherit;
+  }
+}
+
+.isDark {
+  &.Wrapper {
+    transition: $duration-short $easing-standard;
+    background-color: $color-primary-black;
+  }
+}

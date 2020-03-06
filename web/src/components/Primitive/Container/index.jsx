@@ -14,7 +14,8 @@ const Container = ({
   className,
   gutter,
   noClearfix,
-  size
+  size,
+  fullHeight
 }) => (
   <Element
     as={as}
@@ -24,6 +25,7 @@ const Container = ({
       gutter && styles.gutter,
       noClearfix && styles.noClearfix,
       size && styles[size],
+      fullHeight && styles.fullHeight,
       className
     )}
   >
@@ -38,6 +40,7 @@ Container.propTypes = {
   className: string,
   gutter: bool,
   noClearfix: bool,
+  fullHeight: bool,
   size: oneOf(sizes)
 }
 

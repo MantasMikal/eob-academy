@@ -1,0 +1,13 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Seperator {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.SeperatorImg {
+  width: 102%;
+  margin-top: -5px;
+}

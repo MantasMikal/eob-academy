@@ -1,0 +1,34 @@
+@import '_backline-mixins';
+@import 'setting';
+
+.DescriptionCard {
+  text-align: center;
+  max-width: 300px;
+  padding: spacing(1);
+
+  @include mq($breakpoint-desktop) {
+    max-width: 350px;
+  }
+  @include mq($breakpoint-desktopMedium) {
+    max-width: 400px;
+  }
+}
+
+.Icon {
+  padding-bottom: spacing(4);
+
+  svg path {
+    fill: $color-primary-yellow;
+  }
+}
+
+.Tilte {
+  padding-bottom: spacing(1);
+}
+
+.isDark {
+  .Title,
+  .Description {
+    color: $color-primary-white;
+  }
+}

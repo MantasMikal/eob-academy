@@ -50,6 +50,11 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent'
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo-plugin'
     }
   ],
   orderings: [

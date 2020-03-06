@@ -7,6 +7,17 @@ const {
 
 module.exports = {
   plugins: [
+    {
+      resolve: `gatsby-alias-imports`,
+      options: {
+        aliases: {
+          Primitive: `src/components/Primitive`,
+          Common: `src/components/Common`,
+          Context: `src/components/Context`,
+          lib: 'src/lib'
+        }
+      }
+    },
     'gatsby-plugin-postcss',
     {
       resolve: `gatsby-plugin-sass`,
@@ -28,7 +39,7 @@ module.exports = {
       }
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /asset/ // See below to configure properly
