@@ -31,18 +31,10 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        typekit: {
-          id: 'rnl5jdi'
-        }
-      }
-    },
-    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /asset/ // See below to configure properly
+          include: /asset/
         }
       }
     },
