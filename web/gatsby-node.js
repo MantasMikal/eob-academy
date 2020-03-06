@@ -1,11 +1,3 @@
-const { format } = require('date-fns')
-
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 async function createBlogPostPages (graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
@@ -29,9 +21,8 @@ async function createBlogPostPages (graphql, actions, reporter) {
   const postEdges = (result.data.allSanityPost || {}).edges || []
 
   postEdges.forEach((edge, index) => {
-    const { id, slug = {}, publishedAt } = edge.node
-    const dateSegment = format(publishedAt, 'YYYY/MM')
-    const path = `/blog/${dateSegment}/${slug.current}/`
+    const { id, slug = {} } = edge.node
+    const path = `/blog/${slug.current}/`
 
     reporter.info(`Creating blog post page: ${path}`)
 
@@ -83,8 +74,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPages(graphql, actions, reporter)
   await createProjectPages(graphql, actions, reporter)
 }
-
-
 
 // Removes Mini-css errors
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
