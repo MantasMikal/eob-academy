@@ -23,22 +23,29 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) 
       <div className={styles.Wrapper}>
         <div className={styles.Branding}>
           <SmartLink to="/">
-            <Icon a11yText='EOB Logo' className={styles.Logo} type="eob-logo" vAlign="middle" width={40} height={40} />
+            <Icon
+              a11yText="EOB Logo"
+              className={styles.Logo}
+              type="eob-logo"
+              vAlign="middle"
+              width={40}
+              height={40}
+            />
           </SmartLink>
         </div>
         <button className={styles.ToggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
           {showNav ? (
-            <Icon a11yText='Close' type="close" width={24} height={24} />
+            <Icon a11yText="Close" type="close" width={24} height={24} />
           ) : (
-            <Icon a11yText='Open Menu' type="burger" width={24} height={24} />
+            <Icon a11yText="Open Menu" type="burger" width={24} height={24} />
           )}
         </button>
         <nav className={cn(styles.Nav, showNav && styles.showNav)}>
           <ul>
-            <LinkWrapper to="/eob-academy/">EOB Academy</LinkWrapper>
-            <LinkWrapper to="/princes-trust-courses/">Prince's trust courses</LinkWrapper>
-            <LinkWrapper to="/events/">Events</LinkWrapper>
-            <LinkWrapper to="/jobs/">Jobs</LinkWrapper>
+            <LinkWrapper to="#">EOB Academy</LinkWrapper>
+            <LinkWrapper to="#">Prince's trust courses</LinkWrapper>
+            <LinkWrapper to="#">Events</LinkWrapper>
+            <LinkWrapper to="#">Jobs</LinkWrapper>
             <LinkWrapper className={styles.highlight} to="/contact/">
               Contact
             </LinkWrapper>
@@ -46,9 +53,21 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) 
         </nav>
         <SmartLink className={styles.DarkModeToggle} onClick={onToggleDark}>
           {isDark ? (
-            <Icon a11yText='Turn off dark mode' className={styles.Sun} type="sun" width={24} height={24} />
+            <Icon
+              a11yText="Turn off dark mode"
+              className={styles.Sun}
+              type="sun"
+              width={24}
+              height={24}
+            />
           ) : (
-            <Icon a11yText='Turn on dark mode' className={styles.Moon} type="moon" width={24} height={24} />
+            <Icon
+              a11yText="Turn on dark mode"
+              className={styles.Moon}
+              type="moon"
+              width={24}
+              height={24}
+            />
           )}
         </SmartLink>
       </div>
