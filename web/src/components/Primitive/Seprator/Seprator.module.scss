@@ -2,12 +2,18 @@
 @import '_backline-mixins';
 
 .Seperator {
+  position: relative;
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 
 .SeperatorImg {
-  width: 102%;
-  margin-top: -5px;
+  width: 100%;
+}
+
+.OverlayStrip {
+  position: absolute;
+  height: 2vh;
+  width: 100%;
 }

@@ -8,20 +8,22 @@ import ButtonBase from '../ButtonBase'
 
 import styles from './ButtonStandard.module.scss'
 
-const ButtonStandard = ({ className, disabled, children, ...other }) => {
+const sizes = ['large', 'medium', 'small']
+
+const ButtonStandard = ({ className, disabled, children, size, ...other }) => {
   const isDark = useDarkContext()
   return (
     <ButtonBase
       className={cn(
         styles.ButtonWrapper,
         disabled && styles.disabled,
-        isDark && styles.isDark,
-        className
+        size && styles[size],
+        isDark && styles.isDark
       )}
       disabled={disabled}
       {...other}
     >
-      <div className={classNames(styles.ButtonStandard)} disabled={disabled}>
+      <div className={classNames(className, styles.ButtonStandard)} disabled={disabled}>
         {children}
       </div>
     </ButtonBase>

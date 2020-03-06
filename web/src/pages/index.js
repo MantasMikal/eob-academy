@@ -132,7 +132,7 @@ const IndexPage = props => {
       />
       <Seperator />
       <DescriptionCards cards={descriptionCards().cards} />
-
+      <Seperator />
       <Container size="wide" center gutter>
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (

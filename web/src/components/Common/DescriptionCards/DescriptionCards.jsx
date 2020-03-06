@@ -22,7 +22,7 @@ const DescriptionCards = ({ cards }) => {
             />
           ))}
         </div>
-        <ButtonStandard className={styles.Button}>The Button</ButtonStandard>
+        <ButtonStandard size='large' className={styles.Button}>The Button</ButtonStandard>
       </div>
     </div>
   )

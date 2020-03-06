@@ -29,6 +29,12 @@
   transition: $duration-short $easing-standard;
 }
 
+.large {
+  .ButtonStandard {
+    padding: spacing(2) spacing(6);
+  }
+}
+
 .disabled {
   background-color: $color-common-grey50;
 }
