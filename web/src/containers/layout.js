@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import useDarkMode from 'use-dark-mode';
+import React, { useState } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import { DarkContextProvider } from '../components/Context/DarkContext'
