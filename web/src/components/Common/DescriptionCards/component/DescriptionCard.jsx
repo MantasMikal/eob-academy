@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './DescriptionCard.module.scss'
-import Icon from 'Primitive/Icon'
-import Type from 'Primitive/Type'
 import { useDarkContext } from 'Context/DarkContext'
 import { cn } from 'lib/helpers'
 
+import Icon from 'Primitive/Icon'
+import Type from 'Primitive/Type'
+
+import styles from './DescriptionCard.module.scss'
+
 const DescriptionCard = ({ icon, title, description }) => {
+  console.log(icon, title, description)
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.DescriptionCard, isDark && styles.isDark)}>

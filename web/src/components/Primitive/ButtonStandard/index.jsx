@@ -1,22 +1,32 @@
 import React from 'react'
 import { bool, string } from 'prop-types'
 import classNames from 'classnames'
-
-import styles from './ButtonStandard.module.scss'
+import { cn } from 'lib/helpers'
+import { useDarkContext } from 'Context/DarkContext'
 
 import ButtonBase from '../ButtonBase'
 
-const ButtonStandard = ({ className, disabled, ...other }) => (
-  <ButtonBase
-    className={classNames(
-      styles.ButtonStandard,
-      disabled && styles.disabled,
-      className
-    )}
-    disabled={disabled}
-    {...other}
-  />
-)
+import styles from './ButtonStandard.module.scss'
+
+const ButtonStandard = ({ className, disabled, children, ...other }) => {
+  const isDark = useDarkContext()
+  return (
+    <ButtonBase
+      className={cn(
+        styles.ButtonWrapper,
+        disabled && styles.disabled,
+        isDark && styles.isDark,
+        className
+      )}
+      disabled={disabled}
+      {...other}
+    >
+      <div className={classNames(styles.ButtonStandard)} disabled={disabled}>
+        {children}
+      </div>
+    </ButtonBase>
+  )
+}
 
 ButtonStandard.propTypes = {
   className: string,

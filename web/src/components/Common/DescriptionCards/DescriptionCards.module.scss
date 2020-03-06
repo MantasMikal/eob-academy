@@ -1,0 +1,29 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Cards {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-bottom: spacing(4);
+}
+
+.DescriptionCards {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.Button {
+  font-size: spacing(3);
+  font-weight: spacing(4);
+  font-weight: 500;
+}
