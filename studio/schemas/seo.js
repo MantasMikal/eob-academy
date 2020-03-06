@@ -10,7 +10,7 @@ export default {
       options: {
         baseUrl: "https://eob-academy.netlify.com/", // (REQUIRED) This is the baseUrl for your site
         baseUrl(doc) {
-          return "https://.../"; // for dynamic baseUrls
+          return "https://eob-academy.netlify.com/"; // for dynamic baseUrls
         },
         slug(doc) {
           // (REQUIRED) a function to return the sug of the current page, which will be appended to the baseUrl

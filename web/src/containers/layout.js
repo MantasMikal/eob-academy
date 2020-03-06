@@ -23,7 +23,7 @@ function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false)
   // const wasDark = typeof window !== undefined && typeof localStorage !== undefined ? JSON.parse(localStorage.getItem('isDark')) : false
   const [isDark, setDark] = useState(false)
-  
+  console.log("Render")
   function handleDark() {
     // localStorage.setItem('isDark', !isDark)
     setDark(!isDark)
