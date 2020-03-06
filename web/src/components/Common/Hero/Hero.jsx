@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 // Fix this
 // SEO!
 
-import YoutubeEmbed from 'Primitive/YoutubeEmbed'
 import styles from './Hero.module.scss'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import Type from 'Primitive/Type'
