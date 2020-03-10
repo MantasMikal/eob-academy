@@ -16,35 +16,43 @@ const settings = {
   swipeToSlide: true
 }
 
-export const Carousel = ({children, ...props}) => {
+export const Carousel = ({ children, ...props }) => {
   const [dragging, setDragging] = useState(false)
 
-    const handleBeforeChange = useCallback(() => {
-        console.log('handleBeforeChange')
-        setDragging(true)
-    }, [setDragging])
+  const handleBeforeChange = useCallback(() => {
+    console.log('handleBeforeChange')
+    setDragging(true)
+  }, [setDragging])
 
-    const handleAfterChange = useCallback(() => {
-        console.log('handleAfterChange')
-        setDragging(false)
-    }, [setDragging])
+  const handleAfterChange = useCallback(() => {
+    console.log('handleAfterChange')
+    setDragging(false)
+  }, [setDragging])
 
-    const handleOnItemClick = useCallback(
-        e => {
-            console.log('handleOnItemClick')
-            if (dragging) e.stopPropagation()
-        },
-        [dragging]
-    ) 
-
-   return (
-      <Slick {...props} {...settings} className={styles.overflow}>
-         {React.Children.map(children, child => (
-             <div className={styles.Slide} onClickCapture={handleOnItemClick}>{child}</div>
-         ))}
-      </Slick>
+  const handleOnItemClick = useCallback(
+    e => {
+      console.log('handleOnItemClick')
+      if (dragging) e.stopPropagation()
+    },
+    [dragging]
   )
-} 
+
+  return (
+    <Slick
+      beforeChange={handleBeforeChange}
+      afterChange={handleAfterChange}
+      {...props}
+      {...settings}
+      className={styles.overflow}
+    >
+      {React.Children.map(children, child => (
+        <div className={styles.Slide} onClickCapture={handleOnItemClick}>
+          {child}
+        </div>
+      ))}
+    </Slick>
+  )
+}
 Carousel.defaultProps = {}
 
 Carousel.propTypes = {}
