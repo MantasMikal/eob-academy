@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes } from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
+import BlogPostCarousel from '../components/Common/BlogPostCarousel/BlogPostCarousel'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'

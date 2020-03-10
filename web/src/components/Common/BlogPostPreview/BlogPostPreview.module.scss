@@ -1,0 +1,34 @@
+@import 'setting';
+
+.Root {
+  display: block;
+}
+
+.LeadMediaThumb {
+  position: relative;
+}
+
+.Wrapper {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.Title {
+  padding-top: spacing(1);
+  @media (hover: hover) {
+    .Root:hover & {
+      text-decoration: underline;
+    }
+  }
+}
+
+.Excerpt {
+  & p {
+    margin: 0.5em 0;
+  }
+
+  & strong {
+    font-weight: 600;
+  }
+}

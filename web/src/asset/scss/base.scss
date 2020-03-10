@@ -14,6 +14,13 @@
     font-weight: normal;
     font-family: $font-body;
   }
+  a {
+    transition: $duration-short $easing-standard;
+    &:hover {
+      transition: $duration-short $easing-standard;
+      color: $color-primary-purple;
+    }
+  }
 
   // Gracefully add Typekit fonts
   .wf-loading {

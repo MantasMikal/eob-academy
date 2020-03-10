@@ -1,0 +1,31 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Carousel {
+  display: block;
+  position: relative;
+}
+
+.Title {
+  margin: spacing(3) 0;
+}
+
+.Slide {
+  padding: 0 spacing(2);
+}
+
+.isDark {
+  .Title {
+    color: $color-primary-white;
+  }
+}
+
+.overflow {
+  overflow: visible;
+}
+
+:global {
+  .slick-list {
+    overflow: visible !important;
+  }
+}

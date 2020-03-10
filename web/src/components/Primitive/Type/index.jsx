@@ -18,10 +18,17 @@ export const sizes = [
   'small'
 ]
 
-const Type = ({ children, className, as, size, tight }) => (
+const Type = ({ children, className, as, size, tight, italic, ...rest }) => (
   <Element
     as={as}
-    className={classNames(styles.Type, size && styles[size], tight && styles.tight, className)}
+    className={classNames(
+      styles.Type,
+      size && styles[size],
+      tight && styles.tight,
+      italic && styles.italic,
+      className
+    )}
+    {...rest}
   >
     {children}
   </Element>
@@ -39,7 +46,8 @@ Type.propTypes = {
   className: string,
   as: string,
   size: oneOf(sizes),
-  tight: bool
+  tight: bool,
+  italic: bool
 }
 
 export default Type

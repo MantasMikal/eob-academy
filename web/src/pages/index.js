@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
+import BlogPostCarousel from 'Common/BlogPostCarousel/BlogPostCarousel'
 import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
@@ -11,7 +11,7 @@ import Type from 'Primitive/Type'
 import Hero from 'Common/Hero/Hero'
 import Seperator from 'Primitive/Seprator'
 import DescriptionCards from 'Common/DescriptionCards/DescriptionCards'
-import ButtonStandard from 'Primitive/ButtonStandard'
+import SmartLink from 'Primitive/SmartLink'
 import descriptionCards from '../fixture/description-cards'
 
 export const query = graphql`
@@ -63,24 +63,10 @@ export const query = graphql`
           id
           publishedAt
           mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
             asset {
-              _id
+              fluid(maxWidth: 500) {
+                ...GatsbySanityImageFluid
+              }
             }
             alt
           }
@@ -131,25 +117,39 @@ const IndexPage = props => {
         subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
       />
       <Seperator />
-      <DescriptionCards cards={descriptionCards().cards} />
-      <Seperator />
       <Container size="wide" center gutter>
-        <h1 hidden>Welcome to {site.title}</h1>
-        {projectNodes && (
+        <DescriptionCards cards={descriptionCards().cards} />
+      </Container>
+      <Seperator />
+
+      <h1 hidden>Welcome to {site.title}</h1>
+      {/* {projectNodes && (
           <ProjectPreviewGrid
             title="Latest projects"
             nodes={projectNodes}
             browseMoreHref="/projects/"
           />
-        )}
-        {postNodes && (
-          <BlogPostPreviewGrid
-            title="Latest blog posts"
-            nodes={postNodes}
-            browseMoreHref="/blog/"
-          />
-        )}
-      </Container>
+        )} */}
+      <div style={{ overflow: 'hidden', margin: '2rem 0' }}>
+        <Container size="wide" center gutter>
+          <Type size="title2">Latest blog posts</Type>
+          <SmartLink>
+            <Type style={{ color: '#c8167c', marginTop: '2rem' }} size="subtitle">
+              VIEW ALL
+            </Type>
+          </SmartLink>
+          <div style={{ margin: '6rem 0' }}>
+            {postNodes && (
+              <BlogPostCarousel
+                title="Latest blog posts"
+                nodes={postNodes}
+                browseMoreHref="/blog/"
+              />
+            )}
+          </div>
+        </Container>
+
+      </div>
     </Layout>
   )
 }

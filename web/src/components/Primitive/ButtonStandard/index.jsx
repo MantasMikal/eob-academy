@@ -1,38 +1,29 @@
 import React from 'react'
-import { bool, string } from 'prop-types'
+import { bool, string, oneOfType } from 'prop-types'
 import classNames from 'classnames'
-import { cn } from 'lib/helpers'
-import { useDarkContext } from 'Context/DarkContext'
-
-import ButtonBase from '../ButtonBase'
 
 import styles from './ButtonStandard.module.scss'
 
+import ButtonBase from '../ButtonBase'
+
 const sizes = ['large', 'medium', 'small']
 
-const ButtonStandard = ({ className, disabled, children, size, ...other }) => {
-  const isDark = useDarkContext()
-  return (
-    <ButtonBase
-      className={cn(
-        styles.ButtonWrapper,
-        disabled && styles.disabled,
-        size && styles[size],
-        isDark && styles.isDark
-      )}
-      disabled={disabled}
-      {...other}
-    >
-      <div className={classNames(className, styles.ButtonStandard)} disabled={disabled}>
-        {children}
-      </div>
-    </ButtonBase>
-  )
-}
+const ButtonStandard = ({ className, disabled, size, ...other }) => (
+  <ButtonBase
+  className={classNames(
+    styles.ButtonStandard,
+    disabled && styles.disabled,
+    size && styles[size],
+    className
+  )}
+    {...other}
+  />
+)
 
 ButtonStandard.propTypes = {
   className: string,
-  disabled: bool
+  disabled: bool,
+  size: oneOfType(sizes)
 }
 
 export default ButtonStandard

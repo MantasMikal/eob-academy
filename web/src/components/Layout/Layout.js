@@ -6,6 +6,7 @@ import { cn } from 'lib/helpers'
 import Navigation from 'Common/Navigation/Navigation'
 import A11yNavigation from 'Primitive/A11yNavigation'
 import Type from 'Primitive/Type'
+import Footer from 'Common/Footer/Footer'
 
 import styles from './Layout.module.scss'
 
@@ -28,7 +29,8 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, onToggleDa
       <div className={styles.Content} id="content">
         {children}
       </div>
-      <footer className={styles.Footer}>
+      <Footer />
+      {/* <footer className={styles.Footer}>
         <div className={styles.FooterWrapper}>
           <Type size="small" className={styles.SiteInfo}>
             © {new Date().getFullYear()}, Built with <a href="https://www.sanity.io">Sanity</a>{' '}
@@ -37,7 +39,7 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, onToggleDa
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </Type>
         </div>
-      </footer>
+      </footer> */}
     </div>
   )
 }

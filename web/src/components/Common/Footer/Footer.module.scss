@@ -1,0 +1,105 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Footer {
+  padding: spacing(10) spacing(10);
+  position: relative;
+  // background-image: url('/asset/waves.svg');
+  overflow: hidden;
+  color: $color-primary-black;
+  transition: $duration-shortest;
+  a:hover {
+    color: $color-primary-purple;
+    transition: $duration-shortest;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    padding-top: spacing(20);
+    padding-bottom: spacing(20);
+  }
+}
+
+.Container {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mq($breakpoint-tablet) {
+    flex-direction: row;
+  }
+}
+
+.Branding {
+  flex: 1 0;
+  margin-right: spacing(6);
+}
+
+.Logo {
+  transition: $duration-short $easing-standard;
+  &:hover {
+    transform: scale(1.1);
+    transition: $duration-short $easing-standard;
+  }
+}
+
+.Social {
+  display: flex;
+  flex-direction: column;
+  padding: spacing(5) 0;
+
+  a {
+    text-decoration: none;
+    color: $color-primary-black;
+    padding-bottom: spacing(2);
+    display: flex;
+    align-items: center;  
+
+    span {
+      padding-right: spacing(5);
+    }
+  }
+}
+
+.LinkListWrapper {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include mq($breakpoint-tabletLandscape) {
+    flex: 1 1 30rem;
+    flex-direction: row;
+  }
+}
+
+.Waves {
+  position: absolute;
+  width: 100%;
+  bottom: -45vw;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.LinkList {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 spacing(2) 0;
+
+  a {
+    text-decoration: none;
+    color: $color-primary-black;
+    padding-bottom: spacing(2);
+  }
+
+  &::after {
+    content: '_';
+    color: inherit;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    &::after {
+      content: none;
+    }
+  }
+}

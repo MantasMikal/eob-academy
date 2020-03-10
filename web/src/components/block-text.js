@@ -1,14 +1,20 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
 
+import Type from 'Primitive/Type'
+
 import typography from './typography.module.css'
 
 const serializers = {
   types: {
-    block (props) {
+    block(props) {
       switch (props.node.style) {
         default:
-          return <p className={typography.paragraph}>{props.children}</p>
+          return (
+            <Type as="p" size="base">
+              {props.children}
+            </Type>
+          )
       }
     }
   }

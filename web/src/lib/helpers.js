@@ -1,23 +1,23 @@
 import { format } from 'date-fns'
 
-export function cn (...args) {
+export function cn(...args) {
   return args.filter(Boolean).join(' ')
 }
 
-export function mapEdgesToNodes (data) {
+export function mapEdgesToNodes(data) {
   if (!data.edges) return []
   return data.edges.map(edge => edge.node)
 }
 
-export function filterOutDocsWithoutSlugs ({ slug }) {
+export function filterOutDocsWithoutSlugs({ slug }) {
   return (slug || {}).current
 }
 
-export function getBlogUrl (publishedAt, slug) {
-  return `/blog/${format(publishedAt, 'YYYY/MM')}/${slug.current || slug}/`
+export function getBlogUrl(slug) {
+  return `/blog/${slug.current || slug}/`
 }
 
-export function buildImageObj (source) {
+export function buildImageObj(source) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }
   }
@@ -26,4 +26,11 @@ export function buildImageObj (source) {
   if (source.hotspot) imageObj.hotspot = source.hotspot
 
   return imageObj
+}
+
+export function formatDate(date) {
+  const d = new Date(date)
+  const dtf = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'short', day: '2-digit' })
+  const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(d)
+  return (date = `${da} ${mo} ${ye}`)
 }

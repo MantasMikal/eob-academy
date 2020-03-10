@@ -1,37 +1,17 @@
 @import 'setting';
 @import '_backline-mixins';
 
-.ButtonWrapper {
-  padding: 3px;
-  position: relative;
-  background: linear-gradient(
-    to right,
-    $color-primary-yellow,
-    $color-primary-red,
-    $color-primary-purple
-  );
-  border-radius: $radius-standard + 2;
-
+.ButtonStandard {
+  padding: spacing(4) spacing(8);
+  line-height: spacing(2.5);
+  border-radius: $radius-standard;
+  background-color: $color-primary-yellow;
+  color: $color-primary-black;
   &:hover,
   &:focus,
   &:active {
-    transform: scale(1.1);
-    transition: $duration-short $easing-standard;
-  }
-}
-
-.ButtonStandard {
-  padding: spacing(2) spacing(3);
-  line-height: spacing(2.5);
-  border-radius: $radius-standard;
-  background-color: $color-primary-white;
-  color: $color-common-black;
-  transition: $duration-short $easing-standard;
-}
-
-.large {
-  .ButtonStandard {
-    padding: spacing(2) spacing(6);
+    background-color: $color-primary-red;
+    color: $color-primary-white;
   }
 }
 
@@ -39,9 +19,8 @@
   background-color: $color-common-grey50;
 }
 
-.isDark {
-  .ButtonStandard {
-    background-color: $color-primary-black;
-    color: $color-primary-white;
-  }
+.large {
+  padding: spacing(4) spacing(10);
+  font-size: 2rem;
+  font-weight: 500;
 }
