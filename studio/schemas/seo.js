@@ -8,7 +8,7 @@ export default {
       title: "SEO",
       type: "seo-tools", // use seo-tools type
       options: {
-        baseUrl: "https://eob-academy.netlify.com/", // (REQUIRED) This is the baseUrl for your site
+        baseUrl: "https://eob-academy.netlify.com", // (REQUIRED) This is the baseUrl for your site
         baseUrl(doc) {
           return "https://eob-academy.netlify.com/blog/"; // for dynamic baseUrls
         },
