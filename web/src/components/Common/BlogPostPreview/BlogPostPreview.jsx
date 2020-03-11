@@ -1,33 +1,42 @@
-import { Link } from 'gatsby'
 import React from 'react'
-import { getBlogUrl, formatDate } from '../../../lib/helpers'
-import BlockText from '../../block-text'
+import { string, object, array, arrayOf } from 'prop-types'
+import { Link } from 'gatsby'
 import Image from 'gatsby-image'
+import { getBlogUrl, formatDate } from 'lib/helpers'
+import { useDarkContext } from 'Context/DarkContext'
+
+import BlockText from 'Primitive/BlockText/BlockText'
 import Type from 'Primitive/Type'
 
 import styles from './BlogPostPreview.module.scss'
+import { cn } from 'lib/helpers'
 
-function BlogPostPreview(props) {
+const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt }) => {
+  const isDark = useDarkContext()
   return (
-    <div className={styles.Root}>
-      <div className={styles.LeadMediaThumb}>
-        {props.mainImage && props.mainImage.asset && <Image fluid={props.mainImage.asset.fluid} />}
-      </div>
-      <Link className={styles.Wrapper} to={getBlogUrl(props.slug.current)}>
-        <Type as="h3" size="title" className={styles.Title}>
-          {props.title}
-        </Type>
-        {props._rawExcerpt && (
-          <div className={styles.Excerpt}>
-            <BlockText blocks={props._rawExcerpt} />
-          </div>
-        )}
-        <Type size="small" as="p" italic>
-          {formatDate(props.publishedAt)}
-        </Type>
-      </Link>
-    </div>
+    <Link className={cn(styles.Root, isDark && styles.isDark)} to={getBlogUrl(slug.current)}>
+      <div className={styles.LeadMediaThumb}>{mainImage && <Image fluid={mainImage} />}</div>
+      <Type as="h3" size="title" className={styles.Title}>
+        {title}
+      </Type>
+      {excerpt && (
+        <div className={styles.Excerpt}>
+          <BlockText blocks={excerpt} />
+        </div>
+      )}
+      <Type size="small" as="date" className={styles.Date} italic>
+        {formatDate(publishedAt)}
+      </Type>
+    </Link>
   )
+}
+
+BlogPostPreview.propTypes = {
+  slug: object,
+  mainImage: object,
+  title: string,
+  publishedAt: string,
+  excerpt: array
 }
 
 export default BlogPostPreview

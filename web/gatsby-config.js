@@ -14,7 +14,8 @@ module.exports = {
           Primitive: `src/components/Primitive`,
           Common: `src/components/Common`,
           Context: `src/components/Context`,
-          lib: 'src/lib'
+          lib: 'src/lib',
+          Section: 'src/components/Section'
         }
       }
     },

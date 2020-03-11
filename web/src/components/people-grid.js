@@ -1,5 +1,5 @@
 import React from 'react'
-import BlockText from './block-text'
+import BlockText from 'Primitive/BlockText/BlockText'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 

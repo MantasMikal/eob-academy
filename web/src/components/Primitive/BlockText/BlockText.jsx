@@ -3,8 +3,6 @@ import React from 'react'
 
 import Type from 'Primitive/Type'
 
-import typography from './typography.module.css'
-
 const serializers = {
   types: {
     block(props) {

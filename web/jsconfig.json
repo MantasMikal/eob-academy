@@ -5,6 +5,7 @@
         "Primitive": ["Primitive"],
         "Common":[ "Common"],
         "Context": ["Context"],
+        "Section": ["Section"],
         "lib": ["lib"]
       }
     }

@@ -1,18 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
-import BlogPostCarousel from 'Common/BlogPostCarousel/BlogPostCarousel'
+
 import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import ProjectPreviewGrid from '../components/project-preview-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Type from 'Primitive/Type'
 import Hero from 'Common/Hero/Hero'
 import Seperator from 'Primitive/Seprator'
 import DescriptionCards from 'Common/DescriptionCards/DescriptionCards'
-import SmartLink from 'Primitive/SmartLink'
 import descriptionCards from '../fixture/description-cards'
+import BlogPostCarouselSection from 'Section/BlogPostCarouselSection/BlogPostCarouselSection'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -130,26 +128,12 @@ const IndexPage = props => {
             browseMoreHref="/projects/"
           />
         )} */}
-      <div style={{ overflow: 'hidden', margin: '2rem 0' }}>
-        <Container size="wide" center gutter>
-          <Type size="title2">Latest blog posts</Type>
-          <SmartLink>
-            <Type style={{ color: '#c8167c', marginTop: '2rem' }} size="subtitle">
-              VIEW ALL
-            </Type>
-          </SmartLink>
-          <div style={{ margin: '6rem 0' }}>
-            {postNodes && (
-              <BlogPostCarousel
-                title="Latest blog posts"
-                nodes={postNodes}
-                browseMoreHref="/blog/"
-              />
-            )}
-          </div>
-        </Container>
 
-      </div>
+      <BlogPostCarouselSection
+        postNodes={postNodes}
+        browseMoreHref="/blog/"
+        title="Featured Blog Posts"
+      />
     </Layout>
   )
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useDarkContext } from 'Context/DarkContext'
+import { cn } from 'lib/helpers'
 
 import List from 'Primitive/List'
 import Icon from 'Primitive/Icon'
@@ -13,11 +15,12 @@ import styles from './Footer.module.scss'
 
 import links from './links'
 
-const Footer = props => {
+const Footer = () => {
+  const isDark = useDarkContext()
   return (
     <>
       <Seperator />
-      <footer className={styles.Footer}>
+      <footer className={cn(styles.Footer, isDark && styles.isDark)}>
         <Container gutter center size="wide" className={styles.Container}>
           <div className={styles.Branding}>
             <SmartLink href="/">
@@ -39,8 +42,8 @@ const Footer = props => {
             {links.map((linkList, i) => (
               <List key={i} className={styles.LinkList}>
                 {linkList.map((link, j) => (
-                  <SmartLink key={j} href={link.url}>
-                    <Type size='base'>{link.text}</Type>
+                  <SmartLink className={styles.Link} key={j} href={link.url}>
+                    <Type size="base">{link.text}</Type>
                   </SmartLink>
                 ))}
               </List>

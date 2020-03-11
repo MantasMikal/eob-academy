@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React from 'react'
 import { cn, buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
-import BlockText from './block-text'
+import BlockText from 'Primitive/BlockText/BlockText'
 
 import styles from './project-preview.module.css'
 import { responsiveTitle3 } from './typography.module.css'

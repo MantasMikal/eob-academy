@@ -17,7 +17,8 @@ const Container = ({
   size,
   fullHeight,
   sweepRight,
-  hideOverflow
+  hideOverflow,
+  spacious
 }) => (
   <Element
     as={as}
@@ -31,6 +32,7 @@ const Container = ({
       sweepRight && styles.sweepRight,
       hideOverflow && styles.hideOverflow,
       fullHeight && styles.fullHeight,
+      spacious && styles.spacious,
       className
     )}
   >
@@ -49,7 +51,8 @@ Container.propTypes = {
   size: oneOf(sizes),
   sweepRight: bool,
   hideOverflow: bool,
-  fullHeight: bool
+  fullHeight: bool,
+  spacious: bool
 }
 
 export default Container

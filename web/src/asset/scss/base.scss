@@ -1,11 +1,10 @@
 @import '_backline-mixins';
 @import 'setting';
 @import '_backline-normalize';
+@import url('https://use.typekit.net/rnl5jdi.css');
 
 //TODO:
 // MAKE SURE ALL ELEMENTS ARE SELECTABLE
-
-@import url('https://use.typekit.net/rnl5jdi.css');
 
 :global {
   body {
@@ -13,13 +12,6 @@
     line-height: spacing(3); // 24
     font-weight: normal;
     font-family: $font-body;
-  }
-  a {
-    transition: $duration-short $easing-standard;
-    &:hover {
-      transition: $duration-short $easing-standard;
-      color: $color-primary-purple;
-    }
   }
 
   // Gracefully add Typekit fonts
