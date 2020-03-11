@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { window } from 'browser-monads'
 
 // Hook for media queries
 // const isTablet = useMedia('(max-width: 960px)')
