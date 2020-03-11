@@ -4,6 +4,10 @@
 .Footer {
   padding: spacing(10) spacing(10);
   position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-content: center;
+
   // background-image: url('/asset/waves.svg');
   overflow: hidden;
   color: $color-primary-black;
