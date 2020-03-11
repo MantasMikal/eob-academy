@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import Slick from 'react-slick'
+import useMedia from '../../../lib/use-media'
 
 import styles from './Carousel.module.scss'
 import 'slick-carousel/slick/slick.css'
@@ -7,17 +8,20 @@ import 'slick-carousel/slick/slick-theme.css'
 
 // TODO
 // Fix triggering click while dragging
-
-const settings = {
-  infinite: false,
-  speed: 500,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  swipeToSlide: true
-}
+// Make compatable with any children
 
 export const Carousel = ({ children, ...props }) => {
   const [dragging, setDragging] = useState(false)
+
+  const isTablet = useMedia('(max-width: 960px)')
+
+  const settings = {
+    infinite: false,
+    speed: 500,
+    slidesToShow: isTablet ? 2 : 3,
+    slidesToScroll: 1,
+    swipeToSlide: true
+  }
 
   const handleBeforeChange = useCallback(() => {
     console.log('handleBeforeChange')
