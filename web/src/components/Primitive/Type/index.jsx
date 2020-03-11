@@ -9,6 +9,8 @@ import Element from '../Element'
 export const sizes = [
   'display2',
   'display1',
+  'displayHero',
+  'displayLarge',
   'title2',
   'menu',
   'title',

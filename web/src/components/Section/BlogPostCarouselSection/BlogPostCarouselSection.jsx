@@ -13,7 +13,7 @@ const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
   return (
     <div className={cn(styles.BlogPostCarouselSection, isDark && styles.isDark)}>
       <Container size="wide" center gutter spacious>
-        <Type size="title2" as="h2" className={styles.Title}>
+        <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
         <SmartLink>

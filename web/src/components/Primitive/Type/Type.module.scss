@@ -9,14 +9,29 @@
   text-transform: uppercase;
 }
 
-.display1 {
-  font-size: spacing(2.5); // 20
-  line-height: spacing(4); // 28
-  font-weight: 900;
-  text-transform: uppercase;
+.displayLarge {
+  font-weight: bold;
+  font-family: $font-heading;
+  font-size: spacing(4.5);
+  line-height: spacing(5.5);
+
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(5); // 40
+    line-height: spacing(6); // 48
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(6); // 48
+    line-height: spacing(7); // 56
+  }
+
+  @include mq($breakpoint-desktopLarge) {
+    font-size: spacing(8); // 64
+    line-height: spacing(9); // 72
+  }
 }
 
-.title2 {
+.displayHero {
   font-weight: bold;
   font-family: $font-heading;
 

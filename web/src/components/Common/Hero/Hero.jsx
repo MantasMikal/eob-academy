@@ -25,7 +25,7 @@ const Hero = ({ video, image, overlay, title, subtitle }) => {
         <img src="/asset/overlay2.svg" className={styles.Overlay} />
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
-        <Type size="title2" as="h2" className={styles.Title}>
+        <Type size="displayHero" as="h2" className={styles.Title}>
           {title}
         </Type>
         <Type size="subtitle" as="p" className={styles.Subtitle}>

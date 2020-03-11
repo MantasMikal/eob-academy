@@ -24,7 +24,7 @@ const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt }) => {
           <BlockText blocks={excerpt} />
         </div>
       )}
-      <Type size="small" as="date" className={styles.Date} italic>
+      <Type size="small" as="time" className={styles.Date} italic>
         {formatDate(publishedAt)}
       </Type>
     </Link>
