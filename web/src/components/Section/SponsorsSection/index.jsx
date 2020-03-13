@@ -5,9 +5,9 @@ import { cn } from 'lib/helpers'
 
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
-import SponsorCarousel from 'Common/SponsorCarousel/SponsorCarousel'
-import SponsorGrid from 'Common/SponsorGrid/SponsorGrid'
-import Video from 'Common/Video/Video'
+import SponsorCarousel from 'Common/SponsorCarousel'
+import SponsorGrid from 'Common/SponsorGrid'
+import Video from 'Common/Video'
 
 import styles from './SponsorsSection.module.scss'
 

@@ -6,13 +6,13 @@ import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Hero from 'Common/Hero/Hero'
+import Hero from 'Common/Hero'
 import Seperator from 'Primitive/Seprator'
-import DescriptionCards from 'Common/DescriptionCards/DescriptionCards'
+import DescriptionCards from 'Common/DescriptionCards'
 import descriptionCards from '../fixture/description-cards'
-import BlogPostCarouselSection from 'Section/BlogPostCarouselSection/BlogPostCarouselSection'
-import GelleryCarouselSection from 'Section/GalleryCarouselSection/GalleryCarouselSection'
-import SponsorsSection from 'Section/SponsorsSection/SponsorsSection'
+import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
+import GelleryCarouselSection from 'Section/GalleryCarouselSection'
+import SponsorsSection from 'Section/SponsorsSection'
 
 export const query = graphql`
   query IndexPageQuery {

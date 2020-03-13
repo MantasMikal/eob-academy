@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
 import { cn } from 'lib/helpers'
 
-import Navigation from 'Common/Navigation/Navigation'
+import Navigation from 'Common/Navigation'
 import A11yNavigation from 'Primitive/A11yNavigation'
-import Type from 'Primitive/Type'
-import Footer from 'Common/Footer/Footer'
+import Footer from 'Common/Footer'
 
 import styles from './Layout.module.scss'
 
