@@ -1,0 +1,17 @@
+@import 'setting';
+
+.Root {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.Caption {
+  padding-top: spacing(1);
+}
+
+.isDark {
+  .Caption {
+    color: $color-primary-white;
+  }
+}

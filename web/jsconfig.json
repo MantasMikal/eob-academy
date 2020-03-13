@@ -2,11 +2,11 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "Primitive": ["Primitive"],
-        "Common":[ "Common"],
-        "Context": ["Context"],
-        "Section": ["Section"],
-        "lib": ["lib"]
+        "Primitive": ["Primitive/*"],
+        "Common":[ "Common/*"],
+        "Context": ["Context/*"],
+        "Section": ["Section/*"],
+        "lib": ["lib/*"]
       }
     }
   }

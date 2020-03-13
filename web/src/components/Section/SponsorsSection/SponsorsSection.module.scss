@@ -1,0 +1,35 @@
+@import 'setting';
+
+.SponsorCarousel,
+.SponsorGrid,
+.VideoGrid,
+.Title {
+  margin: 0 0 spacing(12);
+}
+
+.SponsorCarousel {
+//   max-width: spacing(140);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.SponsorGrid {
+  margin-bottom: 0;
+}
+
+.VideoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: spacing(2);
+
+  @include mq($breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    gap: spacing(4);
+  }
+}
+
+.isDark {
+  .Title {
+    color: $color-primary-white;
+  }
+}

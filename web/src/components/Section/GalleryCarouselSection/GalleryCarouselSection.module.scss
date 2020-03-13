@@ -1,0 +1,26 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.GelleryCarouselSection {
+  overflow-x: hidden;
+}
+
+.Title {
+  padding-bottom: spacing(1);
+}
+
+.ViewAll {
+  color: $color-primary-purple;
+  transition: $duration-shorter $easing-standard;
+
+  &:hover {
+    transition: $duration-shorter $easing-standard;
+    color: $color-hover;
+  }
+}
+
+.isDark {
+    .Title {
+        color: $color-primary-white;
+    }
+}

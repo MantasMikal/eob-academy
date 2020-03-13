@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { arrayOf, shape, string } from 'prop-types'
 
 import DescriptionCard from './component/DescriptionCard'
 
@@ -22,12 +22,22 @@ const DescriptionCards = ({ cards }) => {
             />
           ))}
         </div>
-        <ButtonStandard size='large' className={styles.Button}>The Button</ButtonStandard>
+        <ButtonStandard size="large" className={styles.Button}>
+          <Type size="title">The Button</Type>
+        </ButtonStandard>
       </div>
     </div>
   )
 }
 
-DescriptionCards.propTypes = {}
+DescriptionCards.propTypes = {
+  cards: arrayOf(
+    shape({
+      icon: string,
+      title: string,
+      description: string
+    })
+  )
+}
 
 export default DescriptionCards

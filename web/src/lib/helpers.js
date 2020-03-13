@@ -17,6 +17,10 @@ export function getBlogUrl(slug) {
   return `/blog/${slug.current || slug}/`
 }
 
+export function getGalleryUrl(slug) {
+  return `/gallery/${slug.current || slug}/`
+}
+
 export function buildImageObj(source) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }

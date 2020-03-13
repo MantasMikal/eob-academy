@@ -17,12 +17,10 @@
 
 // Hacky, but works the best
 :global {
-  .slider-control-bottomleft {
-    right: 4rem;
-    left: unset !important;
-    bottom: spacing(-4) !important;
+  .slider-control-centerleft {
+    // left: -5rem !important;
   }
-  .slider-control-bottomright {
-    bottom: spacing(-4) !important;
+  .slider-control-centerright {
+    // right: -5rem !important;
   }
 }

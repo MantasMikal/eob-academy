@@ -16,7 +16,7 @@ const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, a
     ...(hideInfo && { showInfo: 0 }),
     ...(hideControls && { controls: 0 }),
     ...(autoPlay && { autoPlay: 1, }),
-    // playsinline: 1,
+    playsinline: 1,
     ...(start && { start })
   }
 
@@ -28,6 +28,8 @@ const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, a
       height={height ? height : "315"}
       frameBorder="0"
       allowFullScreen
+      SameSite='None'
+      Secure
     />
   )
 }

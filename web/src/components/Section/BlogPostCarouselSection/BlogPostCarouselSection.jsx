@@ -1,12 +1,15 @@
 import React from 'react'
 import { string, object, array, arrayOf, shape } from 'prop-types'
-import BlogPostCarousel from 'Common/BlogPostCarousel/BlogPostCarousel'
+import { useDarkContext } from 'Context/DarkContext'
+import { cn } from 'lib/helpers'
+
+import Carousel from 'Common/Carousel/Carousel'
+import BlogPostPreview from 'Common/BlogPostPreview/BlogPostPreview'
 import Container from 'Primitive/Container'
 import SmartLink from 'Primitive/SmartLink'
 import Type from 'Primitive/Type'
+
 import styles from './BlogPostCarouselSection.module.scss'
-import { useDarkContext } from 'Context/DarkContext'
-import { cn } from 'lib/helpers'
 
 const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
   const isDark = useDarkContext()
@@ -16,18 +19,24 @@ const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
-        <SmartLink>
+        <SmartLink to={browserMoreHref}>
           <Type className={styles.ViewAll} size="subtitle">
             VIEW ALL
           </Type>
         </SmartLink>
-        {postNodes && (
-          <BlogPostCarousel
-            title="Latest blog posts"
-            nodes={postNodes}
-            browseMoreHref={browserMoreHref}
-          />
-        )}
+        <Carousel>
+          {postNodes &&
+            postNodes.map(node => (
+              <BlogPostPreview
+                key={node.id}
+                slug={node.slug}
+                mainImage={node.mainImage.asset.fluid}
+                title={node.title}
+                publishedAt={node.publishedAt}
+                excerpt={node._rawExcerpt}
+              />
+            ))}
+        </Carousel>
       </Container>
     </div>
   )

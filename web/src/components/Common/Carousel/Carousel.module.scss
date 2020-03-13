@@ -1,31 +1,28 @@
 @import 'setting';
-@import '_backline-mixins';
 
-.Carousel {
-  display: block;
-  position: relative;
+.Root {
+  margin: spacing(6) 0 spacing(12);
 }
 
-.Title {
-  margin: spacing(3) 0;
-}
+.ControlIcon {
+  svg path {
+    transition: $duration-shortest $easing-standard;
+  }
 
-.Slide {
-  padding: 0 spacing(2);
-}
-
-.isDark {
-  .Title {
-    color: $color-primary-white;
+  &:hover svg path {
+    transition: $duration-shortest $easing-standard;
+    fill: $color-hover;
   }
 }
 
-.overflow {
-  overflow: visible;
-}
-
+// Hacky, but works the best
 :global {
-  .slick-list {
-    overflow: visible !important;
+  .slider-control-bottomleft {
+    right: 4rem;
+    left: unset !important;
+    bottom: spacing(-6) !important;
+  }
+  .slider-control-bottomright {
+    bottom: spacing(-6) !important;
   }
 }

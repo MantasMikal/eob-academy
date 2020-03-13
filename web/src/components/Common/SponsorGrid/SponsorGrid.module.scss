@@ -1,0 +1,26 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.ImageWrapper {
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  margin: spacing(3) spacing(2);
+  transition: $easing-standard $duration-shorter;
+  
+  @include mq($breakpoint-tablet) {
+    margin: spacing(3) spacing(4);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: $easing-standard $duration-shorter;
+  }
+}
