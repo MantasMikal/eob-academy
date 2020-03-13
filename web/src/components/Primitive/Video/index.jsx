@@ -5,8 +5,6 @@ import { cn } from 'lib/helpers'
 
 import Type from 'Primitive/Type'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
-import YoutubeEmbed from './YoutubeEmbed/index'
-import VimeoEmbed from './VimeoEmbed/index'
 
 import styles from './Video.module.scss'
 
