@@ -149,8 +149,7 @@ const IndexPage = props => {
   const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
 
   const sponsorNodes = (data || {}).sponsors ? mapEdgesToNodes(data.sponsors)[0] : []
-  console.log('sponsorNodes', sponsorNodes)
-
+  
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'

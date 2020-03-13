@@ -42,7 +42,7 @@ const Video = ({ videoType, videoId, caption, className }) => {
       )
 
     default:
-      console.log(`${videoType} Not supported.`)
+      console.error(`${videoType} Not supported.`)
       break
   }
 }

@@ -12,7 +12,6 @@ import styles from './DescriptionCard.module.scss'
 // Replace Icon with image if using CMS
 
 const DescriptionCard = ({ icon, title, description }) => {
-  console.log(icon, title, description)
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.DescriptionCard, isDark && styles.isDark)}>

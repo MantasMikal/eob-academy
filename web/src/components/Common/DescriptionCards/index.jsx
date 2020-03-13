@@ -8,7 +8,6 @@ import ButtonStandard from 'Primitive/ButtonStandard'
 import Type from 'Primitive/Type'
 
 const DescriptionCards = ({ cards }) => {
-  console.log(cards)
   return (
     <div className={styles.DescriptionCards}>
       <div className={styles.Wrapper}>
