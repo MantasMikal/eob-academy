@@ -11,6 +11,8 @@ import Seperator from 'Primitive/Seprator'
 import DescriptionCards from 'Common/DescriptionCards/DescriptionCards'
 import descriptionCards from '../fixture/description-cards'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection/BlogPostCarouselSection'
+import GelleryCarouselSection from 'Section/GalleryCarouselSection/GalleryCarouselSection'
+import SponsorsSection from 'Section/SponsorsSection/SponsorsSection'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -20,7 +22,53 @@ export const query = graphql`
       keywords
     }
 
-    projects: allSanityProject(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+    gallery: allSanityGalleryMedia(limit: 10, sort: { fields: [publishedAt], order: DESC }) {
+      edges {
+        node {
+          id
+          title
+          publishedAt
+          media {
+            alt
+            caption
+            asset {
+              fluid(maxWidth: 500) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
+    }
+
+    sponsors: allSanitySponsors {
+      edges {
+        node {
+          sponsorList {
+            _key
+            name
+            qouteHeading
+            qouteBody
+            url
+            image {
+              asset {
+                fluid(maxWidth: 600) {
+                  ...GatsbySanityImageFluid
+                }
+              }
+              alt
+            }
+          }
+          videos {
+            videoType
+            videoId
+            caption
+          }
+        }
+      }
+    }
+
+    projects: allSanityProject(limit: 10, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
           id
@@ -98,6 +146,11 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
 
+  const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
+
+  const sponsorNodes = (data || {}).sponsors ? mapEdgesToNodes(data.sponsors)[0] : []
+  console.log('sponsorNodes', sponsorNodes)
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -110,30 +163,30 @@ const IndexPage = props => {
   return (
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
+      <h1 hidden>Welcome to {site.title}</h1>
       <Hero
         title="EOB Academy the UK's first Esports Academy and Video Games Centre"
         subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
       />
       <Seperator />
-      <Container size="wide" center gutter>
+      <Container size="wide" center gutter spacious>
         <DescriptionCards cards={descriptionCards().cards} />
       </Container>
       <Seperator />
-
-      <h1 hidden>Welcome to {site.title}</h1>
-      {/* {projectNodes && (
-          <ProjectPreviewGrid
-            title="Latest projects"
-            nodes={projectNodes}
-            browseMoreHref="/projects/"
-          />
-        )} */}
-
       <BlogPostCarouselSection
         postNodes={postNodes}
         browseMoreHref="/blog/"
         title="Featured Blog Posts"
       />
+      <Seperator />
+      <GelleryCarouselSection
+        galleryNodes={galleryNodes}
+        browseMoreHref="/gallery/"
+        title="EOB Academy in action"
+      />
+      <Seperator />
+
+      <SponsorsSection title="Sponors &amp; Partners" sponsorNodes={sponsorNodes} />
     </Layout>
   )
 }

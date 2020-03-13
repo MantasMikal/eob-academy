@@ -20,7 +20,11 @@
 }
 
 .large {
-  padding: spacing(4) spacing(10);
+  padding: spacing(2) spacing(5);
   font-size: 2rem;
   font-weight: 500;
+
+  @include mq($breakpoint-desktop) {
+    padding: spacing(3) spacing(8);
+  }
 }

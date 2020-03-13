@@ -19,7 +19,11 @@ import project from './project'
 import projectMember from './projectMember'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
+import galleryMedia from './gallery-media'
 import seo from './seo'
+import sponsors from './sponsors'
+import sponsor from './sponsor'
+import video from './video'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -44,6 +48,10 @@ export default createSchema({
     projectMember,
     siteSettings,
     slideshow,
+    galleryMedia,
+    sponsors,
+    sponsor,
+    video,
     seo
 
     // When added to this list, object types can be used as

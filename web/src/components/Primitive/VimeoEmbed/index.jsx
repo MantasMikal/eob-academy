@@ -17,11 +17,9 @@ const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
   return (
     <iframe
       title="Embedded YouTube video"
-      src={`${srcPrefix}${videoId}?${shallowObjectToQuery(
-        query
-      )}${formattedStart}`}
-      width="640"
-      height="360"
+      src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}${formattedStart}`}
+      width="560"
+      height="315"
       frameBorder="0"
       allowFullScreen
     />

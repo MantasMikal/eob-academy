@@ -1,0 +1,11 @@
+@import 'setting';
+
+.Caption {
+  padding-top: spcing(0.5);
+}
+
+.isDark {
+  .Caption{
+    color: $color-primary-white;
+  }
+}

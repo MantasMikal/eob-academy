@@ -24,8 +24,8 @@
     padding-right: spacing(4);
   }
 }
-// SIZES
 
+// SIZES
 .spacious {
   padding-top: spacing(6);
   padding-bottom: spacing(12);
@@ -36,11 +36,15 @@
 }
 
 .wide {
-  max-width: spacing(210);
+  max-width: spacing(190);
+
+  @include mq($breakpoint-full + 100) {
+    max-width: 80vw;
+  }
 }
 
 .large {
-  max-width: spacing(120);
+  max-width: spacing(180);
 }
 
 .medium {

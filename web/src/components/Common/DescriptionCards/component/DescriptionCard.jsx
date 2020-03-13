@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import  { string } from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
 import { cn } from 'lib/helpers'
 
@@ -27,6 +27,10 @@ const DescriptionCard = ({ icon, title, description }) => {
   )
 }
 
-DescriptionCard.propTypes = {}
+DescriptionCard.propTypes = {
+  icon: string,
+  title: string,
+  description: string
+}
 
 export default DescriptionCard
