@@ -56,6 +56,11 @@ Video.propTypes = {
 
 export default Video
 
+
+// Video Types
+
+// # Vimeo
+
 export const VimeoEmbedFallbackUrl = videoId => `https://vimeo.com/${videoId}`
 export const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
   const srcPrefix = 'https://player.vimeo.com/video/'
@@ -85,6 +90,8 @@ VimeoEmbed.propTypes = {
   hideByline: bool,
   videoId: string.isRequired
 }
+
+// # Youtube
 
 export const YouTubeEmbedFallbackUrl = videoId => `https://www.youtube.com/watch?v=${videoId}`
 
