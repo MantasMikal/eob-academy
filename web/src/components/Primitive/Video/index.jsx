@@ -1,14 +1,75 @@
 import React from 'react'
 import { string, bool } from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
+import shallowObjectToQuery from 'lib/shallow-object-to-query'
 import { cn } from 'lib/helpers'
 
 import Type from 'Primitive/Type'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
-import YouTubeEmbed from 'Primitive/YouTubeEmbed'
-import VimeoEmbed from 'Primitve/VimeoEmbed'
 
 import styles from './Video.module.scss'
+
+export const VimeoEmbedFallbackUrl = videoId => `https://vimeo.com/${videoId}`
+const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
+  const srcPrefix = 'https://player.vimeo.com/video/'
+  const query = {
+    ...(color && { color: color.replace('#', '') }),
+    ...(hideByline && { byline: 0 }),
+    ...(hideTitle && { title: 0 })
+  }
+  const formattedStart = start ? `#t=${start}s` : ``
+
+  return (
+    <iframe
+      title="Embedded Vimeo video"
+      src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}${formattedStart}`}
+      width="560"
+      height="315"
+      frameBorder="0"
+      allowFullScreen
+    />
+  )
+}
+
+export const YouTubeEmbedFallbackUrl = videoId => `https://www.youtube.com/watch?v=${videoId}`
+
+const YouTubeEmbed = ({
+  hideControls,
+  start,
+  videoId,
+  width,
+  height,
+  autoPlay,
+  autoHide,
+  mute,
+  hideInfo
+}) => {
+  const srcPrefix = 'https://www.youtube.com/embed/'
+  const query = {
+    rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
+    modestbranding: 1,
+    playsinline: 1,
+    ...(autoHide && { autoHide: 1 }),
+    ...(mute && { mute: 1 }),
+    ...(hideInfo && { showInfo: 0 }),
+    ...(hideControls && { controls: 0 }),
+    ...(autoPlay && { autoPlay: 1 }),
+    ...(start && { start })
+  }
+
+  return (
+    <iframe
+      title="Embedded YouTube video"
+      src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}`}
+      width={width ? width : '560'}
+      height={height ? height : '315'}
+      frameBorder="0"
+      allowFullScreen
+      SameSite="None"
+      Secure
+    />
+  )
+}
 
 const Video = ({ videoType, videoId, caption, className }) => {
   const isDark = useDarkContext()
