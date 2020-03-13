@@ -11,7 +11,6 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import styles from './Video.module.scss'
 
 const Video = ({ videoType, videoId, caption, className }) => {
-  console.log('Video -> caption', caption)
   const isDark = useDarkContext()
   const classNames = cn(className, isDark && styles.isDark)
 
