@@ -11,12 +11,12 @@ const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, a
   const query = {
     rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
     modestbranding: 1,
+    playsinline: 1,
     ...(autoHide && { autoHide: 1 }),
     ...(mute && { mute: 1 }),
     ...(hideInfo && { showInfo: 0 }),
     ...(hideControls && { controls: 0 }),
     ...(autoPlay && { autoPlay: 1, }),
-    playsinline: 1,
     ...(start && { start })
   }
 
