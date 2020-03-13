@@ -7,7 +7,7 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 import SponsorCarousel from 'Common/SponsorCarousel'
 import SponsorGrid from 'Common/SponsorGrid'
-import Video from 'Common/Video'
+import Video from 'Primitive/Video'
 
 import styles from './SponsorsSection.module.scss'
 
