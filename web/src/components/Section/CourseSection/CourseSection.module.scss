@@ -5,18 +5,7 @@
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: spacing(16);
-
-  @include mq($breakpoint-tablet) {
-    flex-direction: row;
-  }
-}
-
-.IntroWrapper {
-  @include mq($breakpoint-tablet) {
-    max-width: 60%;
-    margin-right: spacing(6);
-  }
+  padding-bottom: spacing(6);
 }
 
 .Subtitle {
@@ -39,7 +28,7 @@
 }
 
 .Course {
-  padding-bottom: spacing(14);
+  padding-bottom: spacing(6);
 }
 
 .isDark {
@@ -47,5 +36,31 @@
   .Subtitle,
   .Description {
     color: $color-primary-white;
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .Intro {
+    flex-direction: row;
+    padding-bottom: spacing(8);
+  }
+
+  .Course {
+    padding-bottom: spacing(8);
+  }
+
+  .IntroWrapper {
+    max-width: 60%;
+    margin-right: spacing(6);
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Intro {
+    padding-bottom: spacing(16);
+  }
+
+  .Course {
+    padding-bottom: spacing(14);
   }
 }
