@@ -1,0 +1,76 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.Course {
+  display: block;
+
+  @include mq($breakpoint-tablet) {
+    display: flex;
+  }
+}
+
+.Poster {
+  display: none;
+  flex: 0 0 40%;
+  height: 100%;
+  width: 100%;
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+  margin-bottom: spacing(4);
+
+  @include mq($breakpoint-tablet) {
+    margin-right: spacing(8);
+    display: block;
+  }
+
+  @include mq($breakpoint-tablet + 100) {
+    flex: 0 0 30%;
+  }
+}
+
+.Title {
+  padding-bottom: spacing(1);
+}
+
+.Description {
+  //   flex: 1 1 50%;
+  padding-bottom: spacing(2);
+
+  @include mq($breakpoint-desktop) {
+    padding-bottom: spacing(4);
+  }
+}
+
+.Details {
+  padding-bottom: spacing(2);
+
+  @include mq($breakpoint-desktop) {
+    padding-bottom: spacing(4);
+  }
+}
+
+// Displays poster after description
+.posterMobile {
+  display: block;
+
+  @include mq($breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.reverse {
+  .Poster {
+    order: 1;
+
+    @include mq($breakpoint-tablet) {
+      margin-right: 0;
+      margin-left: spacing(8);
+    }
+  }
+}
+
+.isDark {
+  .Title,
+  .Description {
+    color: $color-primary-white;
+  }
+}
