@@ -43,7 +43,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) 
         <nav className={cn(styles.Nav, showNav && styles.showNav)}>
           <ul>
             <LinkWrapper to="#">EOB Academy</LinkWrapper>
-            <LinkWrapper to="#">Prince's trust courses</LinkWrapper>
+            <LinkWrapper to="/princes-troust-courses/">Prince's trust courses</LinkWrapper>
             <LinkWrapper to="#">Events</LinkWrapper>
             <LinkWrapper to="#">Jobs</LinkWrapper>
             <LinkWrapper className={styles.highlight} to="/contact/">

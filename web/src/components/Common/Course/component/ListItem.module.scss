@@ -1,0 +1,31 @@
+@import 'setting';
+@import '_backline-mixins';
+
+.ListItem {
+  padding-bottom: spacing(1);
+}
+
+.Title {
+  display: inline;
+  padding-right: spacing(1);
+  color: $color-primary-purple;
+}
+
+.Value {
+  display: inline;
+}
+
+.IconWrapper {
+  min-width: spacing(5);
+  text-align: center;
+}
+
+.Icon {
+  margin: auto;
+}
+
+.isDark {
+  .Value {
+    color: $color-primary-white;
+  }
+}

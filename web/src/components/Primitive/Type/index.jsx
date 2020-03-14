@@ -14,13 +14,15 @@ export const sizes = [
   'title2',
   'menu',
   'title',
+  'titleLarge',
   'title1',
   'subtitle',
+  'baseLarge',
   'base',
   'small'
 ]
 
-const Type = ({ children, className, as, size, tight, italic, ...rest }) => (
+const Type = ({ children, className, as, size, tight, italic, bold, demi, heavy, ...rest }) => (
   <Element
     as={as}
     className={classNames(
@@ -28,6 +30,9 @@ const Type = ({ children, className, as, size, tight, italic, ...rest }) => (
       size && styles[size],
       tight && styles.tight,
       italic && styles.italic,
+      bold && styles.bold,
+      demi && styles.demi,
+      heavy && styles.heavy,
       className
     )}
     {...rest}
@@ -49,7 +54,9 @@ Type.propTypes = {
   as: string,
   size: oneOf(sizes),
   tight: bool,
-  italic: bool
+  italic: bool,
+  demi: bool,
+  heavy: bool
 }
 
 export default Type

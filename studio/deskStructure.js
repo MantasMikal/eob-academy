@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { MdBusiness, MdSettings, MdGroup } from "react-icons/md";
+import { MdBusiness, MdSettings, MdGroup, MdLibraryBooks } from "react-icons/md";
 import { FaFile } from "react-icons/fa";
 
 const hiddenTypes = [
@@ -10,7 +10,10 @@ const hiddenTypes = [
   "post",
   "project",
   "siteSettings",
-  "sponsors"
+  "sponsors",
+  "coursesPage",
+  "course",
+  "seo-plugin"
 ];
 
 export default () =>
@@ -86,5 +89,14 @@ export default () =>
             .documentId("sponsors")
         )
         .icon(MdGroup),
+      S.listItem()
+        .title("Courses")
+        .child(
+          S.editor()
+            .id("coursesPage")
+            .schemaType("coursesPage")
+            .documentId("coursesPage")
+        )
+        .icon(MdLibraryBooks),
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
     ]);

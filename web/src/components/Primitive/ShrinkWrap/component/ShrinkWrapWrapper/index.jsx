@@ -12,14 +12,16 @@ const ShrinkWrapWrapper = ({
   fixed,
   fullWidth,
   spacing,
-  vAlign
+  vAlign,
+  className
 }) => (
   <Element
     as={as}
     className={classNames(
       styles.ShrinkWrapWrapper,
       fixed && styles.fixed,
-      fullWidth && styles.fullWidth
+      fullWidth && styles.fullWidth,
+      className
     )}
   >
     {Children.map(children, child => {
@@ -35,7 +37,8 @@ ShrinkWrapWrapper.propTypes = {
   fixed: bool,
   fullWidth: bool,
   spacing: string,
-  vAlign: string
+  vAlign: string,
+  className: string
 }
 
 export default ShrinkWrapWrapper
