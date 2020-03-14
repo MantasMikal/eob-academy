@@ -51,7 +51,13 @@ module.exports = {
         watchMode: true,
         overlayDrafts: true
       }
-    }
+    },
+    // {
+    //   resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+    //   options: {
+    //     production: true
+    //   }
+    // }
   ]
 }
 

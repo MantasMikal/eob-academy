@@ -32,13 +32,13 @@ function Project (props) {
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
           </div>
           <aside className={styles.metaContent}>
-            {publishedAt && (
+            {/* {publishedAt && (
               <div className={styles.publishedAt}>
                 {differenceInDays(new Date(publishedAt), new Date()) > 3
                   ? distanceInWords(new Date(publishedAt), new Date())
                   : format(new Date(publishedAt), 'MMMM Do YYYY')}
               </div>
-            )}
+            )} */}
             {members && <RoleList items={members} title='Authors' />}
             {categories && (
               <div className={styles.categories}>

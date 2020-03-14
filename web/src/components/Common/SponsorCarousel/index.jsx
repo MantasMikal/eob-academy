@@ -14,7 +14,8 @@ const SponsorCarousel = ({ sponsors, className }) => (
       slidesToShow={1}
       cellSpacing={24}
       enableKeyboardControls
-      initialSlideHeight={400}
+      initialSlideHeight={450}
+      inirialSlideWidth={450}
       speed={250}
       transitionMode="scroll"
       renderCenterRightControls={({ nextSlide }) => (

@@ -19,17 +19,17 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^0.147.8",
-    "@sanity/cli": "^0.146.0",
-    "@sanity/components": "^1.148.5",
-    "@sanity/core": "^1.148.5",
-    "@sanity/default-layout": "^1.148.5",
-    "@sanity/default-login": "^1.148.1",
-    "@sanity/desk-tool": "^1.148.4",
+    "@sanity/base": "^1.149.3",
+    "@sanity/cli": "^1.149.2",
+    "@sanity/components": "^1.149.3",
+    "@sanity/core": "^1.149.2",
+    "@sanity/default-layout": "^1.149.3",
+    "@sanity/default-login": "^1.149.0",
+    "@sanity/desk-tool": "^1.149.3",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-icons": "^3.8.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-icons": "^3.9.0",
     "sanity-plugin-seo-tools": "^1.0.6"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
     "prettier-eslint-cli": "^5.0.0"
   }
