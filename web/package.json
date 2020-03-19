@@ -45,6 +45,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-helmet": "^5.2.1",
+    "react-medium-image-zoom": "^4.3.0",
     "react-slick": "^0.25.2",
     "slick-carousel": "^1.8.1"
   },

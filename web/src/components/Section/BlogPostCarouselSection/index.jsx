@@ -30,7 +30,7 @@ const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
               <BlogPostPreview
                 key={node.id}
                 slug={node.slug}
-                mainImage={node.mainImage.asset.fluid}
+                mainImage={node.mainImage}
                 title={node.title}
                 publishedAt={node.publishedAt}
                 excerpt={node._rawExcerpt}

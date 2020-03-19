@@ -21,7 +21,7 @@ const CourseSection = ({ courseNodes }) => {
       spacious
     >
       <div className={styles.Intro}>
-        <div className={styles.IntroWrapper}>
+        <div className={styles.IntroInner}>
           <Type as="h2" size="displayLarge" className={styles.Title}>
             {courseNodes.pageTitle}
           </Type>

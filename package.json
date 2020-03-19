@@ -23,13 +23,5 @@
   "devDependencies": {
     "lerna": "^3.14.1",
     "rimraf": "^2.6.3"
-  },
-  "dependencies": {
-    "backline-mixins": "^1.0.3",
-    "backline-normalize": "^1.0.1",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "gatsby-alias-imports": "^1.0.4",
-    "gatsby-plugin-sass": "^2.1.29",
-    "node-sass": "^4.13.1"
   }
 }
