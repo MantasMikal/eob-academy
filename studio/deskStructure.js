@@ -13,7 +13,8 @@ const hiddenTypes = [
   "sponsors",
   "coursesPage",
   "course",
-  "seo-plugin"
+  "seo-plugin",
+  "category"
 ];
 
 export default () =>
@@ -38,10 +39,6 @@ export default () =>
             .documentId("companyInfo")
         )
         .icon(MdBusiness),
-      S.listItem()
-        .title("Projects")
-        .schemaType("project")
-        .child(S.documentTypeList("project")),
       S.listItem()
         .title("Blog posts")
         .schemaType("post")
@@ -72,14 +69,6 @@ export default () =>
                 .icon(FaFile)
             ])
         ),
-      S.listItem()
-        .title("People")
-        .schemaType("person")
-        .child(S.documentTypeList("person").title("People")),
-      S.listItem()
-        .title("Categories")
-        .schemaType("category")
-        .child(S.documentTypeList("category").title("Categories")),
       S.listItem()
         .title("Sponsors")
         .child(
