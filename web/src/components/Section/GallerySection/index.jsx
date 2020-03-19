@@ -22,7 +22,7 @@ const GallerySection = ({ galleryNodes }) => {
       <Type as="h2" size="displayLarge" className={styles.Title}>
         Gallery
       </Type>
-      <GalleryPreviewLayout nodes={galleryNodes} />
+      <GalleryPreviewLayout nodes={galleryNodes} surround/>
     </Container>
   )
 }

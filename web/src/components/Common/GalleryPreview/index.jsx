@@ -8,10 +8,10 @@ import Media from 'Primitive/Media'
 
 import styles from './GalleryPreview.module.scss'
 
-const GalleryPreview = ({ media, ratio }) => {
+const GalleryPreview = ({ media, ratio, surround }) => {
   const isDark = useDarkContext()
   return (
-    <div className={cn(styles.Root, isDark && styles.isDark)}>
+    <div className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround)}>
       <Media ratio={ratio ? ratio : undefined} media={media} />
       {media.caption && (
         <Type size="base" className={styles.Caption}>
@@ -24,7 +24,8 @@ const GalleryPreview = ({ media, ratio }) => {
 
 GalleryPreview.propTypes = {
   media: object,
-  ratio: number
+  ratio: number,
+  surround: bool
 }
 
 export default GalleryPreview
