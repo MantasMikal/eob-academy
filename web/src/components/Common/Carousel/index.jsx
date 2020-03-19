@@ -19,8 +19,8 @@ function Carousel({ children }) {
         cellSpacing={24}
         enableKeyboardControls
         frameOverflow="visible"
-        initialSlideHeight={450}
-        inirialSlideWidth={450}
+        initialSlideHeight={360}
+        inirialSlideWidth={640}
         speed={250}
         transitionMode="scroll"
         renderBottomRightControls={({ nextSlide }) => (

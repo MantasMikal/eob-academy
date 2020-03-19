@@ -19,19 +19,17 @@ const GelleryCarouselSection = ({ galleryNodes, title, browserMoreHref }) => {
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
-        <SmartLink to={browserMoreHref}>
-          <Type className={styles.ViewAll} size="subtitle">
-            VIEW ALL
-          </Type>
+        <SmartLink to="/gallery" className={styles.ViewAll}>
+          <Type size="subtitle">VIEW ALL</Type>
         </SmartLink>
         <Carousel>
           {galleryNodes &&
             galleryNodes.map(node => (
               <GalleryPreview
+                className={styles.GalleryPreview}
                 key={node.id}
-                media={node.media.asset.fluid}
-                caption={node.media.caption}
-                alt={node.media.alt}
+                media={node.media}
+                ratio={9 / 16}
               />
             ))}
         </Carousel>

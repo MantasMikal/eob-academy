@@ -18,6 +18,7 @@ export const sizes = [
   'title1',
   'subtitle',
   'baseLarge',
+  'baseSmall',
   'base',
   'small'
 ]

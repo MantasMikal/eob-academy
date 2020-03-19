@@ -1,23 +1,21 @@
 import React from 'react'
 import { cn } from 'lib/helpers'
-import { string, object } from 'prop-types'
-import Image from 'gatsby-image'
+import { object, bool, number } from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
 
 import Type from 'Primitive/Type'
+import Media from 'Primitive/Media'
 
 import styles from './GalleryPreview.module.scss'
 
-const GalleryPreview = ({ media, caption, alt }) => {
+const GalleryPreview = ({ media, ratio }) => {
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.Root, isDark && styles.isDark)}>
-      <div className={styles.Media}>
-        {media && <Image fluid={media} alt={alt || 'Gallery image'} />}
-      </div>
-      {caption && (
+      <Media ratio={ratio ? ratio : undefined} media={media} />
+      {media.caption && (
         <Type size="base" className={styles.Caption}>
-          {caption}
+          {media.caption}
         </Type>
       )}
     </div>
@@ -26,8 +24,7 @@ const GalleryPreview = ({ media, caption, alt }) => {
 
 GalleryPreview.propTypes = {
   media: object,
-  caption: string,
-  alt: string
+  ratio: number
 }
 
 export default GalleryPreview

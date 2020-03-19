@@ -1,21 +1,23 @@
 import React from 'react'
 import { string, object, array, arrayOf } from 'prop-types'
 import { Link } from 'gatsby'
-import Image from 'gatsby-image'
 import { getBlogUrl, formatDate } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
 
 import BlockText from 'Primitive/BlockText/BlockText'
 import Type from 'Primitive/Type'
+import Media from 'Primitive/Media'
 
 import styles from './BlogPostPreview.module.scss'
 import { cn } from 'lib/helpers'
 
-const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt }) => {
+const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio }) => {
   const isDark = useDarkContext()
   return (
     <Link className={cn(styles.Root, isDark && styles.isDark)} to={getBlogUrl(slug.current)}>
-      <div className={styles.LeadMediaThumb}>{mainImage && <Image fluid={mainImage} />}</div>
+      <div className={styles.LeadMediaThumb}>
+        <Media ratio={ratio ? ratio : undefined} media={mainImage} />
+      </div>
       <Type as="h3" size="title" className={styles.Title}>
         {title}
       </Type>

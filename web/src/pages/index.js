@@ -32,9 +32,12 @@ export const query = graphql`
             alt
             caption
             asset {
-              fluid(maxWidth: 500) {
-                ...GatsbySanityImageFluid
-              }
+              fluid(maxWidth: 600) {
+                  ...GatsbySanityImageFluid
+                }
+              # fixed(width: 450, height: 265) {
+              #   ...GatsbySanityImageFixed
+              # }
             }
           }
         }

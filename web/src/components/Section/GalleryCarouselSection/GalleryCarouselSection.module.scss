@@ -12,11 +12,16 @@
 .ViewAll {
   color: $color-primary-purple;
   transition: $duration-shorter $easing-standard;
-
+  text-decoration: none;
   &:hover {
     transition: $duration-shorter $easing-standard;
     color: $color-hover;
   }
+}
+
+.GalleryPreview {
+  margin: 0 spacing(2);
+  height: 300px;
 }
 
 .isDark {
