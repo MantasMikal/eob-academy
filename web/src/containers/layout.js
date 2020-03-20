@@ -3,6 +3,8 @@ import { graphql, StaticQuery } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import { DarkContextProvider } from '../components/Context/DarkContext'
 
+
+
 const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -21,11 +23,11 @@ const query = graphql`
 
 function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false)
-  // const wasDark = typeof window !== undefined && typeof localStorage !== undefined ? JSON.parse(localStorage.getItem('isDark')) : false
-  const [isDark, setDark] = useState(false)
+  const wasDark = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : false
+  const [isDark, setDark] = useState(wasDark)
   console.log("Render")
   function handleDark() {
-    // localStorage.setItem('isDark', !isDark)
+    window.localStorage.setItem('isDark', !isDark)
     setDark(!isDark)
   }
 

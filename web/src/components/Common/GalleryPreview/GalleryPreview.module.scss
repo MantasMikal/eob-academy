@@ -8,6 +8,7 @@
 
 .Caption {
   padding-top: spacing(1);
+  color: $color-primary-black;
 }
 
 .surround {
@@ -30,9 +31,10 @@
 }
 
 .isDark {
-  &.Root {
-    background-color: $color-primary-black-light
+  &.surround {
+    background-color: $color-primary-black-light;
   }
+
   .Caption {
     color: $color-primary-white;
   }

@@ -15,7 +15,7 @@ const LinkWrapper = ({ children, to, className }) => (
   </Type>
 )
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) => {
+const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) => {
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.Root, isDark && styles.isDark)} id={id}>
@@ -75,4 +75,4 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) 
   )
 }
 
-export default Header
+export default Navigation

@@ -5,6 +5,7 @@
 
 .Wrapper {
   transition: $duration-short $easing-standard;
+  overflow: hidden;
 }
 
 .Content {
