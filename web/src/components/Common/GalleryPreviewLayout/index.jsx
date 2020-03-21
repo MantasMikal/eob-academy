@@ -2,6 +2,7 @@ import React from 'react'
 import GalleryPreview from 'Common/GalleryPreview'
 import LazyLoader from 'lib/lazy-loader/lazyLoader'
 import MasonryLayout from 'lib/masonry/masonry-layout'
+import { array, bool } from 'prop-types'
 
 export default class GalleryPreviewLayout extends React.Component {
   constructor(props) {
@@ -42,6 +43,7 @@ export default class GalleryPreviewLayout extends React.Component {
             item={nodes[i]}
             key={nodes[i].id}
             surround={this.props.surround}
+            isZoombale
           />
         )
     }
@@ -53,4 +55,9 @@ export default class GalleryPreviewLayout extends React.Component {
       </LazyLoader>
     )
   }
+}
+
+GalleryPreviewLayout.propTypes = {
+  nodes: array,
+  surround: bool
 }

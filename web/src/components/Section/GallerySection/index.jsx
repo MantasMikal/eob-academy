@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { array } from 'prop-types'
 import { cn } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
-import GalleryPreviewLayout from '../../gallery-preview-layout'
+import GalleryPreviewLayout from 'Common/GalleryPreviewLayout'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 
@@ -10,7 +10,7 @@ import styles from './GallerySection.module.scss'
 
 const GallerySection = ({ galleryNodes }) => {
   const isDark = useDarkContext()
-  
+
   return (
     <Container
       className={cn(styles.GallerySection, isDark && styles.isDark)}
@@ -22,11 +22,13 @@ const GallerySection = ({ galleryNodes }) => {
       <Type as="h2" size="displayLarge" className={styles.Title}>
         Gallery
       </Type>
-      <GalleryPreviewLayout nodes={galleryNodes} surround/>
+      <GalleryPreviewLayout nodes={galleryNodes} surround />
     </Container>
   )
 }
 
-GallerySection.propTypes = {}
+GallerySection.propTypes = {
+  galleryNodes: array
+}
 
 export default GallerySection

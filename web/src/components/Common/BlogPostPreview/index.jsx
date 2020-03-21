@@ -6,7 +6,7 @@ import { useDarkContext } from 'Context/DarkContext'
 
 import BlockText from 'Primitive/BlockText/BlockText'
 import Type from 'Primitive/Type'
-import Media from 'Primitive/Media'
+import Media from 'Common/Media'
 
 import styles from './BlogPostPreview.module.scss'
 import { cn } from 'lib/helpers'

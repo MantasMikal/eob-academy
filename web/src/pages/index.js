@@ -33,11 +33,8 @@ export const query = graphql`
             caption
             asset {
               fluid(maxWidth: 600) {
-                  ...GatsbySanityImageFluid
-                }
-              # fixed(width: 450, height: 265) {
-              #   ...GatsbySanityImageFixed
-              # }
+                ...GatsbySanityImageFluid
+              }
             }
           }
         }
@@ -145,14 +142,11 @@ const IndexPage = props => {
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
-  const projectNodes = (data || {}).projects
-    ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
-    : []
 
   const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
 
   const sponsorNodes = (data || {}).sponsors ? mapEdgesToNodes(data.sponsors)[0] : []
-  
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'

@@ -34,7 +34,6 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.1.30",
     "gatsby-plugin-sharp": "^2.4.12",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-sharp": "^2.3.18",

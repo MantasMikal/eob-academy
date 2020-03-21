@@ -2,11 +2,9 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes } from '../lib/helpers'
 
-import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Type from 'Primitive/Type'
 import GallerySection from 'Section/GallerySection'
 
 
@@ -24,7 +22,7 @@ export const query = graphql`
             
             asset {
               url
-              fluid(maxWidth: 500) {
+              fluid(maxWidth: 1000) {
                 ...GatsbySanityImageFluid
               }
             }
