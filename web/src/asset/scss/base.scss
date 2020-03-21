@@ -14,6 +14,21 @@
     font-family: $font-body;
   }
 
+  a, button {
+    color: inherit;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: inherit;
+      outline: 0;
+    }
+
+    &:active {
+      color: inherit;
+    }
+  }
+
   // Gracefully add Typekit fonts
   .wf-loading {
     opacity: 0;

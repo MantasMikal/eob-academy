@@ -20,6 +20,7 @@ const ZoomableMedia = ({ media, ratio }) => {
       transitionDuration={200}
       overlayBgColorEnd={isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)'}
       overlayBgColorStart="rgba(0, 0, 0, 0)"
+      zoomMargin={20}
     >
       <Media imgWrapperStyle={imageStyles} imgStyle={imageStyles} media={media} ratio={ratio} />
     </Zoom>
