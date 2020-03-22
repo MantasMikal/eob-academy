@@ -1,9 +1,0 @@
-@import '../../styles/media-queries.css';
-
-.masonryLayout {
-  display: flex;
-  margin: 0.325rem 0 0.625rem;
-  @media (--media-max-small) {
-    display: block;
-  }
-}

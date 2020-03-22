@@ -20,7 +20,7 @@ const GelleryCarouselSection = ({ galleryNodes, title, browserMoreHref }) => {
           {title}
         </Type>
         <SmartLink to="/gallery" className={styles.ViewAll}>
-          <Type size="subtitle">VIEW ALL</Type>
+          <Type as='span' size="subtitle">VIEW ALL</Type>
         </SmartLink>
         <Carousel>
           {galleryNodes &&

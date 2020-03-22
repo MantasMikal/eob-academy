@@ -19,6 +19,7 @@ const CourseSection = ({ courseNodes }) => {
       center
       gutter
       spacious
+      withNavSpace
       as='section'
     >
       <div className={styles.Intro}>

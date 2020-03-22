@@ -19,8 +19,8 @@ const BlogPostCarouselSection = ({ postNodes, title }) => {
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
-        <SmartLink to='/blog/'>
-          <Type className={styles.ViewAll} size="subtitle">
+        <SmartLink to="/blog/" className={styles.ViewAll}>
+          <Type as="span" size="subtitle">
             VIEW ALL
           </Type>
         </SmartLink>
