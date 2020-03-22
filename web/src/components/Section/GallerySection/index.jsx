@@ -2,9 +2,11 @@ import React from 'react'
 import { array } from 'prop-types'
 import { cn } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
-import GalleryPreviewLayout from 'Common/GalleryPreviewLayout'
+
+import GalleryPreview from 'Common/GalleryPreview'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
+import MasonryLayout from 'Common/MasonryLayout'
 
 import styles from './GallerySection.module.scss'
 
@@ -18,11 +20,23 @@ const GallerySection = ({ galleryNodes }) => {
       center
       gutter
       spacious
+      withNavSpace
+      as='section'
     >
       <Type as="h2" size="displayLarge" className={styles.Title}>
         Gallery
       </Type>
-      <GalleryPreviewLayout nodes={galleryNodes} surround />
+      <MasonryLayout
+        items={[...galleryNodes, ...galleryNodes, ...galleryNodes, ...galleryNodes].map(item => (
+          <GalleryPreview
+            className={styles.GalleryPreview}
+            key={item.id}
+            media={item.media}
+            surround
+          />
+        ))}
+        gap={25}
+      />
     </Container>
   )
 }

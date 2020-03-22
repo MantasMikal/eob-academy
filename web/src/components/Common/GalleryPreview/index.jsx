@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn } from 'lib/helpers'
-import { object, bool, number } from 'prop-types'
+import { object, bool, number, string } from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
 
 import Type from 'Primitive/Type'
@@ -9,7 +9,7 @@ import Zoomable from 'Common/Zoomable'
 
 import styles from './GalleryPreview.module.scss'
 
-const GalleryPreview = ({ media, ratio, surround, isZoombale }) => {
+const GalleryPreview = ({ media, ratio, surround, isZoombale, className }) => {
   const isDark = useDarkContext()
 
   const el = isZoombale ? (
@@ -19,7 +19,7 @@ const GalleryPreview = ({ media, ratio, surround, isZoombale }) => {
   )
 
   return (
-    <div className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround)}>
+    <div className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}>
       {el}
       {media.caption && (
         <Type size="base" className={styles.Caption}>
@@ -33,7 +33,8 @@ const GalleryPreview = ({ media, ratio, surround, isZoombale }) => {
 GalleryPreview.propTypes = {
   media: object,
   ratio: number,
-  surround: bool
+  surround: bool,
+  className: string
 }
 
 export default GalleryPreview

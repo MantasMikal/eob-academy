@@ -7,13 +7,11 @@
   min-height: 90vh;
   display: flex;
   align-content: center;
-
-  // background-image: url('/asset/waves.svg');
   overflow: hidden;
   color: $color-primary-black;
   transition: $duration-shortest;
   a:hover {
-    color: $color-primary-purple;
+    color: $color-hover;
     transition: $duration-shortest;
   }
 
@@ -40,10 +38,15 @@
 }
 
 .Logo {
-  transition: $duration-short $easing-standard;
-  &:hover {
-    transform: scale(1.1);
+  display: block;
+  img {
+    width: auto;
+    height: 150px;
     transition: $duration-short $easing-standard;
+    &:hover {
+      transform: scale(1.1);
+      transition: $duration-short $easing-standard;
+    }
   }
 }
 
@@ -58,7 +61,6 @@
     padding-bottom: spacing(2);
     display: flex;
     align-items: center;
-
 
     span {
       padding-right: spacing(5);

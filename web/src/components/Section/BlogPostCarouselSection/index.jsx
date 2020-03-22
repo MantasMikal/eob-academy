@@ -14,7 +14,7 @@ import styles from './BlogPostCarouselSection.module.scss'
 const BlogPostCarouselSection = ({ postNodes, title }) => {
   const isDark = useDarkContext()
   return (
-    <div className={cn(styles.BlogPostCarouselSection, isDark && styles.isDark)}>
+    <section className={cn(styles.BlogPostCarouselSection, isDark && styles.isDark)}>
       <Container size="wide" center gutter spacious>
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
@@ -39,7 +39,7 @@ const BlogPostCarouselSection = ({ postNodes, title }) => {
             ))}
         </Carousel>
       </Container>
-    </div>
+    </section>
   )
 }
 

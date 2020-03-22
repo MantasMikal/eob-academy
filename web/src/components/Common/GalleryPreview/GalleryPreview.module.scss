@@ -4,6 +4,7 @@
   display: block;
   color: inherit;
   text-decoration: none;
+  animation: fadeIn $duration-short $easing-standard forwards;
 }
 
 .Caption {
@@ -37,4 +38,10 @@
   .Caption {
     color: $color-primary-white;
   }
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
 }

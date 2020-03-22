@@ -14,7 +14,7 @@ import styles from './GalleryCarouselSection.module.scss'
 const GelleryCarouselSection = ({ galleryNodes, title, browserMoreHref }) => {
   const isDark = useDarkContext()
   return (
-    <div className={cn(styles.GelleryCarouselSection, isDark && styles.isDark)}>
+    <section className={cn(styles.GelleryCarouselSection, isDark && styles.isDark)}>
       <Container size="wide" center gutter spacious>
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
@@ -35,7 +35,7 @@ const GelleryCarouselSection = ({ galleryNodes, title, browserMoreHref }) => {
             ))}
         </Carousel>
       </Container>
-    </div>
+    </section>
   )
 }
 

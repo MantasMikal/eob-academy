@@ -2,14 +2,13 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
-import Container from 'Primitive/Container'
+
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import Hero from 'Common/Hero'
 import Seperator from 'Primitive/Seprator'
-import DescriptionCards from 'Common/DescriptionCards'
-import descriptionCards from '../fixture/description-cards'
+import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
 import GelleryCarouselSection from 'Section/GalleryCarouselSection'
 import SponsorsSection from 'Section/SponsorsSection'
@@ -165,9 +164,7 @@ const IndexPage = props => {
         subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
       />
       <Seperator />
-      <Container size="wide" center gutter spacious>
-        <DescriptionCards cards={descriptionCards().cards} />
-      </Container>
+      <DescriptionCardSection />
       <Seperator />
       <BlogPostCarouselSection
         postNodes={postNodes}

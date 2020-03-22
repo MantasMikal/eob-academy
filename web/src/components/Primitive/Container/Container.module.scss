@@ -31,8 +31,8 @@
   padding-bottom: spacing(12);
 }
 
-.fullHeight {
-  height: 100vh;
+.withNavSpace {
+  margin-top: spacing(6);
 }
 
 .wide {
@@ -53,18 +53,6 @@
 
 .small {
   max-width: spacing(60);
-}
-
-.sweepRight {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: inherit;
-
-  @include mq($breakpoint-tabletLandscape) {
-    margin-left: calc((100% - 1680px) / 2);
-    margin-right: unset;
-    max-width: unset;
-  }
 }
 
 .hideOverflow {

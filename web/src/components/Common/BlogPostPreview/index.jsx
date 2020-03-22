@@ -11,11 +11,11 @@ import Media from 'Common/Media'
 import styles from './BlogPostPreview.module.scss'
 import { cn } from 'lib/helpers'
 
-const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio, surround }) => {
+const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio, surround, className }) => {
   const isDark = useDarkContext()
   return (
     <Link
-      className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround)}
+      className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}
       to={getBlogUrl(slug.current)}
     >
       <div className={styles.LeadMediaThumb}>
@@ -48,7 +48,8 @@ BlogPostPreview.propTypes = {
   title: string,
   publishedAt: string,
   excerpt: array,
-  surround: bool
+  surround: bool,
+  className: string
 }
 
 export default BlogPostPreview

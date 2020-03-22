@@ -9,7 +9,7 @@ import { Link } from '../Footer.module.scss'
 
 const SocialLink = ({ url, type, text }) => (
   <SmartLink className={Link} href={url} key={`${type}-icon`}>
-    <Icon type={type} width={24} height={24} a11yText={type} />
+    <Icon type={type} width={30} height={30} a11yText={type} />
     <Type as="span" size="base">
       {text}
     </Type>

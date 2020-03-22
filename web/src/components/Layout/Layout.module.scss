@@ -1,7 +1,5 @@
 @import '_backline-mixins';
 @import 'setting';
-// @import '../styles/media-queries.css';
-// @import '../styles/vars.css';
 
 .Wrapper {
   transition: $duration-short $easing-standard;
@@ -10,10 +8,14 @@
 
 .Content {
   min-height: calc(100% - 73px - 152px);
-
+  scroll-snap-type: y mandatory;
   @include mq($breakpoint-mobileLandscape) {
     min-height: calc(100% - 90px - 169px);
   }
+}
+
+.Content > section {
+  scroll-snap-align: center;
 }
 
 .Footer {

@@ -4,7 +4,8 @@
 @import 'setting';
 
 .Root {
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 100;
   background-color: $color-primary-white;
   color: $color-primary-black;
@@ -36,17 +37,17 @@
 .Logo {
   display: inline-flex;
   transition: $duration-short $easing-standard;
-  svg {
+  width: 50px;
+  height: 100%;
+
+  &:hover {
+    transform: scale(1.2);
     transition: $duration-short $easing-standard;
-    &:hover {
-      transform: scale(1.2);
-      transition: $duration-short $easing-standard;
-    }
   }
 }
 
 .ToggleNavButton {
-  appearance: none; 
+  appearance: none;
   outline: none;
   display: inherit;
 
@@ -139,7 +140,6 @@
     }
 
     .Moon svg path {
-      
       fill: $color-primary-black;
     }
 

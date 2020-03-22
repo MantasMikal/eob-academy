@@ -15,10 +15,9 @@ const Container = ({
   gutter,
   noClearfix,
   size,
-  fullHeight,
   sweepRight,
-  hideOverflow,
-  spacious
+  spacious,
+  withNavSpace
 }) => (
   <Element
     as={as}
@@ -28,11 +27,9 @@ const Container = ({
       gutter && styles.gutter,
       noClearfix && styles.noClearfix,
       size && styles[size],
-      fullHeight && styles.fullHeight,
       sweepRight && styles.sweepRight,
-      hideOverflow && styles.hideOverflow,
-      fullHeight && styles.fullHeight,
       spacious && styles.spacious,
+      withNavSpace && styles.withNavSpace,
       className
     )}
   >
@@ -47,12 +44,10 @@ Container.propTypes = {
   className: string,
   gutter: bool,
   noClearfix: bool,
-  fullHeight: bool,
   size: oneOf(sizes),
   sweepRight: bool,
-  hideOverflow: bool,
-  fullHeight: bool,
-  spacious: bool
+  spacious: bool,
+  withNavSpace: bool
 }
 
 export default Container

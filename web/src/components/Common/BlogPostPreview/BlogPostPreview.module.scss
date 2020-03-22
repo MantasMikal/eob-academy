@@ -4,6 +4,7 @@
   display: block;
   color: inherit;
   text-decoration: none;
+  animation: fadeIn $duration-short $easing-standard forwards;
   @media (hover: hover) {
     &:hover {
       .Title {
@@ -64,5 +65,14 @@
   .Title,
   .Excerpt {
     color: $color-primary-white;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

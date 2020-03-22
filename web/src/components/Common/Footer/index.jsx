@@ -23,15 +23,8 @@ const Footer = () => {
       <footer className={cn(styles.Footer, isDark && styles.isDark)}>
         <Container gutter center size="wide" className={styles.Container}>
           <div className={styles.Branding}>
-            <SmartLink href="/">
-              <Icon
-                a11yText="EOB Logo"
-                className={styles.Logo}
-                type="eob-logo"
-                vAlign="middle"
-                width={200}
-                height={200}
-              />
+            <SmartLink href="/" className={styles.Logo}>
+              <img src="/asset/logo.png" />
             </SmartLink>
             <div className={styles.Social}>
               <SocialLink type="twitter" text="Follow us @eobacademy" url="#" />

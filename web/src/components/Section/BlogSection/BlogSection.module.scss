@@ -1,11 +1,15 @@
 @import 'setting';
 
 .Title {
-    margin-bottom: spacing(2);
+  margin-bottom: spacing(2);
+}
+
+.BlogPostPreview {
+  margin: 0 spacing(1);
 }
 
 .isDark {
-    .Title {
-      color: $color-primary-white;
-    }
+  .Title {
+    color: $color-primary-white;
   }
+}

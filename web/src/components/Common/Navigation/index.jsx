@@ -4,7 +4,6 @@ import { cn } from 'lib/helpers'
 
 import Type from 'Primitive/Type'
 import Icon from 'Primitive/Icon'
-import VisuallyHidden from 'Primitive/VisuallyHidden'
 import SmartLink from 'Primitive/SmartLink'
 
 import styles from './Navigation.module.scss'
@@ -23,14 +22,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
       <div className={styles.Wrapper}>
         <div className={styles.Branding}>
           <SmartLink to="/">
-            <Icon
-              a11yText="EOB Logo"
-              className={styles.Logo}
-              type="eob-logo"
-              vAlign="middle"
-              width={40}
-              height={40}
-            />
+            <img src='/asset/logo.png' className={styles.Logo} />
           </SmartLink>
         </div>
         <button className={styles.ToggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
