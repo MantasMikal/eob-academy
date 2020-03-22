@@ -33,6 +33,7 @@ const GallerySection = ({ galleryNodes }) => {
             key={item.id}
             media={item.media}
             surround
+            isZoomable
           />
         ))}
         gap={25}

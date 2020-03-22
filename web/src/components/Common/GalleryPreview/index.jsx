@@ -9,10 +9,10 @@ import Zoomable from 'Common/Zoomable'
 
 import styles from './GalleryPreview.module.scss'
 
-const GalleryPreview = ({ media, ratio, surround, isZoombale, className }) => {
+const GalleryPreview = ({ media, ratio, surround, isZoomable, className }) => {
   const isDark = useDarkContext()
 
-  const el = isZoombale ? (
+  const el = isZoomable ? (
     <Zoomable atio={ratio ? ratio : undefined} media={media} />
   ) : (
     <Media ratio={ratio ? ratio : undefined} media={media} />
