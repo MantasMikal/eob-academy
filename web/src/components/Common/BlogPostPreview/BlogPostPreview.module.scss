@@ -33,9 +33,36 @@
   }
 }
 
+.Details {
+  color: $color-primary-yellow;
+}
+
+.surround {
+  &.Root {
+    border-radius: $radius-small;
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+    padding-bottom: spacing(2);
+  }
+
+  .Title {
+    padding-top: spacing(1);
+  }
+
+  .Title,
+  .Excerpt,
+  .Details {
+    padding-left: spacing(2);
+    padding-right: spacing(2);
+  }
+}
 
 .isDark {
-  .Title, .Excerpt, .Date {
+  &.surround {
+    background-color: $color-primary-black-light;
+  }
+
+  .Title,
+  .Excerpt {
     color: $color-primary-white;
   }
 }

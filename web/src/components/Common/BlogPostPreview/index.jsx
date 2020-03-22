@@ -1,5 +1,5 @@
 import React from 'react'
-import { string, object, array, arrayOf } from 'prop-types'
+import { string, object, array, arrayOf, bool } from 'prop-types'
 import { Link } from 'gatsby'
 import { getBlogUrl, formatDate } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
@@ -11,10 +11,13 @@ import Media from 'Common/Media'
 import styles from './BlogPostPreview.module.scss'
 import { cn } from 'lib/helpers'
 
-const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio }) => {
+const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio, surround }) => {
   const isDark = useDarkContext()
   return (
-    <Link className={cn(styles.Root, isDark && styles.isDark)} to={getBlogUrl(slug.current)}>
+    <Link
+      className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround)}
+      to={getBlogUrl(slug.current)}
+    >
       <div className={styles.LeadMediaThumb}>
         <Media ratio={ratio ? ratio : undefined} media={mainImage} />
       </div>
@@ -26,9 +29,15 @@ const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio }
           <BlockText blocks={excerpt} />
         </div>
       )}
-      <Type size="small" as="time" className={styles.Date} italic>
-        {formatDate(publishedAt)}
-      </Type>
+      <div className={styles.Details}>
+        <Type size="small" as="time" className={styles.Date}>
+          {formatDate(publishedAt)}
+        </Type>{' '}
+        •{' '}
+        <Type size="small" as="span" className={styles.ReadTime}>
+          4 min read
+        </Type>
+      </div>
     </Link>
   )
 }
@@ -38,7 +47,8 @@ BlogPostPreview.propTypes = {
   mainImage: object,
   title: string,
   publishedAt: string,
-  excerpt: array
+  excerpt: array,
+  surround: bool
 }
 
 export default BlogPostPreview

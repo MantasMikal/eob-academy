@@ -30,6 +30,7 @@ const GelleryCarouselSection = ({ galleryNodes, title, browserMoreHref }) => {
                 key={node.id}
                 media={node.media}
                 ratio={9 / 16}
+                surround
               />
             ))}
         </Carousel>

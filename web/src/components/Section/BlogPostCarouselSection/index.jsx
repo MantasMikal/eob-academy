@@ -11,7 +11,7 @@ import Type from 'Primitive/Type'
 
 import styles from './BlogPostCarouselSection.module.scss'
 
-const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
+const BlogPostCarouselSection = ({ postNodes, title }) => {
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.BlogPostCarouselSection, isDark && styles.isDark)}>
@@ -19,7 +19,7 @@ const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
         <Type size="displayLarge" as="h2" className={styles.Title}>
           {title}
         </Type>
-        <SmartLink to={browserMoreHref}>
+        <SmartLink to='/blog/'>
           <Type className={styles.ViewAll} size="subtitle">
             VIEW ALL
           </Type>
@@ -34,6 +34,7 @@ const BlogPostCarouselSection = ({ postNodes, title, browserMoreHref }) => {
                 title={node.title}
                 publishedAt={node.publishedAt}
                 excerpt={node._rawExcerpt}
+                surround
               />
             ))}
         </Carousel>

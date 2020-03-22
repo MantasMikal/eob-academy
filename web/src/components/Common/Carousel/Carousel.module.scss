@@ -7,6 +7,7 @@
 .ControlIcon {
   svg path {
     transition: $duration-shortest $easing-standard;
+    // fill: $color-hover;
   }
 
   &:hover svg path {
@@ -17,12 +18,21 @@
 
 // Hacky, but works the best
 :global {
-  .slider-control-bottomleft {
+  // .slider-control-bottomleft {
+  //   right: 4rem;
+  //   left: unset !important;
+  //   // bottom: spacing(-6) !important;
+  // }
+  // .slider-control-bottomright {
+  //   // bottom: spacing(-6) !important;
+  // }
+
+  .slider-control-topleft {
     right: 4rem;
     left: unset !important;
-    bottom: spacing(-6) !important;
+    top: spacing(-10) !important;
   }
-  .slider-control-bottomright {
-    bottom: spacing(-6) !important;
+  .slider-control-topright {
+    top: spacing(-10) !important;
   }
 }

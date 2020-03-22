@@ -1,0 +1,11 @@
+@import 'setting';
+
+.Title {
+    margin-bottom: spacing(2);
+}
+
+.isDark {
+    .Title {
+      color: $color-primary-white;
+    }
+  }

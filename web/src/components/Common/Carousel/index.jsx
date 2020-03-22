@@ -23,7 +23,7 @@ function Carousel({ children }) {
         inirialSlideWidth={640}
         speed={250}
         transitionMode="scroll"
-        renderBottomRightControls={({ nextSlide }) => (
+        renderTopRightControls={({ nextSlide }) => (
           <ButtonBase className={styles.ControlRight} onClick={nextSlide}>
             <Icon
               className={styles.ControlIcon}
@@ -34,7 +34,7 @@ function Carousel({ children }) {
             />
           </ButtonBase>
         )}
-        renderBottomLeftControls={({ previousSlide }) => (
+        renderTopLeftControls={({ previousSlide }) => (
           <ButtonBase className={styles.ControlLeft} onClick={previousSlide}>
             <Icon
               className={styles.ControlIcon}

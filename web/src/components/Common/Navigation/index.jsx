@@ -44,8 +44,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
           <ul>
             <LinkWrapper to="/princes-trust-courses/">Prince's trust courses</LinkWrapper>
             <LinkWrapper to="#">Events</LinkWrapper>
-            <LinkWrapper to="/gallery">Gallery</LinkWrapper>
+            <LinkWrapper to="/gallery/">Gallery</LinkWrapper>
             <LinkWrapper to="#">Jobs</LinkWrapper>
+            <LinkWrapper to="/blog/">Blog</LinkWrapper>
             <LinkWrapper className={styles.highlight} to="/contact/">
               Contact
             </LinkWrapper>

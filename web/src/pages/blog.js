@@ -6,6 +6,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 
+import BlogSection from 'Section/BlogSection'
+
 import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
@@ -16,10 +18,13 @@ export const query = graphql`
           id
           publishedAt
           mainImage {
-            asset {
-              _id
-            }
             alt
+            asset {
+              url
+              fluid(maxWidth: 1000) {
+                ...GatsbySanityImageFluid
+              }
+            }
           }
           title
           _rawExcerpt
@@ -43,15 +48,12 @@ const BlogPage = props => {
     )
   }
 
-  const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
+  const blogNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
     <Layout>
-      <SEO title='Blog' />
-      <Container>
-        <h1 className={responsiveTitle1}>Blog</h1>
-        {/* {postNodes && postNodes.length > 0 && <BlogPostCarousel nodes={postNodes} />} */}
-      </Container>
+      <SEO title="Blog" />
+      {blogNodes && blogNodes.length > 0 && <BlogSection blogNodes={blogNodes} />}
     </Layout>
   )
 }
