@@ -21,9 +21,8 @@ const Hero = ({ video, image, overlay, title, subtitle }) => {
           height="auto"
           frameBorder="0"
           allowFullScreen
-        ></iframe>
+        />
         <div className={styles.Overlay} />
-        {/* <img src="/asset/overlay2.svg" className={styles.Overlay} /> */}
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
         <Type size="displayHero" as="h2" className={styles.Title}>
