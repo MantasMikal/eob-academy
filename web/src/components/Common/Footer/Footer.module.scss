@@ -2,9 +2,9 @@
 @import '_backline-mixins';
 
 .Footer {
-  padding: spacing(10) spacing(10);
+  padding: spacing(10) spacing(5);
   position: relative;
-  min-height: 90vh;
+  // min-height: 90vh;
   display: flex;
   align-content: center;
   overflow: hidden;
@@ -41,6 +41,7 @@
   display: block;
   img {
     width: auto;
+    object-fit: contain;
     height: 150px;
     transition: $duration-short $easing-standard;
     &:hover {

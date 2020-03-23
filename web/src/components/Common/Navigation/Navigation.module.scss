@@ -28,6 +28,7 @@
   font-size: inherit;
   margin: 0;
   flex: 1;
+  display: flex;
 
   & a {
     display: inline-block;
@@ -35,10 +36,11 @@
 }
 
 .Logo {
-  display: inline-flex;
+  display: block;
   transition: $duration-short $easing-standard;
-  width: 50px;
+  width: 40px;
   height: 100%;
+  object-fit: contain;
 
   &:hover {
     transform: scale(1.2);
