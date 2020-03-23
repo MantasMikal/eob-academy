@@ -17,7 +17,6 @@ function Carousel({ children }) {
       <NukaCarousel
         slidesToShow={slidesToShow}
         cellSpacing={24}
-        slidesToScroll='auto'
         enableKeyboardControls
         frameOverflow="visible"
         initialSlideHeight={360}
