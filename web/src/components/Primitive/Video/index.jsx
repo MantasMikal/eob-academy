@@ -127,7 +127,8 @@ export const YouTubeEmbed = ({
       height={height ? height : '315'}
       frameBorder="0"
       allowFullScreen
-      SameSite="None"
+      samesite="None"
+      muted
       Secure
     />
   )
