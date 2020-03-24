@@ -30,7 +30,7 @@ const YouTubeEmbed = ({ hideControls, start, videoId, width, height, autoPlay, a
       allowFullScreen
       samesite='None'
       muted
-      Secure
+      secure='true'
     />
   )
 }

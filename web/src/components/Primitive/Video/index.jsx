@@ -129,7 +129,7 @@ export const YouTubeEmbed = ({
       allowFullScreen
       samesite="None"
       muted
-      Secure
+      secure='true'
     />
   )
 }
