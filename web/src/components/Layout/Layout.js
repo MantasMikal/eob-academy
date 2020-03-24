@@ -1,15 +1,25 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes, { bool, func } from 'prop-types'
 import { useDarkContext } from 'Context/DarkContext'
 import { cn } from 'lib/helpers'
 
 import Navigation from 'Common/Navigation'
 import A11yNavigation from 'Primitive/A11yNavigation'
 import Footer from 'Common/Footer'
+import StrpLine from 'Common/StripLine'
 
 import styles from './Layout.module.scss'
 
-const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, onToggleDark }) => {
+const Layout = ({
+  children,
+  onHideNav,
+  onShowNav,
+  showNav,
+  siteTitle,
+  onToggleDark,
+  isStripVisible,
+  hideStrip
+}) => {
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.Wrapper, isDark && styles.isDark)}>
@@ -24,6 +34,11 @@ const Layout = ({ children, onHideNav, onShowNav, showNav, siteTitle, onToggleDa
         showNav={showNav}
         onToggleDark={onToggleDark}
         id="navigation"
+      />
+      <StrpLine
+        isVisible={isStripVisible}
+        hideStrip={hideStrip}
+        text="We are fully operational working with students online - if the Coronavirus is still affecting our lives past September 2020, all of our new students will have access to tutors and be able to work remotely through our online tools. "
       />
       <div className={styles.Content} id="content">
         {children}
@@ -49,7 +64,9 @@ Layout.propTypes = {
   onShowNav: PropTypes.func,
   showNav: PropTypes.bool,
   onToggleDark: PropTypes.func,
-  siteTitle: PropTypes.string
+  siteTitle: PropTypes.string,
+  isStripVisible: bool,
+  hideStrip: func
 }
 
 export default Layout

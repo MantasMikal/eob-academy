@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { graphql, StaticQuery } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import { DarkContextProvider } from '../components/Context/DarkContext'
-
-
 
 const query = graphql`
   query SiteTitleQuery {
@@ -23,12 +21,27 @@ const query = graphql`
 
 function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false)
-  const wasDark = typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : false
+  const wasDark =
+    typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : false
   const [isDark, setDark] = useState(wasDark)
-  console.log("Render")
+  const [isStripVisible, setStrip] = useState(false)
+
+  useEffect(() => {
+    const wasVisible = JSON.parse(window.localStorage.getItem('isStripVisible'))
+    console.log('LayoutContainer -> wasVisible', wasVisible)
+    if (wasVisible === null) {
+      setStrip(true)
+    } else setStrip(wasVisible)
+  }, [])
+
   function handleDark() {
     window.localStorage.setItem('isDark', !isDark)
     setDark(!isDark)
+  }
+
+  function hideStrip() {
+    window.localStorage.setItem('isStripVisible', false)
+    setStrip(false)
   }
 
   function handleShowNav() {
@@ -61,6 +74,8 @@ function LayoutContainer(props) {
               onHideNav={handleHideNav}
               onShowNav={handleShowNav}
               onToggleDark={handleDark}
+              isStripVisible={isStripVisible}
+              hideStrip={hideStrip}
             />
           </DarkContextProvider>
         )
