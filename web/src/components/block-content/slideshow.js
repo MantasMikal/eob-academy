@@ -16,7 +16,7 @@ function Slideshow (props) {
   // }
   return (
     <div className={styles.root}>
-      <div className={styles.nav}>
+      {/* <div className={styles.nav}>
         <button onClick={handlePrev} disabled={index === 0}>
           Prev
         </button>
@@ -45,7 +45,7 @@ function Slideshow (props) {
             )}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }
