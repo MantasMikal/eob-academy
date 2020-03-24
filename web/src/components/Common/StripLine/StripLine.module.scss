@@ -3,18 +3,22 @@
 .StripLine {
   display: flex;
   align-items: center;
- 
+
   background-color: #fee715ff;
   color: white;
   flex-direction: column;
   background-color: $color-primary-purple;
   z-index: 100;
   width: 100%;
+  padding-left: spacing(4);
+  padding-right: spacing(4);
+
+  will-change: height, padding-top, padding-bottom, margin;
+  transition: $easing-standard $duration-short;
+
   @include mq($breakpoint-tablet) {
     flex-direction: row;
   }
-
-  transition: $easing-standard $duration-short;
 }
 
 .Text {
@@ -41,10 +45,11 @@
 }
 
 .visible {
-    transition: $easing-standard $duration-short;
-    padding: spacing(3) spacing(4);
-    margin: 56px 0 -56px;
-    height: auto;
+  transition: $easing-standard $duration-short;
+  padding-top: spacing(3);
+  padding-bottom: spacing(3);
+  margin: 56px 0 -56px;
+  height: auto;
 }
 
 .hidden {
