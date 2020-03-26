@@ -26,13 +26,12 @@ function LayoutContainer(props) {
   const [isDark, setDark] = useState(wasDark)
   const [isStripVisible, setStrip] = useState(false)
 
-  useEffect(() => {
-    const wasVisible = JSON.parse(window.localStorage.getItem('isStripVisible'))
-    console.log('LayoutContainer -> wasVisible', wasVisible)
-    if (wasVisible === null) {
-      setStrip(true)
-    } else setStrip(wasVisible)
-  }, [])
+  // useEffect(() => {
+  //   console.log('LayoutContainer -> wasVisible', wasVisible)
+  //   if (wasVisible === null) {
+  //     setStrip(true)
+  //   } else setStrip(wasVisible)
+  // }, [])
 
   function handleDark() {
     window.localStorage.setItem('isDark', !isDark)
