@@ -21,13 +21,13 @@ const GallerySection = ({ galleryNodes }) => {
       gutter
       spacious
       withNavSpace
-      as='section'
+      as="section"
     >
       <Type as="h2" size="displayLarge" className={styles.Title}>
         Gallery
       </Type>
       <MasonryLayout
-        items={[...galleryNodes, ...galleryNodes, ...galleryNodes, ...galleryNodes].map(item => (
+        items={galleryNodes.map(item => (
           <GalleryPreview
             className={styles.GalleryPreview}
             key={item.id}
