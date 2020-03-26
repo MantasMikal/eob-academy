@@ -25,15 +25,7 @@ const BlogSection = ({ blogNodes }) => {
         Blog
       </Type>
       <MasonryLayout
-        items={[
-          ...blogNodes,
-          ...blogNodes,
-          ...blogNodes,
-          ...blogNodes,
-          ...blogNodes,
-          ...blogNodes,
-          ...blogNodes
-        ].map(item => (
+        items={blogNodes.map(item => (
           <BlogPostPreview
             className={styles.BlogPostPreview}
             mainImage={item.mainImage}
@@ -45,7 +37,7 @@ const BlogSection = ({ blogNodes }) => {
             surround
           />
         ))}
-        gap={26}
+        gap={25}
       />
     </Container>
   )
