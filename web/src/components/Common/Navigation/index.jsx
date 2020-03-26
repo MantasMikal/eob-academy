@@ -20,7 +20,8 @@ const LinkWrapper = ({ children, to, className }) => (
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id }) => {
   const isDark = useDarkContext()
   return (
-    <nav className={cn(styles.Root, showNav && styles.Responsive, isDark && styles.isDark)}>
+    <nav className={cn(styles.Root, showNav && styles.Responsive, isDark && styles.isDark)} id={id}>
+      <h1 hidden>{siteTitle}</h1>
       <div className={styles.Branding}>
         <SmartLink to="/">
           <img src="/asset/logo.png" className={styles.Logo} />
