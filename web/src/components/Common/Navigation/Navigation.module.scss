@@ -61,6 +61,8 @@
   padding: spacing(1) spacing(1) spacing(1) spacing(1);
   margin: 0;
   border-radius: $radius-small;
+  transition: $duration-shortest $easing-standard;
+  background-color: $color-primary-grey-light;
 }
 
 .DropdownContent {
@@ -68,7 +70,8 @@
   position: absolute;
   min-width: 160px;
   z-index: 300;
-  background-color: $color-primary-white;
+  background-color: $color-primary-grey-light;
+  
 }
 
 .DropdownContent .NavLink {
@@ -84,6 +87,7 @@
 .Root .NavLink:hover,
 .Dropdown:hover .DropdownBtn {
   color: $color-primary-red;
+
 }
 
 .DropdownContent .NavLink:hover {
