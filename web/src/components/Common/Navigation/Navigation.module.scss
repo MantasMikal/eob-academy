@@ -14,13 +14,11 @@
   float: right;
   display: block;
   text-align: center;
-  padding: spacing(1) spacing(1) spacing(1) spacing(1);
+  margin: spacing(0.5);
+  padding: spacing(0.5);
   text-decoration: none;
 }
 
-.NavLink:first-of-type {
-  padding-right: 0;
-}
 
 .Branding {
   font-size: inherit;
@@ -58,40 +56,77 @@
 .Dropdown .DropdownBtn {
   border: none;
   outline: none;
-  padding: spacing(1) spacing(1) spacing(1) spacing(1);
   margin: 0;
+  background-color: $color-primary-yellow;
+  border-radius: $radius-small;
+  &:hover {
+    background-color: $color-primary-red;
+    color: $color-primary-white;
+  }
+
+  &.primary {
+    margin: spacing(0.5);
+    padding: spacing(0.5);
+  }
 }
 
 .DropdownContent {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
-  min-width: 160px;
+  min-width: 180px;
   z-index: 300;
   background-color: $color-primary-white;
-
+  border-radius: $radius-small;
+  background-color: $color-primary-grey-light;
+  margin-left: 4px;
 }
 
 .DropdownContent .NavLink {
   float: none;
   color: black;
-  padding: 12px 16px;
+  
   text-decoration: none;
   display: block;
   text-align: left;
-  width: 100%;
+  margin: 0;
 }
 
+.DropdownContent .DropdownLink {
+  display: block;
+  padding: spacing(1);
+  border-radius: 0;
+  &:first-child {
+    border-radius: $radius-small $radius-small 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $radius-small $radius-small;
+  }
+
+  &:hover {
+    transition: $duration-shortest $easing-standard;
+  }
+}
 .Root .NavLink:hover,
 .Dropdown:hover .DropdownBtn {
-  color: $color-primary-red;
+  color: $color-primary-white;
+  background-color: $color-primary-red;
+  border-radius: $radius-small;
+  transition: $duration-shortest $easing-standard;
 }
 
 .DropdownContent .NavLink:hover {
-  color: $color-hover;
+  color: $color-primary-white;
+  border-radius: $radius-small;
+  transition: $duration-shortest $easing-standard;
 }
 
 .Dropdown:hover .DropdownContent {
-  display: block;
+  // display: block;
+  opacity: 1;
+  transition: $duration-shortest $easing-standard;
+  visibility: visible;
 }
 
 .DarkModeToggle {
@@ -158,6 +193,10 @@
   }
 
   .Root.Responsive .DropdownContent {
+    position: absolute;
+  }
+
+  .Root.Responsive .Dropdown:hover .DropdownContent {
     position: relative;
   }
 
@@ -165,6 +204,16 @@
     display: block;
     width: 100%;
     text-align: left;
+    &:first-of-type {
+      margin-top: spacing(1);
+    }
+  }
+
+  .Root.Responsive .DropdownLink {
+    padding: spacing(0.5);
+    span {
+      margin-left: spacing(1);
+    }
   }
 }
 
@@ -174,10 +223,23 @@
     background-color: $color-primary-black;
   }
 
+  .Dropdown,
+  .DropdownContent {
+    transition: $duration-shortest $easing-standard; 
+  }
+
+  .DropdownContent {
+    background-color: $color-primary-black-light;
+  }
+
   .NavLink,
   .Dropdown,
   .DarkModeToggle,
   .ToggleNavButton {
     color: $color-primary-white;
   }
+}
+
+.NavLink.highlight {
+  color: $color-primary-purple;
 }
