@@ -1,34 +1,32 @@
-@import '../../../styles/media-queries.css';
-@import '../../../styles/vars.css';
 @import '_backline-mixins';
 @import 'setting';
 
 .Root {
-  position: fixed;
-  width: 100%;
-  z-index: 500;
   background-color: $color-primary-white;
-  color: $color-primary-black;
-  transition: $easing-standard $duration-short;
+  position: fixed;
+  z-index: 300;
+  width: 100%;
+  padding: spacing(1) spacing(2);
+  transition: $duration-shortest $easing-standard;
 }
 
-.Wrapper {
-  box-sizing: border-box;
-  margin: 0 auto;
-  // max-width: 960px;
-  padding: spacing(1) spacing(2);
-  display: flex;
-  background-color: inherit;
-  @include mq($breakpoint-mobileLandscape) {
-    padding: spacing(1) spacing(2);
-  }
+.NavLink {
+  float: right;
+  display: block;
+  text-align: center;
+  padding: spacing(1) spacing(2) spacing(1) 0;
+  text-decoration: none;
+}
+
+.NavLink:first-of-type {
+  padding-right: 0;
 }
 
 .Branding {
   font-size: inherit;
-  margin: 0;
-  flex: 1;
-  display: flex;
+  display: inline-block;
+  position: relative;
+  top: 3px;
 
   & a {
     display: inline-block;
@@ -48,120 +46,139 @@
   }
 }
 
-.ToggleNavButton {
-  appearance: none;
-  outline: none;
-  display: inherit;
-
-  & svg {
-    display: block;
-  }
-
-  &:hover {
-    & svg path {
-      fill: $color-primary-red;
-    }
-  }
-
-  @include mq($breakpoint-mobileLandscape) {
-    display: none;
-  }
-}
-
-.Nav {
+.Root .ToggleNavButton {
   display: none;
-  background-color: inherit;
-
-  & ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  & ul li a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  @media (hover: hover) {
-    & ul li a:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @include mq(null, $breakpoint-mobileLandscape) {
-    position: absolute;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    left: 0;
-    right: 0;
-    top: spacing(6);
-
-    & ul {
-      padding: 1rem 0;
-    }
-
-    & ul li a {
-      padding: 0.5rem 1.5rem;
-    }
-  }
-
-  @include mq($breakpoint-mobileLandscape) {
-    display: block;
-
-    & ul {
-      list-style: none;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    & ul li a {
-      padding: 0.5rem;
-    }
-  }
 }
 
-// TODO:
-// Fix focus and active styles
-
-.DarkModeToggle {
-  margin-left: spacing(2);
-
-  &:focus,
-  &:active {
-    outline: 0;
-  }
-
-  svg path {
-    transition: $easing-standard $duration-short;
-  }
-
-  &:hover {
-    .Sun svg path {
-      transition: $easing-standard $duration-short;
-      fill: $color-primary-yellow;
-    }
-
-    .Moon svg path {
-      fill: $color-primary-black;
-    }
-
-    .Moon svg path {
-      transition: $easing-standard $duration-short;
-    }
-  }
+.Dropdown {
+  float: right;
+  overflow: hidden;
 }
 
-.showNav {
+.Dropdown .DropdownBtn {
+  border: none;
+  outline: none;
+  padding: spacing(1) spacing(2) spacing(1) 0;
+  margin: 0;
+
+}
+
+.DropdownContent {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  z-index: 300;
+  background-color: $color-primary-white;
+
+}
+
+.DropdownContent .NavLink {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+}
+
+.Root .NavLink:hover,
+.Dropdown:hover .DropdownBtn {
+  color: $color-primary-red;
+}
+
+.DropdownContent .NavLink:hover {
+  color: $color-hover;
+}
+
+.Dropdown:hover .DropdownContent {
   display: block;
 }
 
-.highlight {
-  color: $color-primary-purple;
+.DarkModeToggle {
+  float: right;
+  padding: spacing(1) 0 spacing(1) spacing(2);
+}
+
+.ToggleNavButton,
+.DarkModeToggle {
+  transition: $duration-shortest $easing-standard;
+
+  &:hover {
+    svg path {
+      fill: $color-hover;
+      stroke: $color-hover;
+      transition: $duration-shortest $easing-standard;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Root .NavLink:not(:first-child),
+  .Dropdown .DropdownBtn {
+    display: none;
+  }
+  .Root .ToggleNavButton {
+    float: right;
+    display: block;
+    position: relative;
+    top: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Root.Responsive {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .Root.Responsive .Branding {
+    order: 1;
+  }
+
+  .Root.Responsive .ToggleNavButton {
+    position: absolute;
+    right: spacing(7);
+    top: spacing(2);
+  }
+
+  .Root.Responsive .DarkModeToggle {
+    position: absolute;
+    right: spacing(2);
+    top: spacing(1);
+  }
+
+  .Root.Responsive .NavLink {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .Root.Responsive .Dropdown {
+    float: none;
+  }
+
+  .Root.Responsive .DropdownContent {
+    position: relative;
+  }
+
+  .Root.Responsive .Dropdown .DropdownBtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .isDark {
-  &.Root {
+  &.Root,
+  .DropdownContent {
     background-color: $color-primary-black;
+  }
+
+  .NavLink,
+  .Dropdown,
+  .DarkModeToggle,
+  .ToggleNavButton {
     color: $color-primary-white;
   }
 }

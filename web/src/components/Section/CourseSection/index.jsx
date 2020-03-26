@@ -20,7 +20,7 @@ const CourseSection = ({ courseNodes }) => {
       gutter
       spacious
       withNavSpace
-      as='section'
+      as="section"
     >
       <div className={styles.Intro}>
         <div className={styles.IntroInner}>
@@ -34,9 +34,11 @@ const CourseSection = ({ courseNodes }) => {
             {courseNodes.description}
           </Type>
         </div>
-        <div className={styles.Logo}>
-          <GatsbyImage fluid={courseNodes.logo.asset.fluid} alt={courseNodes.logo.alt} />
-        </div>
+        {courseNodes.logo.asset && (
+          <div className={styles.Logo}>
+            <GatsbyImage fluid={courseNodes.logo.asset.fluid} alt={courseNodes.logo.alt} />
+          </div>
+        )}
       </div>
       <div className={styles.Courses}>
         {courseNodes.courseList.map((course, i) => (

@@ -81,10 +81,34 @@ export default () =>
       S.listItem()
         .title("Courses")
         .child(
-          S.editor()
-            .id("coursesPage")
-            .schemaType("coursesPage")
-            .documentId("coursesPage")
+          S.list()
+            .title("Courses")
+            .items([
+              S.listItem()
+                .title("Prince's trust courses")
+                .child(
+                  S.editor()
+                    .id("princesTrustCourses")
+                    .schemaType("coursesPage")
+                    .documentId("princesTrustCourses")
+                ),
+              S.listItem()
+                .title("College Courses")
+                .child(
+                  S.editor()
+                    .id("collegeCourses")
+                    .schemaType("coursesPage")
+                    .documentId("collegeCourses")
+                ),
+              S.listItem()
+                .title("Alternative Schools Provision")
+                .child(
+                  S.editor()
+                    .id("alternativeSchoolsCourses")
+                    .schemaType("coursesPage")
+                    .documentId("alternativeSchoolsCourses")
+                )
+            ])
         )
         .icon(MdLibraryBooks),
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))

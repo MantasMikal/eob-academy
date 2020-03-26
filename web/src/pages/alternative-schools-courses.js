@@ -9,8 +9,8 @@ import Layout from '../containers/layout'
 import CourseSection from 'Section/CourseSection'
 
 export const query = graphql`
-  query CoursePageQuery {
-    coursePage: allSanityCoursesPage {
+  query AlternativeSchoolCoursePageQuery {
+    coursePage:  allSanityCoursesPage(filter: {_id: {eq: "alternativeSchoolsCourses"}}) {
       edges {
         node {
           _key
