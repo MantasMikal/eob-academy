@@ -14,7 +14,7 @@
   float: right;
   display: block;
   text-align: center;
-  padding: spacing(1) spacing(2) spacing(1) 0;
+  padding: spacing(1) spacing(1) spacing(1) spacing(1);
   text-decoration: none;
 }
 
@@ -58,9 +58,8 @@
 .Dropdown .DropdownBtn {
   border: none;
   outline: none;
-  padding: spacing(1) spacing(2) spacing(1) 0;
+  padding: spacing(1) spacing(2) spacing(1) spacing(1);
   margin: 0;
-
 }
 
 .DropdownContent {
