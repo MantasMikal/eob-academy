@@ -218,8 +218,7 @@
 }
 
 .isDark {
-  &.Root,
-  .DropdownContent {
+  &.Root {
     background-color: $color-primary-black;
   }
 
