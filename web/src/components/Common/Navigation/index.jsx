@@ -9,8 +9,8 @@ import SmartLink from 'Primitive/SmartLink'
 // import './Navigation2.scss'
 import styles from './Navigation.module.scss'
 
-const LinkWrapper = ({ children, to, className }) => (
-  <SmartLink className={className} to={to}>
+const LinkWrapper = ({ children, to, className, highlight }) => (
+  <SmartLink className={cn(className, highlight && styles.highlight)} to={to}>
     <Type as="span" size="menu">
       {children}
     </Type>
@@ -46,7 +46,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
           />
         )}
       </SmartLink>
-      <LinkWrapper className={styles.NavLink} to="/contact/">
+      <LinkWrapper highlight className={styles.NavLink} to="/contact/">
         Contact
       </LinkWrapper>
       <LinkWrapper className={styles.NavLink} to="/blog/">
@@ -62,19 +62,19 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
         Events
       </LinkWrapper>
       <div className={styles.Dropdown}>
-        <button className={styles.DropdownBtn}>
+        <button className={cn(styles.DropdownBtn, styles.primary)}>
           <Type as="span" size="menu">
             Courses
           </Type>
         </button>
         <div className={styles.DropdownContent}>
-          <LinkWrapper className={styles.NavLink} to="/short-term-courses/">
+          <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/short-term-courses/">
             Short term Courses
           </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/college-courses/">
+          <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/college-courses/">
             College Courses
           </LinkWrapper>
-          <LinkWrapper className={styles.NavLink} to="/alternative-schools-courses/">
+          <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/alternative-schools-courses/">
             Alternative Schools Courses
           </LinkWrapper>
         </div>
