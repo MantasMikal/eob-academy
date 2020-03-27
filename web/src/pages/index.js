@@ -5,7 +5,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-import Hero from 'Common/Hero'
+// import Hero from 'Common/Hero'
 import Seperator from 'Primitive/Seprator'
 import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
@@ -123,10 +123,10 @@ const IndexPage = props => {
     <Layout>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <h1 hidden>Welcome to {site.title}</h1>
-      <Hero
+      {/* <Hero
         title="EOB Academy the UK's first Esports Academy and Video Games Centre"
         subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
-      />
+      /> */}
       <Seperator />
       <DescriptionCardSection />
       <Seperator />
