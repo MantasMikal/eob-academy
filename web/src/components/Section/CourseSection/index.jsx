@@ -12,6 +12,7 @@ import styles from './CourseSection.module.scss'
 
 const CourseSection = ({ courseNodes }) => {
   const isDark = useDarkContext()
+  const { pageTitle, subtitle, description, logo, courseList } = courseNodes
   return (
     <Container
       className={cn(styles.CourseSection, isDark && styles.isDark)}
@@ -25,24 +26,24 @@ const CourseSection = ({ courseNodes }) => {
       <div className={styles.Intro}>
         <div className={styles.IntroInner}>
           <Type as="h2" size="displayLarge" className={styles.Title}>
-            {courseNodes.pageTitle}
+            {pageTitle}
           </Type>
           <Type as="h3" size="titleLarge" className={styles.Subtitle}>
-            {courseNodes.subtitle}
+            {subtitle}
           </Type>
           <Type as="p" size="base" className={styles.Description}>
-            {courseNodes.description}
+            {description}
           </Type>
         </div>
-        {courseNodes.logo && courseNodes.logo.asset && (
+        {logo && logo.asset && (
           <div className={styles.Logo}>
-            <GatsbyImage fluid={courseNodes.logo.asset.fluid} alt={courseNodes.logo.alt} />
+            <GatsbyImage fluid={logo.asset.fluid} alt={logo.alt} />
           </div>
         )}
       </div>
-      {courseNodes.courseList.length > 1 ? (
+      {courseList.length > 1 ? (
         <div className={styles.Courses}>
-          {courseNodes.courseList.map((course, i) => (
+          {courseList.map((course, i) => (
             <Course
               className={styles.Course}
               title={course.title}
