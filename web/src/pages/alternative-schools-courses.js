@@ -10,7 +10,7 @@ import CourseSection from 'Section/CourseSection'
 
 export const query = graphql`
   query AlternativeSchoolCoursePageQuery {
-    coursePage:  allSanityCoursesPage(filter: {_id: {eq: "alternativeSchoolsCourses"}}) {
+    coursePage: allSanityCoursesPage(filter: { _id: { eq: "alternativeSchoolsCourses" } }) {
       edges {
         node {
           _key
@@ -69,9 +69,16 @@ const AlternativeSchoolsCourses = props => {
 
   return (
     <Layout>
-      <SEO title={courseNodes.pageTitle} description={courseNodes.description} />
-      <h1 hidden>{courseNodes.pageTitle}</h1>
-      <CourseSection courseNodes={courseNodes} />
+      {courseNodes && courseNodes.pageTitle && (
+        <>
+          <SEO
+            title={courseNodes.pageTitle}
+            description={courseNodes.description ? courseNodes.description : ''}
+          />
+          <h1 hidden>{courseNodes.pageTitle}</h1>
+        </>
+      )}
+      {courseNodes && <CourseSection courseNodes={courseNodes} />}
     </Layout>
   )
 }

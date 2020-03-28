@@ -67,11 +67,18 @@ const ColegeCourses = props => {
   // TODO
   // Add keywords to SEO
 
-  return (
+  return  (
     <Layout>
-      <SEO title={courseNodes.pageTitle} description={courseNodes.description} />
-      <h1 hidden>{courseNodes.pageTitle}</h1>
-      <CourseSection courseNodes={courseNodes} />
+      {courseNodes && courseNodes.pageTitle && (
+        <>
+          <SEO
+            title={courseNodes.pageTitle}
+            description={courseNodes.description ? courseNodes.description : ''}
+          />
+          <h1 hidden>{courseNodes.pageTitle}</h1>
+        </>
+      )}
+      {courseNodes && <CourseSection courseNodes={courseNodes} />}
     </Layout>
   )
 }
