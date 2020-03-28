@@ -9,8 +9,8 @@ import Layout from '../containers/layout'
 import CourseSection from 'Section/CourseSection'
 
 export const query = graphql`
-  query CollegeCoursePageQuery {
-    coursePage: allSanityCoursesPage(filter: {_id: {eq: "collegeCourses"}}) {
+  query OnlineCoursePageQuery {
+    coursePage:  allSanityCoursesPage(filter: {_id: {eq: "onlineCourses"}}) {
       edges {
         node {
           _key
@@ -47,7 +47,7 @@ export const query = graphql`
   }
 `
 
-const ColegeCourses = props => {
+const OnlineCourses = props => {
   const { data, errors } = props
 
   if (errors) {
@@ -76,4 +76,4 @@ const ColegeCourses = props => {
   )
 }
 
-export default ColegeCourses
+export default OnlineCourses

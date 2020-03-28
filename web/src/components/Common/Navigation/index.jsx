@@ -68,6 +68,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
           </Type>
         </button>
         <div className={styles.DropdownContent}>
+        <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/online-courses/">
+            Online Courses
+          </LinkWrapper>
           <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/short-term-courses/">
             Short term Courses
           </LinkWrapper>

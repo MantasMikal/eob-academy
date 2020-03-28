@@ -47,7 +47,7 @@ export const query = graphql`
   }
 `
 
-const PrincesTrustCourses = props => {
+const AlternativeSchoolsCourses = props => {
   const { data, errors } = props
 
   if (errors) {
@@ -76,4 +76,4 @@ const PrincesTrustCourses = props => {
   )
 }
 
-export default PrincesTrustCourses
+export default AlternativeSchoolsCourses

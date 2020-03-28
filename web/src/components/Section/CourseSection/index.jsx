@@ -34,7 +34,7 @@ const CourseSection = ({ courseNodes }) => {
             {courseNodes.description}
           </Type>
         </div>
-        {courseNodes.logo.asset && (
+        {courseNodes.logo && courseNodes.logo.asset && (
           <div className={styles.Logo}>
             <GatsbyImage fluid={courseNodes.logo.asset.fluid} alt={courseNodes.logo.alt} />
           </div>

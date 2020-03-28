@@ -107,6 +107,14 @@ export default () =>
                     .id("alternativeSchoolsCourses")
                     .schemaType("coursesPage")
                     .documentId("alternativeSchoolsCourses")
+                ),
+                S.listItem()
+                .title("Online")
+                .child(
+                  S.editor()
+                    .id("onlineCourses")
+                    .schemaType("coursesPage")
+                    .documentId("onlineCourses")
                 )
             ])
         )
