@@ -40,23 +40,25 @@ const CourseSection = ({ courseNodes }) => {
           </div>
         )}
       </div>
-      <div className={styles.Courses}>
-        {courseNodes.courseList.map((course, i) => (
-          <Course
-            className={styles.Course}
-            title={course.title}
-            description={course.description}
-            location={course.location}
-            launchDate={course.launchDate}
-            duration={course.duration}
-            ages={course.ages}
-            image={course.image.asset.fluid}
-            alt={course.image.alt}
-            reverse={i % 2 !== 0}
-            key={course._key}
-          />
-        ))}
-      </div>
+      {courseNodes.courseList.length > 1 ? (
+        <div className={styles.Courses}>
+          {courseNodes.courseList.map((course, i) => (
+            <Course
+              className={styles.Course}
+              title={course.title}
+              description={course.description}
+              location={course.location}
+              launchDate={course.launchDate}
+              duration={course.duration}
+              ages={course.ages}
+              image={course.image.asset.fluid}
+              alt={course.image.alt}
+              reverse={i % 2 !== 0}
+              key={course._key}
+            />
+          ))}
+        </div>
+      ) : null}
     </Container>
   )
 }
