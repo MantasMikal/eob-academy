@@ -41,7 +41,7 @@ const CourseSection = ({ courseNodes }) => {
           </div>
         )}
       </div>
-      {courseList.length > 1 ? (
+      {courseList.length > 0 ? (
         <div className={styles.Courses}>
           {courseList.map((course, i) => (
             <Course

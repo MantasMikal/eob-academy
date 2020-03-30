@@ -3,7 +3,6 @@ import React from 'react'
 import Figure from './figure'
 import Slideshow from './slideshow'
 
-import typography from '../typography.module.css'
 import Type from 'Primitive/Type'
 
 const serializers = {
@@ -11,25 +10,48 @@ const serializers = {
     block(props) {
       switch (props.node.style) {
         case 'h1':
-          return <h1 className={typography.responsiveTitle1}>{props.children}</h1>
+          return (
+            <Type as="h2" size="displayLarge">
+              {props.children}
+            </Type>
+          )
 
         case 'h2':
-          return <h2 className={typography.responsiveTitle2}>{props.children}</h2>
+          return (
+            <Type as="h3" size="titleLarge">
+              {props.children}
+            </Type>
+          )
 
         case 'h3':
-          return <h3 className={typography.responsiveTitle3}>{props.children}</h3>
+          return (
+            <Type as="h4" size="titleMedium">
+              {props.children}
+            </Type>
+          )
 
         case 'h4':
-          return <h4 className={typography.responsiveTitle4}>{props.children}</h4>
+          return (
+            <Type as="h5" size="title">
+              {props.children}
+            </Type>
+          )
 
         case 'blockquote':
-          return <blockquote className={typography.blockQuote}>{props.children}</blockquote>
+          return (
+            <Type as="blockqoute" size="base" qoute>
+              {props.children}
+            </Type>
+          )
 
         default:
-          return (
+          console.log('def', props.children)
+          return props.children[0] !== "" ? (
             <Type as="p" size="base">
               {props.children}
             </Type>
+          ) : (
+            <br />
           )
       }
     },

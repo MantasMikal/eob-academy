@@ -16,7 +16,7 @@ const DescriptionCard = ({ icon, title, description }) => {
   return (
     <div className={cn(styles.DescriptionCard, isDark && styles.isDark)}>
       <Icon className={styles.Icon} type={icon} height={165} a11yText={`Icon of ${icon}`} />
-      <Type className={styles.Title} size="title1">
+      <Type className={styles.Title} size="title">
         {title}
       </Type>
       <Type className={styles.Description} size="base">

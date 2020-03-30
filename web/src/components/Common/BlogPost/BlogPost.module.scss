@@ -2,6 +2,36 @@
 
 .Root {
   position: relative;
+
+  ul {
+    list-style-position: inside;
+    list-style: none;
+    font-size: spacing(2.25);
+    line-height: spacing(3);
+
+    @include mq($breakpoint-tablet) {
+      font-size: spacing(2.5);
+      line-height: spacing(3.5);
+    }
+
+    @include mq($breakpoint-desktop) {
+      font-size: spacing(3.2);
+      line-height: spacing(4.2);
+    }
+    li {
+      &:before {
+        content: '';
+        background-color: $color-primary-purple;
+        height: spacing(1);
+        border-radius: 50%;
+        vertical-align: middle;
+        font-weight: bold;
+        display: inline-block;
+        width: spacing(1);
+        margin-right: spacing(1);
+      }
+    }
+  }
 }
 
 .Container {
@@ -23,7 +53,7 @@
     position: absolute;
     background-image: url('/asset/overlay2.svg');
     width: spacing(3.5);
-    height: 101%;
+    height: 100%;
     top: 0rem;
     left: -2.5rem;
   }

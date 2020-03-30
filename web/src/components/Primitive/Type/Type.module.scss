@@ -2,6 +2,10 @@
 
 // .Type {}
 
+.common {
+  min-height: spacing(2);
+}
+
 .display2 {
   font-size: spacing(3); // 24
   line-height: spacing(4); // 32
@@ -78,22 +82,24 @@
   }
 }
 
-.title1 {
+.titleMedium {
   font-family: $font-body;
-  font-size: spacing(3.25);
-  line-height: spacing(4.25);
+  font-size: spacing(3.5);
+  line-height: spacing(4.5);
   font-weight: 500;
 
   @include mq($breakpoint-tablet) {
-    font-size: spacing(4.25); // 40
-    line-height: spacing(5.25); // 48
+    font-size: spacing(4.5); // 40
+    line-height: spacing(5.5); // 48
   }
 
   @include mq($breakpoint-desktop) {
-    font-size: spacing(5.25); // 42
-    line-height: spacing(6.25); // 50
+    font-size: spacing(5.5); // 42
+    line-height: spacing(6.5); // 50
   }
 }
+
+
 
 .titleLarge {
   font-family: $font-body;
@@ -205,6 +211,22 @@
 
 .heavy {
   font-weight: 600;
+}
+
+
+.qoute {
+  display: block;
+  position: relative;
+  left: 2rem;
+  margin: spacing(1) 0;
+  &::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    width: 1.2rem;
+    height: 110%;
+    background-image: url('/asset/overlay2.svg');
+  }
 }
 
 // Modifiers

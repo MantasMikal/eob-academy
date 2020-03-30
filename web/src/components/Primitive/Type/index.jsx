@@ -11,11 +11,10 @@ export const sizes = [
   'display1',
   'displayHero',
   'displayLarge',
-  'title2',
   'menu',
   'title',
+  'titleMedium',
   'titleLarge',
-  'title1',
   'subtitle',
   'baseLarge',
   'baseSmall',
@@ -23,7 +22,19 @@ export const sizes = [
   'small'
 ]
 
-const Type = ({ children, className, as, size, tight, italic, bold, demi, heavy, ...rest }) => (
+const Type = ({
+  children,
+  className,
+  as,
+  size,
+  tight,
+  italic,
+  bold,
+  demi,
+  heavy,
+  qoute,
+  ...rest
+}) => (
   <Element
     as={as}
     className={classNames(
@@ -34,6 +45,8 @@ const Type = ({ children, className, as, size, tight, italic, bold, demi, heavy,
       bold && styles.bold,
       demi && styles.demi,
       heavy && styles.heavy,
+      qoute && styles.qoute,
+      styles.common,
       className
     )}
     {...rest}

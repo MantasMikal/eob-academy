@@ -66,11 +66,12 @@ export const query = graphql`
       }
     }
 
-    posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+    posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }, filter: {isFeatured: {eq: true}}) {
       edges {
         node {
           id
           publishedAt
+          isFeatured
           mainImage {
             asset {
               fluid(maxWidth: 500) {
