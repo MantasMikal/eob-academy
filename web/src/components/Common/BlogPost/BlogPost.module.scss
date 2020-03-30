@@ -1,0 +1,63 @@
+@import 'setting';
+
+.Root {
+  position: relative;
+}
+
+.Container {
+  position: relative;
+  background-color: $color-primary-white;
+  top: 0;
+  padding: spacing(3) spacing(5) spacing(6);
+}
+
+.TitleWrapper {
+  position: relative;
+  margin-bottom: spacing(3);
+  margin-top: spacing(3);
+  padding: spacing(3) spacing(1) spacing(3);
+  margin-left: 2.5rem;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url('/asset/overlay2.svg');
+    width: spacing(3.5);
+    height: 101%;
+    top: 0rem;
+    left: -2.5rem;
+  }
+}
+
+.HighlightedText {
+  margin-bottom: spacing(3);
+  color: $color-primary-purple;
+  p {
+    font-size: spacing(4);
+    line-height: spacing(4.5);
+    font-weight: 500;
+  }
+}
+
+.DateWrapper {
+  padding-top: spacing(1);
+  color: $color-primary-purple;
+  font-weight: 500;
+}
+
+@include mq($breakpoint-tablet) {
+  .Container {
+    padding: spacing(3) spacing(15) spacing(6);
+  }
+  .TitleWrapper {
+    &::before {
+      //   left: 0.5rem;
+    }
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Container {
+    top: spacing(-10);
+  }
+}

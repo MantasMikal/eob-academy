@@ -4,10 +4,11 @@ import Figure from './figure'
 import Slideshow from './slideshow'
 
 import typography from '../typography.module.css'
+import Type from 'Primitive/Type'
 
 const serializers = {
   types: {
-    block (props) {
+    block(props) {
       switch (props.node.style) {
         case 'h1':
           return <h1 className={typography.responsiveTitle1}>{props.children}</h1>
@@ -25,13 +26,17 @@ const serializers = {
           return <blockquote className={typography.blockQuote}>{props.children}</blockquote>
 
         default:
-          return <p className={typography.paragraph}>{props.children}</p>
+          return (
+            <Type as="p" size="base">
+              {props.children}
+            </Type>
+          )
       }
     },
-    figure (props) {
+    figure(props) {
       return <Figure {...props.node} />
     },
-    slideshow (props) {
+    slideshow(props) {
       return <Slideshow {...props.node} />
     }
   }
