@@ -28,7 +28,7 @@ const CourseSection = ({ courseNodes }) => {
           <Type as="h2" size="displayLarge" className={styles.Title}>
             {pageTitle}
           </Type>
-          <Type as="h3" size="titleLarge" className={styles.Subtitle}>
+          <Type as="h3" size="titleMedium" className={styles.Subtitle}>
             {subtitle}
           </Type>
           <Type as="p" size="base" className={styles.Description}>
