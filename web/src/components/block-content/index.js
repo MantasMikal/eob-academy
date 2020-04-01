@@ -45,8 +45,7 @@ const serializers = {
           )
 
         default:
-          console.log('def', props.children)
-          return props.children[0] !== "" ? (
+          return props.children[0] !== '' ? (
             <Type as="p" size="base">
               {props.children}
             </Type>

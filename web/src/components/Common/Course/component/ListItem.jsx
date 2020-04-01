@@ -14,7 +14,7 @@ const ListItem = ({ icon, title, value }) => {
   return (
     <ShrinkWrap as="li" className={cn(styles.ListItem, isDark && styles.isDark)} vAlign="middle">
       <ShrinkWrap.Item shirnk className={styles.IconWrapper}>
-        <Icon className={styles.Icon} type={icon} height={25} width={22} />
+        <Icon className={styles.Icon} type={icon} height={25} width={22} a11yText={icon} />
       </ShrinkWrap.Item>
       <ShrinkWrap.Item>
         <Type className={styles.Title} as="p" size="base" demi>

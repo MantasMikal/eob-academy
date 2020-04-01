@@ -26,6 +26,7 @@ export const query = graphql`
             alt
           }
           courseList {
+            _key
             title
             location
             launchDate
@@ -39,7 +40,7 @@ export const query = graphql`
               }
               alt
             }
-            description
+            _rawDescription
           }
         }
       }

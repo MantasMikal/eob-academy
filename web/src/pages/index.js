@@ -20,7 +20,11 @@ export const query = graphql`
       keywords
     }
 
-    gallery: allSanityGalleryMedia(limit: 10, sort: { fields: [publishedAt], order: DESC }) {
+    gallery: allSanityGalleryMedia(
+      limit: 10
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { isFeatured: { eq: true } }
+    ) {
       edges {
         node {
           id
@@ -66,7 +70,11 @@ export const query = graphql`
       }
     }
 
-    posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }, filter: {isFeatured: {eq: true}}) {
+    posts: allSanityPost(
+      limit: 6
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { isFeatured: { eq: true } }
+    ) {
       edges {
         node {
           id

@@ -6,8 +6,9 @@
   position: fixed;
   z-index: 300;
   width: 100%;
-  padding: spacing(1) spacing(2);
+  padding: 2px spacing(2);
   transition: $duration-shortest $easing-standard;
+  // background-color: red;
 }
 
 .NavLink {
@@ -15,24 +16,19 @@
   display: block;
   text-align: center;
   text-decoration: none;
-
-  padding: 10px 10px;
-  margin: 0 4px;
+  padding: 8px 14px;
+  margin: 4px 0px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  &:hover {
-    background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" standalone="no"%3F%3E%3Csvg version="1.0" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1280.000000 857.000000" preserveAspectRatio="xMidYMid meet"%3E%3Cg transform="translate(0.000000,857.000000) scale(0.100000,-0.100000)"%0Afill="%23e72568" stroke="none"%3E%3Cpath d="M3770 8564 c-96 -10 -332 -56 -451 -88 -375 -103 -998 -369 -1127%0A-480 -119 -103 -189 -211 -237 -370 -35 -116 -77 -163 -178 -203 -130 -50%0A-140 -64 -309 -468 -364 -869 -605 -1498 -830 -2165 -742 -2205 -836 -3659%0A-282 -4396 221 -293 601 -443 966 -379 101 17 242 65 318 108 130 72 199 139%0A931 902 823 858 818 854 1054 970 194 95 345 137 560 156 69 6 915 9 2295 7%0A2039 -3 2191 -5 2273 -21 259 -52 479 -149 674 -295 34 -26 395 -393 800 -816%0A495 -516 763 -788 813 -825 440 -329 1078 -241 1403 192 311 414 419 1060 321%0A1927 -128 1137 -589 2630 -1430 4629 -167 397 -181 420 -280 460 -138 56 -180%0A99 -211 218 -38 153 -154 315 -287 406 -113 76 -573 279 -836 367 -422 142%0A-773 195 -1038 156 -203 -30 -342 -90 -481 -206 -132 -111 78 -100 -1795 -100%0A-1206 0 -1649 3 -1677 11 -21 7 -64 34 -96 62 -200 171 -374 234 -663 241 -85%0A2 -175 2 -200 0z"/%3E%3C/g%3E%3C/svg%3E%0A');
-  }
-  min-width: 70px;
+  min-width: 65px;
 }
 
 .Branding {
   font-size: inherit;
   display: inline-block;
   position: relative;
-  top: 3px;
-
+  top: 5px;
   & a {
     display: inline-block;
   }
@@ -41,7 +37,7 @@
 .Logo {
   display: block;
   transition: $duration-short $easing-standard;
-  width: 50px;
+  width: 45px;
   height: 100%;
   object-fit: contain;
 
@@ -71,9 +67,9 @@
   }
 
   &.primary {
-    padding: 10px 10px;
-    margin: 0 4px;
-    min-width: 70px;
+    padding: 8px 14px;
+    margin: 4px 0px;
+    min-width: 65px;
   }
 }
 
@@ -86,8 +82,7 @@
   background-color: $color-primary-white;
   border-radius: $radius-small;
   background-color: $color-primary-grey-light;
-  margin-left: 4px;
-  padding-top: 4px;
+  margin-left: 8px;
 }
 
 .DropdownContent .NavLink {
@@ -129,7 +124,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-
+  transform: scale(1.05);
   background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" standalone="no"%3F%3E%3Csvg version="1.0" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1280.000000 857.000000" preserveAspectRatio="xMidYMid meet"%3E%3Cg transform="translate(0.000000,857.000000) scale(0.100000,-0.100000)"%0Afill="%23e72568" stroke="none"%3E%3Cpath d="M3770 8564 c-96 -10 -332 -56 -451 -88 -375 -103 -998 -369 -1127%0A-480 -119 -103 -189 -211 -237 -370 -35 -116 -77 -163 -178 -203 -130 -50%0A-140 -64 -309 -468 -364 -869 -605 -1498 -830 -2165 -742 -2205 -836 -3659%0A-282 -4396 221 -293 601 -443 966 -379 101 17 242 65 318 108 130 72 199 139%0A931 902 823 858 818 854 1054 970 194 95 345 137 560 156 69 6 915 9 2295 7%0A2039 -3 2191 -5 2273 -21 259 -52 479 -149 674 -295 34 -26 395 -393 800 -816%0A495 -516 763 -788 813 -825 440 -329 1078 -241 1403 192 311 414 419 1060 321%0A1927 -128 1137 -589 2630 -1430 4629 -167 397 -181 420 -280 460 -138 56 -180%0A99 -211 218 -38 153 -154 315 -287 406 -113 76 -573 279 -836 367 -422 142%0A-773 195 -1038 156 -203 -30 -342 -90 -481 -206 -132 -111 78 -100 -1795 -100%0A-1206 0 -1649 3 -1677 11 -21 7 -64 34 -96 62 -200 171 -374 234 -663 241 -85%0A2 -175 2 -200 0z"/%3E%3C/g%3E%3C/svg%3E%0A');
 }
 
@@ -148,7 +143,8 @@
 
 .DarkModeToggle {
   float: right;
-  padding: spacing(1.1) 0 spacing(1.1) spacing(2);
+  padding: 8px 0px 8px 14px;
+  margin: 4px 4px;
 }
 
 .ToggleNavButton,
@@ -173,7 +169,7 @@
     float: right;
     display: block;
     position: relative;
-    top: 5px;
+    top: 10px;
   }
 }
 
@@ -190,7 +186,7 @@
   .Root.Responsive .ToggleNavButton {
     position: absolute;
     right: spacing(7);
-    top: spacing(2);
+    top: spacing(2.5);
   }
 
   .Root.Responsive .DarkModeToggle {

@@ -52,15 +52,15 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
       <LinkWrapper className={styles.NavLink} to="/blog/">
         Blog
       </LinkWrapper>
-      <LinkWrapper className={styles.NavLink} to="/jobs/">
+      {/* <LinkWrapper className={styles.NavLink} to="/jobs/">
         Jobs
-      </LinkWrapper>
+      </LinkWrapper> */}
       <LinkWrapper className={styles.NavLink} to="/gallery/">
         Gallery
       </LinkWrapper>
-      <LinkWrapper className={styles.NavLink} to="/events/">
+      {/* <LinkWrapper className={styles.NavLink} to="/events/">
         Events
-      </LinkWrapper>
+      </LinkWrapper> */}
       <div className={styles.Dropdown}>
         <button className={cn(styles.DropdownBtn, styles.primary)}>
           <Type as="span" size="menu">

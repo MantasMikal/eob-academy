@@ -9,7 +9,7 @@ import { cn } from 'lib/helpers'
 
 const StripLine = ({ text, isVisible, hideStrip, isHidable }) => (
   <div className={cn(styles.StripLine)}>
-    <Icon type="info" width={50} height={50} className={styles.Icon} />
+    <Icon type="info" width={50} height={50} className={styles.Icon} a11yText="Information" />
     <Type size="title" as="h3" className={styles.Text}>
       {text}
     </Type>

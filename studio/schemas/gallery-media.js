@@ -10,11 +10,18 @@ export default {
       type: "string"
     },
     {
+      name: "isFeatured",
+      title: "Is Featured",
+      description: "Will add to homepage gallery",
+      type: "boolean"
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       description: "You can use this field to schedule post where you show them",
       type: "datetime"
     },
+
     {
       name: "media",
       title: "Media",

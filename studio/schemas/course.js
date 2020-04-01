@@ -10,8 +10,8 @@ export default {
     },
     {
       name: "description",
-      title: "Description",
-      type: "text"
+      title: "Body",
+      type: "blockContent"
     },
     {
       name: "location",

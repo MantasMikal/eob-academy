@@ -47,13 +47,12 @@ const CourseSection = ({ courseNodes }) => {
             <Course
               className={styles.Course}
               title={course.title}
-              description={course.description}
+              description={course._rawDescription}
               location={course.location}
               launchDate={course.launchDate}
               duration={course.duration}
               ages={course.ages}
-              image={course.image.asset.fluid}
-              alt={course.image.alt}
+              image={course.image}
               reverse={i % 2 !== 0}
               key={course._key}
             />
@@ -72,13 +71,12 @@ CourseSection.propTypes = {
     courseList: arrayOf(
       shape({
         title: string,
-        description: string,
+        description: object,
         location: string,
         launchDate: string,
         duration: string,
         ages: string,
         image: object,
-        alt: string,
         reverse: bool
       })
     )

@@ -15,7 +15,7 @@
   transition: $easing-standard $duration-short;
   padding-top: spacing(3);
   padding-bottom: spacing(3);
-  margin-top: 56px;
+  margin-top: 48px;
   height: auto;
   @include mq($breakpoint-tablet) {
     flex-direction: row;
