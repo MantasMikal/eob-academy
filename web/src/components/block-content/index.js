@@ -2,8 +2,8 @@ import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
 import Figure from './figure'
 import Slideshow from './slideshow'
-
 import Type from 'Primitive/Type'
+import Qoute from 'Primitive/Qoute'
 
 const serializers = {
   types: {
@@ -38,11 +38,7 @@ const serializers = {
           )
 
         case 'blockquote':
-          return (
-            <Type as="blockqoute" size="base" qoute>
-              {props.children}
-            </Type>
-          )
+          return <Qoute>{props.children}</Qoute>
 
         default:
           return props.children[0] !== '' ? (

@@ -215,8 +215,8 @@
 .qoute {
   display: block;
   position: relative;
-  left: 2rem;
   margin: spacing(1) 0;
+  margin-left: 2rem;
   &::before {
     content: '';
     position: absolute;

@@ -12,8 +12,15 @@ const imageStyles = {
   height: '100%'
 }
 
-const ZoomableMedia = ({ media, ratio }) => {
+// Can't be used with ResponsiveMedia
+
+const ZoomableMedia = ({ media, children }) => {
   const isDark = useDarkContext()
+  const component = children ? (
+    children
+  ) : (
+    <Media imgWrapperStyle={imageStyles} imgStyle={imageStyles} media={media} />
+  )
   return (
     <Zoom
       className={styles.ZoomableMedia}
@@ -22,7 +29,7 @@ const ZoomableMedia = ({ media, ratio }) => {
       overlayBgColorStart="rgba(0, 0, 0, 0)"
       zoomMargin={20}
     >
-      <Media imgWrapperStyle={imageStyles} imgStyle={imageStyles} media={media} ratio={ratio} />
+      {component}
     </Zoom>
   )
 }

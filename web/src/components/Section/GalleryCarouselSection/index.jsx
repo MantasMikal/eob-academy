@@ -29,8 +29,8 @@ const GelleryCarouselSection = ({ galleryNodes, title, browserMoreHref }) => {
                 className={styles.GalleryPreview}
                 key={node.id}
                 media={node.media}
-                ratio={9 / 16}
                 surround
+                isZoomable
               />
             ))}
         </Carousel>

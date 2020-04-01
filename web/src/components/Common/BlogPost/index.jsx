@@ -1,13 +1,13 @@
 import React from 'react'
+import { formatDate, cn } from 'lib/helpers'
 import BlockContent from '../../block-content'
-import { formatDate } from 'lib/helpers'
+import Image from 'gatsby-image'
+
 import Container from 'Primitive/Container'
-// import RoleList from './role-list'
+import { useDarkContext } from 'Context/DarkContext'
 import BlockText from 'Primitive/BlockText/BlockText'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import Type from 'Primitive/Type'
-import Image from 'gatsby-image'
-
 
 import styles from './BlogPost.module.scss'
 
@@ -21,8 +21,9 @@ const BlogPost = props => {
     publishedAt,
     _rawHighlightedText
   } = props
+  const isDark = useDarkContext()
   return (
-    <article className={styles.Root}>
+    <article className={cn(styles.Root, isDark && styles.isDark)}>
       {mainImage && mainImage.asset && (
         <ResponsiveMedia ratio={9 / 16}>
           <Image fluid={mainImage.asset.fluid} alt={mainImage.alt} />
