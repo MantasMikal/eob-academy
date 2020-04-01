@@ -11,28 +11,28 @@ const serializers = {
       switch (props.node.style) {
         case 'h1':
           return (
-            <Type as="h2" size="displayLarge">
+            <Type as="h2" size="titleMedium" padded>
               {props.children}
             </Type>
           )
 
         case 'h2':
           return (
-            <Type as="h3" size="titleLarge">
+            <Type as="h3" size="title" padded>
               {props.children}
             </Type>
           )
 
         case 'h3':
           return (
-            <Type as="h4" size="titleMedium">
+            <Type as="h4" size="title" padded>
               {props.children}
             </Type>
           )
 
         case 'h4':
           return (
-            <Type as="h5" size="title">
+            <Type as="h5" size="title" padded>
               {props.children}
             </Type>
           )

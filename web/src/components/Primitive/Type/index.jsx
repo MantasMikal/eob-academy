@@ -33,6 +33,7 @@ const Type = ({
   demi,
   heavy,
   qoute,
+  padded,
   ...rest
 }) => (
   <Element
@@ -46,7 +47,9 @@ const Type = ({
       demi && styles.demi,
       heavy && styles.heavy,
       qoute && styles.qoute,
+      padded && styles.padded,
       styles.common,
+
       className
     )}
     {...rest}
@@ -70,7 +73,8 @@ Type.propTypes = {
   tight: bool,
   italic: bool,
   demi: bool,
-  heavy: bool
+  heavy: bool,
+  padded: bool
 }
 
 export default Type

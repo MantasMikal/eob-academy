@@ -188,8 +188,8 @@
 }
 
 .small {
-  font-size: spacing(2.2); // 14
-  line-height: spacing(2.4); // 16
+  font-size: spacing(2.4); // 14
+  line-height: spacing(2.6); // 16
 }
 
 .italic {
@@ -208,6 +208,9 @@
   font-weight: 600;
 }
 
+.padded {
+  padding-bottom: spacing(0.5);
+}
 
 .qoute {
   display: block;
