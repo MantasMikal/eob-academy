@@ -16,6 +16,7 @@ const BlogPost = props => {
     _rawBody,
     authors,
     categories,
+    readTime,
     title,
     mainImage,
     publishedAt,
@@ -42,10 +43,12 @@ const BlogPost = props => {
                     {formatDate(publishedAt)}
                   </Type>
                 )}
-                {' • '}
-                <Type as="span" size="small">
-                  4 min read
-                </Type>
+                {readTime && (
+                  <Type size="small" as="span" className={styles.ReadTime}>
+                    {'•'}
+                    {readTime} min read
+                  </Type>
+                )}
               </div>
             </div>
           )}

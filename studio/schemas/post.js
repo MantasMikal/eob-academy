@@ -25,6 +25,11 @@ export default {
       type: "boolean"
     },
     {
+      name: "readTime",
+      title: "Read time",
+      type: "number"
+    },
+    {
       name: "publishedAt",
       title: "Published at",
       description: "You can use this field to schedule post where you show them",

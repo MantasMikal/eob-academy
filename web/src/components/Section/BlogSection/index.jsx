@@ -34,6 +34,7 @@ const BlogSection = ({ blogNodes }) => {
             key={item.id}
             publishedAt={item.publishedAt}
             excerpt={item._rawExcerpt}
+            readTime={item.readTime}
             surround
           />
         ))}

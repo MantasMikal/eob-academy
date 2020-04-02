@@ -1,27 +1,30 @@
 import React from 'react'
 import cfg from '../../../../config'
 
-import Image from 'Common/Zoomable'
+import ZoomableImage from 'Common/Zoomable'
+import Media from 'Common/Media'
 import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 
 const createFigure = figure => {
   if (!figure || !figure.asset || !figure.asset.mimeType) return null
-
-  const image = figure.asset
-  const imageAlt = figure.alt ? figure.alt : ' '
-
-  if (image.mimeType === 'image/gif') {
-    return <img src={image.url} alt={imageAlt} style={{ width: '100%' }} key={figure.asset.id} />
+  const { isZoomable, asset, alt, maxWidth } = figure
+  if (asset.mimeType === 'image/gif') {
+    return <img src={asset.url} alt={alt || ' '} style={{ width: '100%' }} key={figure.asset.id} />
   } else {
-    const mediaProps = getFluidGatsbyImage(image._id, { maxWidth: 800 }, cfg.project)
+    const mediaProps = getFluidGatsbyImage(
+      asset._id,
+      { maxWidth: maxWidth ? maxWidth : 800 },
+      cfg.project
+    )
     const media = {
       asset: {
         fluid: mediaProps
       },
-      alt: imageAlt
+      alt: alt || ' '
     }
-    const isZoomable = figure.isZoomable
-    return <Image key={figure._key} media={media} isZoomable={isZoomable} />
+  
+    const El = (isZoomable === undefined || isZoomable) ? ZoomableImage : Media
+    return <El key={figure._key} media={media} />
   }
 }
 

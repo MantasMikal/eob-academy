@@ -67,6 +67,7 @@
   }
 }
 
+
 .HighlightedText {
   margin-bottom: spacing(3);
   p {
@@ -92,9 +93,15 @@
 }
 
 .DateWrapper {
-  padding-top: spacing(1);
-  color: $color-primary-purple;
+  display: inline-block;
+  background-color: $color-primary-purple;
+  color: $color-primary-white;
   font-weight: 500;
+  padding: spacing(0.5) spacing(0.5);
+  border-radius: $radius-small;
+  text-align: right;
+  line-height: 0;
+  margin-top: 10px;
 }
 
 @include mq($breakpoint-tablet) {

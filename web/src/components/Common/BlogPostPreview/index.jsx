@@ -11,7 +11,17 @@ import Media from 'Common/Media'
 import styles from './BlogPostPreview.module.scss'
 import { cn } from 'lib/helpers'
 
-const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio, surround, className }) => {
+const BlogPostPreview = ({
+  slug,
+  mainImage,
+  title,
+  publishedAt,
+  excerpt,
+  ratio,
+  surround,
+  className,
+  readTime
+}) => {
   const isDark = useDarkContext()
   return (
     <Link
@@ -32,11 +42,13 @@ const BlogPostPreview = ({ slug, mainImage, title, publishedAt, excerpt, ratio, 
       <div className={styles.Details}>
         <Type size="small" as="time" className={styles.Date}>
           {formatDate(publishedAt)}
-        </Type>{' '}
-        •{' '}
-        <Type size="small" as="span" className={styles.ReadTime}>
-          4 min read
         </Type>
+        •
+        {readTime && (
+          <Type size="small" as="span" className={styles.ReadTime}>
+            {readTime} min read
+          </Type>
+        )}
       </div>
     </Link>
   )

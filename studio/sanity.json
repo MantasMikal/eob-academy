@@ -17,7 +17,6 @@
     "seo-tools",
     "@sanity/dashboard",
     "dashboard-widget-netlify",
-    "dashboard-widget-document-chart",
     "media"
   ],
   "parts": [

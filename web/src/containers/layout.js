@@ -25,7 +25,6 @@ function LayoutContainer(props) {
     typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : false
   const [isDark, setDark] = useState(wasDark)
   const [isStripVisible, setStrip] = useState(false)
-  console.log('ssa')
 
   useEffect(() => {
     // Dpuble check if dark

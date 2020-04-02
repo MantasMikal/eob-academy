@@ -31,7 +31,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
-    "sanity-plugin-dashboard-widget-document-chart": "^0.0.6",
     "sanity-plugin-dashboard-widget-netlify": "^1.0.1",
     "sanity-plugin-media": "^0.2.10",
     "sanity-plugin-seo-tools": "^1.0.6"

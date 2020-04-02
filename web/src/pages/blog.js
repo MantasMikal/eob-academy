@@ -17,6 +17,7 @@ export const query = graphql`
         node {
           id
           publishedAt
+          readTime
           mainImage {
             alt
             asset {

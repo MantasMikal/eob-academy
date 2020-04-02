@@ -24,6 +24,7 @@ export const query = graphql`
       slug {
         current
       }
+      readTime
       _rawHighlightedText
       _rawBody
     }

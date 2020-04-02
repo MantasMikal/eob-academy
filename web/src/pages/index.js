@@ -80,6 +80,7 @@ export const query = graphql`
           id
           publishedAt
           isFeatured
+          readTime
           mainImage {
             asset {
               fluid(maxWidth: 500) {
