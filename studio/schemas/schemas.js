@@ -26,7 +26,8 @@ import sponsor from "./sponsor";
 import video from "./video";
 import course from "./course";
 import courses from "./courses";
-
+import grid from './grid'
+import contentBlock from './contentBlock'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -56,7 +57,9 @@ export default createSchema({
     video,
     seo,
     course,
-    courses
+    courses,
+    contentBlock,
+    grid
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

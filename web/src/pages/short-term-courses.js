@@ -40,7 +40,7 @@ export const query = graphql`
               }
               alt
             }
-            _rawDescription
+            _rawDescription(resolveReferences: { maxDepth: 5 })
           }
         }
       }

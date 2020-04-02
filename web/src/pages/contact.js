@@ -1,18 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import BlockContent from '../components/block-content'
-import Container from '../components/container'
+import BlockSection from 'Section/BlockSection'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
-
-import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query ContactPageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)contact/" }) {
       title
-      _rawBody
+      _rawBody(resolveReferences: { maxDepth: 5 })
     }
   }
 `
@@ -39,10 +36,7 @@ const ContactPage = props => {
   return (
     <Layout>
       <SEO title={page.title} />
-      <Container>
-        <h1 className={responsiveTitle1}>{page.title}</h1>
-        <BlockContent blocks={page._rawBody || []} />
-      </Container>
+      <BlockSection title={page.title} blockContent={page._rawBody || []} />
     </Layout>
   )
 }

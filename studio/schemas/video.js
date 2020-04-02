@@ -1,3 +1,4 @@
+import { FaVideo } from "react-icons/fa";
 export default {
   name: "video",
   title: "Video",
@@ -24,7 +25,7 @@ export default {
       name: "videoId",
       title: "Video ID",
       type: "string",
-      description: 'E.g. https://vimeo.com/391416680. Enter only 391416680',
+      description: "E.g. https://vimeo.com/391416680. Enter only 391416680",
       options: {
         isHighlighted: true
       }
@@ -45,5 +46,13 @@ export default {
         isHighlighted: true
       }
     }
-  ]
+  ],
+  preview: {
+    prepare({ title = "Video" }) {
+      return {
+        title,
+        media: FaVideo
+      };
+    }
+  }
 };

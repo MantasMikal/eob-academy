@@ -15,6 +15,11 @@ export default {
       }
     },
     {
+      name: 'isZoomable',
+      title: 'Can be zoomed?',
+      type: 'boolean'
+    },
+    {
       name: 'caption',
       title: 'Caption',
       type: 'string',

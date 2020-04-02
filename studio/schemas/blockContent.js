@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt } from 'react-icons/fa'
+import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from 'react-icons/fa'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -63,6 +63,32 @@ export default {
                 type: 'boolean'
               }
             ]
+          },
+          {
+            title: 'Button',
+            name: 'button',
+            type: 'object',
+            blockEditor: {
+              icon: FaExternalLinkSquareAlt
+            },
+            fields: [
+              {
+                title: 'URL',
+                name: 'href',
+                type: 'url',
+                validation: Rule =>
+                  Rule.uri({
+                    allowRelative: true,
+                    scheme: ['https', 'http', 'mailto', 'tel']
+                  })
+              },
+              {
+                title: 'Open in new tab',
+                name: 'blank',
+                description: 'Read https://css-tricks.com/use-target_blank/',
+                type: 'boolean'
+              }
+            ]
           }
         ]
       }
@@ -75,6 +101,9 @@ export default {
     },
     {
       type: 'slideshow'
+    },
+    {
+      type: 'grid'
     }
   ]
 }

@@ -12,6 +12,10 @@ import VimeoEmbed from './VimeoEmbed'
 
 import styles from './Video.module.scss'
 
+
+// TODO:
+// I can optimise this by loading only necessary video type
+
 const Video = ({ videoType, videoId, caption, className }) => {
   const isDark = useDarkContext()
   const classNames = cn(className, isDark && styles.isDark)

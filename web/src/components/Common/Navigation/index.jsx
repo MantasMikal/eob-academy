@@ -49,6 +49,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
       <LinkWrapper highlight className={styles.NavLink} to="/contact/">
         Contact
       </LinkWrapper>
+      <LinkWrapper className={styles.NavLink} to="/about/">
+        About
+      </LinkWrapper>
       <LinkWrapper className={styles.NavLink} to="/blog/">
         Blog
       </LinkWrapper>
