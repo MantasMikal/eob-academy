@@ -13,7 +13,7 @@ const createFigure = figure => {
   if (image.mimeType === 'image/gif') {
     return <img src={image.url} alt={imageAlt} style={{ width: '100%' }} key={figure.asset.id} />
   } else {
-    const mediaProps = getFluidGatsbyImage(image._id, { maxWidth: 1000 }, cfg.project)
+    const mediaProps = getFluidGatsbyImage(image._id, { maxWidth: 800 }, cfg.project)
     const media = {
       asset: {
         fluid: mediaProps

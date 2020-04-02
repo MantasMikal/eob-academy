@@ -7,6 +7,7 @@ export default {
     hotspot: true
   },
   fields: [
+    
     {
       name: "contentBlock",
       title: "Content Block",
