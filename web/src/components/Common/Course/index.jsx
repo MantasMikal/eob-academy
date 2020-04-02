@@ -27,7 +27,6 @@ const Course = ({
   className
 }) => {
   const isDark = useDarkContext()
-  console.log(image)
   return (
     <div
       className={cn(styles.Course, reverse && styles.reverse, isDark && styles.isDark, className)}

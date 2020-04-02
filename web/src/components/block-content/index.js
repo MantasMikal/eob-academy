@@ -63,8 +63,7 @@ const serializers = {
   },
   marks: {
     button: ({ mark, children }) => {
-      console.log(mark, children)
-      return <div>LOL</div>
+      return <div>WIP</div>
     }
   }
 }
