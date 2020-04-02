@@ -24,6 +24,7 @@ function LayoutContainer(props) {
   const wasDark =
     typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : false
   const [isDark, setDark] = useState(wasDark)
+  console.log("LayoutContainer -> isDark", isDark)
   const [isStripVisible, setStrip] = useState(false)
 
   useEffect(() => {
