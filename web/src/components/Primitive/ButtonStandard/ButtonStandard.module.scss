@@ -16,6 +16,18 @@
   }
 }
 
+.override {
+  background-color: $color-primary-yellow !important;
+  color: $color-primary-black !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-primary-red !important;
+    color: $color-primary-white !important;
+  }
+}
+
 .disabled {
   background-color: $color-common-grey50;
 }

@@ -10,7 +10,7 @@
     color: $color-primary-white;
   }
 
-  .PageSection a {
+  &.BlockSection a {
     color: $color-primary-yellow;
     &:hover {
       color: $color-primary-red;

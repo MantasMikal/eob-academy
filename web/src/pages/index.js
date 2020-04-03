@@ -9,7 +9,7 @@ import Hero from 'Common/Hero'
 import Seperator from 'Primitive/Seprator'
 import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
-import GelleryCarouselSection from 'Section/GalleryCarouselSection'
+// import GelleryCarouselSection from 'Section/GalleryCarouselSection'
 import SponsorsSection from 'Section/SponsorsSection'
 
 export const query = graphql`
@@ -20,28 +20,28 @@ export const query = graphql`
       keywords
     }
 
-    gallery: allSanityGalleryMedia(
-      limit: 10
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { isFeatured: { eq: true } }
-    ) {
-      edges {
-        node {
-          id
-          title
-          publishedAt
-          media {
-            alt
-            caption
-            asset {
-              fluid(maxWidth: 600) {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-        }
-      }
-    }
+    # gallery: allSanityGalleryMedia(
+    #   limit: 10
+    #   sort: { fields: [publishedAt], order: DESC }
+    #   filter: { isFeatured: { eq: true } }
+    # ) {
+    #   edges {
+    #     node {
+    #       id
+    #       title
+    #       publishedAt
+    #       media {
+    #         alt
+    #         caption
+    #         asset {
+    #           fluid(maxWidth: 600) {
+    #             ...GatsbySanityImageFluid
+    #           }
+    #         }
+    #       }
+    #     }
+    #   }
+    # }
 
     sponsors: allSanitySponsors {
       edges {
@@ -116,7 +116,7 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
 
-  const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
+  // const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
 
   const sponsorNodes = (data || {}).sponsors ? mapEdgesToNodes(data.sponsors)[0] : []
 
@@ -145,12 +145,12 @@ const IndexPage = props => {
         browseMoreHref="/blog/"
         title="Featured Blog Posts"
       />
-      <Seperator />
-      <GelleryCarouselSection
+      {/* <Seperator /> */}
+      {/* <GelleryCarouselSection
         galleryNodes={galleryNodes}
         browseMoreHref="/gallery/"
         title="EOB Academy in action"
-      />
+      /> */}
       <Seperator />
 
       <SponsorsSection title="Sponors &amp; Partners" sponsorNodes={sponsorNodes} />

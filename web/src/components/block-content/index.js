@@ -11,7 +11,7 @@ import SmartLink from 'Primitive/SmartLink'
 const serializers = {
   marks: {
     button: ({ mark, children }) => {
-      return children[0] && <ButtonStandard target={mark.blank && '_blank'} href={mark.href}>{children}</ButtonStandard>
+      return children[0] && <ButtonStandard override target={mark.blank && '_blank'} href={mark.href}>{children}</ButtonStandard>
     },
     link: ({ mark, children }) => {
       return children[0] && <SmartLink target={mark.blank && '_blank'} href={mark.href}>{children}</SmartLink>

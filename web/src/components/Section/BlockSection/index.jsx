@@ -14,7 +14,7 @@ const Index = ({ blockContent, title }) => {
   const isDark = useDarkContext()
   return (
     <Container
-      className={cn(styles.PageSection, isDark && styles.isDark)}
+      className={cn(styles.BlockSection, isDark && styles.isDark)}
       size="wide"
       center
       gutter

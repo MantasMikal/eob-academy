@@ -8,12 +8,13 @@ import ButtonBase from '../ButtonBase'
 
 const sizes = ['large', 'medium', 'small']
 
-const ButtonStandard = ({ className, disabled, size, ...other }) => (
+const ButtonStandard = ({ className, disabled, size, override, ...other }) => (
   <ButtonBase
     className={classNames(
       styles.ButtonStandard,
       disabled && styles.disabled,
       size && styles[size],
+      override && styles.override,
       className
     )}
     {...other}
