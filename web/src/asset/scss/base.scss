@@ -31,10 +31,12 @@
 
   a {
     color: $color-primary-purple;
+    text-decoration: none;
     &:focus,
     &:hover {
       color: $color-primary-red;
       outline: 0;
+      text-decoration: underline;
     }
 
     &:active {
