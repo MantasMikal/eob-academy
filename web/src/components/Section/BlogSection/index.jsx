@@ -10,7 +10,7 @@ import Badge from 'Common/Badge'
 import styles from './BlogSection.module.scss'
 import MasonryLayout from 'Common/MasonryLayout'
 
-const getAllUsedCategories = categories => {
+const getAllUsedCategories = (categories = []) => {
   const merged = categories.flat()
   var unique = []
   var distinct = []
@@ -35,7 +35,7 @@ const BlogSection = ({ blogNodes }) => {
   // Filter unique
   const usedCategores = getAllUsedCategories(categories)
 
-  const [activeFilters, setFilters] = useState(usedCategores.map(cat => cat.title))
+  const [activeFilters, setFilters] = useState(usedCategores.map((cat) => cat.title))
 
   // Iterate posts and include only ones with active tag
   let blogposts = []
@@ -57,7 +57,8 @@ const BlogSection = ({ blogNodes }) => {
   }
 
   function handleFilter(filter) {
-    if (activeFilters.includes(filter)) !(activeFilters.length === 1) && setFilters(activeFilters.filter(filt => filt != filter))
+    if (activeFilters.includes(filter))
+      !(activeFilters.length === 1) && setFilters(activeFilters.filter((filt) => filt != filter))
     else setFilters([filter, ...activeFilters])
   }
 
@@ -74,18 +75,23 @@ const BlogSection = ({ blogNodes }) => {
       <Type as="h1" size="displayLarge" className={styles.Title}>
         Blog
       </Type>
-      <div className={styles.CategoryFilter}>
-        {usedCategores &&
-          usedCategores.length > 0 &&
-          usedCategores.map(cat => (
-            <Badge
-              content={cat.title}
-              isInactive={!activeFilters.includes(cat.title)}
-              key={`Filter-${cat.title}`}
-              onClick={() => handleFilter(cat.title)}
-              color={cat.color.hex}
-            />
-          ))}
+      <div className={styles.CategoryFilterWrapper}>
+        <Type as="p" size="small" className={styles.FilterLabel}>
+          What would you like to read?
+        </Type>
+        <div className={styles.CategoryFilter}>
+          {usedCategores &&
+            usedCategores.length > 0 &&
+            usedCategores.map((cat) => (
+              <Badge
+                content={cat.title}
+                isInactive={!activeFilters.includes(cat.title)}
+                key={`Filter-${cat.title}`}
+                onClick={() => handleFilter(cat.title)}
+                color={cat.color.hex}
+              />
+            ))}
+        </div>
       </div>
       <MasonryLayout items={blogposts} gap={25} />
     </Container>
@@ -93,7 +99,7 @@ const BlogSection = ({ blogNodes }) => {
 }
 
 BlogSection.propTypes = {
-  galleryNodes: array
+  galleryNodes: array,
 }
 
 export default BlogSection

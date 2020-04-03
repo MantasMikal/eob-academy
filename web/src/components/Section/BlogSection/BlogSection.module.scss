@@ -15,11 +15,21 @@
   align-items: center;
 }
 
+.CategoryFilterWrapper {
+  margin: spacing(2) spacing(1) spacing(1) spacing(1);
+
+  @include mq($breakpoint-tablet) {
+    margin: spacing(2) spacing(1) spacing(2) spacing(1);
+  }
+}
+
+.FilterLabel {
+  margin-bottom: spacing(1);
+}
+
 .CategoryFilter {
   display: flex;
   justify-content: flex-start;
-  margin: spacing(1) spacing(1) spacing(2) spacing(1);
-  
   & > div {
     cursor: pointer;
     margin-right: spacing(1);
@@ -29,7 +39,6 @@
       transition: $easing-standard $duration-short;
     }
   }
-
 }
 
 .isDark {
