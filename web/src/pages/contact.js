@@ -35,7 +35,7 @@ const ContactPage = props => {
 
   return (
     <Layout>
-      <SEO title={page.title} />
+      <SEO title={page.title} slug={'/contact'} />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
     </Layout>
   )

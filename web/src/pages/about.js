@@ -37,7 +37,7 @@ const AboutPage = props => {
 
   return (
     <Layout>
-      <SEO title={page.title} />
+      <SEO title={page.title} slug={'/about'}/>
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
     </Layout>
   )

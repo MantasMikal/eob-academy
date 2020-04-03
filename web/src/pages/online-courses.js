@@ -75,6 +75,7 @@ const OnlineCourses = props => {
           <SEO
             title={courseNodes.pageTitle}
             description={courseNodes.description ? courseNodes.description : ''}
+            slug={'/online-courses'}
           />
           <h1 hidden>{courseNodes.pageTitle}</h1>
         </>

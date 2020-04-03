@@ -6,7 +6,7 @@ import Type from 'Primitive/Type'
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="404: Not found" slug={'/404'}/>
     <Container size="wide" center gutter spacious as="section">
       <div style={{marginTop: '80px'}} />
       <Type as="h2" size="displayLarge">

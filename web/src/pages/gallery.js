@@ -60,7 +60,7 @@ const IndexPage = props => {
   // make dynamic
   return (
     <Layout>
-      <SEO title='Gallery' description='TBA' keywords={['TBA']}  />
+      <SEO title='Gallery' slug={'/gallery'}  />
         <GallerySection galleryNodes={galleryNodes} />
     </Layout>
   )

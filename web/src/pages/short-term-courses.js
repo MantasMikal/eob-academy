@@ -75,6 +75,7 @@ const PrincesTrustCourses = props => {
           <SEO
             title={courseNodes.pageTitle}
             description={courseNodes.description ? courseNodes.description : ''}
+            slug={'/short-term-courses'}
           />
           <h1 hidden>{courseNodes.pageTitle}</h1>
         </>

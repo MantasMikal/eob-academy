@@ -9,12 +9,23 @@ const detailsQuery = graphql`
       title
       description
       keywords
-      author
+      siteUrl
+      metaImage {
+        asset {
+          url
+          metadata {
+            dimensions {
+              width
+              height
+            }
+          }
+        }
+      }
     }
   }
 `
 
-function SEO ({ description, lang, meta, keywords = [], title }) {
+function SEO({ description, lang, meta, keywords = [], keySentence, title, image, slug }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -23,6 +34,19 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
           return
         }
         const metaDescription = description || data.site.description
+
+        const metaImage = image && image.asset && image.asset.url ? image : data.site.metaImage
+
+        const keyWords = keySentence
+          ? keySentence
+          : keywords && keywords.length > 0 && keywords.join(', ')
+
+        const canonical = slug ? `${data.site.siteUrl}${slug}` : null
+        console.log("SEO -> canonical", canonical)
+
+        console.log('SEO -> metaImage', metaImage)
+        console.log('SEO -> keyWords', keyWords)
+
         return (
           <Helmet
             htmlAttributes={{
@@ -30,6 +54,16 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
             }}
             title={title}
             titleTemplate={title === data.site.title ? '%s' : `%s | ${data.site.title}`}
+            link={
+              canonical
+                ? [
+                    {
+                      rel: 'canonical',
+                      href: canonical
+                    }
+                  ]
+                : []
+            }
             meta={[
               {
                 name: 'description',
@@ -52,10 +86,6 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
                 content: 'summary'
               },
               {
-                name: 'twitter:creator',
-                content: data.site.author
-              },
-              {
                 name: 'twitter:title',
                 content: title
               },
@@ -65,12 +95,37 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
               }
             ]
               .concat(
-                keywords && keywords.length > 0
-                  ? {
-                    name: 'keywords',
-                    content: keywords.join(', ')
-                  }
-                  : []
+                metaImage
+                  ? [
+                      {
+                        property: 'og:image',
+                        content: metaImage.asset.url
+                      },
+                      {
+                        property: 'og:image:width',
+                        content: metaImage.asset.metadata.dimensions.width
+                      },
+                      {
+                        property: 'og:image:height',
+                        content: metaImage.asset.metadata.dimensions.height
+                      },
+                      {
+                        name: 'twitter:card',
+                        content: 'summary_large_image'
+                      }
+                    ]
+                  : [
+                      {
+                        name: 'twitter:card',
+                        content: 'summary'
+                      }
+                    ]
+              )
+              .concat(
+                keyWords && {
+                  name: 'keywords',
+                  content: keyWords
+                }
               )
               .concat(meta)}
           />

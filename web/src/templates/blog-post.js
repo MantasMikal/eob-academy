@@ -15,8 +15,15 @@ export const query = graphql`
         asset {
           _id
           fluid(maxWidth: 1000) {
-                ...GatsbySanityImageFluid
-              }
+            ...GatsbySanityImageFluid
+          }
+          url
+          metadata {
+            dimensions {
+              width
+              height
+            }
+          }
         }
         alt
       }
@@ -26,7 +33,15 @@ export const query = graphql`
       }
       readTime
       _rawHighlightedText
-      _rawBody
+      _rawBody(resolveReferences: { maxDepth: 5 })
+      seo {
+        seo {
+          focus_keyword
+          focus_synonyms
+          seo_title
+          meta_description
+        }
+      }
     }
   }
 `
@@ -34,10 +49,19 @@ export const query = graphql`
 const BlogPostTemplate = props => {
   const { data, errors } = props
   const post = data && data.post
+  const seo = data && data.post && data.post.seo && data.post.seo.seo
   return (
     <Layout>
-      {errors && <SEO title='GraphQL Error' />}
-      {post && <SEO title={post.title || 'Untitled'} />}
+      {errors && <SEO title="GraphQL Error" />}
+      {post && (
+        <SEO
+          title={seo ? seo.seo_title : post.title}
+          description={seo ? seo.meta_description : ''}
+          keySentence={seo ? seo.focus_keyword : ''}
+          image={post.mainImage && post.mainImage}
+          slug={`/blog/${post.slug.current}`}
+        />
+      )}
 
       {errors && (
         <Container>

@@ -5,8 +5,20 @@ import Type from 'Primitive/Type'
 import Qoute from 'Primitive/Qoute'
 import createGrid from './components/createGrid'
 import createFigure from './components/createFigure'
+import ButtonStandard from 'Primitive/ButtonStandard'
+import SmartLink from 'Primitive/SmartLink'
 
 const serializers = {
+  marks: {
+    button: ({ mark, children }) => {
+      console.log('BTN: ', mark, children)
+      return children[0] && <ButtonStandard target={mark.blank && '_blank'} href={mark.href}>{children}</ButtonStandard>
+    },
+    link: ({ mark, children }) => {
+      console.log('LINK: ', mark, children)
+      return children[0] && <SmartLink target={mark.blank && '_blank'} href={mark.href}>{children}</SmartLink>
+    }
+  },
   types: {
     block(props) {
       switch (props.node.style) {
@@ -42,13 +54,15 @@ const serializers = {
           return <Qoute>{props.children}</Qoute>
 
         default:
-          return props.children[0] !== '' ? (
-            <Type as="p" size="base">
-              {props.children}
-            </Type>
-          ) : (
-            <br />
-          )
+          console.log('Default Block: ', props.node.style, props.children)
+
+          if (props.children.length > 1 || props.children[0] !== '')
+            return (
+              <Type as="p" size="base">
+                {props.children}
+              </Type>
+            )
+          else return <br />
       }
     },
     figure(props) {
@@ -59,11 +73,6 @@ const serializers = {
     },
     grid(props) {
       return createGrid(props.node)
-    }
-  },
-  marks: {
-    button: ({ mark, children }) => {
-      return <div>WIP</div>
     }
   }
 }
