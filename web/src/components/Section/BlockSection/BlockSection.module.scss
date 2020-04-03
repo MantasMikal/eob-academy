@@ -10,6 +10,13 @@
     color: $color-primary-white;
   }
 
+  .PageSection a {
+    color: $color-primary-yellow;
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
   div,
   p {
     color: $color-primary-white;

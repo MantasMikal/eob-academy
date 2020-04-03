@@ -11,11 +11,9 @@ import SmartLink from 'Primitive/SmartLink'
 const serializers = {
   marks: {
     button: ({ mark, children }) => {
-      console.log('BTN: ', mark, children)
       return children[0] && <ButtonStandard target={mark.blank && '_blank'} href={mark.href}>{children}</ButtonStandard>
     },
     link: ({ mark, children }) => {
-      console.log('LINK: ', mark, children)
       return children[0] && <SmartLink target={mark.blank && '_blank'} href={mark.href}>{children}</SmartLink>
     }
   },
@@ -54,8 +52,6 @@ const serializers = {
           return <Qoute>{props.children}</Qoute>
 
         default:
-          console.log('Default Block: ', props.node.style, props.children)
-
           if (props.children.length > 1 || props.children[0] !== '')
             return (
               <Type as="p" size="base">

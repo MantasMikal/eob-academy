@@ -135,6 +135,13 @@
     color: $color-primary-yellow;
   }
 
+  .Content a {
+    color: $color-primary-yellow;
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
   .TitleWrapper {
     &::before {
       background-image: url('/asset/overlay2white.svg');

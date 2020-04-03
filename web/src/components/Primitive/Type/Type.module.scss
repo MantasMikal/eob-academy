@@ -182,6 +182,13 @@
   }
 }
 
+
+.baseSmall, .base {
+  a {
+    text-decoration: underline;
+  }
+}
+
 .baseSmall {
   font-size: spacing(2.4); // 14
   line-height: spacing(2.6); // 16
