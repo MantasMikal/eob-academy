@@ -37,16 +37,13 @@ function SEO({ description, lang, meta, keywords = [], keySentence, title, image
 
         const metaImage = image && image.asset && image.asset.url ? image : data.site.metaImage
 
-        const keyWords = keySentence
+        const metaKeywords = keySentence
           ? keySentence
-          : keywords && keywords.length > 0 && keywords.join(', ')
+          : data.site.keywords && data.site.keywords.length
+          ? data.site.keywords.join(', ')
+          : null
 
         const canonical = slug ? `${data.site.siteUrl}${slug}` : null
-        console.log("SEO -> canonical", canonical)
-
-        console.log('SEO -> metaImage', metaImage)
-        console.log('SEO -> keyWords', keyWords)
-
         return (
           <Helmet
             htmlAttributes={{
@@ -122,10 +119,12 @@ function SEO({ description, lang, meta, keywords = [], keySentence, title, image
                     ]
               )
               .concat(
-                keyWords && {
-                  name: 'keywords',
-                  content: keyWords
-                }
+                metaKeywords
+                  ? {
+                      name: 'keywords',
+                      content: metaKeywords
+                    }
+                  : {}
               )
               .concat(meta)}
           />

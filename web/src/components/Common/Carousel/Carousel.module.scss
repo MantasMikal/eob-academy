@@ -1,10 +1,18 @@
 @import 'setting';
 
 .Root {
-  margin: spacing(6) 0 spacing(12);
+  margin: spacing(4) 0 spacing(3);
+
+  @include mq($breakpoint-tablet) {
+    margin: spacing(4) 0 spacing(12);
+  }
 }
 
 .ControlIcon {
+  svg {
+    width: 20px !important;
+  }
+  
   svg path {
     transition: $duration-shortest $easing-standard;
     // fill: $color-hover;
@@ -13,6 +21,12 @@
   &:hover svg path {
     transition: $duration-shortest $easing-standard;
     fill: $color-hover;
+  }
+
+  @include mq($breakpoint-tablet) {
+    svg {
+      width: 27px !important;
+    }
   }
 }
 
@@ -28,11 +42,22 @@
   // }
 
   .slider-control-topleft {
-    right: 4rem;
+    right: 3rem;
     left: unset !important;
-    top: spacing(-10) !important;
+    top: spacing(-6) !important;
   }
   .slider-control-topright {
-    top: spacing(-10) !important;
+    top: spacing(-6) !important;
+  }
+
+  @include mq($breakpoint-tablet) {
+    .slider-control-topleft {
+      right: 4rem;
+    }
+    
+    .slider-control-topleft,
+    .slider-control-topright {
+      top: spacing(-7) !important;
+    }
   }
 }

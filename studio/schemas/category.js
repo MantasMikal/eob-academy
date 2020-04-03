@@ -21,5 +21,6 @@ export default {
       type: "color",
       title: "Choose badge color"
     }
-  ]
+  ],
+  liveEdit: true
 };

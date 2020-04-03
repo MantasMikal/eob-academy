@@ -8,8 +8,7 @@ import styles from './ZoomableMedia.module.scss'
 import 'react-medium-image-zoom/dist/styles.css'
 
 const imageStyles = {
-  width: '100%',
-  height: '100%'
+  width: '100%'
 }
 
 // Can't be used with ResponsiveMedia

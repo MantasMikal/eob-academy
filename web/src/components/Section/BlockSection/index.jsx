@@ -22,7 +22,7 @@ const Index = ({ blockContent, title }) => {
       withNavSpace
       as="section"
     >
-      <Type as="h2" size="displayLarge" className={styles.Title}>
+      <Type as="h1" size="displayLarge" className={styles.Title}>
         {title}
       </Type>
       <BlockContent blocks={blockContent} />

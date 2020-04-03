@@ -1,16 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { array } from 'prop-types'
 import { cn } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
 import BlogPostPreview from 'Common/BlogPostPreview'
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
+import Badge from 'Common/Badge'
 
 import styles from './BlogSection.module.scss'
 import MasonryLayout from 'Common/MasonryLayout'
 
+const getAllUsedCategories = categories => {
+  const merged = categories.flat()
+  var unique = []
+  var distinct = []
+  for (let i = 0; i < merged.length; i++) {
+    if (!unique[merged[i].title]) {
+      distinct.push(merged[i])
+      unique[merged[i].title] = 1
+    }
+  }
+  return distinct
+}
+
 const BlogSection = ({ blogNodes }) => {
   const isDark = useDarkContext()
+
+  // Collect all categories from posts
+  const categories = []
+  for (let i = 0; i < blogNodes.length; i++) {
+    categories.push(blogNodes[i].category)
+  }
+
+  // Filter unique
+  const usedCategores = getAllUsedCategories(categories)
+
+  const [activeFilters, setFilters] = useState(usedCategores.map(cat => cat.title))
+
+  // Iterate posts and include only ones with active tag
+  let blogposts = []
+  for (let i = 0; i < blogNodes.length; i++) {
+    let shouldInclude = false
+    for (let j = 0; j < blogNodes[i].category.length; j++) {
+      if (activeFilters.includes(blogNodes[i].category[j].title)) shouldInclude = true
+    }
+
+    if (shouldInclude)
+      blogposts.push(
+        <BlogPostPreview
+          key={blogNodes[i].id}
+          className={styles.BlogPostPreview}
+          {...blogNodes[i]}
+          surround
+        />
+      )
+  }
+
+  function handleFilter(filter) {
+    if (activeFilters.includes(filter)) !(activeFilters.length === 1) && setFilters(activeFilters.filter(filt => filt != filter))
+    else setFilters([filter, ...activeFilters])
+  }
+
   return (
     <Container
       className={cn(styles.BlogSection, isDark && styles.isDark)}
@@ -19,21 +69,25 @@ const BlogSection = ({ blogNodes }) => {
       gutter
       spacious
       withNavSpace
-      as='section'
+      as="section"
     >
-      <Type as="h2" size="displayLarge" className={styles.Title}>
+      <Type as="h1" size="displayLarge" className={styles.Title}>
         Blog
       </Type>
-      <MasonryLayout
-        items={blogNodes.map(item => (
-          <BlogPostPreview
-            className={styles.BlogPostPreview}
-            {...item}
-            surround
-          />
-        ))}
-        gap={25}
-      />
+      <div className={styles.CategoryFilter}>
+        {usedCategores &&
+          usedCategores.length > 0 &&
+          usedCategores.map(cat => (
+            <Badge
+              content={cat.title}
+              isInactive={!activeFilters.includes(cat.title)}
+              key={`Filter-${cat.title}`}
+              onClick={() => handleFilter(cat.title)}
+              color={cat.color.hex}
+            />
+          ))}
+      </div>
+      <MasonryLayout items={blogposts} gap={25} />
     </Container>
   )
 }

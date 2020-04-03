@@ -1,12 +1,12 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
-import Slideshow from './slideshow'
 import Type from 'Primitive/Type'
 import Qoute from 'Primitive/Qoute'
 import createGrid from './components/createGrid'
 import createFigure from './components/createFigure'
 import ButtonStandard from 'Primitive/ButtonStandard'
 import SmartLink from 'Primitive/SmartLink'
+import createSlideshow from './components/createSlideshow'
 
 const serializers = {
   marks: {
@@ -65,11 +65,13 @@ const serializers = {
       return createFigure(props.node)
     },
     slideshow(props) {
-      return <Slideshow {...props.node} />
+    // console.log("slideshow -> props", props)
+      
+      return createSlideshow(props.node)
     },
     grid(props) {
       return createGrid(props.node)
-    }
+    },
   }
 }
 

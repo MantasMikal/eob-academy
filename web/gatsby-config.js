@@ -61,6 +61,19 @@ module.exports = {
         overlayDrafts: true
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `EOB Academy`,
+        short_name: `EOBA`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#c8167c`,
+        display: `standalone`,
+        icon: 'src/asset/favicon.png'
+      },
+    },
+    `gatsby-plugin-offline`,
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {

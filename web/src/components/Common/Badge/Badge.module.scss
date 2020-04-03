@@ -8,3 +8,8 @@
 //   margin-left: spacing(1);
   line-height: 0;
 }
+
+
+.isInactive {
+  filter: saturate(0.2);
+}

@@ -25,7 +25,6 @@ const BlogPostPreview = ({
   category
 }) => {
   const isDark = useDarkContext()
-  console.log(category)
   return (
     <Link
       className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}
@@ -55,7 +54,7 @@ const BlogPostPreview = ({
       </div>
       <div className={styles.CategoryWrapper}>
         {category && category.length > 0 &&
-          category.map(cat => <Badge content={cat.title} color={cat.color.hex} />)}
+          category.map(cat => <Badge content={cat.title} key={`Cat-${title}-${cat.title}`} color={cat.color.hex} />)}
       </div>
     </Link>
   )
