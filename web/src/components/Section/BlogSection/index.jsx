@@ -10,6 +10,14 @@ import Badge from 'Common/Badge'
 import styles from './BlogSection.module.scss'
 import MasonryLayout from 'Common/MasonryLayout'
 
+Object.defineProperty(Array.prototype, 'flat', {
+  value: function(depth = 1) {
+    return this.reduce(function (flat, toFlatten) {
+      return flat.concat((Array.isArray(toFlatten) && (depth>1)) ? toFlatten.flat(depth-1) : toFlatten);
+    }, []);
+  }
+});
+
 const getAllUsedCategories = (categories = []) => {
   const merged = categories.flat()
   var unique = []
