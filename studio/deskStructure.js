@@ -13,8 +13,7 @@ const hiddenTypes = [
   "sponsors",
   "coursesPage",
   "course",
-  "seo-plugin",
-  "category"
+  "seo-plugin"
 ];
 
 export default () =>
@@ -43,6 +42,10 @@ export default () =>
         .title("Blog posts")
         .schemaType("post")
         .child(S.documentTypeList("post").title("Blog posts")),
+      S.listItem()
+        .title("Blog Categories")
+        .schemaType("category")
+        .child(S.documentTypeList("category").title("Category")),
       S.listItem()
         .title("Pages")
         .child(
@@ -108,7 +111,7 @@ export default () =>
                     .schemaType("coursesPage")
                     .documentId("alternativeSchoolsCourses")
                 ),
-                S.listItem()
+              S.listItem()
                 .title("Online")
                 .child(
                   S.editor()

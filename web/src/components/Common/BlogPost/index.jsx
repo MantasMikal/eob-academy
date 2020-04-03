@@ -8,6 +8,7 @@ import { useDarkContext } from 'Context/DarkContext'
 import BlockText from 'Primitive/BlockText/BlockText'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import Type from 'Primitive/Type'
+import Badge from 'Common/Badge'
 
 import styles from './BlogPost.module.scss'
 
@@ -20,7 +21,8 @@ const BlogPost = props => {
     title,
     mainImage,
     publishedAt,
-    _rawHighlightedText
+    _rawHighlightedText,
+    category
   } = props
   const isDark = useDarkContext()
   return (
@@ -49,6 +51,10 @@ const BlogPost = props => {
                     {readTime} min read
                   </Type>
                 )}
+              </div>
+              <div className={styles.CategoryWrapper}>
+                {category && category.length > 0 &&
+                  category.map(cat => <Badge content={cat.title} color={cat.color.hex} />)}
               </div>
             </div>
           )}

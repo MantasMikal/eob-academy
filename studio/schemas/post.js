@@ -25,6 +25,14 @@ export default {
       type: "boolean"
     },
     {
+      name: "category",
+      title: "Categories",
+      description:
+        "Can be more than one. First you have to create categories (Sidebar -> Categories)",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }]
+    },
+    {
       name: "readTime",
       title: "Read time",
       type: "number"
@@ -51,13 +59,6 @@ export default {
       description: "Adds highlighted (purple) text at the top of the blog post",
       type: "blockText"
     },
-    // {
-    //   name: "categories",
-    //   title: "Categories",
-    //   type: "array",
-    //   description: 'Can be used in the f',
-    //   of: [{ type: "reference", to: { type: "category" } }]
-    // },
     {
       name: "body",
       title: "Body",
@@ -72,9 +73,9 @@ export default {
       name: "similarPosts",
       title: "Similar posts",
       description: "Similar posts that will be added to the page",
-      type: 'array',
+      type: "array",
       of: [{ type: "reference", to: { type: "post" } }]
-    },
+    }
   ],
   orderings: [
     {

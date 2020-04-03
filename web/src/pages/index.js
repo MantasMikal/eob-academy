@@ -81,6 +81,12 @@ export const query = graphql`
           publishedAt
           isFeatured
           readTime
+          category {
+            color {
+              hex
+            }
+            title
+          }
           mainImage {
             asset {
               fluid(maxWidth: 500) {

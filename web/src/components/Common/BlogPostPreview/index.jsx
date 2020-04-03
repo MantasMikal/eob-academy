@@ -3,13 +3,14 @@ import { string, object, array, arrayOf, bool } from 'prop-types'
 import { Link } from 'gatsby'
 import { getBlogUrl, formatDate } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
+import { cn } from 'lib/helpers'
 
 import BlockText from 'Primitive/BlockText/BlockText'
 import Type from 'Primitive/Type'
 import Media from 'Common/Media'
+import Badge from 'Common/Badge'
 
 import styles from './BlogPostPreview.module.scss'
-import { cn } from 'lib/helpers'
 
 const BlogPostPreview = ({
   slug,
@@ -20,9 +21,11 @@ const BlogPostPreview = ({
   ratio,
   surround,
   className,
-  readTime
+  readTime,
+  category
 }) => {
   const isDark = useDarkContext()
+  console.log(category)
   return (
     <Link
       className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}
@@ -49,6 +52,10 @@ const BlogPostPreview = ({
             {readTime} min read
           </Type>
         )}
+      </div>
+      <div className={styles.CategoryWrapper}>
+        {category && category.length > 0 &&
+          category.map(cat => <Badge content={cat.title} color={cat.color.hex} />)}
       </div>
     </Link>
   )

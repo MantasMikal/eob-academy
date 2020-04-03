@@ -35,6 +35,7 @@ const BlogPostCarouselSection = ({ postNodes, title }) => {
                 publishedAt={node.publishedAt}
                 excerpt={node._rawExcerpt}
                 readTime={node.readTime}
+                category={node.category}
                 surround
               />
             ))}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Container from '../components/container'
+import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPost from 'Common/BlogPost'
 import SEO from '../components/seo'
@@ -11,6 +11,12 @@ export const query = graphql`
     post: sanityPost(id: { eq: $id }) {
       id
       publishedAt
+      category {
+        color {
+          hex
+        }
+        title
+      }
       mainImage {
         asset {
           _id

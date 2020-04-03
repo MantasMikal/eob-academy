@@ -28,13 +28,7 @@ const BlogSection = ({ blogNodes }) => {
         items={blogNodes.map(item => (
           <BlogPostPreview
             className={styles.BlogPostPreview}
-            mainImage={item.mainImage}
-            slug={item.slug}
-            title={item.title}
-            key={item.id}
-            publishedAt={item.publishedAt}
-            excerpt={item._rawExcerpt}
-            readTime={item.readTime}
+            {...item}
             surround
           />
         ))}

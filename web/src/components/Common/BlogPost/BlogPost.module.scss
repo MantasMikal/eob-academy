@@ -93,16 +93,26 @@
 }
 
 .DateWrapper {
-  display: inline-block;
-  background-color: $color-primary-purple;
-  color: $color-primary-white;
   font-weight: 500;
-  padding: spacing(0.5) spacing(0.5);
-  border-radius: $radius-small;
+  display: inline-block;
+  // background-color: $color-primary-purple;
+  color: $color-primary-black-light;
+  // font-weight: 500;
+  // padding: spacing(0.5) spacing(1);
+  // border-radius: $radius-small;
   text-align: right;
   line-height: 0;
-  margin-top: 10px;
+  margin-bottom: spacing(1);
 }
+
+.CategoryWrapper {
+  display: flex;
+  align-content: center;
+  & > div {
+    margin-right: spacing(1);
+  }
+}
+
 
 @include mq($breakpoint-tablet) {
   .Container {

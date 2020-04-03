@@ -17,7 +17,8 @@
     "seo-tools",
     "@sanity/dashboard",
     "dashboard-widget-netlify",
-    "media"
+    "media",
+    "@sanity/color-input"
   ],
   "parts": [
     {
