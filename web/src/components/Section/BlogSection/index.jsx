@@ -11,12 +11,14 @@ import styles from './BlogSection.module.scss'
 import MasonryLayout from 'Common/MasonryLayout'
 
 Object.defineProperty(Array.prototype, 'flat', {
-  value: function(depth = 1) {
+  value: function (depth = 1) {
     return this.reduce(function (flat, toFlatten) {
-      return flat.concat((Array.isArray(toFlatten) && (depth>1)) ? toFlatten.flat(depth-1) : toFlatten);
-    }, []);
-  }
-});
+      return flat.concat(
+        Array.isArray(toFlatten) && depth > 1 ? toFlatten.flat(depth - 1) : toFlatten
+      )
+    }, [])
+  },
+})
 
 const getAllUsedCategories = (categories = []) => {
   const merged = categories.flat()
@@ -33,6 +35,7 @@ const getAllUsedCategories = (categories = []) => {
 
 const BlogSection = ({ blogNodes }) => {
   const isDark = useDarkContext()
+  const [isFirstTime, setFirstTime] = useState(true)
 
   // Collect all categories from posts
   const categories = []
@@ -65,6 +68,12 @@ const BlogSection = ({ blogNodes }) => {
   }
 
   function handleFilter(filter) {
+    if (isFirstTime) {
+      setFilters([filter])
+      setFirstTime(false)
+      return
+    }
+
     if (activeFilters.includes(filter))
       !(activeFilters.length === 1) && setFilters(activeFilters.filter((filt) => filt != filter))
     else setFilters([filter, ...activeFilters])
