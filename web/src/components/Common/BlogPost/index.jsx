@@ -1,18 +1,21 @@
 import React from 'react'
 import { formatDate, cn } from 'lib/helpers'
-import BlockContent from '../../block-content'
+import { useDarkContext } from 'Context/DarkContext'
 import Image from 'gatsby-image'
 
+import BlockContent from '../../block-content'
 import Container from 'Primitive/Container'
-import { useDarkContext } from 'Context/DarkContext'
 import BlockText from 'Primitive/BlockText/BlockText'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import Type from 'Primitive/Type'
 import Badge from 'Common/Badge'
+import Icon from 'Primitive/Icon'
+import SocialShare from '../SocialShare'
 
 import styles from './BlogPost.module.scss'
+import SocialBlock from '../SocialShare/SocialBlock'
 
-const BlogPost = props => {
+const BlogPost = (props) => {
   const {
     _rawBody,
     authors,
@@ -22,9 +25,11 @@ const BlogPost = props => {
     mainImage,
     publishedAt,
     _rawHighlightedText,
-    category
+    category,
+    url,
   } = props
   const isDark = useDarkContext()
+  console.log(url)
   return (
     <article className={cn(styles.Root, isDark && styles.isDark)}>
       {mainImage && mainImage.asset && (
@@ -53,8 +58,9 @@ const BlogPost = props => {
                 )}
               </div>
               <div className={styles.CategoryWrapper}>
-                {category && category.length > 0 &&
-                  category.map(cat => <Badge content={cat.title} color={cat.color.hex} />)}
+                {category &&
+                  category.length > 0 &&
+                  category.map((cat) => <Badge content={cat.title} color={cat.color.hex} />)}
               </div>
             </div>
           )}
@@ -64,6 +70,9 @@ const BlogPost = props => {
             </div>
           )}
           {_rawBody && <BlockContent blocks={_rawBody} />}
+        </div>
+        <div className={styles.SocialShare}>
+          <SocialBlock url={url} />
         </div>
       </Container>
     </article>

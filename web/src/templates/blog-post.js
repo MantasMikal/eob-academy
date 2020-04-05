@@ -52,8 +52,8 @@ export const query = graphql`
   }
 `
 
-const BlogPostTemplate = props => {
-  const { data, errors } = props
+const BlogPostTemplate = (props) => {
+  const { data, errors, pageContext } = props
   const post = data && data.post
   const seo = data && data.post && data.post.seo && data.post.seo.seo
   return (
@@ -75,7 +75,7 @@ const BlogPostTemplate = props => {
         </Container>
       )}
 
-      {post && <BlogPost {...post} />}
+      {post && <BlogPost {...post} url={pageContext.absPath} />}
     </Layout>
   )
 }
