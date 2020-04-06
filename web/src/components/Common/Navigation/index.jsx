@@ -49,9 +49,6 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
       <LinkWrapper highlight className={styles.NavLink} to="/contact/">
         Contact
       </LinkWrapper>
-      <LinkWrapper className={styles.NavLink} to="/about/">
-        About
-      </LinkWrapper>
       <LinkWrapper className={styles.NavLink} to="/blog/">
         Blog
       </LinkWrapper>
@@ -74,9 +71,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
         <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/online-courses/">
             Online Courses
           </LinkWrapper>
-          <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/short-term-courses/">
+          {/* <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/short-term-courses/">
             Short term Courses
-          </LinkWrapper>
+          </LinkWrapper> */}
           <LinkWrapper className={cn(styles.NavLink, styles.DropdownLink)} to="/college-courses/">
             College Courses
           </LinkWrapper>
@@ -85,6 +82,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
           </LinkWrapper>
         </div>
       </div>
+      <LinkWrapper className={styles.NavLink} to="/about/">
+        About
+      </LinkWrapper>
       <button className={styles.ToggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
         {showNav ? (
           <Icon a11yText="Close" type="close" width={24} height={24} />
