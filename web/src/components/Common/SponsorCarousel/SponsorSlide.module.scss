@@ -8,6 +8,10 @@
   margin: 0 auto;
   text-decoration: none;
   color: $color-primary-black;
+
+  &:hover {
+    color: $color-primary-black;
+  }
 }
 
 .Heading {
@@ -25,6 +29,7 @@
 }
 
 .QouteBody {
+
   &::before {
     content: '"';
   }
