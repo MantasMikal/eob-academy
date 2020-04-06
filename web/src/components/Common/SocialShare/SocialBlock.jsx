@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import PropTypes, { string } from 'prop-types'
 import SocialShare from './index'
 import Icon from 'Primitive/Icon'
 import styles from './SocialShare.module.scss'
@@ -20,6 +20,8 @@ const SocialBlock = ({url}) => {
   )
 }
 
-SocialBlock.propTypes = {}
+SocialBlock.propTypes = {
+  url: string
+}
 
 export default SocialBlock
