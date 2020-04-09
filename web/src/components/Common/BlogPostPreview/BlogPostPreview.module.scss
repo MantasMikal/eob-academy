@@ -79,6 +79,10 @@
 }
 
 .isDark {
+  &.Root {
+    background-color: $color-primary-black;
+  }
+
   &.surround {
     background-color: $color-primary-black-light;
   }

@@ -9,12 +9,12 @@
 }
 
 .ImageWrapper {
-  max-width: 200px;
+  max-width: 120px;
   width: 100%;
   height: 100%;
   margin: spacing(3) spacing(2);
   transition: $easing-standard $duration-shorter;
-  
+
   @include mq($breakpoint-tablet) {
     margin: spacing(3) spacing(4);
   }
@@ -22,5 +22,16 @@
   &:hover {
     transform: scale(1.05);
     transition: $easing-standard $duration-shorter;
+  }
+}
+
+.large {
+
+  &.Wrapper {
+    margin-bottom: spacing(2);
+  }
+  
+  .ImageWrapper {
+    max-width: 180px; 
   }
 }

@@ -11,7 +11,7 @@
 
 .Header {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -24,15 +24,18 @@
 }
 
 .FilterLabel {
-  margin-bottom: spacing(1);
+  // margin-bottom: spacing(1);
 }
 
 .CategoryFilter {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+
   & > div {
     cursor: pointer;
     margin-right: spacing(1);
+    margin-top: spacing(1);
     transition: $easing-standard $duration-short;
     &:hover {
       transform: scale(1.03);

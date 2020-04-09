@@ -2,7 +2,7 @@ import React from 'react'
 import createMedia from './createMedia'
 import Grid from 'Common/Grid'
 
-export function createGrid(component) {
+export function createGrid (component) {
   const gridMedia = component.gridMedia
   const colTemplate = component.colTemplate
     ? { gridTemplateColumns: `${component.colTemplate}` }
@@ -23,6 +23,9 @@ export function createGrid(component) {
   const gridComponents = gridMedia.map(item => {
     return createMedia(item)
   })
+
+  console.log("createGrid -> gridComponents", gridComponents)
+  
   return (
     gridComponents && (
       <Grid style={styles} key={component._key}>

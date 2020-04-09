@@ -69,7 +69,7 @@ const AboutPage = props => {
     <Layout>
       <SEO title={page.title} slug='/about' />
       <BlockSection title={page.title} blockContent={page._rawBody || []} />
-      <SponsorsSection title='Supporters' sponsorNodes={sponsorNodes} />
+      <SponsorsSection title='Testimonials' sponsorNodes={sponsorNodes} />
     </Layout>
   )
 }

@@ -93,9 +93,9 @@ const BlogSection = ({ blogNodes }) => {
         Blog
       </Type>
       <div className={styles.CategoryFilterWrapper}>
-        {/* <Type as="p" size="small" className={styles.FilterLabel}>
-          What would you like to read?
-        </Type> */}
+        <Type as="p" size="small" className={styles.FilterLabel}>
+          Pick a tag
+        </Type>
         <div className={styles.CategoryFilter}>
           {usedCategores &&
             usedCategores.length > 0 &&

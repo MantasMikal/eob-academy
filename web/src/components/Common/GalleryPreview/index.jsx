@@ -22,7 +22,7 @@ const GalleryPreview = ({ media, ratio, surround, isZoomable, className }) => {
     <div className={cn(styles.Root, isDark && styles.isDark, surround && styles.surround, className)}>
       {el}
       {media.caption && (
-        <Type size="base" className={styles.Caption}>
+        <Type size="baseSmall" className={styles.Caption}>
           {media.caption}
         </Type>
       )}

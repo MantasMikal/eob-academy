@@ -8,12 +8,12 @@ const {
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-alias-imports`,
+      resolve: 'gatsby-alias-imports',
       options: {
         aliases: {
-          Primitive: `src/components/Primitive`,
-          Common: `src/components/Common`,
-          Context: `src/components/Context`,
+          Primitive: 'src/components/Primitive',
+          Common: 'src/components/Common',
+          Context: 'src/components/Context',
           lib: 'src/lib',
           Section: 'src/components/Section'
         }
@@ -21,7 +21,7 @@ module.exports = {
     },
     'gatsby-plugin-postcss',
     {
-      resolve: `gatsby-plugin-sass`,
+      resolve: 'gatsby-plugin-sass',
       options: {
         includePaths: [
           ...require('backline-mixins').includePaths,
@@ -48,8 +48,8 @@ module.exports = {
         enableImprovedAccessibility: true // Optional. Sets aria-label attribute on pop-up icon for screen readers. Defaults to true.
       }
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',
@@ -62,18 +62,24 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: `EOB Academy`,
-        short_name: `EOBA`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#c8167c`,
-        display: `standalone`,
+        name: 'EOB Academy',
+        short_name: 'EOBA',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#c8167c',
+        display: 'standalone',
         icon: 'src/asset/favicon.png'
-      },
+      }
     },
-    `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-transform-portable-text',
+      options: {
+        extendTypes: [{ typeName: 'SanityPost', contentFieldName: 'body' }]
+      }
+    },
+    'gatsby-plugin-offline'
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
@@ -117,7 +123,7 @@ module.exports = {
  * with directions to enter the info manually or in the environment.
  */
 
-function requireConfig(path) {
+function requireConfig (path) {
   try {
     return require('../studio/sanity.json')
   } catch (e) {

@@ -17,6 +17,7 @@ const Layout = ({
   showNav,
   siteTitle,
   onToggleDark,
+  sponsors,
   isStripVisible,
   hideStrip
 }) => {
@@ -41,7 +42,7 @@ const Layout = ({
       <div className={styles.Content} id="content">
         {children}
       </div>
-      <Footer />
+      <Footer sponsors={sponsors} />
       {/* <footer className={styles.Footer}>
         <div className={styles.FooterWrapper}>
           <Type size="small" className={styles.SiteInfo}>

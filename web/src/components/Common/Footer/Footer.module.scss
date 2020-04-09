@@ -1,6 +1,22 @@
 @import 'setting';
 @import '_backline-mixins';
 
+.Wrapper {
+  position: relative;
+  &::before {
+    content: '';
+    width: 100%;
+    display: block;
+    background-image: url('/asset/overlay2.svg');
+    height: 19px;
+    max-height: 25px;
+
+    @include mq($breakpoint-tabletLandscape) {
+      height: 29px;
+    }
+  }
+}
+
 .Footer {
   padding: spacing(10) spacing(5);
   position: relative;
@@ -32,6 +48,11 @@
   }
 }
 
+.SponsorGrid {
+  padding: spacing(6) 0;
+  background-color: $color-primary-grey-light;
+}
+
 .Branding {
   flex: 1 0;
   margin-right: spacing(6);
@@ -42,11 +63,16 @@
   img {
     width: auto;
     object-fit: contain;
-    height: 150px;
+    height: 100px;
     transition: $duration-short $easing-standard;
+  
     &:hover {
       transform: scale(1.1);
       transition: $duration-short $easing-standard;
+    }
+
+    @include mq($breakpoint-tablet) {
+      height: 150px;
     }
   }
 }
@@ -70,7 +96,7 @@
 }
 
 .LinkListWrapper {
-  flex: 1 1 0;
+  // flex: 1 1 0;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -113,7 +139,13 @@
 }
 
 .isDark {
+  &.Wrapper::before {
+    background-image: url('/asset/overlay2white.svg');
+  }
   .Link {
     color: $color-primary-white;
+  }
+  .SponsorGrid {
+    background-color: $color-primary-black-light;
   }
 }

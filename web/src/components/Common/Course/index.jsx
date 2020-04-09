@@ -11,6 +11,7 @@ import Type from 'Primitive/Type'
 import ButtonStandard from 'Primitive/ButtonStandard'
 
 import styles from './Course.module.scss'
+import ZoomableMedia from '../Zoomable'
 
 //TODO
 // Add button function
@@ -33,7 +34,7 @@ const Course = ({
     >
       {image && image.asset && (
         <div className={styles.Poster}>
-          <GatsbyImage alt={image.alt} fluid={image.asset.fluid} />
+          <ZoomableMedia alt={image.alt} media={image} />
         </div>
       )}
       <div className={styles.CourseDescription}>

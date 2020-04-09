@@ -11,67 +11,103 @@ import createSlideshow from './components/createSlideshow'
 const serializers = {
   marks: {
     button: ({ mark, children }) => {
-      return children[0] && <ButtonStandard override target={mark.blank && '_blank'} href={mark.href}>{children}</ButtonStandard>
+      return (
+        children[0] && (
+          <ButtonStandard override target={mark.blank && '_blank'} href={mark.href}>
+            {children}
+          </ButtonStandard>
+        )
+      )
     },
     link: ({ mark, children }) => {
-      return children[0] && <SmartLink target={mark.blank && '_blank'} href={mark.href}>{children}</SmartLink>
+      return (
+        children[0] && (
+          <SmartLink target={mark.blank && '_blank'} href={mark.href}>
+            {children}
+          </SmartLink>
+        )
+      )
     }
   },
   types: {
-    block(props) {
+    block (props) {
       switch (props.node.style) {
-        case 'h1':
-          return (
-            <Type as="h1" size="titleMedium" padded>
-              {props.children}
-            </Type>
-          )
+        // case 'h1':
+        //   return (
+        //     <Type as='h1' size='titleLarge' padded>
+        //       {props.children}
+        //     </Type>
+        //   )
 
         case 'h2':
           return (
-            <Type as="h2" size="title" padded>
+            <Type as='h2' size='titleLarge' padded>
               {props.children}
             </Type>
           )
 
         case 'h3':
           return (
-            <Type as="h3" size="title" padded>
+            <Type as='h3' size='title' padded>
               {props.children}
             </Type>
           )
 
         case 'h4':
           return (
-            <Type as="h4" size="title" padded>
+            <Type as='h4' size='subtitle' padded>
               {props.children}
             </Type>
           )
 
+        case 'title':
+          return (
+            <Type as='div' size='displayLarge' padded>
+              {props.children}
+            </Type>
+          )
+        case 'large':
+          return (
+            <Type as='h4' size='titleLarge' padded>
+              {props.children}
+            </Type>
+          )
+        case 'medium':
+          return (
+            <Type as='h4' size='titleMedium' padded>
+              {props.children}
+            </Type>
+          )
+        case 'small':
+          return (
+            <Type as='h4' size='title' padded>
+              {props.children}
+            </Type>
+          )
         case 'blockquote':
           return <Qoute>{props.children}</Qoute>
 
         default:
-          if (props.children.length > 1 || props.children[0] !== '')
+          if (props.children.length > 1 || props.children[0] !== '') {
             return (
-              <Type as="p" size="base">
+              <Type as='p' size='base'>
                 {props.children}
               </Type>
             )
-          else return <br />
+          } else return <br />
       }
     },
-    figure(props) {
+    figure (props) {
       return createFigure(props.node)
     },
-    slideshow(props) {
-    // console.log("slideshow -> props", props)
-      
+    slideshow (props) {
+      // console.log("slideshow -> props", props)
+
       return createSlideshow(props.node)
     },
-    grid(props) {
+    grid (props) {
       return createGrid(props.node)
-    },
+    }
   }
 }
 

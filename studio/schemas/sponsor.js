@@ -14,6 +14,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'isFeatured',
+      title: 'Is Featured',
+      type: 'boolean',
+    },
+    {
       name: "qouteHeading",
       title: "Qoute Heading",
       description: "Only sponsors with qoutes appear in the slider",

@@ -33,7 +33,7 @@ const SponsorsSection = ({ sponsorNodes, title }) => {
               />
             ))}
           </div>
-          <SponsorGrid className={styles.SponsorGrid} sponsors={sponsorNodes.sponsorList} />
+          {/* <SponsorGrid className={styles.SponsorGrid} sponsors={sponsorNodes.sponsorList} /> */}
         </Container>
       </Container>
     </div>

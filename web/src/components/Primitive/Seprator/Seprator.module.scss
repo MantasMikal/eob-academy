@@ -5,7 +5,7 @@
   position: relative;
   width: 101%;
   height: 9vw;
-    
+
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='170' viewBox='0 0 1920 170'%3E%3Cg transform='translate(-2720 6425)'%3E%3Cg transform='translate(2720 -6425)'%3E%3Cpath d='M0,2572.593c5.39-.393,253.943-46.16,253.943-46.16l524.491-4.282,887.923,107.459L1920,2572.6V2459.61L0,2465.657Z' transform='translate(0 -2459.61)' fill='%23fbc87c'/%3E%3C/g%3E%3Cpath d='M0,2518.175l422.681,56.682,466.2-55.476,167.929,89.317L1920,2519.381V2463.7H0Z' transform='translate(2720 -8888.698)' fill='%23e72568'/%3E%3Cpath d='M217.016,2505.088,810.5,2597.1l427.973-70.548,472.052,29.1,210.919-33.369v-60.125l-1920-.054.011,61.542Z' transform='translate(2718.556 -8887.102)' fill='%23c8167c'/%3E%3C/g%3E%3C/svg%3E");
@@ -17,7 +17,7 @@
 
 .Strip {
   top: 0.5px;
-  height: 1.3vw;
+  height: 1.8vw;
   max-height: 25px;
   position: absolute;
   width: 101%;
@@ -25,10 +25,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='1.5' height='1.5' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='crispEdges' cx='0.5' cy='0.5' r='0.5' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
-  
-  @include mq($breakpoint-tablet) {
-      top: 0px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='3' height='3' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='crispEdges' cx='2' cy='2' r='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
-  }
 
+  @include mq($breakpoint-tablet) {
+    top: 0px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='3' height='3' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='crispEdges' cx='2' cy='2' r='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
+  }
 }

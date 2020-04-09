@@ -7,23 +7,37 @@ import SmartLink from 'Primitive/SmartLink'
 
 import styles from './SponsorGrid.module.scss'
 
-const SponsorGrid = ({ sponsors, className }) => {
+const Sponsor = ({ sponsor }) => {
   return (
-    <div className={cn(styles.Wrapper, className)}>
-      {sponsors.map((sponsor, i) => (
-        <SmartLink
-          href={sponsor.url}
-          className={styles.ImageWrapper}
-          target="_blank"
-          key={`${sponsor._key}-${i}`}
-        >
-          <GatsbyImage
-            className={styles.SponsorImage}
-            fluid={sponsor.image.asset.fluid}
-            alt={sponsor.image.alt}
-          />
-        </SmartLink>
-      ))}
+    <SmartLink href={sponsor.url} className={styles.ImageWrapper} target='_blank'>
+      <GatsbyImage
+        className={styles.SponsorImage}
+        fluid={sponsor.image.asset.fluid}
+        alt={sponsor.image.alt}
+      />
+    </SmartLink>
+  )
+}
+
+const SponsorGrid = ({ sponsors, className }) => {
+  if (!sponsors) return <> </>
+
+  return (
+    <div className={cn(className)}>
+      <div className={cn(styles.Wrapper, styles.large)}>
+        {sponsors.map((sponsor, i) => {
+          return (
+            sponsor.isFeatured && (
+              <Sponsor isLarge sponsor={sponsor} key={`${sponsor._key}-${i}-featured`} />
+            )
+          )
+        })}
+      </div>
+      <div className={styles.Wrapper}>
+        {sponsors.map((sponsor, i) => {
+          return !sponsor.isFeatured && <Sponsor sponsor={sponsor} key={`${sponsor._key}-${i}`} />
+        })}
+      </div>
     </div>
   )
 }

@@ -16,46 +16,52 @@ const query = graphql`
       city
       country
     }
+    sponsors: allSanitySponsors {
+      edges {
+        node {
+          sponsorList {
+            _key
+            name
+            qouteHeading
+            qouteBody
+            url
+            isFeatured
+            image {
+              asset {
+                fluid(maxWidth: 600) {
+                  ...GatsbySanityImageFluid
+                }
+              }
+              alt
+            }
+          }
+        }
+      }
+    }
   }
 `
 
-function LayoutContainer(props) {
+function LayoutContainer (props) {
   const [showNav, setShowNav] = useState(false)
   const wasDark =
     typeof window !== 'undefined' ? JSON.parse(window.localStorage.getItem('isDark')) : false
   const [isDark, setDark] = useState(wasDark)
-  // console.log("LayoutContainer -> isDark", isDark)
   const [isStripVisible, setStrip] = useState(false)
 
-  // useEffect(() => {
-  //   // Dpuble check if dark
-  //   const wasDark = JSON.parse(window.localStorage.getItem('isDark'))
-  //   console.log("LayoutContainer -> wasDark", wasDark)
-  //   console.log("LayoutContainer -> isDark", isDark)
-  //   setDark(wasDark)
-  // })
-
-  // useEffect(() => {
-  //   console.log('LayoutContainer -> wasVisible', wasVisible)
-  //   if (wasVisible === null) {
-  //     setStrip(true)
-  //   } else setStrip(wasVisible)
-  // }, [])
-
-  function handleDark() {
+  function handleDark () {
     window.localStorage.setItem('isDark', !isDark)
     setDark(!isDark)
   }
 
-  function hideStrip() {
+  function hideStrip () {
     window.localStorage.setItem('isStripVisible', false)
     setStrip(false)
   }
 
-  function handleShowNav() {
+  function handleShowNav () {
     setShowNav(true)
   }
-  function handleHideNav() {
+  function handleHideNav () {
     setShowNav(false)
   }
   return (
@@ -72,6 +78,7 @@ function LayoutContainer(props) {
             'Missing "Company info". Open the studio at http://localhost:3333 and add "Company info" data'
           )
         }
+        console.log(data.sponsors.edges)
         return (
           <DarkContextProvider isDark={isDark}>
             <Layout
@@ -84,6 +91,7 @@ function LayoutContainer(props) {
               onToggleDark={handleDark}
               isStripVisible={isStripVisible}
               hideStrip={hideStrip}
+              sponsors={data.sponsors.edges[0].node.sponsorList}
             />
           </DarkContextProvider>
         )

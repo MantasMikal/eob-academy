@@ -1,9 +1,8 @@
 import React from 'react'
 import { string, object, array, arrayOf, bool } from 'prop-types'
 import { Link } from 'gatsby'
-import { getBlogUrl, formatDate } from 'lib/helpers'
+import { getBlogUrl, formatDate, cn } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
-import { cn } from 'lib/helpers'
 
 import BlockText from 'Primitive/BlockText/BlockText'
 import Type from 'Primitive/Type'
@@ -31,9 +30,9 @@ const BlogPostPreview = ({
       to={getBlogUrl(slug.current)}
     >
       <div className={styles.LeadMediaThumb}>
-        <Media ratio={ratio ? ratio : undefined} media={mainImage} />
+        <Media ratio={ratio || undefined} media={mainImage} />
       </div>
-      <Type as="h3" size="title" className={styles.Title}>
+      <Type as='h3' size='title' className={styles.Title}>
         {title}
       </Type>
       {excerpt && (
@@ -42,19 +41,22 @@ const BlogPostPreview = ({
         </div>
       )}
       <div className={styles.Details}>
-        <Type size="small" as="time" className={styles.Date}>
+        <Type size='small' as='time' className={styles.Date}>
           {formatDate(publishedAt)}
         </Type>
-        •
         {readTime && (
-          <Type size="small" as="span" className={styles.ReadTime}>
+          <Type size='small' as='span' className={styles.ReadTime}>
+            •
             {readTime} min read
           </Type>
         )}
       </div>
       <div className={styles.CategoryWrapper}>
-        {category && category.length > 0 &&
-          category.map(cat => <Badge content={cat.title} key={`Cat-${title}-${cat.title}`} color={cat.color.hex} />)}
+        {category &&
+          category.length > 0 &&
+          category.map(cat => (
+            <Badge content={cat.title} key={`Cat-${title}-${cat.title}`} color={cat.color.hex} />
+          ))}
       </div>
     </Link>
   )

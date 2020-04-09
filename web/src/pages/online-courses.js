@@ -77,7 +77,6 @@ const OnlineCourses = props => {
             description={courseNodes.description ? courseNodes.description : ''}
             slug={'/online-courses'}
           />
-          <h1 hidden>{courseNodes.pageTitle}</h1>
         </>
       )}
       {courseNodes && <CourseSection courseNodes={courseNodes} />}

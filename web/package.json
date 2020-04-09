@@ -19,6 +19,7 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "dependencies": {
+    "@react-google-maps/api": "^1.8.6",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.17",
     "backline-mixins": "^1.0.3",
@@ -40,6 +41,7 @@
     "gatsby-plugin-sharp": "^2.5.1",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-source-sanity": "^5.0.6",
+    "gatsby-transform-portable-text": "0.0.2",
     "gatsby-transformer-sharp": "^2.4.1",
     "node-sass": "^4.13.1",
     "nuka-carousel": "^4.6.6",
