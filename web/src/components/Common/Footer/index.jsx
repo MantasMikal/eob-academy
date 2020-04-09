@@ -14,7 +14,7 @@ import SponsorGrid from 'Common/SponsorGrid'
 
 import styles from './Footer.module.scss'
 
-const Footer = ({ sponsors }) => {
+const Footer = ({ sponsors, social }) => {
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.Wrapper, isDark && styles.isDark)}>
@@ -27,8 +27,8 @@ const Footer = ({ sponsors }) => {
               <img src='/asset/logo.png' alt='EOB Academy' />
             </SmartLink>
             <div className={styles.Social}>
-              <SocialLink type='twitter' text='Follow us @eobacademy' url='#' />
-              <SocialLink type='facebook-round' text='Find us' url='#' />
+              <SocialLink type='twitter' url={social.twitter} />
+              <SocialLink type='facebook-round' url={social.facebook} />
             </div>
           </div>
           <div className={styles.LinkListWrapper}>

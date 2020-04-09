@@ -18,6 +18,7 @@ const Layout = ({
   siteTitle,
   onToggleDark,
   sponsors,
+  social,
   isStripVisible,
   hideStrip
 }) => {
@@ -42,8 +43,8 @@ const Layout = ({
       <div className={styles.Content} id="content">
         {children}
       </div>
-      <Footer sponsors={sponsors} />
-      {/* <footer className={styles.Footer}>
+      <Footer sponsors={sponsors} social={social} />
+    {/* <footer className={styles.Footer}>
         <div className={styles.FooterWrapper}>
           <Type size="small" className={styles.SiteInfo}>
             © {new Date().getFullYear()}, Built with <a href="https://www.sanity.io">Sanity</a>{' '}

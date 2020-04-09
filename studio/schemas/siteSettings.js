@@ -35,6 +35,26 @@ export default {
         })
     },
     {
+      name: "facebookUrl",
+      title: "Facebook Page URL",
+      type: "url",
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ["https", "http"]
+        })
+    },
+    {
+      name: "twitterUrl",
+      title: "Twitter pageURL",
+      type: "url",
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ["https", "http"]
+        })
+    },
+    {
       name: "keywords",
       title: "Keywords",
       type: "array",

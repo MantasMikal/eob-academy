@@ -1,9 +1,9 @@
 @import 'setting';
 @import '_backline-mixins';
 
-.Wrapper {  position: relative;
+.Wrapper {
+  position: relative;
 }
-
 
 .Footer {
   padding: spacing(10) spacing(5);
@@ -47,7 +47,7 @@
 }
 
 .Branding {
-  flex: 1 0;
+  flex: 1 0 200px;
   margin-right: spacing(6);
 }
 
@@ -58,7 +58,7 @@
     object-fit: contain;
     height: 100px;
     transition: $duration-short $easing-standard;
-  
+
     &:hover {
       transform: scale(1.1);
       transition: $duration-short $easing-standard;
@@ -72,20 +72,28 @@
 
 .Social {
   display: flex;
-  flex-direction: column;
-  padding: spacing(5) 0;
+  flex-direction: row;
+  padding: spacing(4) 0;
 
-  a {
-    text-decoration: none;
-    color: $color-primary-black;
-    padding-bottom: spacing(2);
-    display: flex;
-    align-items: center;
-
-    span {
-      padding-right: spacing(5);
+  a, button {
+    padding-right: spacing(2);
+    &:hover {
+      transform: scale(1.03);
+      transition: $easing-standard $duration-short;
     }
   }
+
+  // a {
+  //   text-decoration: none;
+  //   color: $color-primary-black;
+  //   padding-bottom: spacing(2);
+  //   display: flex;
+  //   align-items: center;
+
+  //   span {
+  //     padding-right: spacing(5);
+  //   }
+  // }
 }
 
 .LinkListWrapper {
@@ -95,7 +103,7 @@
   flex-direction: column;
 
   @include mq($breakpoint-tabletLandscape) {
-    flex: 1 1 30rem;
+    flex: 1 1 60%;
     flex-direction: row;
   }
 }
@@ -138,7 +146,8 @@
   .Link {
     color: $color-primary-white;
   }
-  .SponsorGrid, .Seperator {
+  .SponsorGrid,
+  .Seperator {
     background-color: $color-primary-black-light;
   }
 }

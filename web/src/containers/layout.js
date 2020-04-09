@@ -7,6 +7,8 @@ const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
+      facebookUrl
+      twitterUrl
     }
     companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       name
@@ -78,7 +80,10 @@ function LayoutContainer (props) {
             'Missing "Company info". Open the studio at http://localhost:3333 and add "Company info" data'
           )
         }
-        console.log(data.sponsors.edges)
+        const social = {
+          facebook: data.site.facebookUrl || null,
+          twitter: data.site.twitterUrl || null
+        }
         return (
           <DarkContextProvider isDark={isDark}>
             <Layout
@@ -86,6 +91,7 @@ function LayoutContainer (props) {
               showNav={showNav}
               companyInfo={data.companyInfo}
               siteTitle={data.site.title}
+              social={social}
               onHideNav={handleHideNav}
               onShowNav={handleShowNav}
               onToggleDark={handleDark}
