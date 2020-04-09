@@ -9,8 +9,8 @@ import Hero from 'Common/Hero'
 import Seperator from 'Primitive/Seprator'
 import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
-// import GelleryCarouselSection from 'Section/GalleryCarouselSection'
-import SponsorsSection from 'Section/SponsorsSection'
+
+import MapSection from 'Section/MapSection'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -124,8 +124,7 @@ const IndexPage = props => {
 
   // const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
 
-  const sponsorNodes = (data || {}).sponsors ? mapEdgesToNodes(data.sponsors)[0] : []
-
+ 
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -157,9 +156,9 @@ const IndexPage = props => {
         browseMoreHref="/gallery/"
         title="EOB Academy in action"
       /> */}
-      <Seperator />
-
-      <SponsorsSection title="Sponors &amp; Partners" sponsorNodes={sponsorNodes} />
+      {/* <Seperator /> */}
+      {/* <MapSection title='Find us' /> */}
+      {/* <Seperator /> */}
     </Layout>
   )
 }
