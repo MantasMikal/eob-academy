@@ -6,9 +6,9 @@
 }
 
 .Footer {
-  padding: spacing(10) spacing(5);
+  padding: spacing(10) spacing(5) spacing(10);
   position: relative;
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-content: center;
   overflow: hidden;
@@ -20,8 +20,13 @@
   }
 
   @include mq($breakpoint-tabletLandscape) {
-    padding-top: spacing(20);
+    padding-top: spacing(10);
     padding-bottom: spacing(20);
+  }
+
+  @include mq($breakpoint-desktop) {
+    padding-top: spacing(20);
+    padding-bottom: spacing(30);
   }
 }
 
@@ -119,7 +124,7 @@
 .LinkList {
   display: flex;
   flex-direction: column;
-  padding: 0 0 spacing(2) 0;
+  padding: 0 0 spacing(4) 0;
 
   a {
     text-decoration: none;
