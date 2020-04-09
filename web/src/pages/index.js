@@ -10,7 +10,7 @@ import Seperator from 'Primitive/Seprator'
 import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
 
-import MapSection from 'Section/MapSection'
+// import MapSection from 'Section/MapSection'
 
 export const query = graphql`
   query IndexPageQuery {
