@@ -1,21 +1,9 @@
 @import 'setting';
 @import '_backline-mixins';
 
-.Wrapper {
-  position: relative;
-  &::before {
-    content: '';
-    width: 100%;
-    display: block;
-    background-image: url('/asset/overlay2.svg');
-    height: 19px;
-    max-height: 25px;
-
-    @include mq($breakpoint-tabletLandscape) {
-      height: 29px;
-    }
-  }
+.Wrapper {  position: relative;
 }
+
 
 .Footer {
   padding: spacing(10) spacing(5);
@@ -50,6 +38,11 @@
 
 .SponsorGrid {
   padding: spacing(6) 0;
+  background-color: $color-primary-grey-light;
+  position: relative;
+}
+
+.Seperator {
   background-color: $color-primary-grey-light;
 }
 
@@ -145,7 +138,7 @@
   .Link {
     color: $color-primary-white;
   }
-  .SponsorGrid {
+  .SponsorGrid, .Seperator {
     background-color: $color-primary-black-light;
   }
 }

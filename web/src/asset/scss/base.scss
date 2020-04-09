@@ -43,6 +43,11 @@
     }
   }
 
+  *::selection{
+    background-color: $color-primary-red;
+    color: white;
+  }
+
   // Gracefully add Typekit fonts
   .wf-loading {
     opacity: 0;

@@ -18,8 +18,8 @@ const Footer = ({ sponsors }) => {
   const isDark = useDarkContext()
   return (
     <div className={cn(styles.Wrapper, isDark && styles.isDark)}>
+      <Seperator className={styles.Seperator} />
       {sponsors && <SponsorGrid className={styles.SponsorGrid} sponsors={sponsors} />}
-      <Seperator />
       <footer className={cn(styles.Footer)}>
         <Container gutter center size='wide' className={styles.Container}>
           <div className={styles.Branding}>
