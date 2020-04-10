@@ -1,6 +1,7 @@
 import React from 'react'
 import { arrayOf, shape, object, string } from 'prop-types'
 import GatsbyImage from 'gatsby-image'
+import { useDarkContext } from 'Context/DarkContext'
 import { cn } from 'lib/helpers'
 
 import SmartLink from 'Primitive/SmartLink'
@@ -21,10 +22,10 @@ const Sponsor = ({ sponsor }) => {
 }
 
 const SponsorGrid = ({ sponsors, className }) => {
+  const isDark = useDarkContext()
   if (!sponsors) return <> </>
-
   return (
-    <div className={cn(className)}>
+    <div className={cn(isDark && styles.isDark, className)}>
       <Type size='title' className={styles.Title}>
         Partners
       </Type>
