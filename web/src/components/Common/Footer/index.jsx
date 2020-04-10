@@ -29,6 +29,8 @@ const Footer = ({ sponsors, social }) => {
             <div className={styles.Social}>
               <SocialLink type='twitter' url={social.twitter} />
               <SocialLink type='facebook-round' url={social.facebook} />
+              <SocialLink type='youtube' url={social.youtube} />
+              <SocialLink type='instagram' url={social.instagram} />
             </div>
           </div>
           <div className={styles.LinkListWrapper}>

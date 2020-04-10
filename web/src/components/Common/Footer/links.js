@@ -1,49 +1,45 @@
 export default [
   [
     {
-      text: 'About Us',
-      url: '#'
+      text: 'Home',
+      url: '/'
     },
     {
-      text: 'Prince\'s Trust Courses',
-      url: '#'
+      text: 'Courses',
+      url: '/courses'
     },
     {
-      text: 'Events',
-      url: '#'
+      text: 'Gallery',
+      url: '/gallery'
     },
     {
       text: 'Blog',
-      url: '#'
-    }
-  ],
-  [
-    {
-      text: 'Video',
-      url: '#'
+      url: '/blog'
     },
-    {
-      text: 'External Press',
-      url: '#'
-    },
-    {
-      text: 'Education',
-      url: '#'
-    },
-    {
-      text: 'Case Studies',
-      url: '#'
-    },
-    {
-      text: 'Industry',
-      url: '#'
-    }
-  ],
-  [
     {
       text: 'Contact',
+      url: '/contact'
+    }
+  ],
+  [
+    {
+      text: 'Facebook',
       url: '#'
     },
+    {
+      text: 'Youtube',
+      url: '#'
+    },
+    {
+      text: 'Instagram',
+      url: '#'
+    },
+    {
+      text: 'Twitter',
+      url: '#'
+    }
+  ],
+  [
     {
       text: 'Website Terms and Conditions',
       url: '#'

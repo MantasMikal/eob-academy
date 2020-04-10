@@ -16,6 +16,26 @@ export default {
       of: [{ type: 'location' }]
     },
     {
+      name: 'instagramUrl',
+      title: 'Instagram Page URL',
+      type: 'url',
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['https', 'http']
+        })
+    },
+    {
+      name: 'youtubeUrl',
+      title: 'Youtube Page URL',
+      type: 'url',
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['https', 'http']
+        })
+    },
+    {
       name: 'facebookUrl',
       title: 'Facebook Page URL',
       type: 'url',
