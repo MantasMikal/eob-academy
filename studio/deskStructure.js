@@ -1,6 +1,7 @@
 import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings, MdGroup, MdLibraryBooks, MdHome } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
+import { FiFileText, FiBook } from 'react-icons/fi'
 import { TiContacts } from 'react-icons/ti'
 
 const hiddenTypes = [
@@ -33,14 +34,14 @@ export default () =>
         )
         .icon(MdSettings),
       S.listItem()
-        .title('Contact Page')
+        .title('Company Info')
         .child(
           S.editor()
-            .id('contactPage')
-            .schemaType('contactPage')
-            .documentId('contactPage')
+            .id('companyInfo')
+            .schemaType('companyInfo')
+            .documentId('companyInfo')
         )
-        .icon(TiContacts),
+        .icon(MdBusiness),
       S.listItem()
         .title('Home Page')
         .child(
@@ -51,22 +52,14 @@ export default () =>
         )
         .icon(MdHome),
       S.listItem()
-        .title('Company Info')
+        .title('Contact Page')
         .child(
           S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
+            .id('contactPage')
+            .schemaType('contactPage')
+            .documentId('contactPage')
         )
-        .icon(MdBusiness),
-      S.listItem()
-        .title('Blog posts')
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
-      S.listItem()
-        .title('Blog Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Category')),
+        .icon(TiContacts),
       S.listItem()
         .title('Pages')
         .child(
@@ -81,18 +74,18 @@ export default () =>
                     .schemaType('page')
                     .documentId('about')
                 )
-                .icon(FaFile)
-              // S.listItem()
-              //   .title('Contact')
-              //   .child(
-              //     S.editor()
-              //       .id('contactPage')
-              //       .schemaType('page')
-              //       .documentId('contact')
-              //   )
-              //   .icon(FaFile)
             ])
-        ),
+        )
+        .icon(FaFile),
+      S.listItem()
+        .title('Blog posts')
+        .schemaType('post')
+        .child(S.documentTypeList('post').title('Blog posts'))
+        .icon(FiFileText),
+      S.listItem()
+        .title('Blog Categories')
+        .schemaType('category')
+        .child(S.documentTypeList('category').title('Category')),
       S.listItem()
         .title('Sponsors')
         .child(
@@ -142,6 +135,6 @@ export default () =>
                 )
             ])
         )
-        .icon(MdLibraryBooks),
+        .icon(FiBook),
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
     ])

@@ -1,7 +1,10 @@
+import { FiFileText } from 'react-icons/fi'
+
 export default {
   name: "post",
   title: "Blog Post",
   type: "document",
+  icon: FiFileText,
   fields: [
     {
       name: "title",
