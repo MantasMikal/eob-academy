@@ -1,3 +1,3 @@
 # TBA WIP
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/91134dac-be60-4c5a-97c1-b667d784b222/deploy-status)](https://app.netlify.com/sites/eob-academy/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b190ed4-c8fe-4748-98c7-498ed8bf59a7/deploy-status)](https://app.netlify.com/sites/eobacademy/deploys)
