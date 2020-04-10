@@ -10,7 +10,20 @@ import Type from 'Primitive/Type'
 
 import styles from './ContactSection.module.scss'
 
-const ContactSection = ({ blocks, locations, title }) => {
+const createVenue = _rawVenue => (
+  <div className={styles.Venue} key={_rawVenue._key}>
+    <div className={styles.BlockWrapper}>
+      <BlockContent blocks={_rawVenue.body} />
+    </div>
+    <div className={styles.MapWrapper}>
+      {_rawVenue.location && (
+        <Map center={_rawVenue.location} mpaId={_rawVenue._key} locations={[_rawVenue.location]} />
+      )}
+    </div>
+  </div>
+)
+
+const ContactSection = ({ body, venues, title }) => {
   const isDark = useDarkContext()
   return (
     <Container
@@ -19,20 +32,17 @@ const ContactSection = ({ blocks, locations, title }) => {
       center
       gutter
       spacious
-      withNavSpace
       as='section'
     >
       <Type as='h1' size='displayLarge' className={styles.Title}>
         {title}
       </Type>
-      <div className={styles.ContactSection}>
-        <div className={styles.BlockWrapper}>
-          <BlockContent blocks={blocks} />
+      {body && (
+        <div className={styles.Body}>
+          <BlockContent blocks={body} />
         </div>
-        <div className={styles.MapWrapper}>
-          <Map locations={locations} />
-        </div>
-      </div>
+      )}
+      <div className={styles.VenueWrapper}>{venues && venues.map(venue => createVenue(venue))}</div>
     </Container>
   )
 }

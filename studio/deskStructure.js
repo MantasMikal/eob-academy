@@ -1,126 +1,147 @@
-import S from "@sanity/desk-tool/structure-builder";
-import { MdBusiness, MdSettings, MdGroup, MdLibraryBooks } from "react-icons/md";
-import { FaFile } from "react-icons/fa";
+import S from '@sanity/desk-tool/structure-builder'
+import { MdBusiness, MdSettings, MdGroup, MdLibraryBooks, MdHome } from 'react-icons/md'
+import { FaFile } from 'react-icons/fa'
+import { TiContacts } from 'react-icons/ti'
 
 const hiddenTypes = [
-  "category",
-  "companyInfo",
-  "page",
-  "person",
-  "post",
-  "project",
-  "siteSettings",
-  "sponsors",
-  "coursesPage",
-  "course",
-  "seo-plugin"
-];
+  'category',
+  'companyInfo',
+  'page',
+  'person',
+  'post',
+  'project',
+  'siteSettings',
+  'sponsors',
+  'coursesPage',
+  'course',
+  'seo-plugin',
+  'contactPage',
+  'homePage'
+]
 
 export default () =>
   S.list()
-    .title("Content")
+    .title('Content')
     .items([
       S.listItem()
-        .title("Site Settings")
+        .title('Site Settings')
         .child(
           S.editor()
-            .id("siteSettings")
-            .schemaType("siteSettings")
-            .documentId("siteSettings")
+            .id('siteSettings')
+            .schemaType('siteSettings')
+            .documentId('siteSettings')
         )
         .icon(MdSettings),
       S.listItem()
-        .title("Company Info")
+        .title('Contact Page')
         .child(
           S.editor()
-            .id("companyInfo")
-            .schemaType("companyInfo")
-            .documentId("companyInfo")
+            .id('contactPage')
+            .schemaType('contactPage')
+            .documentId('contactPage')
+        )
+        .icon(TiContacts),
+      S.listItem()
+        .title('Home Page')
+        .child(
+          S.editor()
+            .id('homePage')
+            .schemaType('homePage')
+            .documentId('homePage')
+        )
+        .icon(MdHome),
+      S.listItem()
+        .title('Company Info')
+        .child(
+          S.editor()
+            .id('companyInfo')
+            .schemaType('companyInfo')
+            .documentId('companyInfo')
         )
         .icon(MdBusiness),
       S.listItem()
-        .title("Blog posts")
-        .schemaType("post")
-        .child(S.documentTypeList("post").title("Blog posts")),
+        .title('Blog posts')
+        .schemaType('post')
+        .child(S.documentTypeList('post').title('Blog posts')),
       S.listItem()
-        .title("Blog Categories")
-        .schemaType("category")
-        .child(S.documentTypeList("category").title("Category")),
+        .title('Blog Categories')
+        .schemaType('category')
+        .child(S.documentTypeList('category').title('Category')),
       S.listItem()
-        .title("Pages")
+        .title('Pages')
         .child(
           S.list()
-            .title("Pages")
+            .title('Pages')
             .items([
               S.listItem()
-                .title("About")
+                .title('About')
                 .child(
                   S.editor()
-                    .id("aboutPage")
-                    .schemaType("page")
-                    .documentId("about")
-                )
-                .icon(FaFile),
-              S.listItem()
-                .title("Contact")
-                .child(
-                  S.editor()
-                    .id("contactPage")
-                    .schemaType("page")
-                    .documentId("contact")
+                    .id('aboutPage')
+                    .schemaType('page')
+                    .documentId('about')
                 )
                 .icon(FaFile)
+              // S.listItem()
+              //   .title('Contact')
+              //   .child(
+              //     S.editor()
+              //       .id('contactPage')
+              //       .schemaType('page')
+              //       .documentId('contact')
+              //   )
+              //   .icon(FaFile)
             ])
         ),
       S.listItem()
-        .title("Sponsors")
+        .title('Sponsors')
         .child(
           S.editor()
-            .id("sponsors")
-            .schemaType("sponsors")
-            .documentId("sponsors")
+            .id('sponsors')
+            .schemaType('sponsors')
+            .documentId('sponsors')
         )
         .icon(MdGroup),
       S.listItem()
-        .title("Courses")
+        .title('Courses')
         .child(
           S.list()
-            .title("Courses")
+            .title('Courses')
             .items([
               S.listItem()
                 .title("Prince's trust courses")
                 .child(
                   S.editor()
-                    .id("princesTrustCourses")
-                    .schemaType("coursesPage")
-                    .documentId("princesTrustCourses")
+                    .id('princesTrustCourses')
+                    .schemaType('coursesPage')
+                    .documentId('princesTrustCourses')
                 ),
               S.listItem()
-                .title("College Courses")
+                .title('College Courses')
                 .child(
                   S.editor()
-                    .id("collegeCourses")
-                    .schemaType("coursesPage")
-                    .documentId("collegeCourses")
+                    .id('collegeCourses')
+                    .schemaType('coursesPage')
+                    .documentId('collegeCourses')
                 ),
               S.listItem()
-                .title("Alternative Schools Provision")
+                .title('Alternative Schools Provision')
                 .child(
                   S.editor()
-                    .id("alternativeSchoolsCourses")
-                    .schemaType("coursesPage")
-                    .documentId("alternativeSchoolsCourses")
+                    .id('alternativeSchoolsCourses')
+                    .schemaType('coursesPage')
+                    .documentId('alternativeSchoolsCourses')
                 ),
               S.listItem()
-                .title("Online")
+                .title('Online')
                 .child(
                   S.editor()
-                    .id("onlineCourses")
-                    .schemaType("coursesPage")
-                    .documentId("onlineCourses")
+                    .id('onlineCourses')
+                    .schemaType('coursesPage')
+                    .documentId('onlineCourses')
                 )
             ])
         )
         .icon(MdLibraryBooks),
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
-    ]);
+    ])

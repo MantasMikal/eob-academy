@@ -8,12 +8,13 @@
 .Footer {
   padding: spacing(10) spacing(5) spacing(10);
   position: relative;
-  min-height: 70vh;
   display: flex;
   align-content: center;
   overflow: hidden;
   color: $color-primary-black;
   transition: $duration-shortest;
+  min-height: 60vh;
+  // background-color: $color-primary-grey-light;
   a:hover {
     color: $color-hover;
     transition: $duration-shortest;
@@ -42,7 +43,7 @@
 }
 
 .SponsorGrid {
-  padding: spacing(6) 0 0;
+  padding: spacing(6) 0 spacing(4);
   // background-color: $color-primary-grey-light;
   position: relative;
 }

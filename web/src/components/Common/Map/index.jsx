@@ -1,11 +1,12 @@
 import React from 'react'
+import { arrayOf, number, string, shape } from 'prop-types'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
+import { useDarkContext } from 'Context/DarkContext'
 
 import darkStyles from './dark'
 import lightStyles from './light'
-import { useDarkContext } from 'Context/DarkContext'
 
-const Map = ({ locations, mapId }) => {
+const Map = ({ locations, mapId, center }) => {
   const isDark = useDarkContext()
   return (
     <LoadScript id='script-loader' googleMapsApiKey={process.env.GATSBY_GOOGLE_MAPS_API}>
@@ -17,21 +18,31 @@ const Map = ({ locations, mapId }) => {
         }}
         options={{ styles: isDark ? darkStyles : lightStyles }}
         zoom={8}
-        center={{
+        center={center ? center :{
           lat: 51.36537,
           lng: -0.16077
         }}
       >
         {locations &&
-          locations.map(loc => {
-            const pos = {
-              lat: loc.lat,
-              lng: loc.lng
-            }
-            return <Marker position={pos} key={`MapLocation-${pos.lat}-${pos.lng}`} />
-          })}
+          locations.map(loc => <Marker position={loc} key={`MapLocation-${loc.lat}-${loc.lng}`} />)}
       </GoogleMap>
     </LoadScript>
   )
 }
+
+Map.propTypes = {
+  locations: arrayOf([
+    shape({
+      lng: number,
+      lat: number
+    })
+  ]),
+  mapId: string,
+  center: shape({
+    lng: number,
+    lat: number
+  })
+}
+
+
 export default Map

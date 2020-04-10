@@ -9,6 +9,7 @@ import Hero from 'Common/Hero'
 import Seperator from 'Primitive/Seprator'
 import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
+import BlockSection from 'Section/BlockSection'
 
 // import MapSection from 'Section/MapSection'
 
@@ -42,6 +43,10 @@ export const query = graphql`
     #     }
     #   }
     # }
+
+    sections: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
+      _rawSections(resolveReferences: { maxDepth: 10 })
+    }
 
     sponsors: allSanitySponsors {
       edges {
@@ -122,9 +127,10 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
 
+  const sections = data.sections._rawSections
+  console.log('sections', sections)
   // const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
 
- 
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -147,9 +153,16 @@ const IndexPage = props => {
       <Seperator />
       <BlogPostCarouselSection
         postNodes={postNodes}
-        browseMoreHref="/blog/"
-        title="Featured Blog Posts"
+        browseMoreHref='/blog/'
+        title='Featured Blog Posts'
       />
+      {sections &&
+        sections.map(section => (
+          <>
+            <Seperator />
+            <BlockSection blockContent={section.body} title={section.title} />
+          </>
+        ))}
       {/* <Seperator /> */}
       {/* <GelleryCarouselSection
         galleryNodes={galleryNodes}

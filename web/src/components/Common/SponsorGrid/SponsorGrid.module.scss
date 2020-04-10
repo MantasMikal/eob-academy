@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.Title {
+  text-align: center;
+  padding: spacing(1) 0 0;
+}
+
 .ImageWrapper {
   max-width: 120px;
   width: 100%;
@@ -25,12 +30,16 @@
   }
 }
 
-.large {
-
-  &.Wrapper {
-    margin-bottom: spacing(2);
+.isDark {
+  .Title {
+    color: $color-primary-white;
   }
-  
+}
+
+.large {
+  &.Wrapper {
+    margin-bottom: spacing(8);
+  }
   .ImageWrapper {
     max-width: 180px; 
   }

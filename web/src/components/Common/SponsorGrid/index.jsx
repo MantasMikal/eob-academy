@@ -4,6 +4,7 @@ import GatsbyImage from 'gatsby-image'
 import { cn } from 'lib/helpers'
 
 import SmartLink from 'Primitive/SmartLink'
+import Type from 'Primitive/Type'
 
 import styles from './SponsorGrid.module.scss'
 
@@ -24,6 +25,9 @@ const SponsorGrid = ({ sponsors, className }) => {
 
   return (
     <div className={cn(className)}>
+      <Type size='title' className={styles.Title}>
+        Partners
+      </Type>
       <div className={cn(styles.Wrapper, styles.large)}>
         {sponsors.map((sponsor, i) => {
           return (
@@ -33,6 +37,9 @@ const SponsorGrid = ({ sponsors, className }) => {
           )
         })}
       </div>
+      <Type size='title' className={styles.Title}>
+        Supporters
+      </Type>
       <div className={styles.Wrapper}>
         {sponsors.map((sponsor, i) => {
           return !sponsor.isFeatured && <Sponsor sponsor={sponsor} key={`${sponsor._key}-${i}`} />

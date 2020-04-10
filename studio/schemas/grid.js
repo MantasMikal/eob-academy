@@ -29,14 +29,14 @@ export default {
       type: 'string'
     },
     {
-      name: 'rowGap',
-      title: 'Row Gap',
+      name: 'colGap',
+      title: 'Column Gap',
       description: 'eg.: "10px". Defines size of gap in the grid. Available units: px, em, %, rem',
       type: 'string'
     },
     {
-      name: 'colGap',
-      title: 'Column Gap',
+      name: 'rowGap',
+      title: 'Row Gap',
       description: 'eg.: "10px". Defines size of gap in the grid. Available units: px, em, %, rem',
       type: 'string'
     },

@@ -6,7 +6,16 @@
 }
 
 .ContactSection {
+}
+
+
+.Body {
+  margin-bottom: spacing(6);
+}
+
+.Venue {
   display: block;
+  margin-bottom: spacing(6);
 
   @include mq($breakpoint-tabletLandscape) {
     display: flex;
@@ -15,12 +24,16 @@
 
 .MapWrapper {
   flex: 1 1 50%;
-  height: 500px;
+  height: 300px;
 }
 
 .BlockWrapper {
   flex: 1 1 50%;
-  margin-right: spacing(4);
+  margin-right: spacing(3);
+
+  @include mq($breakpoint-tabletLandscape) {
+    margin-right: spacing(6);
+  }
 }
 
 .isDark {
@@ -28,7 +41,7 @@
     color: $color-primary-white;
   }
 
-  .BlockWrapper a {
+  .BlockWrapper, .Body a {
     color: $color-primary-yellow;
     &:hover {
       color: $color-primary-red;
