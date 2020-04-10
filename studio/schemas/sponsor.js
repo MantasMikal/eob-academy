@@ -1,3 +1,6 @@
+// TODO
+// There's a typo in quotes
+
 export default {
   name: "sponsor",
   title: "Sponsor",
@@ -20,13 +23,13 @@ export default {
     },
     {
       name: "qouteHeading",
-      title: "Qoute Heading",
-      description: "Only sponsors with qoutes appear in the slider",
+      title: "Quote Heading",
+      description: "Only sponsors with quotes appear in the slider",
       type: "string"
     },
     {
       name: "qouteBody",
-      title: "Qoute Body",
+      title: "Quote Body",
       type: "text"
     },
     {

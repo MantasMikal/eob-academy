@@ -9,39 +9,38 @@ export default {
   icon: MdBusiness,
   fields: [
     {
-      name: 'name',
-      title: 'Company name',
-      type: 'string'
+      name: 'locations',
+      title: 'Locations',
+      description: 'These are used in contact page',
+      type: 'array',
+      of: [{ type: 'location' }]
     },
     {
-      name: 'email',
-      title: 'Email',
-      type: 'email'
+      name: 'facebookUrl',
+      title: 'Facebook Page URL',
+      type: 'url',
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['https', 'http']
+        })
     },
     {
-      name: 'address1',
-      title: 'Address 1',
-      type: 'string'
-    },
-    {
-      name: 'address2',
-      title: 'Address 2',
-      type: 'string'
-    },
-    {
-      name: 'zipCode',
-      title: 'ZIP Code',
-      type: 'string'
-    },
-    {
-      name: 'city',
-      title: 'City',
-      type: 'string'
-    },
-    {
-      name: 'country',
-      title: 'Country',
-      type: 'string'
+      name: 'twitterUrl',
+      title: 'Twitter pageURL',
+      type: 'url',
+      validation: Rule =>
+        Rule.uri({
+          allowRelative: true,
+          scheme: ['https', 'http']
+        })
     }
-  ]
+  ],
+  preview: {
+    prepare ({ title = 'Company Info' }) {
+      return {
+        title
+      }
+    }
+  }
 }

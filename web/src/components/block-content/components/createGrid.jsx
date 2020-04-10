@@ -22,10 +22,7 @@ export function createGrid (component) {
   // Build content
   const gridComponents = gridMedia.map(item => {
     return createMedia(item)
-  })
-
-  console.log("createGrid -> gridComponents", gridComponents)
-  
+  })  
   return (
     gridComponents && (
       <Grid style={styles} key={component._key}>

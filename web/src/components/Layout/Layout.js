@@ -26,8 +26,8 @@ const Layout = ({
   return (
     <div className={cn(styles.Wrapper, isDark && styles.isDark)}>
       <A11yNavigation>
-        <a href="#content">Jump to main content</a>
-        <a href="#navigation">Jump to primary navigation</a>
+        <a href='#content'>Jump to main content</a>
+        <a href='#navigation'>Jump to primary navigation</a>
       </A11yNavigation>
       <Navigation
         siteTitle={siteTitle}
@@ -35,25 +35,13 @@ const Layout = ({
         onShowNav={onShowNav}
         showNav={showNav}
         onToggleDark={onToggleDark}
-        id="navigation"
+        id='navigation'
       />
-      <StrpLine
-        text="We are fully operational working with students online - if the Coronavirus is still affecting our lives past September 2020, all of our new students will have access to tutors and be able to work remotely through our online tools. "
-      />
-      <div className={styles.Content} id="content">
+      <StrpLine text='We are fully operational working with students online - if the Coronavirus is still affecting our lives past September 2020, all of our new students will have access to tutors and be able to work remotely through our online tools. ' />
+      <div className={styles.Content} id='content'>
         {children}
       </div>
       <Footer sponsors={sponsors} social={social} />
-    {/* <footer className={styles.Footer}>
-        <div className={styles.FooterWrapper}>
-          <Type size="small" className={styles.SiteInfo}>
-            © {new Date().getFullYear()}, Built with <a href="https://www.sanity.io">Sanity</a>{' '}
-            &amp;
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </Type>
-        </div>
-      </footer> */}
     </div>
   )
 }

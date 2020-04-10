@@ -1,0 +1,42 @@
+@import 'setting';
+
+.Title {
+  margin-bottom: spacing(3);
+  //   margin-left: spacing(1);
+}
+
+.ContactSection {
+  display: block;
+
+  @include mq($breakpoint-tabletLandscape) {
+    display: flex;
+  }
+}
+
+.MapWrapper {
+  flex: 1 1 50%;
+  height: 500px;
+}
+
+.BlockWrapper {
+  flex: 1 1 50%;
+  margin-right: spacing(4);
+}
+
+.isDark {
+  .Title {
+    color: $color-primary-white;
+  }
+
+  .BlockWrapper a {
+    color: $color-primary-yellow;
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
+  div,
+  p {
+    color: $color-primary-white;
+  }
+}

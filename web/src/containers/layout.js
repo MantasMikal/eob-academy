@@ -7,17 +7,13 @@ const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
+    }
+
+    companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       facebookUrl
       twitterUrl
     }
-    companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
-      name
-      address1
-      address2
-      zipCode
-      city
-      country
-    }
+
     sponsors: allSanitySponsors {
       edges {
         node {
@@ -81,15 +77,14 @@ function LayoutContainer (props) {
           )
         }
         const social = {
-          facebook: data.site.facebookUrl || null,
-          twitter: data.site.twitterUrl || null
+          facebook: data.companyInfo.facebookUrl || null,
+          twitter: data.companyInfo.twitterUrl || null
         }
         return (
           <DarkContextProvider isDark={isDark}>
             <Layout
               {...props}
               showNav={showNav}
-              companyInfo={data.companyInfo}
               siteTitle={data.site.title}
               social={social}
               onHideNav={handleHideNav}

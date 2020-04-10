@@ -1,40 +1,37 @@
 import React from 'react'
-import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 
-const options = {
-  zoomControlOptions: {
-    // position: window.google.maps.ControlPosition.RIGHT_CENTER, // ,
-    // ...otherOptions
-  },
-}
+import darkStyles from './dark'
+import lightStyles from './light'
+import { useDarkContext } from 'Context/DarkContext'
 
-const Map = (props) => {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'YAIzaSyCMFqOiAe1JqNy91WAdg7qORt4HnRx-fsc', // ,
-    // ...otherOptions
-  })
-
-  const renderMap = () => {
-    // wrapping to a function is useful in case you want to access `window.google`
-    // to eg. setup options or create latLng object, it won't be available otherwise
-    // feel free to render directly if you don't need that
-    const onLoad = React.useCallback(function onLoad(mapInstance) {
-      // do something with map Instance
-    })
-    return (
-      <GoogleMap options={options} onLoad={onLoad}>
-        {
-          // ...Your map components
-        }
+const Map = ({ locations, mapId }) => {
+  const isDark = useDarkContext()
+  return (
+    <LoadScript id='script-loader' googleMapsApiKey={process.env.GATSBY_GOOGLE_MAPS_API}>
+      <GoogleMap
+        id={mapId || 'untitled-map'}
+        mapContainerStyle={{
+          height: '100%',
+          width: '100%'
+        }}
+        options={{ styles: isDark ? darkStyles : lightStyles }}
+        zoom={8}
+        center={{
+          lat: 51.36537,
+          lng: -0.16077
+        }}
+      >
+        {locations &&
+          locations.map(loc => {
+            const pos = {
+              lat: loc.lat,
+              lng: loc.lng
+            }
+            return <Marker position={pos} key={`MapLocation-${pos.lat}-${pos.lng}`} />
+          })}
       </GoogleMap>
-    )
-  }
-
-  if (loadError) {
-    return <div>Map cannot be loaded right now, sorry.</div>
-  }
-
-  return isLoaded ? renderMap() : <div>Loading...</div>
+    </LoadScript>
+  )
 }
-
 export default Map

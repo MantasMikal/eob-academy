@@ -156,8 +156,8 @@ const IndexPage = props => {
         browseMoreHref="/gallery/"
         title="EOB Academy in action"
       /> */}
-      {/* <Seperator /> */}
-      {/* <MapSection title='Find us' /> */}
+      {/* <Seperator />
+      <MapSection title='Find us' /> */}
       {/* <Seperator /> */}
     </Layout>
   )

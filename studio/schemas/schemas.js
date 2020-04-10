@@ -12,11 +12,7 @@ import companyInfo from "./companyInfo";
 import figure from "./figure";
 import mainImage from "./mainImage";
 import page from "./page";
-import person from "./person";
 import post from "./post";
-import postAuthor from "./postAuthor";
-import project from "./project";
-import projectMember from "./projectMember";
 import siteSettings from "./siteSettings";
 import slideshow from "./slideshow";
 import galleryMedia from "./gallery-media";
@@ -28,6 +24,7 @@ import course from "./course";
 import courses from "./courses";
 import grid from './grid'
 import contentBlock from './contentBlock'
+import location from './location'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -55,7 +52,8 @@ export default createSchema({
     course,
     courses,
     contentBlock,
-    grid
+    grid,
+    location
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

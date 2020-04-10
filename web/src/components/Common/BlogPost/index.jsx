@@ -18,8 +18,6 @@ import SocialBlock from '../SocialShare/SocialBlock'
 const BlogPost = (props) => {
   const {
     _rawBody,
-    authors,
-    categories,
     readTime,
     title,
     mainImage,
@@ -29,7 +27,6 @@ const BlogPost = (props) => {
     url,
   } = props
   const isDark = useDarkContext()
-  console.log(url)
   return (
     <article className={cn(styles.Root, isDark && styles.isDark)}>
       {mainImage && mainImage.asset && (
