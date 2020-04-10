@@ -15,7 +15,7 @@
 
 .displayLarge {
   font-weight: bold;
-  font-family: $font-heading;
+  font-family: $font-body;
   font-size: spacing(4.5);
   line-height: spacing(5.5);
 
@@ -32,7 +32,7 @@
 
 .displayHero {
   font-weight: bold;
-  font-family: $font-heading;
+  font-family: $font-body;
 
   font-size: spacing(2.5); // 24
   line-height: spacing(3); // 32
