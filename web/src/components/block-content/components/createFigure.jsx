@@ -13,7 +13,7 @@ const createFigure = figure => {
   } else {
     const mediaProps = getFluidGatsbyImage(
       asset._id,
-      { maxWidth: maxWidth ? maxWidth : 800 },
+      { maxWidth: maxWidth || 800 },
       cfg.project
     )
     const media = {
@@ -22,9 +22,13 @@ const createFigure = figure => {
       },
       alt: alt || ' '
     }
-  
-    const El = (isZoomable === undefined || isZoomable) ? ZoomableImage : Media
-    return <El key={figure._key} media={media} />
+
+    const El = isZoomable === undefined || isZoomable ? ZoomableImage : Media
+    return (
+      <div style={{padding: '10px 0'}}>
+        <El key={figure._key} media={media} />
+      </div>
+    )
   }
 }
 
