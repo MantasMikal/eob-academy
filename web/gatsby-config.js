@@ -1,11 +1,16 @@
 require('dotenv').config()
 const path = require('path')
-
+const config = require('./config')
 const {
   api: { projectId, dataset }
 } = requireConfig('../studio/sanity.json')
 
 module.exports = {
+  siteMetadata: {
+    title: config.site.siteTitle,
+    siteUrl: config.site.siteTitle,
+    description: config.site.description
+  },
   plugins: [
     {
       resolve: 'gatsby-alias-imports',
@@ -64,11 +69,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'EOB Academy',
-        short_name: 'EOBA',
+        name: config.site.siteTitle,
+        short_name: config.site.shortName,
+        background_color: config.site.bgColor,
+        theme_color: config.site.themeColor,
         start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#c8167c',
         display: 'standalone',
         icon: 'src/asset/favicon.png'
       }
@@ -79,6 +84,8 @@ module.exports = {
         extendTypes: [{ typeName: 'SanityPost', contentFieldName: 'body' }]
       }
     },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline'
     // {
     //   resolve: `gatsby-plugin-google-analytics`,

@@ -20,30 +20,7 @@ export const query = graphql`
       description
       keywords
     }
-
-    # gallery: allSanityGalleryMedia(
-    #   limit: 10
-    #   sort: { fields: [publishedAt], order: DESC }
-    #   filter: { isFeatured: { eq: true } }
-    # ) {
-    #   edges {
-    #     node {
-    #       id
-    #       title
-    #       publishedAt
-    #       media {
-    #         alt
-    #         caption
-    #         asset {
-    #           fluid(maxWidth: 600) {
-    #             ...GatsbySanityImageFluid
-    #           }
-    #         }
-    #       }
-    #     }
-    #   }
-    # }
-
+  
     sections: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
       _rawSections(resolveReferences: { maxDepth: 10 })
     }
