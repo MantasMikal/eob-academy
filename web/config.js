@@ -1,4 +1,4 @@
-module.exports = {
+var config = {
   site: {
     siteTitle: 'EOB Academy',
     siteUrl: 'https://eob-academy.netlify.com',
@@ -12,3 +12,5 @@ module.exports = {
     dataset: 'production'
   }
 }
+
+module.exports = config

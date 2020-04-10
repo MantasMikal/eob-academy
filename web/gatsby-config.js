@@ -8,7 +8,7 @@ const {
 module.exports = {
   siteMetadata: {
     title: config.site.siteTitle,
-    siteUrl: config.site.siteTitle,
+    siteUrl: config.site.siteUrl,
     description: config.site.description
   },
   plugins: [
