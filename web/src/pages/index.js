@@ -150,12 +150,6 @@ const IndexPage = props => {
       />
       <Seperator />
       <DescriptionCardSection />
-      <Seperator />
-      <BlogPostCarouselSection
-        postNodes={postNodes}
-        browseMoreHref='/blog/'
-        title='Featured blog posts'
-      />
       {sections &&
         sections.map(section => (
           <>
@@ -163,6 +157,12 @@ const IndexPage = props => {
             <BlockSection blockContent={section.body} title={section.title} />
           </>
         ))}
+      <Seperator />
+      <BlogPostCarouselSection
+        postNodes={postNodes}
+        browseMoreHref='/blog/'
+        title='Featured blog posts'
+      />
       {/* <Seperator /> */}
       {/* <GelleryCarouselSection
         galleryNodes={galleryNodes}
