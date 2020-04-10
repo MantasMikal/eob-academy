@@ -154,7 +154,7 @@ const IndexPage = props => {
       <BlogPostCarouselSection
         postNodes={postNodes}
         browseMoreHref='/blog/'
-        title='Featured Blog Posts'
+        title='Featured blog posts'
       />
       {sections &&
         sections.map(section => (
