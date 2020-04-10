@@ -17,7 +17,7 @@ const SponsorCarousel = ({ sponsors, className }) => (
       initialSlideHeight={320}
       inirialSlideWidth={850}
       speed={250}
-      heightMode="current"
+      heightMode="max"
       transitionMode="scroll"
       renderCenterRightControls={({ nextSlide }) => (
         <ButtonBase className={styles.ControlRight} onClick={nextSlide}>
