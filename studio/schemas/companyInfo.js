@@ -9,13 +9,6 @@ export default {
   icon: MdBusiness,
   fields: [
     {
-      name: 'locations',
-      title: 'Locations',
-      description: 'These are used in contact page',
-      type: 'array',
-      of: [{ type: 'location' }]
-    },
-    {
       name: 'instagramUrl',
       title: 'Instagram Page URL',
       type: 'url',
