@@ -25,7 +25,7 @@
   }
 
   @include mq($breakpoint-desktop) {
-    padding-top: spacing(20);
+    padding-top: spacing(10);
     padding-bottom: spacing(30);
   }
 }
@@ -42,13 +42,13 @@
 }
 
 .SponsorGrid {
-  padding: spacing(6) 0;
-  background-color: $color-primary-grey-light;
+  padding: spacing(6) 0 0;
+  // background-color: $color-primary-grey-light;
   position: relative;
 }
 
 .Seperator {
-  background-color: $color-primary-grey-light;
+  // background-color: $color-primary-grey-light;
 }
 
 .Branding {
@@ -80,7 +80,8 @@
   flex-direction: row;
   padding: spacing(4) 0;
 
-  a, button {
+  a,
+  button {
     padding-right: spacing(2);
     &:hover {
       transform: scale(1.03);
@@ -145,14 +146,11 @@
 }
 
 .isDark {
-  &.Wrapper::before {
-    background-image: url('/asset/overlay2white.svg');
-  }
   .Link {
     color: $color-primary-white;
   }
-  .SponsorGrid,
-  .Seperator {
-    background-color: $color-primary-black-light;
-  }
+  // .SponsorGrid,
+  // .Seperator {
+  //   background-color: $color-primary-black-light;
+  // }
 }
