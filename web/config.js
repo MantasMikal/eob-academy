@@ -1,6 +1,6 @@
 module.exports = {
   site: {
-    siteTite: 'EOB Academy',
+    siteTitle: 'EOB Academy',
     siteUrl: 'https://eob-academy.netlify.com',
     shortName: 'EOBA',
     bgColor:  '#ffffff',
