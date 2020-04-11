@@ -69,7 +69,7 @@ const AlternativeSchoolsCourses = props => {
   // Add keywords to SEO
 
   return (
-    <Layout>
+    <Layout isNoticeVisible>
       {courseNodes && courseNodes.pageTitle && (
         <>
           <SEO

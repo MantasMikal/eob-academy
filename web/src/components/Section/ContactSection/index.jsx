@@ -32,6 +32,7 @@ const ContactSection = ({ body, venues, title }) => {
       center
       gutter
       spacious
+      withNavSpace
       as='section'
     >
       <Type as='h1' size='displayLarge' className={styles.Title}>

@@ -4,10 +4,10 @@ import Container from 'Primitive/Container'
 import DescriptionCards from 'Common/DescriptionCards'
 import descriptionCards from '../../../fixture/description-cards'
 
-const DescriptionCardSection = () => {
+const DescriptionCardSection = ({cards}) => {
   return (
     <Container size="wide" center gutter spacious as="section">
-      <DescriptionCards cards={descriptionCards().cards} />
+      <DescriptionCards cards={cards} />
     </Container>
   )
 }

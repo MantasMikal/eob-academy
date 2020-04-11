@@ -11,8 +11,6 @@ import DescriptionCardSection from 'Section/DescriptionCardSection'
 import BlogPostCarouselSection from 'Section/BlogPostCarouselSection'
 import BlockSection from 'Section/BlockSection'
 
-// import MapSection from 'Section/MapSection'
-
 export const query = graphql`
   query IndexPageQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
@@ -20,9 +18,14 @@ export const query = graphql`
       description
       keywords
     }
-  
-    sections: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
+
+    home: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
       _rawSections(resolveReferences: { maxDepth: 10 })
+      aboutSection {
+        title
+        icon
+        description
+      }
     }
 
     sponsors: allSanitySponsors {
@@ -104,8 +107,8 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
 
-  const sections = data.sections._rawSections
-  console.log('sections', sections)
+  const home = data.home
+  const sections = data.home._rawSections
   // const galleryNodes = (data || {}).gallery ? mapEdgesToNodes(data.gallery) : []
 
   if (!site) {
@@ -118,7 +121,7 @@ const IndexPage = props => {
   // make dynamic
 
   return (
-    <Layout>
+    <Layout isNoticeVisible>
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <h1 hidden>Welcome to {site.title}</h1>
       <Hero
@@ -126,7 +129,7 @@ const IndexPage = props => {
         subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
       />
       <Seperator />
-      <DescriptionCardSection />
+      {home.aboutSection && <DescriptionCardSection cards={home.aboutSection} />}
       {sections &&
         sections.map(section => (
           <>
@@ -134,6 +137,7 @@ const IndexPage = props => {
             <BlockSection blockContent={section.body} title={section.title} />
           </>
         ))}
+
       <Seperator />
       <BlogPostCarouselSection
         postNodes={postNodes}

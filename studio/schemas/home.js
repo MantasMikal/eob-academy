@@ -15,6 +15,12 @@ export default {
       type: 'array',
       description: 'Extra sections for the homepage',
       of: [{ type: 'section' }]
+    },
+    {
+      name: 'aboutSection',
+      title: 'About Section',
+      type: 'array',
+      of: [{ type: 'card' }]
     }
   ],
   preview: {

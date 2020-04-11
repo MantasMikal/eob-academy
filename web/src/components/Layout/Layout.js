@@ -6,7 +6,7 @@ import { cn } from 'lib/helpers'
 import Navigation from 'Common/Navigation'
 import A11yNavigation from 'Primitive/A11yNavigation'
 import Footer from 'Common/Footer'
-import StrpLine from 'Common/StripLine'
+import StripLine from 'Common/StripLine'
 
 import styles from './Layout.module.scss'
 
@@ -20,7 +20,8 @@ const Layout = ({
   sponsors,
   social,
   isStripVisible,
-  hideStrip
+  hideStrip,
+  isNoticeVisible
 }) => {
   const isDark = useDarkContext()
   return (
@@ -37,7 +38,9 @@ const Layout = ({
         onToggleDark={onToggleDark}
         id='navigation'
       />
-      <StrpLine text='We are fully operational working with students online - if the Coronavirus is still affecting our lives past September 2020, all of our new students will have access to tutors and be able to work remotely through our online tools. ' />
+      {isNoticeVisible && (
+        <StripLine text='We are fully operational working with students online - if the Coronavirus is still affecting our lives past September 2020, all of our new students will have access to tutors and be able to work remotely through our online tools. ' />
+      )}
       <div className={styles.Content} id='content'>
         {children}
       </div>

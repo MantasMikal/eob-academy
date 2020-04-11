@@ -29,6 +29,7 @@ import venue from './venue'
 import concat from './contact'
 import home from './home'
 import section from './section'
+import card from './card'
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -61,7 +62,8 @@ export default createSchema({
     venue,
     concat,
     home,
-    section
+    section,
+    card
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
