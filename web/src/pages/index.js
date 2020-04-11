@@ -132,10 +132,10 @@ const IndexPage = props => {
       {home.aboutSection && <DescriptionCardSection cards={home.aboutSection} />}
       {sections &&
         sections.map(section => (
-          <>
+          <div key={section._key}>
             <Seperator />
             <BlockSection blockContent={section.body} title={section.title} />
-          </>
+          </div>
         ))}
 
       <Seperator />

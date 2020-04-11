@@ -1,19 +1,20 @@
 import React from 'react'
 import { string, object, bool, array } from 'prop-types'
 import GatsbyImage from 'gatsby-image'
-import { formatDate } from 'lib/helpers'
-import { cn } from 'lib/helpers'
+import { formatDate, cn } from 'lib/helpers'
+
 import { useDarkContext } from 'Context/DarkContext'
 
 import BlockContent from '../../block-content'
 import ListItem from './component/ListItem'
 import Type from 'Primitive/Type'
-import ButtonStandard from 'Primitive/ButtonStandard'
+import SmartLink from 'Primitive/SmartLink'
 
 import styles from './Course.module.scss'
 import ZoomableMedia from '../Zoomable'
+import ButtonStandard from 'Primitive/ButtonStandard'
 
-//TODO
+// TODO
 // Add button function
 
 const Course = ({
@@ -38,7 +39,7 @@ const Course = ({
         </div>
       )}
       <div className={styles.CourseDescription}>
-        <Type as="h3" size="titleLarge" className={styles.Title}>
+        <Type as='h3' size='titleLarge' className={styles.Title}>
           {title}
         </Type>
         <div className={styles.Description}>
@@ -50,16 +51,18 @@ const Course = ({
           </div>
         )}
         <ul className={styles.Details}>
-          <ListItem title="Location" icon="location-arrow" value={location} />
-          <ListItem title="Launch" icon="calendar" value={formatDate(launchDate)} />
-          <ListItem title="Duration" icon="clock" value={duration} />
-          <ListItem title="Ages" icon="person" value={ages} />
+          <ListItem title='Location' icon='location-arrow' value={location} />
+          <ListItem title='Launch' icon='calendar' value={formatDate(launchDate)} />
+          <ListItem title='Duration' icon='clock' value={duration} />
+          <ListItem title='Ages' icon='person' value={ages} />
         </ul>
-        <ButtonStandard className={styles.Button}>
-          <Type size="base" demi>
-            Apply
-          </Type>
-        </ButtonStandard>
+        <SmartLink to='/contact' className={styles.Button}>
+          <ButtonStandard>
+            <Type size='base' demi>
+              Apply
+            </Type>
+          </ButtonStandard>
+        </SmartLink>
       </div>
     </div>
   )
