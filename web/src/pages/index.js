@@ -21,6 +21,8 @@ export const query = graphql`
 
     home: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
       _rawSections(resolveReferences: { maxDepth: 10 })
+      title
+      subtitle
       aboutSection {
         title
         icon
@@ -125,8 +127,8 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <h1 hidden>Welcome to {site.title}</h1>
       <Hero
-        title="EOB Academy the UK's first Esports Academy and Video Games Centre"
-        subtitle="EOB Academy the UK's first Esports Academy and Video Games Centre"
+        title={home.title}
+        subtitle={home.subtitle}
       />
       <Seperator />
       {home.aboutSection && <DescriptionCardSection cards={home.aboutSection} />}
