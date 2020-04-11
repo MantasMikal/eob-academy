@@ -24,29 +24,29 @@ export default [
   [
     {
       text: 'Facebook',
-      url: '#'
+      url: 'https://www.facebook.com/EOBFEED/'
     },
     {
       text: 'Youtube',
-      url: '#'
+      url: 'https://www.youtube.com/channel/UC1q2-7FQrgne_cKFemMXWYA/featured'
     },
     {
       text: 'Instagram',
-      url: '#'
+      url: 'https://www.instagram.com/enemyofboredom/'
     },
     {
       text: 'Twitter',
-      url: '#'
+      url: 'https://twitter.com/eobbyte'
     }
   ],
   [
     {
       text: 'Website Terms and Conditions',
-      url: '#'
+      url: '/terms-and-conditions'
     },
     {
       text: 'Privacy Statement',
-      url: '#'
+      url: '/privacy-statement'
     }
   ]
 ]

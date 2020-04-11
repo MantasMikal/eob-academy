@@ -15,7 +15,9 @@ import SponsorGrid from 'Common/SponsorGrid'
 import styles from './Footer.module.scss'
 
 const Footer = ({ sponsors, social }) => {
+  console.log("Footer -> social", social)
   const isDark = useDarkContext()
+  
   return (
     <div className={cn(styles.Wrapper, isDark && styles.isDark)}>
       <Seperator className={styles.Seperator} />

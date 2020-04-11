@@ -12,6 +12,8 @@ const query = graphql`
     companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       facebookUrl
       twitterUrl
+      youtubeUrl
+      instagramUrl
     }
 
     sponsors: allSanitySponsors {
@@ -78,7 +80,9 @@ function LayoutContainer (props) {
         }
         const social = {
           facebook: data.companyInfo.facebookUrl || null,
-          twitter: data.companyInfo.twitterUrl || null
+          twitter: data.companyInfo.twitterUrl || null,
+          youtube: data.companyInfo.youtubeUrl || null,
+          instagram: data.companyInfo.instagramUrl || null
         }
         return (
           <DarkContextProvider isDark={isDark}>

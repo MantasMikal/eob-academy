@@ -73,6 +73,22 @@ export default () =>
                     .id('aboutPage')
                     .schemaType('page')
                     .documentId('about')
+                ),
+              S.listItem()
+                .title('Terms And Conditions')
+                .child(
+                  S.editor()
+                    .id('termsAndConditionsPage')
+                    .schemaType('page')
+                    .documentId('termsAndConditions')
+                ),
+              S.listItem()
+                .title('Privacy Statement')
+                .child(
+                  S.editor()
+                    .id('privacyStatement')
+                    .schemaType('page')
+                    .documentId('privacyStatement')
                 )
             ])
         )
