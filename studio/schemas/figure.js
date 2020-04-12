@@ -34,7 +34,7 @@ export default {
       name: 'maxWidth',
       title: 'Max width',
       type: 'number',
-      description: '(Optional) Set if the image on the page will not be big. Optimzes performance',
+      description: '(Optional) Set if you want to force maximum width to an image (or make it smaller or larger). Default is 800px',
       options: {
         isHighlighted: true
       }
