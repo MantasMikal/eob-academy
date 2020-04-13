@@ -57,6 +57,6 @@ LazyLoader.propTypes = {
 }
 
 LazyLoader.defaultProps = {
-  threshold: 0.7,
+  threshold: 0.6,
   hasMore: true
 }
