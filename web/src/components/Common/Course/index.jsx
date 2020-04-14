@@ -56,7 +56,7 @@ const Course = ({
           <ListItem title='Duration' icon='clock' value={duration} />
           <ListItem title='Ages' icon='person' value={ages} />
         </ul>
-        <SmartLink to='/contact' className={styles.Button}>
+        <SmartLink href="mailto:info@eobacademy.com" className={styles.Button}>
           <ButtonStandard>
             <Type size='base' demi>
               Apply

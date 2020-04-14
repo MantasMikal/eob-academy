@@ -22,7 +22,7 @@ const DescriptionCards = ({ cards }) => {
             />
           ))}
         </div>
-        <SmartLink to='/contact'>
+        <SmartLink href='mailto:info@eobacademy.com'>
           <ButtonStandard size='large' className={styles.Button}>
             <Type size='title'>The Button</Type>
           </ButtonStandard>

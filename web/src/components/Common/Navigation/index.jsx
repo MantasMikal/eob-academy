@@ -85,6 +85,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
       <LinkWrapper className={styles.NavLink} to="/about/">
         About
       </LinkWrapper>
+      <LinkWrapper className={styles.NavLink} to="/">
+        Home
+      </LinkWrapper>
       <button className={styles.ToggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
         {showNav ? (
           <Icon a11yText="Close" type="close" width={24} height={24} />
