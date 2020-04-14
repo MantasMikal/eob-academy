@@ -1,7 +1,7 @@
 var config = {
   site: {
     siteTitle: 'EOB Academy',
-    siteUrl: 'https://eob-academy.netlify.com',
+    siteUrl: 'https://eobacademy.com',
     shortName: 'EOBA',
     bgColor:  '#ffffff',
     themeColor: '#c8167c',
