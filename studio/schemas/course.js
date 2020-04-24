@@ -19,9 +19,10 @@ export default {
       type: "string"
     },
     {
-      name: "launchDate",
-      title: "Launch Date",
-      type: "string"
+      name: "launchDates",
+      title: "Launch Dates",
+      type: "array",
+      of: [{type: 'string'}]
     },
     {
       name: "duration",

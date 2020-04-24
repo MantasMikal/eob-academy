@@ -117,14 +117,14 @@ export default () =>
           S.list()
             .title('Courses')
             .items([
-              S.listItem()
-                .title("Prince's trust courses")
-                .child(
-                  S.editor()
-                    .id('princesTrustCourses')
-                    .schemaType('coursesPage')
-                    .documentId('princesTrustCourses')
-                ),
+              // S.listItem()
+              //   .title("Prince's trust courses")
+              //   .child(
+              //     S.editor()
+              //       .id('princesTrustCourses')
+              //       .schemaType('coursesPage')
+              //       .documentId('princesTrustCourses')
+              //   ),
               S.listItem()
                 .title('College Courses')
                 .child(

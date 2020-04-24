@@ -3,10 +3,29 @@
 
 .ListItem {
   padding-bottom: spacing(1);
+  list-style: none;
+  display: inline;
+}
+
+.ListItemList {
+  list-style: none;
+  text-align: left;
+  padding-top: spacing(0.2);
+  padding-left: spacing(4);
+  & > li {
+    display: block;
+    
+    // padding-left: spacing(2);
+  }
+
+  @include mq($breakpoint-tablet) {
+    padding-left: 0;
+  }
 }
 
 .Title {
   display: inline;
+  // vertical-align: top;
   padding-right: spacing(1);
   color: $color-primary-purple;
 }
@@ -15,13 +34,34 @@
   display: inline;
 }
 
-.IconWrapper {
-  min-width: spacing(5);
-  text-align: center;
+.TitleWrap {
+  display: inline;
 }
 
 .Icon {
-  margin: auto;
+  margin-right: spacing(1);
+  vertical-align: text-bottom;
+}
+
+.arrayItem {
+  &.ListItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: spacing(5);
+    text-align: center;
+
+    @include mq($breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  .TitleWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
 .isDark {

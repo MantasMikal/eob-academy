@@ -29,7 +29,7 @@ export const query = graphql`
             _key
             title
             location
-            launchDate
+            launchDates
             duration
             ages
             image {

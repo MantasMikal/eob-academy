@@ -46,15 +46,9 @@ const CourseSection = ({ courseNodes }) => {
           {courseList.map((course, i) => (
             <Course
               className={styles.Course}
-              title={course.title}
-              description={course._rawDescription}
-              location={course.location}
-              launchDate={course.launchDate}
-              duration={course.duration}
-              ages={course.ages}
-              image={course.image}
               reverse={i % 2 !== 0}
               key={course._key}
+              {...course}
             />
           ))}
         </div>

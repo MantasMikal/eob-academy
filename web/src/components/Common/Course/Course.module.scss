@@ -45,6 +45,8 @@
 }
 
 .Details {
+  display: flex;
+  flex-direction: column;
   padding-bottom: spacing(2);
 
   @include mq($breakpoint-desktop) {

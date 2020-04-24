@@ -21,7 +21,7 @@ const Course = ({
   title,
   description,
   location,
-  launchDate,
+  launchDates,
   duration,
   ages,
   image,
@@ -52,7 +52,11 @@ const Course = ({
         )}
         <ul className={styles.Details}>
           <ListItem title='Location' icon='location-arrow' value={location} />
-          <ListItem title='Launch' icon='calendar' value={launchDate} />
+          <ListItem
+            title={launchDates.length > 1 ? 'Launch dates' : 'Launch date'}
+            icon='calendar'
+            value={launchDates}
+          />
           <ListItem title='Duration' icon='clock' value={duration} />
           <ListItem title='Ages' icon='person' value={ages} />
         </ul>
@@ -72,7 +76,7 @@ Course.propTypes = {
   title: string,
   description: array,
   location: string,
-  launchDate: string,
+  launchDates: string,
   duration: string,
   ages: string,
   image: object,
