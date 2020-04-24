@@ -8,9 +8,9 @@ export default {
       title: "SEO",
       type: "seo-tools", // use seo-tools type
       options: {
-        baseUrl: "https://eob-academy.netlify.com", // (REQUIRED) This is the baseUrl for your site
+        baseUrl: "https://eobacademy.com", // (REQUIRED) This is the baseUrl for your site
         baseUrl(doc) {
-          return "https://eob-academy.netlify.com/blog/"; // for dynamic baseUrls
+          return "https://eobacademy.com/blog/"; // for dynamic baseUrls
         },
         slug(doc) {
           // (REQUIRED) a function to return the sug of the current page, which will be appended to the baseUrl
