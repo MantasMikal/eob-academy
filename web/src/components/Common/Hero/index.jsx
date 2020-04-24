@@ -15,13 +15,7 @@ const Hero = ({ video, image, overlay, title, subtitle }) => {
   return (
     <div className={styles.Hero}>
       <ResponsiveMedia ratio={9 / 16}>
-        <iframe
-          src="https://www.youtube.com/embed/7zxEi66DLPs?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1&playsinline=1"
-          width="100%"
-          height="auto"
-          frameBorder="0"
-          allowFullScreen
-        />
+      <iframe src="https://player.vimeo.com/video/411540773?controls=0&muted=1&autoplay=1" width="auto" height="auto" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         <div className={styles.Overlay} />
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
