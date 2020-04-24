@@ -13,7 +13,7 @@ import ButtonStandard from 'Primitive/ButtonStandard'
 
 import styles from './ApplySection.module.scss'
 
-const courses = ['Online', 'College', 'Alternative Provision']
+const courses = ['Click to pick a course', 'Online', 'College', 'Alternative Provision']
 
 const Index = ({ title }) => {
   const isDark = useDarkContext()
@@ -71,7 +71,7 @@ const Index = ({ title }) => {
           controlName='courseOfInterest'
         >
           <label>
-            <VisuallyHidden>Day</VisuallyHidden>
+            <VisuallyHidden>Course of interest</VisuallyHidden>
             <SelectControl name='courseOfInterest'>
               {courses.map(course => (
                 <option value={course} key={`course${course}`}>
@@ -82,7 +82,7 @@ const Index = ({ title }) => {
           </label>
         </FieldTemplate>
         <FieldTemplate label='Message' status='success' required controlName='message'>
-          <TextControl name='message' placeholder='Hi! ...' multiLine />
+          <TextControl name='message' placeholder='Hi! ...' multiLine rows={10}/>
         </FieldTemplate>
 
         <ButtonStandard className={styles.ApplyButton} type='submit'>
