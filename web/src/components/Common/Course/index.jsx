@@ -1,7 +1,7 @@
 import React from 'react'
 import { string, object, bool, array } from 'prop-types'
 import GatsbyImage from 'gatsby-image'
-import { formatDate, cn } from 'lib/helpers'
+import { cn } from 'lib/helpers'
 
 import { useDarkContext } from 'Context/DarkContext'
 
@@ -52,7 +52,7 @@ const Course = ({
         )}
         <ul className={styles.Details}>
           <ListItem title='Location' icon='location-arrow' value={location} />
-          <ListItem title='Launch' icon='calendar' value={formatDate(launchDate)} />
+          <ListItem title='Launch' icon='calendar' value={launchDate} />
           <ListItem title='Duration' icon='clock' value={duration} />
           <ListItem title='Ages' icon='person' value={ages} />
         </ul>

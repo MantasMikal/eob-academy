@@ -21,7 +21,7 @@ export default {
     {
       name: "launchDate",
       title: "Launch Date",
-      type: "datetime"
+      type: "string"
     },
     {
       name: "duration",
