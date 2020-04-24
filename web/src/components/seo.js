@@ -43,7 +43,7 @@ function SEO({ description, lang, meta, keywords = [], keySentence, title, image
           ? data.site.keywords.join(', ')
           : null
 
-        const canonical = slug ? `${data.site.siteUrl}${slug}` : null
+        // const canonical = slug ? `${data.site.siteUrl}${slug}` : null
         return (
           <Helmet
             htmlAttributes={{
@@ -51,16 +51,16 @@ function SEO({ description, lang, meta, keywords = [], keySentence, title, image
             }}
             title={title}
             titleTemplate={title === data.site.title ? '%s' : `%s | ${data.site.title}`}
-            link={
-              canonical
-                ? [
-                    {
-                      rel: 'canonical',
-                      href: canonical
-                    }
-                  ]
-                : []
-            }
+            // link={
+            //   canonical
+            //     ? [
+            //         {
+            //           rel: 'canonical',
+            //           href: canonical
+            //         }
+            //       ]
+            //     : []
+            // }
             meta={[
               {
                 name: 'description',
