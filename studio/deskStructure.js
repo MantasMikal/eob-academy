@@ -74,6 +74,14 @@ export default () =>
                     .schemaType('page')
                     .documentId('about')
                 ),
+                S.listItem()
+                .title('Apply')
+                .child(
+                  S.editor()
+                    .id('applyPage')
+                    .schemaType('page')
+                    .documentId('apply')
+                ),
               S.listItem()
                 .title('Terms And Conditions')
                 .child(

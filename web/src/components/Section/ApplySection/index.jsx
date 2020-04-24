@@ -10,12 +10,13 @@ import FieldTemplate from 'Primitive/FieldTemplate'
 import SelectControl from 'Primitive/SelectControl'
 import VisuallyHidden from 'Primitive/VisuallyHidden'
 import ButtonStandard from 'Primitive/ButtonStandard'
+import BlockContent from '../../block-content'
 
 import styles from './ApplySection.module.scss'
 
 const courses = ['Click to pick a course', 'Online', 'College', 'Alternative Provision']
 
-const Index = ({ title }) => {
+const Index = ({ title, blocks }) => {
   const isDark = useDarkContext()
   // const [form, setForm] = useState({
   //   name: '',
@@ -56,6 +57,11 @@ const Index = ({ title }) => {
       <Type as='h1' size='displayLarge' className={styles.Title}>
         {title}
       </Type>
+      {blocks && (
+        <div className={styles.Description}>
+          <BlockContent blocks={blocks} />
+        </div>
+      )}
       <form name='contact' method='post' data-netlify='true' data-netlify-honeypot='bot-field'>
         <input type='hidden' name='form-name' value='contact' />
         <FieldTemplate label='Your Name' required controlName='name'>
@@ -82,7 +88,7 @@ const Index = ({ title }) => {
           </label>
         </FieldTemplate>
         <FieldTemplate label='Message' status='success' required controlName='message'>
-          <TextControl name='message' placeholder='Hi! ...' multiLine rows={10}/>
+          <TextControl name='message' placeholder='Hi! ...' multiLine rows={10} />
         </FieldTemplate>
 
         <ButtonStandard className={styles.ApplyButton} type='submit'>
