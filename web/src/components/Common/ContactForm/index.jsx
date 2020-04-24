@@ -1,38 +1,32 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useDarkContext } from 'Context/DarkContext'
+// import PropTypes from 'prop-types'
+import { cn } from 'lib/helpers'
+import Container from 'Primitive/Container'
+import TextControl from 'Primitive/TextControl'
+import FieldTemplate from 'Primitive/FieldTemplate'
+import ShrinkWrap from 'Primitive/ShrinkWrap'
+import SelectControl from 'Primitive/SelectControl'
+import VisuallyHidden from 'Primitive/VisuallyHidden'
+
+
+import styles from './ContactForm.module.scss'
 
 const ContactForm = props => {
+  const isDark = useDarkContext()
+  
   return (
-    <form name='contact' method='post' data-netlify='true' data-netlify-honeypot='bot-field'>
-      <input type='hidden' name='form-name' value='contact' />
-      <p>
-        <label>
-          Your Name: <input type='text' name='name' />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Email: <input type='email' name='email' />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Role:{' '}
-          <select name='role[]' multiple>
-            <option value='leader'>Leader</option>
-            <option value='follower'>Follower</option>
-          </select>
-        </label>
-      </p>
-      <p>
-        <label>
-          Message: <textarea name='message' />
-        </label>
-      </p>
-      <p>
-        <button type='submit'>Send</button>
-      </p>
-    </form>
+    <Container
+    className={cn(styles.ContactForm, isDark && styles.isDark)}
+    size="wide"
+    center
+    gutter
+    spacious
+    withNavSpace
+    as="section"
+  >
+
+    </Container>
   )
 }
 

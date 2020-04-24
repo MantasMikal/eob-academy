@@ -88,7 +88,7 @@ TextControl.defaultProps = {
 TextControl.propTypes = {
   autoComplete: oneOfType([bool, string]),
   className: string,
-  controlRef: oneOfType([func, shape({ current: instanceOf(PropTypes.number) })]),
+  controlRef: oneOfType([func, shape({ current: instanceOf(number) })]),
   defaultValue: string,
   disabled: bool,
   id: string,

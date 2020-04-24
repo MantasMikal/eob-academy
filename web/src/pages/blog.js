@@ -9,7 +9,7 @@ import BlogSection from 'Section/BlogSection'
 
 export const query = graphql`
   query BlogPageQuery {
-    posts: allSanityPost(limit: 12, sort: { fields: [publishedAt], order: DESC }) {
+    posts: allSanityPost(limit: 100, sort: { fields: [publishedAt], order: DESC }) {
       edges {
         node {
           id
@@ -25,7 +25,7 @@ export const query = graphql`
             alt
             asset {
               url
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 500) {
                 ...GatsbySanityImageFluid
               }
             }
