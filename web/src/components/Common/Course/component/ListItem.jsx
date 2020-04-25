@@ -12,7 +12,7 @@ import styles from './ListItem.module.scss'
 const ListItem = ({ icon, title, value }) => {
   const isDark = useDarkContext()
   const item = Array.isArray(value) ? (
-    <ul className={styles.ListItemList}>
+    <ul className={cn(styles.ListItemList)}>
       {value.map(listItem => (
         <Type className={styles.Value} as="li" size="base">
           {listItem}
@@ -25,7 +25,7 @@ const ListItem = ({ icon, title, value }) => {
     </Type>
   )
   return (
-    <li className={cn(styles.ListItem, isDark && styles.isDark, Array.isArray(value) && styles.arrayItem)} vAlign="middle">
+    <li className={cn(styles.ListItem, isDark && styles.isDark, Array.isArray(value) && styles.arrayItem, value.length === 1 && styles.oneItemOnly)} vAlign="middle">
         <div className={styles.TitleWrap}>
           <Icon className={styles.Icon} type={icon} height={25} width={22} a11yText={icon} />
           <Type className={styles.Title} as="p" size="base">

@@ -14,12 +14,8 @@
   padding-left: spacing(4);
   & > li {
     display: block;
-    
-    // padding-left: spacing(2);
-  }
 
-  @include mq($breakpoint-tablet) {
-    // padding-left: 0;
+    // padding-left: spacing(2);
   }
 }
 
@@ -50,10 +46,10 @@
     align-items: flex-start;
     min-width: spacing(5);
     text-align: center;
+  }
 
-    // @include mq($breakpoint-tablet) {
-    //   flex-direction: row;
-    // }
+  &.oneItemOnly {
+    display: flex;
   }
 
   .TitleWrap {
@@ -61,7 +57,17 @@
     justify-content: center;
     align-items: center;
   }
+}
 
+
+.oneItemOnly {
+  &.ListItem {
+    flex-direction: row;
+  }
+
+  .ListItemList {
+    padding-left: 0;
+  }
 }
 
 .isDark {
