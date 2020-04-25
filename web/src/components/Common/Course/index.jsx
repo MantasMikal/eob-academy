@@ -19,7 +19,7 @@ import ButtonStandard from 'Primitive/ButtonStandard'
 
 const Course = ({
   title,
-  description,
+  _rawDescription,
   location,
   launchDates,
   duration,
@@ -43,7 +43,7 @@ const Course = ({
           {title}
         </Type>
         <div className={styles.Description}>
-          {description && <BlockContent blocks={description} />}
+          {_rawDescription && <BlockContent blocks={_rawDescription} />}
         </div>
         {image && image.asset && (
           <div className={cn(styles.Poster, styles.posterMobile)}>
