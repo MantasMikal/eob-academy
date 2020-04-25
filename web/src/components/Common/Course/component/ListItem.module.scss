@@ -19,7 +19,7 @@
   }
 
   @include mq($breakpoint-tablet) {
-    padding-left: 0;
+    // padding-left: 0;
   }
 }
 
@@ -51,9 +51,9 @@
     min-width: spacing(5);
     text-align: center;
 
-    @include mq($breakpoint-tablet) {
-      flex-direction: row;
-    }
+    // @include mq($breakpoint-tablet) {
+    //   flex-direction: row;
+    // }
   }
 
   .TitleWrap {
