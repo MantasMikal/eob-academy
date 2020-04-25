@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 const detailsQuery = graphql`
@@ -25,7 +25,7 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO({ description, lang, meta, keywords = [], keySentence, title, image, slug }) {
+function SEO ({ description, lang, meta, keywords = [], keySentence, title, image, slug }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -37,11 +37,9 @@ function SEO({ description, lang, meta, keywords = [], keySentence, title, image
 
         const metaImage = image && image.asset && image.asset.url ? image : data.site.metaImage
 
-        const metaKeywords = keySentence
-          ? keySentence
-          : data.site.keywords && data.site.keywords.length
+        const metaKeywords = keySentence || (data.site.keywords && data.site.keywords.length
           ? data.site.keywords.join(', ')
-          : null
+          : null)
 
         // const canonical = slug ? `${data.site.siteUrl}${slug}` : null
         return (
@@ -94,36 +92,36 @@ function SEO({ description, lang, meta, keywords = [], keySentence, title, image
               .concat(
                 metaImage
                   ? [
-                      {
-                        property: 'og:image',
-                        content: metaImage.asset.url
-                      },
-                      {
-                        property: 'og:image:width',
-                        content: metaImage.asset.metadata.dimensions.width
-                      },
-                      {
-                        property: 'og:image:height',
-                        content: metaImage.asset.metadata.dimensions.height
-                      },
-                      {
-                        name: 'twitter:card',
-                        content: 'summary_large_image'
-                      }
-                    ]
+                    {
+                      property: 'og:image',
+                      content: metaImage.asset.url
+                    },
+                    {
+                      property: 'og:image:width',
+                      content: metaImage.asset.metadata.dimensions.width
+                    },
+                    {
+                      property: 'og:image:height',
+                      content: metaImage.asset.metadata.dimensions.height
+                    },
+                    {
+                      name: 'twitter:card',
+                      content: 'summary_large_image'
+                    }
+                  ]
                   : [
-                      {
-                        name: 'twitter:card',
-                        content: 'summary'
-                      }
-                    ]
+                    {
+                      name: 'twitter:card',
+                      content: 'summary'
+                    }
+                  ]
               )
               .concat(
                 metaKeywords
                   ? {
-                      name: 'keywords',
-                      content: metaKeywords
-                    }
+                    name: 'keywords',
+                    content: metaKeywords
+                  }
                   : {}
               )
               .concat(meta)}
