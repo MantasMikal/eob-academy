@@ -64,11 +64,14 @@ const Index = ({ title, blocks }) => {
       )}
       <form name='contact' method='post' data-netlify='true' data-netlify-honeypot='bot-field'>
         <input type='hidden' name='form-name' value='contact' />
-        <FieldTemplate label='Your Name' required controlName='name'>
+        <FieldTemplate label='Name' required controlName='name'>
           <TextControl name='name' type='text' required />
         </FieldTemplate>
-        <FieldTemplate label='Your email' required controlName='email'>
-          <TextControl name='email' type='text' required />
+        <FieldTemplate label='Email' required controlName='email'>
+          <TextControl name='email' type='email' required />
+        </FieldTemplate>
+        <FieldTemplate label='Phone number' controlName='phone'>
+          <TextControl name='phone' type='tel' required />
         </FieldTemplate>
         <FieldTemplate
           template='multiText'
@@ -88,9 +91,8 @@ const Index = ({ title, blocks }) => {
           </label>
         </FieldTemplate>
         <FieldTemplate label='Message' status='success' required controlName='message'>
-          <TextControl name='message' placeholder='Hi! ...' multiLine rows={10} />
+          <TextControl name='message' placeholder='Hi!' multiLine rows={10} required />
         </FieldTemplate>
-
         <ButtonStandard className={styles.ApplyButton} type='submit'>
           <Type size='base' demi>
             Apply

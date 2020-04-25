@@ -1,4 +1,5 @@
 import React from 'react'
+import { object, node } from 'prop-types'
 import Zoom from 'react-medium-image-zoom'
 import { useDarkContext } from 'Context/DarkContext'
 
@@ -33,6 +34,9 @@ const ZoomableMedia = ({ media, children }) => {
   )
 }
 
-ZoomableMedia.propTypes = {}
+ZoomableMedia.propTypes = {
+  media: object,
+  children: node
+}
 
 export default ZoomableMedia
