@@ -26,6 +26,13 @@
     }
   }
 
+  input, textarea, select {
+    background-color: $color-primary-black-light;
+    color: $color-primary-white;
+    border: $color-primary-black-light;
+  }
+
+
   div,
   p {
     color: $color-primary-white;
