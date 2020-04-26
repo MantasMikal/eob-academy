@@ -23,7 +23,6 @@ async function createBlogPostPages(graphql, actions, reporter) {
       }
     }
   `)
-   ('absolutePath', absolutePath)
 
   if (result.errors) throw result.errors
 
