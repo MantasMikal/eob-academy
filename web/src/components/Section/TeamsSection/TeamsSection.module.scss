@@ -10,10 +10,14 @@
 }
 
 .TeamGrid {
-  display: grid;
+  display: block;
   margin-top: spacing(3);
   gap: spacing(4);
   grid-template-columns: repeat(3, minmax(280px, 1fr));
+
+  @include mq($breakpoint-tablet) {
+    display: grid;
+  }
 }
 
 .Team {
