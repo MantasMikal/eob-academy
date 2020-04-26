@@ -12,6 +12,7 @@
 .TeamGrid {
   display: grid;
   margin-top: spacing(3);
+  gap: spacing(4);
   grid-template-columns: repeat(3, minmax(280px, 1fr));
 }
 
