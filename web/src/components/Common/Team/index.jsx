@@ -13,7 +13,6 @@ import styles from './Team.module.scss'
 
 const Team = ({ title, location, email, phone, discord, address, logo, className }) => {
   const isDark = useDarkContext()
-  console.log(location)
   return (
     <div className={cn(styles.Team, isDark && styles.isDark, className)}>
       <TeamDetails
