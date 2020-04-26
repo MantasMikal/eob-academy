@@ -20,9 +20,10 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title'
+      lng: 'lng',
+      lat: 'lat'
     },
-    prepare ({ title = 'Untitled location' }) {
+    prepare ({ title = lat ? lat + ' ' + lng : 'Untitled location' }) {
       return {
         title,
         media: MdMyLocation

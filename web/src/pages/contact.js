@@ -50,7 +50,6 @@ const ContactPage = props => {
   }
 
   const contact = (data || {}).contact ? mapEdgesToNodes(data.contact) : []
-  console.log('contact', contact)
 
   return (
     <Layout>

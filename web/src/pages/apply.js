@@ -16,7 +16,6 @@ export const query = graphql`
 `
 
 const ApplyPage = props => {
-  console.log('props', props)
   const blocks = props.data && props.data.page._rawBody
   const title = props.data && props.data.page.title
   return (

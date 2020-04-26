@@ -14,7 +14,7 @@ const imageStyles = {
 
 // Can't be used with ResponsiveMedia
 
-const ZoomableMedia = ({ media, children }) => {
+const ZoomableMedia = ({ media, children }) => {  
   const isDark = useDarkContext()
   const component = children ? (
     children

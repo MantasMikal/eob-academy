@@ -101,7 +101,7 @@ const serializers = {
       return createFigure(props.node)
     },
     slideshow (props) {
-      // console.log("slideshow -> props", props)
+      //  ("slideshow -> props", props)
 
       return createSlideshow(props.node)
     },
@@ -111,6 +111,6 @@ const serializers = {
   }
 }
 
-const BlockContent = ({ blocks }) => <BaseBlockContent blocks={blocks} serializers={serializers} />
+const BlockContent = ({ blocks, className }) => <BaseBlockContent className={className} blocks={blocks} serializers={serializers} />
 
 export default BlockContent
