@@ -12,8 +12,8 @@ import SmartLink from 'Primitive/SmartLink'
 import styles from './Team.module.scss'
 
 const Team = ({ title, location, email, phone, discord, address, logo, className }) => {
-   ('Team -> address', address)
   const isDark = useDarkContext()
+  console.log(location)
   return (
     <div className={cn(styles.Team, isDark && styles.isDark, className)}>
       <TeamDetails
@@ -26,7 +26,7 @@ const Team = ({ title, location, email, phone, discord, address, logo, className
         phone={phone}
       />
       <div className={styles.MapWrapper}>
-        <Map locations={[location]} mapId={`${title}-Map`} />
+        <Map locations={[location]} center={location} mapId={`${title}-Map`} />
       </div>
     </div>
   )
