@@ -1,0 +1,39 @@
+@import 'setting';
+
+.TeamsSection {
+  
+}
+
+.Title {
+  margin-bottom: spacing(3);
+  //   margin-left: spacing(1);
+}
+
+.TeamGrid {
+  display: grid;
+  margin-top: spacing(3);
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+}
+
+.Team {
+  display: block;
+  margin: 0 spacing(1);
+}
+
+.isDark {
+  .Title {
+    color: $color-primary-white;
+  }
+
+  &.BlockSection a {
+    color: $color-primary-yellow;
+    &:hover {
+      color: $color-primary-red;
+    }
+  }
+
+  div,
+  p {
+    color: $color-primary-white;
+  }
+}

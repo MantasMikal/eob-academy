@@ -1,9 +1,18 @@
 import S from '@sanity/desk-tool/structure-builder'
-import { MdBusiness, MdSettings, MdGroup, MdLibraryBooks, MdHome } from 'react-icons/md'
-import { FaFile } from 'react-icons/fa'
+import {
+  MdBusiness,
+  MdSettings,
+  MdGroup,
+  MdLibraryBooks,
+  MdHome,
+  MdInfoOutline
+} from 'react-icons/md'
+import { FaFile, FaPhone } from 'react-icons/fa'
 import { FiFileText, FiBook } from 'react-icons/fi'
 import { TiContacts } from 'react-icons/ti'
-
+import { AiFillFlag } from 'react-icons/ai'
+import { RiPagesLine } from 'react-icons/ri'
+import { GoSignIn } from 'react-icons/go'
 const hiddenTypes = [
   'category',
   'companyInfo',
@@ -17,7 +26,9 @@ const hiddenTypes = [
   'course',
   'seo-plugin',
   'contactPage',
-  'homePage'
+  'homePage',
+  'teamsPage',
+  'team'
 ]
 
 export default () =>
@@ -43,29 +54,38 @@ export default () =>
         )
         .icon(MdBusiness),
       S.listItem()
-        .title('Home Page')
-        .child(
-          S.editor()
-            .id('homePage')
-            .schemaType('homePage')
-            .documentId('homePage')
-        )
-        .icon(MdHome),
-      S.listItem()
-        .title('Contact Page')
-        .child(
-          S.editor()
-            .id('contactPage')
-            .schemaType('contactPage')
-            .documentId('contactPage')
-        )
-        .icon(TiContacts),
-      S.listItem()
         .title('Pages')
         .child(
           S.list()
             .title('Pages')
             .items([
+              S.listItem()
+                .title('Home')
+                .child(
+                  S.editor()
+                    .id('homePage')
+                    .schemaType('homePage')
+                    .documentId('homePage')
+                )
+                .icon(MdHome),
+              S.listItem()
+                .title('Contact')
+                .child(
+                  S.editor()
+                    .id('contactPage')
+                    .schemaType('contactPage')
+                    .documentId('contactPage')
+                )
+                .icon(FaPhone),
+              S.listItem()
+                .title('Teams')
+                .child(
+                  S.editor()
+                    .id('teamsPage')
+                    .schemaType('teamsPage')
+                    .documentId('teamsPage')
+                )
+                .icon(RiPagesLine),
               S.listItem()
                 .title('About')
                 .child(
@@ -73,15 +93,17 @@ export default () =>
                     .id('aboutPage')
                     .schemaType('page')
                     .documentId('about')
-                ),
-                S.listItem()
+                )
+                .icon(MdInfoOutline),
+              S.listItem()
                 .title('Apply')
                 .child(
                   S.editor()
                     .id('applyPage')
                     .schemaType('page')
                     .documentId('apply')
-                ),
+                )
+                .icon(GoSignIn),
               S.listItem()
                 .title('Terms And Conditions')
                 .child(
@@ -111,6 +133,11 @@ export default () =>
         .schemaType('category')
         .child(S.documentTypeList('category').title('Category')),
       S.listItem()
+        .title('Teams')
+        .schemaType('team')
+        .child(S.documentTypeList('team').title('Teams'))
+        .icon(AiFillFlag),
+      S.listItem()
         .title('Sponsors')
         .child(
           S.editor()
@@ -125,14 +152,6 @@ export default () =>
           S.list()
             .title('Courses')
             .items([
-              // S.listItem()
-              //   .title("Prince's trust courses")
-              //   .child(
-              //     S.editor()
-              //       .id('princesTrustCourses')
-              //       .schemaType('coursesPage')
-              //       .documentId('princesTrustCourses')
-              //   ),
               S.listItem()
                 .title('College Courses')
                 .child(

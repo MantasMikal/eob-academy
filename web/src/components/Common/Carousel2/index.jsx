@@ -15,7 +15,7 @@ const Carousel2 = props => {
   const slidesToShow = isTablet ? (isPhone ? 1 : 2) : 3
    
 //   function handleClick (e) {
-//       console.log(e)
+//        (e)
 //       e.preventDefault()
 //       e.stopPropagation();
       

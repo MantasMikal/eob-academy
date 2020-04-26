@@ -23,7 +23,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
       }
     }
   `)
-  console.log('absolutePath', absolutePath)
+   ('absolutePath', absolutePath)
 
   if (result.errors) throw result.errors
 
@@ -44,8 +44,54 @@ async function createBlogPostPages(graphql, actions, reporter) {
   })
 }
 
+async function createTeamPages(graphql, actions, reporter) {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      allSanityTeam(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const absolutePath = await graphql(`
+    {
+      site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+        siteUrl
+      }
+    }
+  `)
+
+
+  if (result.errors) throw result.errors
+
+  const teamEdges = (result.data.allSanityTeam || {}).edges || []
+
+  teamEdges.forEach((edge, index) => {
+    const { id, slug = {} } = edge.node
+    const path = `/team/${slug.current}/`
+    const absPath = `${absolutePath.data.site.siteUrl}${path}`
+
+    reporter.info(`Creating team page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/team.js'),
+      context: { id, absPath },
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPages(graphql, actions, reporter)
+  await createTeamPages(graphql, actions, reporter)
 }
 
 // Removes Mini-css errors

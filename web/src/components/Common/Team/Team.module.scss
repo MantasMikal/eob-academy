@@ -1,0 +1,91 @@
+@import 'setting';
+
+.Team {
+  width: 100%;
+  position: relative;
+}
+
+.MapWrapper {
+  height: 100vh;
+}
+
+.TeamDetails {
+  width: 100%;
+  padding: spacing(4);
+  border-radius: $radius-small;
+
+  z-index: 10;
+
+  background-color: $color-primary-white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Logo {
+  height: 100%;
+  width: 250px;
+  margin-bottom: spacing(1);
+}
+
+.TeamTitle {
+  text-transform: uppercase;
+  margin-bottom: spacing(1);
+}
+
+.TeamDescription {
+  text-align: center;
+  margin-bottom: spacing(2);
+}
+
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    &:not(:last-child) {
+      padding-right: spacing(2);
+    }
+  }
+}
+
+.Icon {
+  svg {
+    vertical-align: initial;
+  }
+
+  svg,
+  path {
+    transition: $easing-standard $duration-shortest;
+    fill: $color-primary-yellow;
+  }
+
+  &:hover {
+    svg,
+    path {
+      fill: $color-primary-red;
+      transition: $easing-standard $duration-shortest;
+    }
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .TeamDetails {
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+    width: 22%;
+    min-width: 350px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4vw;
+  }
+}
+
+.isDark {
+    .TeamDetails {
+        background-color: $color-primary-black-light;
+    }
+}
