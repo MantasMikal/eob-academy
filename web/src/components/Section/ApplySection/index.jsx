@@ -71,7 +71,7 @@ const Index = ({ title, blocks }) => {
           <TextControl name='email' type='email' required />
         </FieldTemplate>
         <FieldTemplate label='Phone number' controlName='phone'>
-          <TextControl name='phone' type='tel' required />
+          <TextControl name='phone' type='tel' />
         </FieldTemplate>
         <FieldTemplate
           template='multiText'
