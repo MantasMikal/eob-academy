@@ -2,6 +2,7 @@ import React from 'react'
 import { formatDate, cn } from 'lib/helpers'
 import { useDarkContext } from 'Context/DarkContext'
 import Image from 'gatsby-image'
+import { useScrollPercentage } from 'react-scroll-percentage'
 
 import BlockContent from '../../block-content'
 import Container from 'Primitive/Container'
@@ -9,11 +10,9 @@ import BlockText from 'Primitive/BlockText/BlockText'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import Type from 'Primitive/Type'
 import Badge from 'Common/Badge'
-import Icon from 'Primitive/Icon'
-import SocialShare from '../SocialShare'
+import SocialBlock from '../SocialShare/SocialBlock'
 
 import styles from './BlogPost.module.scss'
-import SocialBlock from '../SocialShare/SocialBlock'
 
 const BlogPost = (props) => {
   const {
@@ -27,6 +26,10 @@ const BlogPost = (props) => {
     url,
   } = props
   const isDark = useDarkContext()
+  const [ref, percentage] = useScrollPercentage({
+    /* Optional options */
+    threshold: 0,
+  })
   return (
     <article className={cn(styles.Root, isDark && styles.isDark)}>
       {mainImage && mainImage.asset && (
@@ -34,8 +37,9 @@ const BlogPost = (props) => {
           <Image fluid={mainImage.asset.fluid} alt={mainImage.alt} />
         </ResponsiveMedia>
       )}
+      <div className={styles.LoadingBar} style={{width: `${percentage * 100}%`}}/>
       <Container className={styles.Container} size="medium" gutter center>
-        <div className={styles.Content}>
+        <div ref={ref} className={styles.Content}>
           {title && (
             <div className={styles.TitleWrapper}>
               <Type as="h1" size="displayLarge" className={styles.Title}>

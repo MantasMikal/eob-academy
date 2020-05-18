@@ -130,6 +130,15 @@
   }
 }
 
+.LoadingBar {
+  width: 10%;
+  height: 3px;
+  position: fixed;
+  top: 52px;
+  background-color: $color-primary-yellow;
+  z-index: 100;
+}
+
 .isDark {
   &.Root {
     background-color: $color-primary-black;

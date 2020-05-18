@@ -24,6 +24,7 @@ const Layout = ({
   isNoticeVisible
 }) => {
   const isDark = useDarkContext()
+
   return (
     <div className={cn(styles.Wrapper, isDark && styles.isDark)}>
       <A11yNavigation>
