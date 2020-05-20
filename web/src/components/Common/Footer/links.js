@@ -5,8 +5,8 @@ export default [
       url: '/'
     },
     {
-      text: 'Courses',
-      url: '/courses'
+      text: 'Online Courses',
+      url: '/online-courses'
     },
     {
       text: 'Gallery',
