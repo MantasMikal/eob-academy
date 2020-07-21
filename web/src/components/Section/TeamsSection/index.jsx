@@ -33,7 +33,7 @@ const Index = ({ teams, blocks, title }) => {
             <div className={styles.Team}>
               <TeamCard key={team._key} {...team} className={styles.TeamCard} />
               <div className={styles.MapWrapper}>
-                <Map location={[team.location]} maxHeight={'400px'} />
+                <Map locations={[team.location]} maxHeight={'400px'} />
               </div>
             </div>
           ))}
