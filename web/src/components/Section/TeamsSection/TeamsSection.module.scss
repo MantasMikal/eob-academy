@@ -5,24 +5,44 @@
 }
 
 .Title {
-  margin-bottom: spacing(3);
-  //   margin-left: spacing(1);
+  margin-bottom: spacing(4);
+  margin-top: spacing(2);
 }
 
 .TeamGrid {
   display: block;
-  margin-top: spacing(3);
-  gap: spacing(4);
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  margin-top: spacing(4);
+}
 
-  @include mq($breakpoint-tablet) {
-    display: grid;
-  }
+.TeamCard {
+  min-width: 350px;
+  flex: 1 1 30%;
 }
 
 .Team {
-  display: block;
-  margin: 0 spacing(1);
+  gap: spacing(4);
+  @include mq($breakpoint-tablet) {
+    display: flex;
+  }
+
+  padding-bottom: spacing(6);
+}
+
+.MapWrapper {
+  flex: 1 1;
+  width: 100%;
+  border-radius: $radius-small;
+  height: 300px;
+  flex: 1 1 70%;
+
+  @include mq($breakpoint-tablet) {
+    height: unset;
+  }
+}
+
+.Map {
+  border-radius: $radius-small;
+  max-height: 400px;
 }
 
 .isDark {

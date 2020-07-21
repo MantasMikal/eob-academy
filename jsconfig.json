@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "jsx": "react",
+      "paths": {
+        "Primitive/*": ["./web/src/component/Primitive/*"],
+        "Common/*":[ "./web/src/component/Common/*"],
+        "Context/*": ["./web/src/component/Context/*"],
+        "Section/*": ["./web/src/component/Section/*"],
+        "lib/*": ["./web/src/lib/*"]
+      }
+    }
+  }

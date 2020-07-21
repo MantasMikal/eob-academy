@@ -46,7 +46,10 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
           />
         )}
       </SmartLink>
-      <LinkWrapper highlight className={styles.NavLink} to='/contact/'>
+      <LinkWrapper highlight className={styles.NavLink} to='/apply/'>
+        Apply
+      </LinkWrapper>
+      <LinkWrapper className={styles.NavLink} to='/contact/'>
         Contact
       </LinkWrapper>
       <LinkWrapper className={styles.NavLink} to='/blog/'>
@@ -58,9 +61,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, onToggleDark, id
       <LinkWrapper className={styles.NavLink} to='/gallery/'>
         Gallery
       </LinkWrapper>
-      {/* <LinkWrapper className={styles.NavLink} to='/esports-teams/'>
+      <LinkWrapper className={styles.NavLink} to='/esports-teams/'>
         Teams
-      </LinkWrapper> */}
+      </LinkWrapper>
       {/* <LinkWrapper className={styles.NavLink} to="/events/">
         Events
       </LinkWrapper> */}

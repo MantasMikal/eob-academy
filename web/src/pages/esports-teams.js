@@ -16,6 +16,14 @@ export const query = graphql`
           current
       }
       description
+      location {
+        lng
+        lat
+      }
+      phone
+      email
+      discord
+      address
       logo {
         asset {
           fluid(maxWidth: 900) {

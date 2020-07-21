@@ -6,7 +6,7 @@ import { useDarkContext } from 'Context/DarkContext'
 import darkStyles from './dark'
 import lightStyles from './light'
 
-const Map = ({ locations, mapId, center }) => {
+const Map = ({ locations, mapId, center, maxHeight }) => {
   const isDark = useDarkContext()
   return (
     <LoadScript id='script-loader' googleMapsApiKey={process.env.GATSBY_GOOGLE_MAPS_API}>
@@ -14,7 +14,8 @@ const Map = ({ locations, mapId, center }) => {
         id={mapId || 'untitled-map'}
         mapContainerStyle={{
           height: '100%',
-          width: '100%'
+          width: '100%',
+          borderRadius: '3px'
         }}
         options={{ styles: isDark ? darkStyles : lightStyles }}
         zoom={8}
@@ -31,6 +32,7 @@ const Map = ({ locations, mapId, center }) => {
 }
 
 Map.propTypes = {
+  maxHeight: string,
   locations: arrayOf([
     shape({
       lng: number,

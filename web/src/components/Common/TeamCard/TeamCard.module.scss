@@ -3,7 +3,7 @@
 
 .TeamCard {
   text-align: center;
-  padding: spacing(2) spacing(3) spacing(6);
+  padding: spacing(2) spacing(4) spacing(6);
   box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
 }
 
@@ -13,12 +13,28 @@
 }
 
 .Description {
+  padding-bottom: spacing(3);
+}
+
+.TeamDescription {
   padding-bottom: spacing(2);
 }
 
 .MoreBtn {
   color: $color-primary-black;
   padding: spacing(2) spacing(3);
+}
+
+.Contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > a {
+    &:not(:last-child) {
+      padding-right: spacing(2);
+    }
+  }
 }
 
 .isDark {

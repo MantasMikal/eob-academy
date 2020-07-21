@@ -42,17 +42,6 @@ const TeamDetails = ({ title, logo, address, email, phone, discord, className })
     <Type size='base' className={styles.TeamDescription}>
       {address}
     </Type>
-    <div className={styles.Contact}>
-      <SmartLink href={`tel:${phone}`}>
-        <Icon type='phone' className={styles.Icon} width={35} height={35}  />
-      </SmartLink>
-      <SmartLink href={`mailto:${email}`}>
-        <Icon type='email' className={styles.Icon} width={35} height={35}  />
-      </SmartLink>
-      <SmartLink href={discord}>
-        <Icon type='discord' className={styles.Icon} width={35} height={35}  />
-      </SmartLink>
-    </div>
   </div>
 )
 
