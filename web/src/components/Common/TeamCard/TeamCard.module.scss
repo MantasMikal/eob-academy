@@ -3,11 +3,12 @@
 
 .TeamCard {
   text-align: center;
-  padding: spacing(2) spacing(4) spacing(6);
+  padding: spacing(4) spacing(4) spacing(6);
   box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
 }
 
 .Title {
+  padding-top: spacing(1);
   padding-bottom: spacing(1);
   text-transform: uppercase;
 }

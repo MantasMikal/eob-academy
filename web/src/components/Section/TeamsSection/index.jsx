@@ -29,14 +29,24 @@ const Index = ({ teams, blocks, title }) => {
       {blocks && <BlockContent blocks={blocks} />}
       <div className={styles.TeamGrid}>
         {teams.length > 0 &&
-          teams.map((team) => (
-            <div className={styles.Team}>
-              <TeamCard key={team._key} {...team} className={styles.TeamCard} />
-              <div className={styles.MapWrapper}>
-                <Map locations={[team.location]} maxHeight={'400px'} />
+          teams.map((team) => {
+            return (
+              <div className={styles.Team}>
+                <TeamCard
+                  key={team._key}
+                  {...team}
+                  className={styles.TeamCard}
+                />
+                <div className={styles.MapWrapper}>
+                  <Map
+                    center={team.location}
+                    locations={[team.location]}
+                    maxHeight={"400px"}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
       </div>
     </Container>
   );
