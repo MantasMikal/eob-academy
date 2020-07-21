@@ -38,6 +38,13 @@
   }
 }
 
+.Logo {
+  & > div {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+
 .isDark {
   .Title,
   .Description {

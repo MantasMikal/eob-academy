@@ -29,7 +29,9 @@ const TeamCard = ({
   const isDark = useDarkContext();
   return (
     <div className={cn(styles.TeamCard, isDark && styles.isDark, className)}>
-      <Media media={logo} />
+      <div className={styles.Logo}>
+        <Media media={logo} />
+      </div>
       <Type className={styles.Title} size="titleLarge">
         {title}
       </Type>

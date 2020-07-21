@@ -1,5 +1,5 @@
 import React from "react";
-import { array, string } from "prop-types";
+import { string } from "prop-types";
 import { cn } from "lib/helpers";
 import { useDarkContext } from "Context/DarkContext";
 
