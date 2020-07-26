@@ -67,6 +67,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/asset/content`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.site.siteTitle,

@@ -1,22 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-// import overlay from '/'
+import React from "react";
 
-// TODO
-// Fix this
-// SEO!
+import ResponsiveMedia from "Primitive/ResponsiveMedia"
+import Type from "Primitive/Type"
+import Container from "Primitive/Container"
 
-import styles from './Hero.module.scss'
-import ResponsiveMedia from 'Primitive/ResponsiveMedia'
-import Type from 'Primitive/Type'
-import Container from 'Primitive/Container'
+import styles from "./Hero.module.scss"
+import eobHero from "../../../asset/content/eobHero.mp4"
 
 const Hero = ({ video, image, overlay, title, subtitle }) => {
   return (
     <div className={styles.Hero}>
       <ResponsiveMedia ratio={9 / 16}>
-      <iframe src="https://player.vimeo.com/video/411540773?controls=0&muted=1&autoplay=1" width="auto" height="auto" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-        <div className={styles.Overlay} />
+      <div className={styles.Overlay} />
+      <video
+        className={styles.VideoFrame}
+        poster={'/asset/eobHero.jpg'}
+        autoPlay
+        muted
+        loop
+      >
+        <source src={eobHero} type="video/mp4" />
+      </video>
+  
       </ResponsiveMedia>
       <Container size="wide" gutter center className={styles.Content}>
         <Type size="displayHero" as="h2" className={styles.Title}>
