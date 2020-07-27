@@ -23,9 +23,11 @@ const Index = ({ teams, blocks, title }) => {
       withNavSpace
       as="section"
     >
-      <Type as="h1" size="displayLarge" className={styles.Title}>
-        {title}
-      </Type>
+      {title && (
+        <Type as="h1" size="displayLarge" className={styles.Title}>
+          {title}
+        </Type>
+      )}
       {blocks && <BlockContent blocks={blocks} />}
       <div className={styles.TeamGrid}>
         {teams.length > 0 &&
@@ -41,6 +43,11 @@ const Index = ({ teams, blocks, title }) => {
                   <Map
                     center={team.location}
                     locations={[team.location]}
+                    style={{
+                      height: '100%',
+                      width: '100%',
+                      borderRadius: '0 3px 3px 0'
+                    }}
                     maxHeight={"400px"}
                   />
                 </div>

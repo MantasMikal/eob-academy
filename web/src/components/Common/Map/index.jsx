@@ -6,17 +6,13 @@ import { useDarkContext } from 'Context/DarkContext'
 import darkStyles from './dark'
 import lightStyles from './light'
 
-const Map = ({ locations, mapId, center, maxHeight }) => {
+const Map = ({ locations, mapId, center, maxHeight, style }) => {
   const isDark = useDarkContext()
   return (
     <LoadScript id='script-loader' googleMapsApiKey={process.env.GATSBY_GOOGLE_MAPS_API}>
       <GoogleMap
         id={mapId || 'untitled-map'}
-        mapContainerStyle={{
-          height: '100%',
-          width: '100%',
-          borderRadius: '3px'
-        }}
+        mapContainerStyle={style}
         options={{ styles: isDark ? darkStyles : lightStyles }}
         zoom={8}
         center={center ? center :{

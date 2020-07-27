@@ -16,16 +16,20 @@
 
 .TeamCard {
   min-width: 350px;
-  flex: 1 1 30%;
+  flex: 1 1 40%;
+  padding: spacing(6) spacing(4);
 }
 
 .Team {
   gap: spacing(4);
+  border-radius: $radius-small;
+  box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+  padding: spacing(0) spacing(0) spacing(0) 0;
   @include mq($breakpoint-tablet) {
     display: flex;
   }
 
-  padding-bottom: spacing(6);
+  margin-bottom: spacing(6);
 }
 
 .MapWrapper {
@@ -41,11 +45,14 @@
 }
 
 .Map {
-  border-radius: $radius-small;
+  border-radius: 0 $radius-small $radius-small 0;
   max-height: 400px;
 }
 
 .isDark {
+  .Team {
+    background-color: $color-primary-black-light;
+  }
   .Title {
     color: $color-primary-white;
   }
