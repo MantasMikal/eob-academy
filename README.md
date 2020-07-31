@@ -1,6 +1,6 @@
-# EOB Academy
-
 ![EOB Academy](https://github.com/MantasMikal/eob-academy/blob/master/web/static/asset/logo.png?raw=true)
+
+# EOB Academy
 
 [eobacdemy.com](http://eobacademy.com)
 
