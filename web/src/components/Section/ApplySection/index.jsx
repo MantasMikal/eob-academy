@@ -18,32 +18,6 @@ const courses = ['Click to pick a course', 'Online', 'College', 'Alternative Pro
 
 const Index = ({ title, blocks }) => {
   const isDark = useDarkContext()
-  // const [form, setForm] = useState({
-  //   name: '',
-  //   email: '',
-  //   courseOfInterest: '',
-  //   message: ''
-  // })
-
-  // function validateForm (form) {
-  //   return {
-  //     name: {
-  //       status: form.name.length > 1 ? 'success' : 'error'
-  //     },
-  //     email: {
-  //       status: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(form.email)
-  //         ? 'success'
-  //         : 'error'
-  //     },
-  //     courseOfInterest: {
-  //       status: form.courseOfInterest.length > 1 ? 'success' : 'error'
-  //     },
-  //     message: {
-  //       status: form.message.length > 1 ? 'success' : 'error'
-  //     }
-  //   }
-  // }
-
   return (
     <Container
       className={cn(styles.ApplySection, isDark && styles.isDark)}
@@ -57,6 +31,7 @@ const Index = ({ title, blocks }) => {
       <Type as='h1' size='displayLarge' className={styles.Title}>
         {title}
       </Type>
+      <div className={styles.Wrapper}>
       {blocks && (
         <div className={styles.Description}>
           <BlockContent blocks={blocks} />
@@ -99,6 +74,7 @@ const Index = ({ title, blocks }) => {
           </Type>
         </ButtonStandard>
       </form>
+      </div>
     </Container>
   )
 }

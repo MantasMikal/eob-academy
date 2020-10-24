@@ -14,6 +14,16 @@
   margin-top: spacing(2);
 }
 
+.Wrapper {
+  @include mq($breakpoint-tabletLandscape) {
+    form {
+      max-width: 60%;
+      // margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 .isDark {
   .Title {
     color: $color-primary-white;
