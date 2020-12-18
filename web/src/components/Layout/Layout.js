@@ -18,10 +18,7 @@ const Layout = ({
   siteTitle,
   onToggleDark,
   sponsors,
-  social,
-  isStripVisible,
-  hideStrip,
-  isNoticeVisible
+  social
 }) => {
   const isDark = useDarkContext()
 
@@ -57,8 +54,6 @@ Layout.propTypes = {
   showNav: PropTypes.bool,
   onToggleDark: PropTypes.func,
   siteTitle: PropTypes.string,
-  isStripVisible: bool,
-  hideStrip: func
 }
 
 export default Layout
