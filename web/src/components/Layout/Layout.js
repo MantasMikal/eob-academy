@@ -39,9 +39,9 @@ const Layout = ({
         onToggleDark={onToggleDark}
         id='navigation'
       />
-      {isNoticeVisible && (
+      {/* {isNoticeVisible && (
         <StripLine text='We are fully operational working with students online - if the Coronavirus is still affecting our lives past September 2020, all of our new students will have access to tutors and be able to work remotely through our online tools. ' />
-      )}
+      )} */}
       <div className={styles.Content} id='content'>
         {children}
       </div>
