@@ -22,7 +22,6 @@ const courses = [
 ];
 
 const venues = [
-  "Click to pick area of interest",
   "Online",
   "Bracknell",
   "Letchworth",
@@ -79,7 +78,7 @@ const Index = ({ title, blocks }) => {
           </FieldTemplate>
         </div>
 
-        {venues.slice(1, venues.length).map((venue) => {
+        {venues.map((venue) => {
           return (
             <form
               className={cn(
