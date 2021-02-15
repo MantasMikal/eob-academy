@@ -19,10 +19,20 @@
   padding-left: spacing(2);
   padding-right: spacing(2);
 
-  @include mq($breakpoint-desktop) {
+  @include mq($breakpoint-tablet) {
     padding-left: spacing(4);
     padding-right: spacing(4);
   }
+
+  @include mq($breakpoint-desktop) {
+    padding-left: spacing(6);
+    padding-right: spacing(6);
+  }
+
+  // @include mq($breakpoint-desktopMedium) {
+  //   padding-left: spacing(6);
+  //   padding-right: spacing(6);
+  // }
 }
 
 // SIZES

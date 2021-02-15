@@ -1,7 +1,11 @@
 @import "setting";
 
-.CoursePromo  {
+.CoursePromo {
   margin-top: spacing(4);
+
+  @include mq($breakpoint-desktop) {
+    margin-top: spacing(6);
+  }
 }
 
 .Title {

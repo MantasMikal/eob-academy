@@ -15,18 +15,44 @@
     justify-content: space-between;
     align-items: center;
 
+    padding-bottom: spacing(8);
+
     .Left {
-      margin-right: spacing(4);
+      margin-right: spacing(7);
+    }
+  }
+
+
+
+  @include mq($breakpoint-desktop) {
+    padding-bottom: spacing(10);
+    .Left {
+      margin-right: spacing(8);
+    }
+  }
+
+  @include mq($breakpoint-desktopMedium) {
+    padding-bottom: spacing(12);
+    .Left {
+      margin-right: spacing(10);
     }
   }
 }
 
 .reverse {
   .Left {
-    @include mq($breakpoint-tablet) { 
+    @include mq($breakpoint-tablet) {
       margin-right: 0;
-      margin-left: spacing(4);
+      margin-left: spacing(7);
       order: 2;
+    }
+
+    @include mq($breakpoint-desktop) {
+      margin-left: spacing(8);
+    }
+
+    @include mq($breakpoint-desktopMedium) {
+      margin-left: spacing(10);
     }
   }
 }

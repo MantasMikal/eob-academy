@@ -26,7 +26,7 @@ const createFigure = figure => {
 
     const El = isZoomable === undefined || isZoomable ? ZoomableImage : Media
     return (
-      <div style={{padding: '10px 0', maxWidth: maxWidth || 'auto'}}>
+      <div style={{padding: '10px 0 10px', maxWidth: maxWidth || 'auto'}}>
         <El key={figure._key} media={media} />
       </div>
     )
