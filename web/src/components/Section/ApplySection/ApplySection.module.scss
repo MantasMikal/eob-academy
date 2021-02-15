@@ -1,4 +1,4 @@
-@import 'setting';
+@import "setting";
 
 .Title {
   margin-bottom: spacing(3);
@@ -9,9 +9,18 @@
   // max-width: 0;
 }
 
-
 .ApplyButton {
   margin-top: spacing(2);
+}
+
+.AreaOfInterest {
+  @include mq($breakpoint-tabletLandscape) {
+    max-width: 60%;
+  }
+}
+
+.Form {
+  display: none;
 }
 
 .Wrapper {
@@ -36,15 +45,20 @@
     }
   }
 
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     background-color: $color-primary-black-light;
     color: $color-primary-white;
     border: $color-primary-black-light;
   }
 
-
   div,
   p {
     color: $color-primary-white;
   }
+}
+
+.visible {
+  display: block;
 }
