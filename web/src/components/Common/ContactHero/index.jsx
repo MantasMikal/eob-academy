@@ -62,7 +62,7 @@ const ContactBox = ({ description, phone, email, address, pdf }) => {
         <ContactItem icon="email" title={email} href={`mailto:${email}`} />
       </div>
       <div className={styles.ContactButtons}>
-        <SmartLink href={pdf} target="_blank">
+        <SmartLink to='/apply' target="_blank">
           <ButtonStandard>
             <Type size="base" demi>
               Apply

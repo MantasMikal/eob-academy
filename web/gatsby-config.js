@@ -24,18 +24,20 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        includePaths: [
-          ...require('backline-mixins').includePaths,
-          ...require('backline-normalize').includePaths,
-          path.join(__dirname, 'src/asset/scss/setting')
-        ],
-        sassRuleModulesTest: /\.module\.s(a|c)ss$/
+        sassOptions: {
+          includePaths: [
+            ...require('backline-mixins').includePaths,
+            ...require('backline-normalize').includePaths,
+            path.join(__dirname, 'src/asset/scss/setting')
+          ],
+          sassRuleModulesTest: /\.module\.s(a|c)ss$/
+        }
       }
     },
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {

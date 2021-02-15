@@ -20,6 +20,7 @@ export default {
       name: 'isFeatured',
       title: 'Is Featured',
       type: 'boolean',
+      description: "Wether the sponsor should appear under 'Partners' section in the footer",
     },
     {
       name: "qouteHeading",

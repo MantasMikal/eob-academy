@@ -8,19 +8,22 @@ import ButtonStandard from "Primitive/ButtonStandard";
 import SmartLink from "Primitive/SmartLink";
 import createSlideshow from "./components/createSlideshow";
 import createSplitPanel from "./components/createSplitPanel";
+import { cn } from "lib/helpers";
 
 const serializers = {
   marks: {
     button: ({ mark, children }) => {
       return (
         children[0] && (
-          <ButtonStandard
-            override
-            target={mark.blank && "_blank"}
-            href={mark.href}
-          >
-            {children}
-          </ButtonStandard>
+          <div style={{ margin: "10px 0" }}>
+            <ButtonStandard
+              override
+              target={mark.blank && "_blank"}
+              href={mark.href}
+            >
+              {children}
+            </ButtonStandard>
+          </div>
         )
       );
     },
@@ -134,7 +137,7 @@ const serializers = {
 
 const BlockContent = ({ blocks, className }) => (
   <BaseBlockContent
-    className={className}
+    className={cn(className, "BlockContent")}
     blocks={blocks}
     serializers={serializers}
   />

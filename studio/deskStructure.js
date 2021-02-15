@@ -55,6 +55,34 @@ export default () =>
             .documentId('companyInfo')
         )
         .icon(MdBusiness),
+
+        S.listItem()
+        .title('Locations')
+        .child(
+          S.list()
+            .title('Locations')
+            .items([
+                S.listItem()
+                .title('Letchworth Hertfordshire')
+                .child(
+                  S.editor()
+                    .id('hertfordshirePage')
+                    .schemaType('coursePromoPage')
+                    .documentId('hertfordshirePage')
+                )
+                .icon(AiOutlineHome),
+                S.listItem()
+                .title('Bracknell Berkshire')
+                .child(
+                  S.editor()
+                    .id('bracknellPage')
+                    .schemaType('coursePromoPage')
+                    .documentId('bracknellPage')
+                )
+                .icon(AiOutlineHome),
+            ])
+        )
+        .icon(AiOutlineHome),
       S.listItem()
         .title('Pages')
         .child(
@@ -79,33 +107,33 @@ export default () =>
                     .documentId('contactPage')
                 )
                 .icon(FaPhone),
-                S.listItem()
-                .title('Letchworth Hertfordshire')
-                .child(
-                  S.editor()
-                    .id('hertfordshirePage')
-                    .schemaType('coursePromoPage')
-                    .documentId('hertfordshirePage')
-                )
-                .icon(AiOutlineHome),
-                S.listItem()
-                .title('Bracknell Berkshire')
-                .child(
-                  S.editor()
-                    .id('bracknellPage')
-                    .schemaType('coursePromoPage')
-                    .documentId('bracknellPage')
-                )
-                .icon(AiOutlineHome),
-              S.listItem()
-                .title('Teams')
-                .child(
-                  S.editor()
-                    .id('teamsPage')
-                    .schemaType('teamsPage')
-                    .documentId('teamsPage')
-                )
-                .icon(RiPagesLine),
+              //   S.listItem()
+              //   .title('Letchworth Hertfordshire')
+              //   .child(
+              //     S.editor()
+              //       .id('hertfordshirePage')
+              //       .schemaType('coursePromoPage')
+              //       .documentId('hertfordshirePage')
+              //   )
+              //   .icon(AiOutlineHome),
+              //   S.listItem()
+              //   .title('Bracknell Berkshire')
+              //   .child(
+              //     S.editor()
+              //       .id('bracknellPage')
+              //       .schemaType('coursePromoPage')
+              //       .documentId('bracknellPage')
+              //   )
+              //   .icon(AiOutlineHome),
+              // S.listItem()
+              //   .title('Teams')
+              //   .child(
+              //     S.editor()
+              //       .id('teamsPage')
+              //       .schemaType('teamsPage')
+              //       .documentId('teamsPage')
+              //   )
+              //   .icon(RiPagesLine),
               S.listItem()
                 .title('About')
                 .child(
