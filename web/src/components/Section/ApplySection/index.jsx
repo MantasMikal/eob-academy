@@ -21,7 +21,12 @@ const courses = [
   "Alternative Provision",
 ];
 
-const venues = ["Online", "Bracknell", "Letchworth"];
+const venues = [
+  "Click to pick area of interest",
+  "Online",
+  "Bracknell",
+  "Letchworth",
+];
 
 const Index = ({ title, blocks }) => {
   const isDark = useDarkContext();
@@ -47,6 +52,10 @@ const Index = ({ title, blocks }) => {
           </div>
         )}
 
+        <Type as="h1" size="displayMedium" className={styles.Title}>
+          Application form
+        </Type>
+
         <div className={styles.AreaOfInterest}>
           <FieldTemplate
             template="multiText"
@@ -70,7 +79,7 @@ const Index = ({ title, blocks }) => {
           </FieldTemplate>
         </div>
 
-        {venues.map((venue) => {
+        {venues.slice(1, venues.length).map((venue) => {
           return (
             <form
               className={cn(
@@ -87,15 +96,6 @@ const Index = ({ title, blocks }) => {
                 name="form-name"
                 value={`contact-${venue}`}
               />
-              <FieldTemplate label="Name" required controlName="name">
-                <TextControl name="name" type="text" required />
-              </FieldTemplate>
-              <FieldTemplate label="Email" required controlName="email">
-                <TextControl name="email" type="email" required />
-              </FieldTemplate>
-              <FieldTemplate label="Phone number" controlName="phone">
-                <TextControl name="phone" type="tel" />
-              </FieldTemplate>
               <FieldTemplate
                 template="multiText"
                 label="Course of interest"
@@ -113,7 +113,15 @@ const Index = ({ title, blocks }) => {
                   </SelectControl>
                 </label>
               </FieldTemplate>
-
+              <FieldTemplate label="Name" required controlName="name">
+                <TextControl name="name" type="text" required />
+              </FieldTemplate>
+              <FieldTemplate label="Email" required controlName="email">
+                <TextControl name="email" type="email" required />
+              </FieldTemplate>
+              <FieldTemplate label="Phone number" controlName="phone">
+                <TextControl name="phone" type="tel" />
+              </FieldTemplate>
               <FieldTemplate
                 label="Message"
                 status="success"
