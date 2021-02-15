@@ -30,6 +30,41 @@
   }
 }
 
+.displayMedium {
+  font-weight: bold;
+  font-family: $font-body;
+  font-size: spacing(4.5);
+  line-height: spacing(6.5);
+
+  @include mq($breakpoint-tabletLandscape) {
+    font-size: spacing(5);
+    line-height: spacing(7); 
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(6);
+    line-height: spacing(8);
+  }
+}
+
+
+.displaySmall {
+  font-weight: bold;
+  font-family: $font-body;
+  font-size: spacing(3.5);
+  line-height: spacing(4.5);
+
+  @include mq($breakpoint-tabletLandscape) {
+    font-size: spacing(4);
+    line-height: spacing(5); 
+  }
+
+  // @include mq($breakpoint-desktop) {
+  //   font-size: spacing(5);
+  //   line-height: spacing(6);
+  // }
+}
+
 .displayHero {
   font-weight: bold;
   font-family: $font-body;
@@ -216,7 +251,7 @@
 }
 
 .padded {
-  padding-bottom: spacing(0.5);
+  padding-bottom: spacing(1);
 }
 
 .qoute {

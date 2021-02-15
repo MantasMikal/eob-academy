@@ -10,7 +10,7 @@ import eobHero from "../../../asset/content/eobHero.mp4"
 const Hero = ({ video, image, overlay, title, subtitle }) => {
   return (
     <div className={styles.Hero}>
-      <ResponsiveMedia ratio={9 / 16}>
+      <ResponsiveMedia ratio={9 / 18} className={styles.ResponsiveMedia}>
       <div className={styles.Overlay} />
       <video
         className={styles.VideoFrame}

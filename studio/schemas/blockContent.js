@@ -1,4 +1,22 @@
-import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from "react-icons/fa";
+import React from "react";
+
+import {
+  FaExternalLinkAlt,
+  FaExternalLinkSquareAlt,
+  FaHighlighter,
+} from "react-icons/fa";
+
+const highlightRender = (props) => (
+  <span style={{ color: "#E72568" }}>{props.children}</span>
+);
+
+const displayRender = (props) => (
+  <h1>{props.children}</h1>
+);
+
+const displaySmallRender = (props) => (
+  <h3>{props.children}</h3>
+);
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -28,10 +46,24 @@ export default {
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
         { title: "Quote", value: "blockquote" },
+        {
+          title: "Display",
+          value: "display",
+          blockEditor: {
+            render: displayRender,
+          },
+        },
+        {
+          title: "Display small",
+          value: "displaySmall",
+          blockEditor: {
+            render: displaySmallRender,
+          },
+        },
         { title: "Title", value: "title" },
-        { title: "Large div", value: "large" },
-        { title: "Medium div", value: "medium" },
-        { title: "Small div", value: "small" }, 
+        { title: "Large", value: "large" },
+        { title: "Medium", value: "medium" },
+        { title: "Small", value: "small" },
       ],
       lists: [{ title: "Bullet", value: "bullet" }],
       // Marks let you mark up inline text in the block editor.
@@ -40,7 +72,15 @@ export default {
         // preference or highlighting by editors.
         decorators: [
           { title: "Strong", value: "strong" },
-          { title: "Emphasis", value: "em" }
+          { title: "Emphasis", value: "em" },
+          {
+            title: "Highlight",
+            value: "highlight",
+            blockEditor: {
+              icon: FaHighlighter,
+              render: highlightRender,
+            },
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -49,67 +89,70 @@ export default {
             name: "button",
             type: "object",
             blockEditor: {
-              icon: FaExternalLinkSquareAlt
+              icon: FaExternalLinkSquareAlt,
             },
             fields: [
               {
                 title: "URL",
                 name: "href",
                 type: "url",
-                validation: Rule =>
+                validation: (Rule) =>
                   Rule.uri({
                     allowRelative: true,
-                    scheme: ["https", "http", "mailto", "tel"]
-                  })
+                    scheme: ["https", "http", "mailto", "tel"],
+                  }),
               },
               {
                 title: "Open in new tab",
                 name: "blank",
                 description: "Read https://css-tricks.com/use-target_blank/",
-                type: "boolean"
-              }
-            ]
+                type: "boolean",
+              },
+            ],
           },
           {
             title: "External Link",
             name: "link",
             type: "object",
             blockEditor: {
-              icon: FaExternalLinkAlt
+              icon: FaExternalLinkAlt,
             },
             fields: [
               {
                 title: "URL",
                 name: "href",
                 type: "url",
-                validation: Rule =>
+                validation: (Rule) =>
                   Rule.uri({
                     allowRelative: true,
-                    scheme: ["https", "http", "mailto", "tel"]
-                  })
+                    scheme: ["https", "http", "mailto", "tel"],
+                  }),
               },
               {
                 title: "Open in new tab",
                 name: "blank",
                 description: "Read https://css-tricks.com/use-target_blank/",
-                type: "boolean"
-              }
-            ]
-          }
-        ]
-      }
+                type: "boolean",
+              },
+            ],
+          },
+        ],
+      },
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      type: "figure"
+      type: "figure",
     },
     {
-      type: "slideshow"
+      type: "slideshow",
     },
     {
-      type: "grid"
-    }
-  ]
+      type: "grid",
+    },
+    {
+      type: "splitPanel",
+    },
+  ],
 };

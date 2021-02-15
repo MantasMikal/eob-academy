@@ -34,6 +34,13 @@ export default {
       description:
         "Used to create space around an elements content. More info: https://www.w3schools.com/css/css_padding.asp",
       type: "string"
+    },
+    {
+      name: "maxWidth",
+      title: "Max Width",
+      description:
+        "Sets maximum width of the content. Available units: %, px, em, rem",
+      type: "string"
     }
   ],
   select: {

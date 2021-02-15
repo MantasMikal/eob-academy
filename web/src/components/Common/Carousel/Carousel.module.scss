@@ -6,6 +6,10 @@
   @include mq($breakpoint-tablet) {
     margin: spacing(4) 0 spacing(12);
   }
+
+  li:before {
+    display: none;
+  }
 }
 
 .ControlIcon {

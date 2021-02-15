@@ -32,6 +32,9 @@ import section from './section'
 import card from './card'
 import team from './team'
 import teamsPage from './teamsPage'
+import splitPanel from './split-panel'
+import coursePromoPage from './coursePromoPage'
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -67,7 +70,9 @@ export default createSchema({
     section,
     card,
     team,
-    teamsPage
+    teamsPage,
+    splitPanel,
+    coursePromoPage
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

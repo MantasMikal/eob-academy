@@ -8,6 +8,7 @@ import { getFluidGatsbyImage } from 'gatsby-source-sanity'
 const createFigure = figure => {
   if (!figure || !figure.asset || !figure.asset.mimeType) return null
   const { isZoomable, asset, alt, maxWidth } = figure
+  
   if (asset.mimeType === 'image/gif') {
     return <img src={asset.url} alt={alt || ' '} style={{ width: '100%' }} key={figure.asset.id} />
   } else {
@@ -25,7 +26,7 @@ const createFigure = figure => {
 
     const El = isZoomable === undefined || isZoomable ? ZoomableImage : Media
     return (
-      <div style={{padding: '10px 0'}}>
+      <div style={{padding: '10px 0', maxWidth: maxWidth || 'auto'}}>
         <El key={figure._key} media={media} />
       </div>
     )

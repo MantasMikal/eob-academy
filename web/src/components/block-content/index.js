@@ -1,36 +1,44 @@
-import BaseBlockContent from '@sanity/block-content-to-react'
-import React from 'react'
-import Type from 'Primitive/Type'
-import Qoute from 'Primitive/Qoute'
-import createGrid from './components/createGrid'
-import createFigure from './components/createFigure'
-import ButtonStandard from 'Primitive/ButtonStandard'
-import SmartLink from 'Primitive/SmartLink'
-import createSlideshow from './components/createSlideshow'
+import BaseBlockContent from "@sanity/block-content-to-react";
+import React from "react";
+import Type from "Primitive/Type";
+import Qoute from "Primitive/Qoute";
+import createGrid from "./components/createGrid";
+import createFigure from "./components/createFigure";
+import ButtonStandard from "Primitive/ButtonStandard";
+import SmartLink from "Primitive/SmartLink";
+import createSlideshow from "./components/createSlideshow";
+import createSplitPanel from "./components/createSplitPanel";
 
 const serializers = {
   marks: {
     button: ({ mark, children }) => {
       return (
         children[0] && (
-          <ButtonStandard override target={mark.blank && '_blank'} href={mark.href}>
+          <ButtonStandard
+            override
+            target={mark.blank && "_blank"}
+            href={mark.href}
+          >
             {children}
           </ButtonStandard>
         )
-      )
+      );
     },
     link: ({ mark, children }) => {
       return (
         children[0] && (
-          <SmartLink target={mark.blank && '_blank'} href={mark.href}>
+          <SmartLink target={mark.blank && "_blank"} href={mark.href}>
             {children}
           </SmartLink>
         )
-      )
-    }
+      );
+    },
+    highlight: ({ mark, children }) => {
+      return <span style={{ color: "#E72568" }}>{children}</span>;
+    },
   },
   types: {
-    block (props) {
+    block(props) {
       switch (props.node.style) {
         // case 'h1':
         //   return (
@@ -39,78 +47,97 @@ const serializers = {
         //     </Type>
         //   )
 
-        case 'h2':
+        case "h2":
           return (
-            <Type as='h2' size='titleLarge' padded>
+            <Type as="h2" size="titleLarge" padded>
               {props.children}
             </Type>
-          )
+          );
 
-        case 'h3':
+        case "h3":
           return (
-            <Type as='h3' size='title' padded>
+            <Type as="h3" size="title" padded>
               {props.children}
             </Type>
-          )
+          );
 
-        case 'h4':
+        case "h4":
           return (
-            <Type as='h4' size='subtitle' padded>
+            <Type as="h4" size="subtitle" padded>
               {props.children}
             </Type>
-          )
+          );
+        case "display":
+          return (
+            <Type as="h3" size="displayMedium" padded>
+              {props.children}
+            </Type>
+          );
+        case "displaySmall":
+          return (
+            <Type as="h3" size="displaySmall" padded>
+              {props.children}
+            </Type>
+          );
+        case "title":
+          return (
+            <Type as="div" size="displayLarge" padded>
+              {props.children}
+            </Type>
+          );
+        case "large":
+          return (
+            <Type as="h4" size="titleLarge" padded>
+              {props.children}
+            </Type>
+          );
+        case "medium":
+          return (
+            <Type as="h4" size="titleMedium" padded>
+              {props.children}
+            </Type>
+          );
+        case "small":
+          return (
+            <Type as="h4" size="title" padded>
+              {props.children}
+            </Type>
+          );
 
-        case 'title':
-          return (
-            <Type as='div' size='displayLarge' padded>
-              {props.children}
-            </Type>
-          )
-        case 'large':
-          return (
-            <Type as='h4' size='titleLarge' padded>
-              {props.children}
-            </Type>
-          )
-        case 'medium':
-          return (
-            <Type as='h4' size='titleMedium' padded>
-              {props.children}
-            </Type>
-          )
-        case 'small':
-          return (
-            <Type as='h4' size='title' padded>
-              {props.children}
-            </Type>
-          )
-        case 'blockquote':
-          return <Qoute>{props.children}</Qoute>
+        case "blockquote":
+          return <Qoute>{props.children}</Qoute>;
 
         default:
-          if (props.children.length > 1 || props.children[0] !== '') {
+          if (props.children.length > 1 || props.children[0] !== "") {
             return (
-              <Type as='p' size='base'>
+              <Type as="p" size="base">
                 {props.children}
               </Type>
-            )
-          } else return <br />
+            );
+          } else return <br />;
       }
     },
-    figure (props) {
-      return createFigure(props.node)
+    figure(props) {
+      return createFigure(props.node);
     },
-    slideshow (props) {
-      //  ("slideshow -> props", props)
-
-      return createSlideshow(props.node)
+    slideshow(props) {
+      return createSlideshow(props.node);
     },
-    grid (props) {
-      return createGrid(props.node)
-    }
-  }
-}
+    grid(props) {
+      return createGrid(props.node);
+    },
+    splitPanel(props) {
+      return createSplitPanel(props.node);
+    },
+  },
+};
 
-const BlockContent = ({ blocks, className }) => <BaseBlockContent className={className} blocks={blocks} serializers={serializers} />
+const BlockContent = ({ blocks, className }) => (
+  <BaseBlockContent
+    className={className}
+    blocks={blocks}
+    serializers={serializers}
+  />
+);
 
-export default BlockContent
+export default BlockContent;

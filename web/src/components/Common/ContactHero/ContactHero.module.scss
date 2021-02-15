@@ -1,11 +1,12 @@
 @import '_backline-mixins';
 @import 'setting';
 
-.Hero {
+.ContactHero {
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin-top: 42px;
+  margin-top: 50px;
+
 }
 
 .Overlay {
@@ -14,66 +15,107 @@
   height: 102%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='1.5' height='1.5' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='crispEdges' cx='0.5' cy='0.5' r='0.5' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 
   @include mq($breakpoint-tablet) {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='3' height='3' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='geometricPrecision'%0Acx='2' cy='2' r='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
   }
 }
 
-.VideoFrame {
-  display: block;
-}
-
 .Content {
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
-  padding: spacing(2);
-  max-width: 95%;
 
-  @include mq($breakpoint-mobile-large) {
-    padding: spacing(4);
-    max-width: 85%;
-  }
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
 
-  @include mq($breakpoint-mobileLandscape) {
-    padding: spacing(6);
-    max-width: 75%;
-  }
+  z-index: 1;
 
-  @include mq($breakpoint-tablet) {
-    padding: spacing(8) spacing(8);
-    max-width: 60%;
-  }
+  display: flex;
 
   @include mq($breakpoint-tabletLandscape) {
-    padding: spacing(10) spacing(10);
-    max-width: 60%;
-  }
-
-  @include mq($breakpoint-desktop) {
-    padding: spacing(12) spacing(12);
-  }
-
-  @include mq($breakpoint-desktopMedium) {
-    padding: spacing(15) spacing(10);
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
-.ResponsiveMedia {
-  padding-bottom: 56.25% !important;
 
-  @include mq($breakpoint-desktop) {
-    padding-bottom: 50.25% !important;
+.TitleWrapper {
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 700px;
+
+  @include mq($breakpoint-tabletLandscape) {
+    flex: 1 1 60%;
+    min-width: 400px;
+    max-width: 1200px;
+    margin-right: spacing(6);
   }
+
+  @include mq($breakpoint-desktopMedium) {
+    margin-right: spacing(10);
+  }
+}
+
+.Contacts {
+  margin-bottom: spacing(2);
+}
+
+.Contact {
+  max-width: 650px;
+  border-radius: $radius-small;
+  background-color: $color-primary-white;
+  display: none;
+
+  margin: spacing(3) 0;
+
+  @include mq($breakpoint-tabletLandscape) {
+    display: block;
+    padding: spacing(3);
+    margin: 0;
+  }
+} 
+
+.MobileContact {
+  .Contact {
+    display: block;
+    @include mq($breakpoint-tabletLandscape) {
+      display: none;
+    }
+  }
+}
+
+.ContactTitle {
+  margin-bottom: spacing(1);
+}
+
+.ContactButtons {
+  button:first-child {
+    margin-right: spacing(1);
+  }
+
+  a {
+    color: $color-primary-black;
+  }
+}
+
+.ContactDescription  {
+  margin-bottom: spacing(2);
 }
 
 .Title {
   color: $color-primary-white;
   padding-bottom: spacing(1);
 
-  @include mq($breakpoint-mobileLandscape) {
+  @include mq($breakpoint-tablet) {
     padding-bottom: spacing(2);
   }
 
@@ -88,5 +130,30 @@
   @include mq($breakpoint-desktop) {
     font-size: 2.5vw;
     line-height: 3vw;
+  }
+}
+
+.ContactItem {
+  display: flex;
+  padding-bottom: spacing(1);
+  color: $color-primary-black;
+}
+
+.Icon {
+  margin-right: spacing(1.5);
+  vertical-align: text-bottom;
+  svg, path {
+    fill: $color-primary-yellow;
+  }
+}
+
+
+.isDark {
+  .LitItemTitle, .ContactDescription, .ContactTitle {
+    color: $color-primary-white;
+  }
+
+  .Contact {
+    background-color: $color-primary-black-light;
   }
 }

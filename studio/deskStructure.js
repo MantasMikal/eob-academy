@@ -10,7 +10,7 @@ import {
 import { FaFile, FaPhone } from 'react-icons/fa'
 import { FiFileText, FiBook } from 'react-icons/fi'
 import { TiContacts } from 'react-icons/ti'
-import { AiFillFlag } from 'react-icons/ai'
+import { AiFillFlag, AiOutlineHome } from 'react-icons/ai'
 import { RiPagesLine } from 'react-icons/ri'
 import { GoSignIn } from 'react-icons/go'
 const hiddenTypes = [
@@ -26,9 +26,11 @@ const hiddenTypes = [
   'course',
   'seo-plugin',
   'contactPage',
+  'bracknellPage',
   'homePage',
   'teamsPage',
-  'team'
+  'team',
+  'coursePromoPage'
 ]
 
 export default () =>
@@ -77,6 +79,24 @@ export default () =>
                     .documentId('contactPage')
                 )
                 .icon(FaPhone),
+                S.listItem()
+                .title('Letchworth Hertfordshire')
+                .child(
+                  S.editor()
+                    .id('hertfordshirePage')
+                    .schemaType('coursePromoPage')
+                    .documentId('hertfordshirePage')
+                )
+                .icon(AiOutlineHome),
+                S.listItem()
+                .title('Bracknell Berkshire')
+                .child(
+                  S.editor()
+                    .id('bracknellPage')
+                    .schemaType('coursePromoPage')
+                    .documentId('bracknellPage')
+                )
+                .icon(AiOutlineHome),
               S.listItem()
                 .title('Teams')
                 .child(

@@ -1,0 +1,32 @@
+@import "setting";
+@import "_backline-mixins";
+
+.SplitPanel {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: spacing(4);
+
+  div {
+    flex: 1 1 50%;
+  }
+
+  @include mq($breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .Left {
+      margin-right: spacing(4);
+    }
+  }
+}
+
+.reverse {
+  .Left {
+    @include mq($breakpoint-tablet) { 
+      margin-right: 0;
+      margin-left: spacing(4);
+      order: 2;
+    }
+  }
+}
