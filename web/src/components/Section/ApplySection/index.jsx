@@ -25,7 +25,28 @@ const venues = ["Online", "Bracknell", "Letchworth"];
 
 const Index = ({ title, blocks }) => {
   const isDark = useDarkContext();
-  const [venue, setVenue] = useState(venues[0])
+  const [venue, setVenue] = useState(venues[0]);
+
+  const onSubmit = (e) => {
+    function encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
+        .join("&");
+    }
+
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": venue,
+        "name": 'Just a test'
+      }),
+    });
+  };
+
   return (
     <Container
       className={cn(styles.ApplySection, isDark && styles.isDark)}
@@ -87,7 +108,10 @@ const Index = ({ title, blocks }) => {
           >
             <label>
               <VisuallyHidden>Area of interest</VisuallyHidden>
-              <SelectControl name="areaOfInterest" onChange={e => setVenue(e.target.value)}>
+              <SelectControl
+                name="areaOfInterest"
+                onChange={(e) => setVenue(e.target.value)}
+              >
                 {venues.map((venue) => (
                   <option value={venue} key={`venue${venue}`}>
                     {venue}
@@ -110,7 +134,7 @@ const Index = ({ title, blocks }) => {
               required
             />
           </FieldTemplate>
-          <ButtonStandard className={styles.ApplyButton} type="submit">
+          <ButtonStandard className={styles.ApplyButton} onClick={onSubmit}>
             <Type size="base" demi>
               Apply
             </Type>
