@@ -19,9 +19,10 @@ function Carousel({ children }) {
         cellSpacing={24}
         enableKeyboardControls
         frameOverflow="visible"
-        initialSlideHeight={360}
-        inirialSlideWidth={640}
+        // initialSlideHeight={360}
+        initialSlideWidth={640}
         speed={250}
+        heightMode="current"
         transitionMode="scroll"
         renderTopRightControls={({ nextSlide }) => (
           <ButtonBase className={styles.ControlRight} onClick={nextSlide}>

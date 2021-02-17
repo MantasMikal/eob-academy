@@ -7,10 +7,17 @@
     margin: spacing(4) 0 spacing(12);
   }
 
+  // li {
+  //   display: inline-flex;
+  //   align-items: center;
+  // }
+
   li:before {
     display: none;
   }
 }
+
+:glo
 
 .ControlIcon {
   svg {
