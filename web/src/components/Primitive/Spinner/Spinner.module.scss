@@ -4,12 +4,13 @@ $spinner-duration: 800ms;
 $spinner-step-duration: $spinner-duration / 8;
 
 .Spinner {
-  display: inline-block;
+  display: block;
   width: 21px;
   height: 21px;
   line-height: 21px;
   opacity: 0;
   animation: spinner-reveal 1000ms $easing-standard 1 forwards;
+  margin: auto;
 }
 
 .SpinnerInner {
