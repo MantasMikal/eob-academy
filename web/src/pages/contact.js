@@ -7,6 +7,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import ContactSection from 'Section/ContactSection'
 import { Helmet } from 'react-helmet'
+import useScript from '../components/Hooks/useScript'
 
 export const query = graphql`
   query ContactPageQuery {
@@ -52,17 +53,15 @@ const ContactPage = props => {
 
   const contact = (data || {}).contact ? mapEdgesToNodes(data.contact) : []
 
+  useScript(`hbspt.forms.create({
+    region: "eu1",
+    portalId: "24888008",
+    formId: "76b72dd9-bd61-4614-82fb-e42421c72f03"
+    });`)
   return (
     <>
     <Helmet>
       <script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/shell.js" />
-      <script>
-        {`hbspt.forms.create({
-        region: "eu1",
-        portalId: "24888008",
-        formId: "76b72dd9-bd61-4614-82fb-e42421c72f03"
-        });`}
-      </script>
     </Helmet>
     <Layout>
       <SEO title='Contact' slug='/contact' />
