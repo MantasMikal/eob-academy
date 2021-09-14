@@ -55,7 +55,7 @@ const ContactPage = props => {
   return (
     <>
     <Helmet>
-      <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/shell.js" />
+      <script charset="utf-8" type="text/javascript" src="https://js-eu1.hsforms.net/forms/shell.js" />
       <script>
         {`hbspt.forms.create({
         region: "eu1",
