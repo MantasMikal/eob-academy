@@ -30,7 +30,6 @@
     "gatsby": "^2.32.3",
     "gatsby-alias-imports": "^1.0.6",
     "gatsby-image": "^2.11.0",
-    "gatsby-plugin-crisp-chat": "^3.2.2",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-offline": "^3.10.0",
     "gatsby-plugin-postcss": "^2.3.1",
