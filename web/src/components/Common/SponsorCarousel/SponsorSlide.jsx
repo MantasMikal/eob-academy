@@ -13,9 +13,9 @@ const SponsorSlide = ({ image, alt, heading, body, url }) => {
   const isDark = useDarkContext()
   return (
     <SmartLink href={url} className={cn(styles.Slide, isDark && styles.isDark)} target="_blank">
-      <div className={styles.ImageWrapper}>
+      {image && <div className={styles.ImageWrapper}>
         <GatsbyImage fluid={image} alt={alt} />
-      </div>
+      </div>}
       <Type size="subtitle" as="h5" className={styles.Heading}>
         {heading}
       </Type>
