@@ -51,7 +51,7 @@ const SponsorCarousel = ({ sponsors, className }) => (
             <SponsorSlide
               heading={sponsor.qouteHeading}
               body={sponsor.qouteBody}
-              alt={sponsor.image.alt}
+              alt={sponsor?.image?.alt}
               image={sponsor?.image?.asset?.fluid}
               url={sponsor.url}
               key={sponsor._key}
