@@ -10,6 +10,7 @@ import Type from 'Primitive/Type'
 import styles from './SponsorGrid.module.scss'
 
 const Sponsor = ({ sponsor }) => {
+  if(!sponsor || !sponsor?.image.asset) return null
   return (
     <SmartLink href={sponsor.url} className={styles.ImageWrapper} target='_blank'>
       <GatsbyImage
