@@ -36,6 +36,17 @@
   background-color: $color-common-grey50;
 }
 
+.medium {
+  padding: spacing(1) spacing(3);
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  @include mq($breakpoint-desktop) {
+    padding: spacing(2) spacing(4);
+    font-size: 1.5rem;
+  }
+}
+
 .large {
   padding: spacing(2) spacing(5);
   font-size: 2rem;

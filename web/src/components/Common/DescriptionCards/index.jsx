@@ -4,9 +4,6 @@ import { arrayOf, shape, string } from 'prop-types'
 import DescriptionCard from './component/DescriptionCard'
 
 import styles from './DescriptionCards.module.scss'
-import ButtonStandard from 'Primitive/ButtonStandard'
-import Type from 'Primitive/Type'
-import SmartLink from 'Primitive/SmartLink'
 
 const DescriptionCards = ({ cards }) => {
   return (
@@ -22,11 +19,6 @@ const DescriptionCards = ({ cards }) => {
             />
           ))}
         </div>
-        <SmartLink to='/apply'>
-          <ButtonStandard size='large' className={styles.Button}>
-            <Type size='title'>The Button</Type>
-          </ButtonStandard>
-        </SmartLink>
       </div>
     </div>
   )

@@ -1,110 +1,110 @@
-import S from '@sanity/desk-tool/structure-builder'
+import S from "@sanity/desk-tool/structure-builder";
 import {
   MdBusiness,
   MdSettings,
   MdGroup,
   MdLibraryBooks,
   MdHome,
-  MdInfoOutline
-} from 'react-icons/md'
-import { FaFile, FaPhone } from 'react-icons/fa'
-import { FiFileText, FiBook } from 'react-icons/fi'
-import { TiContacts } from 'react-icons/ti'
-import { AiFillFlag, AiOutlineHome } from 'react-icons/ai'
-import { RiPagesLine } from 'react-icons/ri'
-import { GoSignIn } from 'react-icons/go'
+  MdInfoOutline,
+} from "react-icons/md";
+import { FaFile, FaPhone } from "react-icons/fa";
+import { FiFileText, FiBook } from "react-icons/fi";
+import { TiContacts } from "react-icons/ti";
+import { AiFillFlag, AiOutlineHome } from "react-icons/ai";
+import { RiPagesLine } from "react-icons/ri";
+import { GoSignIn } from "react-icons/go";
 const hiddenTypes = [
-  'category',
-  'companyInfo',
-  'page',
-  'person',
-  'post',
-  'project',
-  'siteSettings',
-  'sponsors',
-  'coursesPage',
-  'course',
-  'seo-plugin',
-  'contactPage',
-  'bracknellPage',
-  'homePage',
-  'teamsPage',
-  'team',
-  'coursePromoPage'
-]
+  "category",
+  "companyInfo",
+  "page",
+  "person",
+  "post",
+  "project",
+  "siteSettings",
+  "sponsors",
+  "coursesPage",
+  "course",
+  "seo-plugin",
+  "contactPage",
+  "bracknellPage",
+  "homePage",
+  "teamsPage",
+  "team",
+  "coursePromoPage",
+];
 
 export default () =>
   S.list()
-    .title('Content')
+    .title("Content")
     .items([
       S.listItem()
-        .title('Site Settings')
+        .title("Site Settings")
         .child(
           S.editor()
-            .id('siteSettings')
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
+            .id("siteSettings")
+            .schemaType("siteSettings")
+            .documentId("siteSettings")
         )
         .icon(MdSettings),
       S.listItem()
-        .title('Company Info')
+        .title("Company Info")
         .child(
           S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
+            .id("companyInfo")
+            .schemaType("companyInfo")
+            .documentId("companyInfo")
         )
         .icon(MdBusiness),
 
-        S.listItem()
-        .title('Locations')
+      S.listItem()
+        .title("Locations")
         .child(
           S.list()
-            .title('Locations')
+            .title("Locations")
             .items([
-                S.listItem()
-                .title('Letchworth Hertfordshire')
+              S.listItem()
+                .title("Letchworth Hertfordshire")
                 .child(
                   S.editor()
-                    .id('hertfordshirePage')
-                    .schemaType('coursePromoPage')
-                    .documentId('hertfordshirePage')
+                    .id("hertfordshirePage")
+                    .schemaType("coursePromoPage")
+                    .documentId("hertfordshirePage")
                 )
                 .icon(AiOutlineHome),
-                S.listItem()
-                .title('Bracknell Berkshire')
+              S.listItem()
+                .title("Bracknell Berkshire")
                 .child(
                   S.editor()
-                    .id('bracknellPage')
-                    .schemaType('coursePromoPage')
-                    .documentId('bracknellPage')
+                    .id("bracknellPage")
+                    .schemaType("coursePromoPage")
+                    .documentId("bracknellPage")
                 )
                 .icon(AiOutlineHome),
             ])
         )
         .icon(AiOutlineHome),
       S.listItem()
-        .title('Pages')
+        .title("Pages")
         .child(
           S.list()
-            .title('Pages')
+            .title("Pages")
             .items([
               S.listItem()
-                .title('Home')
+                .title("Home")
                 .child(
                   S.editor()
-                    .id('homePage')
-                    .schemaType('homePage')
-                    .documentId('homePage')
+                    .id("homePage")
+                    .schemaType("homePage")
+                    .documentId("homePage")
                 )
                 .icon(MdHome),
               S.listItem()
-                .title('Contact')
+                .title("Contact")
                 .child(
                   S.editor()
-                    .id('contactPage')
-                    .schemaType('contactPage')
-                    .documentId('contactPage')
+                    .id("contactPage")
+                    .schemaType("contactPage")
+                    .documentId("contactPage")
                 )
                 .icon(FaPhone),
               //   S.listItem()
@@ -135,97 +135,108 @@ export default () =>
               //   )
               //   .icon(RiPagesLine),
               S.listItem()
-                .title('About')
+                .title("About")
                 .child(
                   S.editor()
-                    .id('aboutPage')
-                    .schemaType('page')
-                    .documentId('about')
+                    .id("aboutPage")
+                    .schemaType("page")
+                    .documentId("about")
                 )
                 .icon(MdInfoOutline),
               S.listItem()
-                .title('Apply')
+                .title("Jobs")
                 .child(
                   S.editor()
-                    .id('applyPage')
-                    .schemaType('page')
-                    .documentId('apply')
+                    .id("jobsPage")
+                    .schemaType("page")
+                    .documentId("jobs")
+                )
+                .icon(MdInfoOutline),
+              S.listItem()
+                .title("Apply")
+                .child(
+                  S.editor()
+                    .id("applyPage")
+                    .schemaType("page")
+                    .documentId("apply")
                 )
                 .icon(GoSignIn),
               S.listItem()
-                .title('Terms And Conditions')
+                .title("Terms And Conditions")
                 .child(
                   S.editor()
-                    .id('termsAndConditionsPage')
-                    .schemaType('page')
-                    .documentId('termsAndConditions')
+                    .id("termsAndConditionsPage")
+                    .schemaType("page")
+                    .documentId("termsAndConditions")
                 ),
               S.listItem()
-                .title('Privacy Statement')
+                .title("Privacy Statement")
                 .child(
                   S.editor()
-                    .id('privacyStatement')
-                    .schemaType('page')
-                    .documentId('privacyStatement')
-                )
+                    .id("privacyStatement")
+                    .schemaType("page")
+                    .documentId("privacyStatement")
+                ),
             ])
         )
         .icon(FaFile),
       S.listItem()
-        .title('Blog posts')
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts'))
+        .title("Blog posts")
+        .schemaType("post")
+        .child(S.documentTypeList("post").title("Blog posts"))
         .icon(FiFileText),
       S.listItem()
-        .title('Blog Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Category')),
+        .title("Blog Categories")
+        .schemaType("category")
+        .child(S.documentTypeList("category").title("Category")),
       S.listItem()
-        .title('Teams')
-        .schemaType('team')
-        .child(S.documentTypeList('team').title('Teams'))
+        .title("Teams")
+        .schemaType("team")
+        .child(S.documentTypeList("team").title("Teams"))
         .icon(AiFillFlag),
       S.listItem()
-        .title('Sponsors')
+        .title("Sponsors")
         .child(
           S.editor()
-            .id('sponsors')
-            .schemaType('sponsors')
-            .documentId('sponsors')
+            .id("sponsors")
+            .schemaType("sponsors")
+            .documentId("sponsors")
         )
         .icon(MdGroup),
       S.listItem()
-        .title('Courses')
+        .title("Courses")
         .child(
           S.list()
-            .title('Courses')
+            .title("Courses")
             .items([
               S.listItem()
-                .title('College Courses')
+                .title("College Courses")
                 .child(
                   S.editor()
-                    .id('collegeCourses')
-                    .schemaType('coursesPage')
-                    .documentId('collegeCourses')
+                    .id("collegeCourses")
+                    .schemaType("coursesPage")
+                    .documentId("collegeCourses")
                 ),
               S.listItem()
-                .title('Alternative Schools Provision')
+                .title("Alternative Schools Provision")
                 .child(
                   S.editor()
-                    .id('alternativeSchoolsCourses')
-                    .schemaType('coursesPage')
-                    .documentId('alternativeSchoolsCourses')
+                    .id("alternativeSchoolsCourses")
+                    .schemaType("coursesPage")
+                    .documentId("alternativeSchoolsCourses")
                 ),
               S.listItem()
-                .title('Online')
+                .title("Online")
                 .child(
                   S.editor()
-                    .id('onlineCourses')
-                    .schemaType('coursesPage')
-                    .documentId('onlineCourses')
-                )
+                    .id("onlineCourses")
+                    .schemaType("coursesPage")
+                    .documentId("onlineCourses")
+                ),
             ])
         )
         .icon(FiBook),
-      ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
-    ])
+      ...S.documentTypeListItems().filter(
+        (listItem) => !hiddenTypes.includes(listItem.getId())
+      ),
+    ]);

@@ -24,7 +24,7 @@ const ButtonStandard = ({ className, disabled, size, override, ...other }) => (
 ButtonStandard.propTypes = {
   className: string,
   disabled: bool,
-  size: oneOf(['large', 'medium', 'small'])
+  size: oneOf(sizes)
 }
 
 export default ButtonStandard

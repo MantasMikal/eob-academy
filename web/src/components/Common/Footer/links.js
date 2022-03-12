@@ -19,6 +19,10 @@ export default [
     {
       text: 'Contact',
       url: '/contact'
+    },
+    {
+      text: 'Jobs',
+      url: '/jobs'
     }
   ],
   [
