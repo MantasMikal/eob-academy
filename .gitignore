@@ -1,7 +1,5 @@
 # Project specific
 
-/web/public
-
 # Logs
 logs
 *.log

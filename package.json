@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "name": "eob-academy",
+  "version": "1.0.0",
+  "description": "EOB Academy monorepo",
+  "main": "index.js",
+  "repository": "git@github.com:MantasMikal/eob-academy.git",
+  "author": "MantasMikal <mantas.codes@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn workspace web run start",
+    "dev": "yarn workspace web run dev",
+    "build": "yarn workspace web run build"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "express": "^4.18.1",
+    "heroku-ssl-redirect": "^0.1.1"
+  }
+}
