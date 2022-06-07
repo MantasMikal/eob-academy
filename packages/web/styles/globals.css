@@ -2,19 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root {
+  --nav-height: 64px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer utilities {
+  .bg-polka-dots {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='3' height='3' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='geometricPrecision'%0Acx='2' cy='2' r='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
+  }
 
-* {
-  box-sizing: border-box;
-} */
+  .container-lg {
+    @apply relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+
+  .min-h-screen-nav {
+    min-height: calc(100vh - var(--nav-height));
+  }
+}
