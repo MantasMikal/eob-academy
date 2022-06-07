@@ -14,9 +14,5 @@
   },
   "workspaces": [
     "packages/*"
-  ],
-  "dependencies": {
-    "express": "^4.18.1",
-    "heroku-ssl-redirect": "^0.1.1"
-  }
+  ]
 }
