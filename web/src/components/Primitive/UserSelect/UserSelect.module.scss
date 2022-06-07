@@ -1,7 +1,0 @@
-$selection-types: all, auto, none, text;
-
-@each $type in $selection-types {
-  .#{$type} {
-    user-select: $type !important;
-  }
-}
