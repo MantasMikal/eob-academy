@@ -15,7 +15,7 @@ const nextConfig = {
     ignoreDuringBuilds: true
   },
   images: {
-    domains: ['cdn.sanity.io']
+    domains: ['cdn.sanity.io', 'img.clock.co.uk', 'picsum.photos']
   },
   webpack: (config) => {
     config.module.rules.push({
@@ -30,7 +30,7 @@ const nextConfig = {
     })
     config.resolve.alias['@'] = path.join(__dirname, './')
     return config
-  },
+  }
 }
 
 module.exports = withPlugins(
@@ -56,7 +56,7 @@ module.exports = withPlugins(
             enabled: process.env.ANALYZE === 'true'
           })
         ]
-      : []),
+      : [])
     // (nextConfig) =>
     //   withSentryConfig(nextConfig, {
     //     silent: true,
