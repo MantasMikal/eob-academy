@@ -23,4 +23,7 @@
   .decoration-inherit {
     text-decoration: inherit;
   }
+  .trns-ease {
+    @apply transition ease-in-out;
+  }
 }

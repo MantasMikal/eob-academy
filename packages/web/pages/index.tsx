@@ -30,7 +30,7 @@ const Home: NextPage = () => {
       <Hero />
       {/* Intro */}
       <div className="space-y-12 lg:space-y-24 container-lg">
-        <section className="py-12 px-8 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
+        <section className="py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
           <div className="space-y-6 md:space-y-8 text-white">
             <h2 className="relative heading-xlarge left-1">Main courses</h2>
             {courses.map((course) => (
@@ -68,18 +68,19 @@ const Home: NextPage = () => {
             </div>
           ))}
         </section>
-        <section className="border-b-2 border-secondary">
+        <section className="border-secondary border-b-2 space-y-8 md:space-y-16">
           <SectionTitle
             title="Full-time & Short Courses"
             label="All courses"
             href="/courses"
           />
-          <p className="pt-12 pb-16 lg:pt-24 lg:pb-32 max-w-3xl text-xl md:text-3xl text-black">
+          <p className="pt-6 pb-6 lg:pt-16 lg:pb-16 max-w-3xl text-xl md:text-3xl text-black">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
             veniam provident, error dolores fuga minima vitae a officia
             doloremque quae explicabo repellendus iste, commodi ab ut fugit
             quod! Accusamus, cum?
           </p>
+          <span className="block w-full h-[2px] bg-secondary" />
           <div className="space-y-12">
             {['', '', '', ''].map((item, i) => (
               <CourseCard
