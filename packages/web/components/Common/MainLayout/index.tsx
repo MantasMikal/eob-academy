@@ -13,10 +13,9 @@ const MainLayout: React.FC<Props> = ({ children }) => {
         <a href="#navigation">Jump to primary navigation</a>
       </A11yNavigation>
       <Navigation />
-      <main id="content" className="flex-auto">
+      <main id="content" className="flex-auto mt-14">
         {children}
       </main>
-      <div className="bg-gray-800 min-h-screen" />
     </>
   )
 }
