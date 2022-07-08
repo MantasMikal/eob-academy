@@ -12,7 +12,8 @@ module.exports = {
           dark: '#bb1473'
         },
         secondary: '#e82569',
-        tertiary: '#fbc87c'
+        tertiary: '#fbc87c',
+        backgroundSecondary: '#F3F3F3'
       }
     }
   },
