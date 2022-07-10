@@ -1,5 +1,5 @@
 {
-  "name": "violet-clam",
+  "name": "studio",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -15,6 +15,8 @@
   ],
   "dependencies": {
     "@sanity/base": "^2.30.1",
+    "@sanity/color-input": "^2.30.1",
+    "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.30.2",
     "@sanity/default-layout": "^2.30.1",
     "@sanity/default-login": "^2.30.1",
@@ -25,6 +27,8 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sanity-plugin-social-preview": "^0.1.5",
+    "react-icons": "^4.4.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {},

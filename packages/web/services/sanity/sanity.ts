@@ -1,0 +1,80 @@
+import { createClient, createPreviewSubscriptionHook } from 'next-sanity'
+import createImageUrlBuilder from '@sanity/image-url'
+import {
+  getHomeDataQuery,
+  getAllPostsQuery,
+  getPostPageDataQuery,
+  getAllGalleryItemsQuery,
+  getAllSponsorsQuery,
+  getGalleryItemsQuery,
+  getRegularPageDataQuery
+} from './queries'
+import {
+  SanityProjectDetails,
+  SanityImageSource
+} from '@sanity/image-url/lib/types/types'
+
+const config: SanityProjectDetails = {
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string
+}
+
+export const imageBuilder = (source: SanityImageSource) =>
+  createImageUrlBuilder(config).image(source)
+export const usePreviewSubscription = createPreviewSubscriptionHook(config)
+export const client = createClient(config)
+
+export const previewClient = createClient({
+  ...config,
+  useCdn: false,
+  token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN
+})
+
+export const getClient = (usePreview: boolean) =>
+  usePreview ? previewClient : client
+export default client
+
+export async function getHomeData(preview: boolean) {
+  const data = await getClient(preview).fetch(getHomeDataQuery)
+
+  return data
+}
+
+export async function getRecentPosts(preview: boolean) {
+  const data = await getClient(preview).fetch(getAllPostsQuery)
+  return data
+}
+
+export async function getAllPosts(preview: boolean) {
+  const data = await getClient(preview).fetch(getAllPostsQuery)
+  return data
+}
+
+export async function getAllGalleryPosts(preview: boolean) {
+  const data = await getClient(preview).fetch(getAllGalleryItemsQuery)
+  return data
+}
+
+export async function getGalleryPosts(count: number, preview: boolean) {
+  const data = await getClient(preview).fetch(getGalleryItemsQuery(count))
+  return data
+}
+
+export async function getPostPageData(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getPostPageDataQuery, {
+    slug: slug
+  })
+  return data
+}
+
+export async function getRegularPageData(id: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getRegularPageDataQuery, {
+    id: id
+  })
+  return data
+}
+
+export async function getAllSponsors(preview: boolean) {
+  const data = await getClient(preview).fetch(getAllSponsorsQuery)
+  return data
+}

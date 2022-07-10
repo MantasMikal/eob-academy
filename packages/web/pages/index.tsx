@@ -10,6 +10,8 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import { IBlogCardProps } from '@/components/Common/BlogCard'
 import Partners from '@/components/Common/Partners'
+import { getHomeData, usePreviewSubscription } from '@/services/sanity/sanity'
+import { getHomePageDataQuery } from '@/services/sanity/queries'
 
 const courseCategories = [
   {
@@ -200,7 +202,18 @@ const featuredCourses: CourseCardProps[] = [
   }
 ]
 
-const Home: NextPage = () => {
+interface IHomePageProps {
+  data: any
+  preview: boolean
+}
+
+const Home: NextPage<IHomePageProps> = ({ data, preview }) => {
+  const { data: homeData } = usePreviewSubscription(getHomePageDataQuery, {
+    initialData: data,
+    enabled: preview
+  })
+
+  console.log('🚀 ~ file: index.tsx ~ line 210 ~ homeData', homeData)
   return (
     <MainLayout>
       <Hero />
@@ -311,3 +324,13 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getStaticProps = async ({ preview = false }) => {
+  const homePageData = await getHomeData(preview)
+  return {
+    props: {
+      data: homePageData
+    },
+    revalidate: 60 * 30 // 30 minutes
+  }
+}
