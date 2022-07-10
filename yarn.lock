@@ -7532,6 +7532,13 @@ next-compose-plugins@^2.2.1:
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.1.tgz#020fc53f275a7e719d62521bef4300fbb6fde5ab"
   integrity sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==
 
+next-sanity-image@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/next-sanity-image/-/next-sanity-image-3.2.1.tgz#81b44969c7b5c281b7f29fe25b3649828fc5a5ea"
+  integrity sha512-lnynR/h7kD5ueVxQoam8ElKXb+bGWuU1cP+PCwx1NzIiBUHM2wBMnvmpt+emubGocMaIURT/iwPU46VnmB9rsQ==
+  dependencies:
+    "@sanity/image-url" "^0.140.22"
+
 next-sanity@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-0.6.0.tgz#4c1c7017476412fc915d10f8b1ab740583ea33fd"

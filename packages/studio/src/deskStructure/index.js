@@ -7,6 +7,7 @@ import gallery from "./gallery";
 import PagePreview from "../components/previews/page/PagePreview";
 import posts from "./posts";
 import sponsors from "./sponsors";
+import courses from "./courses";
 
 const hiddenTypes = [
   "category",
@@ -22,6 +23,8 @@ const hiddenTypes = [
   "aboutPage",
   "gallery",
   "page",
+  "course",
+  "courseCategory",
 ];
 
 export default () =>
@@ -141,6 +144,7 @@ export default () =>
       sponsors,
       posts,
       gallery,
+      courses,
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

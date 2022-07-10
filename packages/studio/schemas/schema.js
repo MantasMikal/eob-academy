@@ -26,6 +26,8 @@ import siteSettings from "./documents/siteSettings";
 import sponsor from './documents/sponsor'
 import video from "./plugs/video";
 import splitPanel from "./objects/split-panel";
+import course from "./documents/course";
+import courseCategory from "./documents/course-category";
 
 export default createSchema({
   name: "default",
@@ -52,6 +54,8 @@ export default createSchema({
     gallery,
     itemGallery,
     page,
-    splitPanel
+    splitPanel,
+    course,
+    courseCategory
   ]),
 });

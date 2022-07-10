@@ -29,10 +29,22 @@ export const sponsorFragment = groq`
   quoteBody,
   image
   `
+
 export const regularPageFragment = groq`
   _id,
   title,
   body,
+  openGraph
+`
+
+export const courseFragment = groq`
+  _id,
+  title,
+  slug,
+  category,
+  publishedAt,
+  excerpt,
+  mainImage,
   openGraph
 `
 
@@ -49,6 +61,14 @@ export const getAllSponsorsQuery = groq`*[_type == "sponsor"]{
 
 export const getAllPostsQuery = groq`*[_type == "post"] {
   ${postFragment}
+}`
+
+export const getAllCoursesQuery = groq`*[_type == "course"] {
+  ${courseFragment}
+}`
+
+export const getCourseDataQuery = groq`*[_type == "course" && slug.current == $slug][0] {
+  ${courseFragment}
 }`
 
 export const getAllGalleryItemsQuery = groq`*[_type == "gallery"] {
