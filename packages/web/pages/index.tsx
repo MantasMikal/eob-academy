@@ -1,4 +1,4 @@
-import CourseCard from '@/components/Common/CourseCard'
+import CourseCard, { CourseCardProps } from '@/components/Common/CourseCard'
 import Hero from '@/components/Common/Hero'
 import MainLayout from '@/components/Common/MainLayout'
 import SectionTitle from '@/components/Common/SectionTitle'
@@ -7,7 +7,7 @@ import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
 
-const courses = [
+const courseCategories = [
   {
     title: 'FE Video Game Design College Courses',
     href: '#'
@@ -24,6 +24,83 @@ const courses = [
 
 const aboutItems = [{}, {}, {}, {}]
 
+const featuredCourses: CourseCardProps[] = [
+  {
+    title: "The Hero's Journey",
+    href: '/courses/the-heros-journey',
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+      veniam provident, error dolores fuga minima vitae a officia
+      doloremque quae explicabo repellendus iste, commodi ab ut fugit
+      quod! Accusamus, cum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+      veniam provident, error dolores fuga minima vitae a officia
+      doloremque quae explicabo repellendus iste, commodi ab ut fugit
+      quod! Accusamus, cum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+      veniam provident, error dolores fuga minima vitae a officia
+      doloremque quae explicabo repellendus iste, commodi ab ut fugit
+      quod! Accusamus, cum?`,
+    image: {
+      src: `https://picsum.photos/id/${100}/400/400`
+    },
+    category: {
+      title: 'FE Video Game Design College Courses',
+      href: '#'
+    },
+    startDate: new Date().toString(),
+    ageGroup: '14-20'
+  },
+  {
+    title: "The Hero's Journey",
+    href: '/courses/the-heros-journey',
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+      veniam provident, error dolores fuga minima vitae a officia
+      doloremque quae explicabo repellendus iste, commodi ab ut fugit
+      quod! Accusamus, cum?`,
+    image: {
+      src: `https://picsum.photos/id/${100}/400/400`
+    },
+    category: {
+      title: 'FE Video Game Design College Courses',
+      href: '#'
+    },
+    startDate: new Date().toString(),
+    ageGroup: '14-20'
+  },
+  {
+    title: "The Hero's Journey",
+    href: '/courses/the-heros-journey',
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+    veniam provident, error dolores fuga minima vitae a officia
+    doloremque quae explicabo repellendus iste, commodi ab ut fugit
+    quod! Accusamus, cum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+    veniam provident, error dolores fuga minima vitae a officia
+    doloremque quae explicabo repellendus iste, commodi ab ut fugit
+    quod! Accusamus, cum?`,
+    image: {
+      src: `https://picsum.photos/id/${100}/400/400`
+    },
+    category: {
+      title: 'FE Video Game Design College Courses',
+      href: '#'
+    },
+    startDate: new Date().toString(),
+    ageGroup: '14-20'
+  },
+  {
+    title: "The Hero's Journey",
+    href: '/courses/the-heros-journey',
+    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, corrupti. Corporis architecto rerum possimus earum reiciendis incidunt ut corrupti quisquam unde maiores doloremque quae sapiente, suscipit sit consectetur optio quod delectus molestias, magnam officiis dolores vel iste inventore odio. In doloribus tempore numquam totam. Et nostrum adipisci ratione totam tempora.`,
+    image: {
+      src: `https://picsum.photos/id/${100}/400/400`
+    },
+    category: {
+      title: 'FE Video Game Design College Courses',
+      href: '#'
+    },
+    startDate: new Date().toString(),
+    ageGroup: '14-20'
+  }
+]
+
 const Home: NextPage = () => {
   return (
     <MainLayout>
@@ -33,7 +110,7 @@ const Home: NextPage = () => {
         <section className="py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
           <div className="space-y-6 md:space-y-8 text-white">
             <h2 className="relative heading-xlarge left-1">Main courses</h2>
-            {courses.map((course) => (
+            {courseCategories.map((course) => (
               <SmartLink
                 className="flex items-center subtitle hover:underline"
                 key={course.title}
@@ -68,37 +145,22 @@ const Home: NextPage = () => {
             </div>
           ))}
         </section>
-        <section className="border-secondary border-b-2 space-y-8 md:space-y-16">
+        {/* Courses */}
+        <section className="space-y-8 md:space-y-16">
           <SectionTitle
             title="Full-time & Short Courses"
             label="All courses"
             href="/courses"
           />
-          <p className="pt-6 pb-6 lg:pt-16 lg:pb-16 max-w-3xl text-xl md:text-3xl text-black">
+          <p className=" max-w-3xl text-xl md:text-3xl text-black">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
             veniam provident, error dolores fuga minima vitae a officia
             doloremque quae explicabo repellendus iste, commodi ab ut fugit
             quod! Accusamus, cum?
           </p>
-          <span className="block w-full h-[2px] bg-secondary" />
-          <div className="space-y-12">
-            {['', '', '', ''].map((item, i) => (
-              <CourseCard
-                key={`CourseCard:${i}`}
-                title={`The Hero's Journey`}
-                description="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, corporis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, corporis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              veniam provident, error dolores fuga minima vitae a officia
-              doloremque quae explicabo repellendus iste, commodi ab ut fugit
-              quod! Accusamus, cum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, corporis."
-                href="/beep"
-                image={{
-                  src: `https://picsum.photos/id/${i + 100}/400/400`
-                }}
-                category={{
-                  title: 'Video Game Design',
-                  href: '/courses/video-game-design'
-                }}
-              />
+          <div className="flex flex-col space-y-12">
+            {featuredCourses.map((item, i) => (
+              <CourseCard key={`CourseCard:${i}`} {...item} />
             ))}
           </div>
         </section>

@@ -36,7 +36,7 @@ const links = [
 
 export default function Navigation() {
   return (
-    <Popover as="nav" className=" bg-white fixed z-10 w-full top-0 shadow">
+    <Popover as="nav" className=" bg-white fixed z-50 w-full top-0 shadow">
       <>
         <div className="container-lg">
           <div className="flex items-center justify-between h-14">
