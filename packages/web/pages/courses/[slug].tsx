@@ -8,7 +8,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 const CoursePage: NextPage = ({ data }: any) => {
-  const slug = data.slug
+  const slug = data?.slug?.current
   const router = useRouter()
   const { data: courseData } = usePreviewSubscription(getCourseDataQuery, {
     initialData: data,
