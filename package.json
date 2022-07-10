@@ -10,9 +10,10 @@
   "scripts": {
     "start": "yarn workspace web run start",
     "dev": "yarn workspace web run dev",
-    "build": "yarn workspace web run build"
+    "build": "yarn workspace web run build",
+    "rm": "rm -rf node_modules packages/web/node_modules packages/studio/node_modules"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": ["packages/*"]
+  }
 }

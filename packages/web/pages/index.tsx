@@ -2,10 +2,14 @@ import CourseCard, { CourseCardProps } from '@/components/Common/CourseCard'
 import Hero from '@/components/Common/Hero'
 import MainLayout from '@/components/Common/MainLayout'
 import SectionTitle from '@/components/Common/SectionTitle'
+import BlogCarousel from '@/components/Common/BlogCarousel'
 import Icon from '@/components/Primitive/Icon'
 import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
+import Image from 'next/image'
+import { IBlogCardProps } from '@/components/Common/BlogCard'
+import Partners from '@/components/Common/Partners'
 
 const courseCategories = [
   {
@@ -23,6 +27,101 @@ const courseCategories = [
 ]
 
 const aboutItems = [{}, {}, {}, {}]
+
+const partnersAndSupporters = {
+  partners: Array(4).fill({
+    href: '#',
+    image: 'https://picsum.photos/id/2/200/200',
+    title: 'Partner'
+  }),
+  supporters: Array(14).fill({
+    href: '#',
+    image: 'https://picsum.photos/id/2/200/200',
+    title: 'Partner'
+  })
+}
+
+const latestBlogPosts: IBlogCardProps[] = Array(5).fill({
+  title: 'Beating the Crunch Out of Crunch With EOB Academy',
+  publishedAt: '2020-01-01',
+  image: 'https://picsum.photos/id/1/400/400',
+  href: '/blog/beating-the-crunch-out-of-crunch-with-eob-academy'
+})
+
+const industryRoles = [
+  {
+    title: 'Game animator',
+    icon: '/content/industry-roles/animator.svg'
+  },
+  {
+    title: 'Game audio engineer',
+    icon: '/content/industry-roles/audio-engineer.svg'
+  },
+  {
+    title: 'Game designer',
+    icon: '/content/industry-roles/game-designer.svg'
+  },
+  {
+    title: 'Creative game director',
+    icon: '/content/industry-roles/creative-director.svg'
+  },
+  {
+    title: 'Game artist',
+    icon: '/content/industry-roles/artist.svg'
+  },
+  {
+    title: 'Game PR & marketing',
+    icon: '/content/industry-roles/pr-marketing.svg'
+  },
+  {
+    title: 'QA Game tester',
+    icon: '/content/industry-roles/qa.svg'
+  },
+  {
+    title: 'Video game system designer',
+    icon: '/content/industry-roles/systems-designer.svg'
+  },
+  {
+    title: 'Analyst',
+    icon: '/content/industry-roles/analyst.svg'
+  },
+  {
+    title: 'Sales / partnership manager',
+    icon: '/content/industry-roles/sales.svg'
+  },
+  {
+    title: 'Business management',
+    icon: '/content/industry-roles/business-management.svg'
+  },
+  {
+    title: 'PR / marketing executive',
+    icon: '/content/industry-roles/pr.svg'
+  },
+  {
+    title: 'Professional player',
+    icon: '/content/industry-roles/player.svg'
+  },
+  {
+    title: 'Coach',
+    icon: '/content/industry-roles/coach.svg'
+  },
+  {
+    title: 'Production crew',
+    icon: '/content/industry-roles/production-crew.svg'
+  },
+  {
+    title: '3D modeller',
+    icon: '/content/industry-roles/3d-modeller.svg'
+  },
+  {
+    title: 'Coder',
+    icon: '/content/industry-roles/coders.svg'
+  },
+  {
+    title: 'Broadcasting',
+    icon: '/content/industry-roles/broadcasting.svg'
+  }
+]
 
 const featuredCourses: CourseCardProps[] = [
   {
@@ -106,8 +205,8 @@ const Home: NextPage = () => {
     <MainLayout>
       <Hero />
       {/* Intro */}
-      <div className="space-y-12 lg:space-y-24 container-lg">
-        <section className="py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
+      <div className="space-y-12 lg:space-y-24">
+        <section className="container-lg py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
           <div className="space-y-6 md:space-y-8 text-white">
             <h2 className="relative heading-xlarge left-1">Main courses</h2>
             {courseCategories.map((course) => (
@@ -146,7 +245,7 @@ const Home: NextPage = () => {
           ))}
         </section>
         {/* Courses */}
-        <section className="space-y-8 md:space-y-16">
+        <section className="container-lg space-y-8 md:space-y-16">
           <SectionTitle
             title="Full-time & Short Courses"
             label="All courses"
@@ -163,6 +262,48 @@ const Home: NextPage = () => {
               <CourseCard key={`CourseCard:${i}`} {...item} />
             ))}
           </div>
+        </section>
+        <section className="container-lg space-y-8 md:space-y-16">
+          <SectionTitle
+            title="Gaming industry roles"
+            label="Industry Brakedown"
+            href="/"
+          />
+          <p className=" max-w-3xl text-xl md:text-3xl text-black">
+            There are many gaming career options to choose from, both on the
+            technical and creative sides of the field.
+          </p>
+          <p>
+            If you have the commitment, skills and drive to immerse yourself in
+            the world of video games, the possibilities are endless.
+          </p>
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
+            {industryRoles.map((item, i) => (
+              <div
+                className="flex space-x-4 items-center p-3 rounded border"
+                key={`IndustryRole:${i}`}
+              >
+                <Image
+                  src={item.icon}
+                  alt={item.title}
+                  width={60}
+                  height={60}
+                />
+                <p>{item.title}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="bg-slate-50 pb-16">
+          <div className="container-lg">
+            <BlogCarousel items={latestBlogPosts} />
+          </div>
+        </section>
+        <section className="container-lg">
+          <Partners
+            partners={partnersAndSupporters.partners}
+            supporters={partnersAndSupporters.supporters}
+          />
         </section>
       </div>
     </MainLayout>
