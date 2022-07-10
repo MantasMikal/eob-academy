@@ -1,11 +1,11 @@
 import SmartLink from '@/components/Primitive/SmartLink'
-import Image from 'next/future/image'
 import React from 'react'
+import SanityImage from '../SanityImage'
 import SectionTitle from '../SectionTitle'
 
 interface IPartner {
   title: string
-  href: string
+  url: string
   image: string
 }
 
@@ -26,31 +26,26 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
         <div className="flex flex-wrap justify-start items-center border-b-2 pb-8 border-secondary">
           {partners.map((partner) => (
             <SmartLink
-              href={partner.href}
+              href={partner.url}
               target="_blank"
-              className="max-w-[80px] my-2 mx-3 lg:my-4 lg:mx-3 lg:max-w-[160px] hover:scale-101 active:scale-98 transition-all"
+              key={partner.title}
+              className="max-w-[80px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[140px] hover:scale-101 active:scale-98 transition-all"
             >
-              <Image
-                src={partner.image}
-                alt={partner.title}
-                width={200}
-                height={200}
-              />
+              <SanityImage image={partner.image as any} alt={partner.title} />
             </SmartLink>
           ))}
         </div>
         <div className="flex flex-wrap justify-start items-center">
           {supporters.map((supporter) => (
             <SmartLink
-              href={supporter.href}
+              href={supporter.url}
               target="_blank"
-              className="max-w-[60px] my-2 mx-3 lg:my-4 lg:mx-3 lg:max-w-[120px] hover:scale-101 active:scale-98 transition-all"
+              key={supporter.title}
+              className="max-w-[60px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[120px] hover:scale-101 active:scale-98 transition-all"
             >
-              <Image
-                src={supporter.image}
+              <SanityImage
+                image={supporter.image as any}
                 alt={supporter.title}
-                width={200}
-                height={200}
               />
             </SmartLink>
           ))}

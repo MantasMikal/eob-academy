@@ -13,7 +13,7 @@ const CoursePage: NextPage = ({ data }: any) => {
   const { data: courseData } = usePreviewSubscription(getCourseDataQuery, {
     initialData: data,
     params: { slug },
-    enabled: router.query.preview !== null
+    enabled: router?.query?.preview !== null
   })
 
   return <div>{JSON.stringify(courseData)}</div>

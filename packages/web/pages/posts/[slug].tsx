@@ -13,7 +13,7 @@ const PostsPage: NextPage = ({ data }: any) => {
   const { data: postData } = usePreviewSubscription(getPostPageDataQuery, {
     initialData: data,
     params: { slug },
-    enabled: router.query.preview !== null
+    enabled: router?.query?.preview !== null
   })
 
   return <div>{JSON.stringify(postData)}</div>

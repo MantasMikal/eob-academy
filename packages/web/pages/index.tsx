@@ -10,8 +10,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import { IBlogCardProps } from '@/components/Common/BlogCard'
 import Partners from '@/components/Common/Partners'
-import { getHomeData, usePreviewSubscription } from '@/services/sanity/sanity'
-import { getHomePageDataQuery } from '@/services/sanity/queries'
+import { getAllSponsors, getHomeData } from '@/services/sanity/sanity'
 
 const courseCategories = [
   {
@@ -29,19 +28,6 @@ const courseCategories = [
 ]
 
 const aboutItems = [{}, {}, {}, {}]
-
-const partnersAndSupporters = {
-  partners: Array(4).fill({
-    href: '#',
-    image: 'https://picsum.photos/id/2/200/200',
-    title: 'Partner'
-  }),
-  supporters: Array(14).fill({
-    href: '#',
-    image: 'https://picsum.photos/id/2/200/200',
-    title: 'Partner'
-  })
-}
 
 const latestBlogPosts: IBlogCardProps[] = Array(5).fill({
   title: 'Beating the Crunch Out of Crunch With EOB Academy',
@@ -204,14 +190,15 @@ const featuredCourses: CourseCardProps[] = [
 
 interface IHomePageProps {
   data: any
-  preview: boolean
 }
 
-const Home: NextPage<IHomePageProps> = ({ data, preview }) => {
-  const { data: homeData } = usePreviewSubscription(getHomePageDataQuery, {
-    initialData: data,
-    enabled: preview
-  })
+const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
+  const { home, sponsors } = homeData
+
+  const partnersAndSupporters = {
+    partners: sponsors.filter((s: any) => s.isPartner),
+    supporters: sponsors.filter((s: any) => !s.isPartner)
+  }
 
   console.log('🚀 ~ file: index.tsx ~ line 210 ~ homeData', homeData)
   return (
@@ -327,9 +314,13 @@ export default Home
 
 export const getStaticProps = async ({ preview = false }) => {
   const homePageData = await getHomeData(preview)
+  const sponsors = await getAllSponsors(preview)
   return {
     props: {
-      data: homePageData
+      data: {
+        home: homePageData,
+        sponsors
+      }
     },
     revalidate: 60 * 30 // 30 minutes
   }
