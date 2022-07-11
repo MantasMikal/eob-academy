@@ -18,16 +18,10 @@ function Section({ title, label, href, className, children }: SectionProps) {
         className
       )}
     >
-      {label ? (
-        <SectionTitle title={title} label={label} href={href} />
-      ) : (
-        <SectionTitle title={title} />
-      )}
+      <SectionTitle title={title} label={label && label} href={href && href} />
       {children}
     </section>
   )
 }
-
-Section.propTypes = {}
 
 export default Section

@@ -2,58 +2,50 @@ import MainLayout from '@/components/Common/MainLayout'
 import Icon from '@/components/Primitive/Icon'
 import type { NextPage } from 'next'
 import Section from '@/components/Common/Section'
+import PageHeader from '@/components/Common/PageHeader'
+import ItemRow from '@/components/Common/ItemRow'
+
+const items = [
+  {
+    title: 'What',
+    subtitle: `An Academy that offers small class sizes, creates video games and
+    grassroots esports teams.`,
+    a11yText: 'Controller',
+    icon: 'controller'
+  },
+  {
+    title: 'Who',
+    subtitle: `Young people from all backgrounds working together to push each
+    other to the next level.`,
+    a11yText: 'Person',
+    icon: 'person'
+  },
+  {
+    title: 'The Content',
+    subtitle: `Video game creation, 3D character design, esports team creation,
+    industry masterclasses.`,
+    a11yText: 'Tasks',
+    icon: 'tasks'
+  }
+]
 
 const About: NextPage = () => {
   return (
     <MainLayout>
       {/* Intro */}
       <div className="font-semibold">
-        <section className="py-8 px-4 lg:p-12 lg:py-16 bg-tertiary rounded-lg shadow">
-          <div className="container-lg space-y-6 md:space-y-8 text-primary">
-            <p className="ml-1 pb-28">
-              <strong>EOB</strong> - About
-            </p>
-            <h2 className="heading-xlarge">About</h2>
-            <p className="font-bold max-w-2xl text-sm md:text-xl subtitle pt-16">
-              EOB Academy is a place where you can explore and build video games
-              and create your own esports brand, alongside like-minded peers and
-              incredible tutors.
-            </p>
-          </div>
-        </section>
+        <PageHeader
+          title="About"
+          subtitle="EOB Academy is a place where you can explore and build video games
+          and create your own esports brand, alongside like-minded peers and
+          incredible tutors."
+        />
         {/* About */}
-        <section className="container-lg my-20 place-items-center grid sm:grid-cols-3 grid-cols-1 gap-4 lg:gap-32 gap-y-12">
-          <div className="flex flex-col p-6 px-3 xl:px-11 lg:py-6 rounded-lg items-left space-y-4 flex-auto">
-            <Icon
-              type="controller"
-              width={120}
-              height={80}
-              a11yText="Controller"
-              className="mt-5"
-            />
-            <h3 className="font-bold text-xl text-primary">Purpose</h3>
-            <p>
-              An Academy that offers small class sizes, creates video games and
-              grassroots esports teams.
-            </p>
-          </div>
-          <div className="flex flex-col p-6 xl:px-11 lg:py-6 rounded-lg items-left space-y-4 flex-auto">
-            <Icon type="person" width={100} height={100} a11yText="Person" />
-            <h3 className="font-bold text-xl text-primary">Purpose</h3>
-            <p>
-              Young people from all backgrounds working together to push each
-              other to the next level.
-            </p>
-          </div>
-          <div className="flex flex-col p-6 xl:px-11 lg:py-6 rounded-lg items-left space-y-4 flex-auto">
-            <Icon type="tasks" width={100} height={100} a11yText="Tasks" />
-            <h3 className="font-bold text-xl text-primary">Purpose</h3>
-            <p>
-              Video game creation, 3D character design, esports team creation,
-              industry masterclasses.
-            </p>
-          </div>
-        </section>
+        <ItemRow
+          items={items}
+          cardClassName="shadow-none my-20 items-start text-left"
+          iconClassName="items-left"
+        />
         {/* Get Involved */}
         <Section
           title="Get Involved"
@@ -169,7 +161,7 @@ const About: NextPage = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            />
           </div>
           <div className="gap-32 md:flex lg:gap-60">
             <div className="max-w-xl">
@@ -204,7 +196,7 @@ const About: NextPage = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            />
           </div>
         </Section>
       </div>

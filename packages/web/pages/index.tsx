@@ -1,8 +1,8 @@
 import CourseCard from '@/components/Common/CourseCard'
 import Hero from '@/components/Common/Hero'
+import ItemRow from '@/components/Common/ItemRow'
 import MainLayout from '@/components/Common/MainLayout'
 import SectionTitle from '@/components/Common/SectionTitle'
-import Icon from '@/components/Primitive/Icon'
 import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
@@ -22,7 +22,40 @@ const courses = [
   }
 ]
 
-const aboutItems = [{}, {}, {}, {}]
+const aboutItems = [
+  {
+    title: 'Purpose',
+    subtitle: `Offering the neurodiverse opportunities to enable maximum
+  capabilities and confidence through learning video game design -
+  Education without boundaries.`,
+    a11yText: 'Purpose',
+    icon: 'purpose'
+  },
+  {
+    title: 'Purpose',
+    subtitle: `Offering the neurodiverse opportunities to enable maximum
+  capabilities and confidence through learning video game design -
+  Education without boundaries.`,
+    a11yText: 'Purpose',
+    icon: 'purpose'
+  },
+  {
+    title: 'Purpose',
+    subtitle: `Offering the neurodiverse opportunities to enable maximum
+  capabilities and confidence through learning video game design -
+  Education without boundaries.`,
+    a11yText: 'Purpose',
+    icon: 'purpose'
+  },
+  {
+    title: 'Purpose',
+    subtitle: `Offering the neurodiverse opportunities to enable maximum
+  capabilities and confidence through learning video game design -
+  Education without boundaries.`,
+    a11yText: 'Purpose',
+    icon: 'purpose'
+  }
+]
 
 const Home: NextPage = () => {
   return (
@@ -46,28 +79,7 @@ const Home: NextPage = () => {
           </div>
         </section>
         {/* About */}
-        <section className="container-lg grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 gap-y-12">
-          {aboutItems.map((item, i) => (
-            <div
-              className="flex flex-col p-6 lg:px-3 lg:py-6 bg-white rounded-lg shadow items-center text-center space-y-4 flex-auto"
-              key={`About:${i}`}
-            >
-              <Icon
-                type="purpose"
-                width={100}
-                height={100}
-                a11yText="Purpose"
-                className="mx-auto"
-              />
-              <h3 className="font-bold text-primary">Purpose</h3>
-              <p>
-                Offering the neurodiverse opportunities to enable maximum
-                capabilities and confidence through learning video game design -
-                Education without boundaries.
-              </p>
-            </div>
-          ))}
-        </section>
+        <ItemRow items={aboutItems} cardClassName="items-center text-center" />
         <section className="border-secondary border-b-2 space-y-8 md:space-y-16">
           <SectionTitle
             title="Full-time & Short Courses"
