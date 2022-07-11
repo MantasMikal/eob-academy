@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "eobacademy"
+    "name": "EOBAcademy"
   },
   "api": {
     "projectId": "1b51i4i7",
@@ -9,9 +9,12 @@
   },
   "plugins": [
     "@sanity/base",
+    "@sanity/components",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "social-preview",
+    "@sanity/color-input"
   ],
   "env": {
     "development": {
@@ -24,6 +27,14 @@
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/deskStructure"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/variables.css"
     }
   ]
 }

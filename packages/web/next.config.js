@@ -4,6 +4,11 @@ const withPlugins = require('next-compose-plugins')
 const isDev = process.env.NODE_ENV === 'development'
 
 const nextConfig = {
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   poweredByHeader: false,
   useFileSystemPublicRoutes: true,
   // reactStrictMode: true,

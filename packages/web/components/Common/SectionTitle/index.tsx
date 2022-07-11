@@ -14,7 +14,7 @@ function SectionTitle({ title, label, href }: ISectionTitleProps) {
         <h2 className="inline-block py-3 text-xl md:text-2xl font-bold px-2 rounded-b-lg bg-secondary text-white flex-1 max-w-[50%]">
           {title}
         </h2>
-        {label && (
+        {label && href && (
           <Button
             className="rounded-md"
             size="small"

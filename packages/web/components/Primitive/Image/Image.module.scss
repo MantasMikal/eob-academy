@@ -1,0 +1,5 @@
+.Image {
+  & > div, img {
+    filter: none !important;
+  }
+}
