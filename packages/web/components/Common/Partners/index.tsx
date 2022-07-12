@@ -31,7 +31,7 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
               key={partner.title}
               className="max-w-[80px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[140px] hover:scale-101 active:scale-98 transition-all"
             >
-              <SanityImage image={partner.image as any} alt={partner.title} />
+              <SanityImage src={partner.image as any} alt={partner.title} />
             </SmartLink>
           ))}
         </div>
@@ -43,10 +43,7 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
               key={supporter.title}
               className="max-w-[60px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[120px] hover:scale-101 active:scale-98 transition-all"
             >
-              <SanityImage
-                image={supporter.image as any}
-                alt={supporter.title}
-              />
+              <SanityImage src={supporter.image as any} alt={supporter.title} />
             </SmartLink>
           ))}
         </div>

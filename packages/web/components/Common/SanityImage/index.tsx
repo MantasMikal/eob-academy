@@ -1,15 +1,17 @@
 import { client } from '@/services/sanity/sanity'
 import { useNextSanityImage, UseNextSanityImageProps } from 'next-sanity-image'
-import NextImage from 'next/image'
+import { ImageProps } from 'next/future/image'
+import NextImage from 'next/future/image'
 import React from 'react'
 
-export interface ISanityImage {
-  image: UseNextSanityImageProps
+export interface ISanityImage extends ImageProps {
+  src: UseNextSanityImageProps
   alt?: string
 }
 
-const SanityImage = ({ image, alt, ...other }: ISanityImage) => {
-  const imageProps = useNextSanityImage(client, image)
+const SanityImage: React.FC<ISanityImage> = ({ src, alt, ...other }) => {
+  const imageProps = useNextSanityImage(client, src || {})
+  console.log('🚀 ~ file: index.tsx ~ line 14 ~ imageProps', imageProps)
   return <NextImage {...imageProps} alt={alt} {...other} />
 }
 

@@ -42,7 +42,7 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-14">
             <div className="flex items-center">
               <div className="flex-shrink-0 w-full">
-                <div className="relative w-12">
+                <SmartLink to="/" className="block relative w-12">
                   <Image
                     src={logo}
                     priority
@@ -52,7 +52,7 @@ export default function Navigation() {
                     height={120}
                     layout="responsive"
                   />
-                </div>
+                </SmartLink>
               </div>
               <div className=" sm:block sm:ml-6"></div>
             </div>

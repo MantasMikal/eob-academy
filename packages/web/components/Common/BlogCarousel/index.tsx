@@ -39,7 +39,7 @@ const BlogCarousel: React.FC<IBlogCarouselProps> = ({ title, items }) => {
           {items.map((item) => (
             <div
               className="keen-slider__slide !overflow-visible"
-              key={item.href}
+              key={item.slug.current}
             >
               <BlogCard {...item} />
             </div>

@@ -10,7 +10,12 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import { IBlogCardProps } from '@/components/Common/BlogCard'
 import Partners from '@/components/Common/Partners'
-import { getAllSponsors, getHomeData } from '@/services/sanity/sanity'
+import {
+  getAllGalleryPosts,
+  getAllSponsors,
+  getHomeData,
+  getRecentPosts
+} from '@/services/sanity/sanity'
 
 const courseCategories = [
   {
@@ -226,7 +231,7 @@ interface IHomePageProps {
 }
 
 const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
-  const { home, sponsors } = homeData
+  const { home, sponsors, posts } = homeData
 
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
@@ -256,7 +261,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
         </section>
         {/* About */}
         <ItemRow items={aboutItems} cardClassName="items-center text-center" />
-        <section className="border-secondary border-b-2 space-y-8 md:space-y-16">
+        <section className="container-lg space-y-8 md:space-y-16">
           <SectionTitle
             title="Full-time & Short Courses"
             label="All courses"
@@ -307,7 +312,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
         </section>
         <section className="bg-slate-50 pb-16">
           <div className="container-lg">
-            <BlogCarousel items={latestBlogPosts} />
+            <BlogCarousel items={posts} />
           </div>
         </section>
         <section className="container-lg">
@@ -326,11 +331,13 @@ export default Home
 export const getStaticProps = async ({ preview = false }) => {
   const homePageData = await getHomeData(preview)
   const sponsors = await getAllSponsors(preview)
+  const posts = await getRecentPosts(preview)
   return {
     props: {
       data: {
         home: homePageData,
-        sponsors
+        sponsors,
+        posts
       }
     },
     revalidate: 60 * 30 // 30 minutes

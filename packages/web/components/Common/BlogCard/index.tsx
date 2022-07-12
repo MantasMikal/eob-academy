@@ -1,12 +1,15 @@
 import SmartLink from '@/components/Primitive/SmartLink'
 import { format } from 'date-fns'
-import Image from 'next/future/image'
+import { UseNextSanityImageProps } from 'next-sanity-image'
 import React from 'react'
+import SanityImage from '../SanityImage'
 
 export interface IBlogCardProps {
   title: string
-  href: string
-  image: string
+  slug: {
+    current: string
+  }
+  mainImage: UseNextSanityImageProps
   publishedAt: string
   tag?: string
   description?: string
@@ -14,17 +17,20 @@ export interface IBlogCardProps {
 
 const BlogCard = ({
   title,
-  href,
-  image,
+  slug,
+  mainImage,
   publishedAt,
   tag,
   description
 }: IBlogCardProps) => {
   return (
-    <SmartLink to={href} className="block space-y-2 bg-white rounded border shadow hover:shadow-md hover:scale-101 active:scale-98 transition-all">
-      <Image
+    <SmartLink
+      to={`/blog/${slug.current}`}
+      className="block space-y-2 bg-white rounded border shadow hover:shadow-md hover:scale-101 active:scale-98 transition-all"
+    >
+      <SanityImage
         className="rounded aspect-video object-cover"
-        src={image}
+        src={mainImage}
         alt={title}
         width={500}
         height={300}
