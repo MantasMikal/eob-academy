@@ -12,6 +12,31 @@ export default {
       type: "string",
     },
     {
+      name: "subtitle",
+      title: "Subtitle",
+      type: "text",
+    },
+    {
+      name: "location",
+      title: "Location",
+      type: "string",
+    },
+    {
+      name: "launchDate",
+      title: "Launch Date",
+      type: "string",
+    },
+    {
+      name: "duration",
+      title: "Duration",
+      type: "string",
+    },
+    {
+      name: "ages",
+      title: "Ages",
+      type: "string",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -21,6 +46,12 @@ export default {
         source: "title",
         maxLength: 96,
       },
+    },
+    {
+      name: "overview",
+      title: "Overview",
+      type: 'array',
+      of: [{ type: "courseOverview" }]
     },
     {
       name: "category",

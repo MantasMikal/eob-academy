@@ -10,7 +10,7 @@ import MainLayout from '@/components/Common/MainLayout'
 import Icon from '@/components/Primitive/Icon'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
-import Image from '@/components/Primitive/Image'
+import Image from '@/components/Common/SanityImage'
 import classNames from 'classnames'
 
 const CoursePage: NextPage = ({ data }: any) => {
@@ -25,47 +25,40 @@ const CoursePage: NextPage = ({ data }: any) => {
   const infoItems = [
     {
       title: 'Location',
-      subtitle: 'Your home or school',
+      subtitle: courseData.location,
       a11yText: 'location',
       icon: 'location'
     },
     {
       title: 'Launch Date',
-      subtitle: 'Book a bespoke course for your cohort',
+      subtitle: courseData.launchDate,
       a11yText: 'Launch',
       icon: 'launch'
     },
     {
       title: 'Duration',
-      subtitle: 'Mon - Fri 10am - 2pm',
+      subtitle: courseData.duration,
       a11yText: 'Circle',
       icon: 'circle'
     },
     {
       title: 'Ages',
-      subtitle: '8-25',
+      subtitle: courseData.ages,
       a11yText: 'Full Person',
       icon: 'fullPerson'
     }
   ]
 
   const benefits = [{}, {}, {}, {}, {}]
-
   return (
     <MainLayout>
       <div className="font-semibold">
-        <PageHeader
-          title={courseData.title}
-          subtitle={courseData.excerpt}
-        />
+        <PageHeader title={courseData.title} subtitle={courseData.excerpt} />
         <section>
-          <Image 
-            image={courseData.mainImage}
-            alt={courseData.title}
-          />
+          <Image src={courseData.mainImage} alt={courseData.title} />
         </section>
         <section>
-          <div className="container-lg bg-primary p-10 text-white md:grid grid-cols-2 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-16 place-items-center">
+          <div className="container-lg bg-primary p-10 text-white md:grid grid-cols-3 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-16 place-items-center">
             {infoItems.map((item, i) => (
               <div
                 key={`InfoItem:${i}`}
@@ -87,20 +80,16 @@ const CoursePage: NextPage = ({ data }: any) => {
             <button className="bg-tertiary text-primary text-3xl px-11 py-1 mb-11 md:w-40 md:h-12">
               Apply
             </button>
-            <p className="col-span-3">
-              A 5-day course from the comfort of your own home or venue. <br />
-              <br />
-              We will teach you the basics of designing your own platform video
-              game or building a 3D model, using free off-the-shelf design
-              engines - so no need to worry about expensive software costs.
-            </p>
+            {courseData.subtitle && (
+              <p className="col-span-3">{courseData.subtitle}</p>
+            )}
           </div>
         </section>
 
         {/* Course overview */}
         <Section title="Course overview">
           <div className="max-w-full">
-            {benefits.map((b, i) => (
+            {courseData.overview.map((item, i) => (
               <div
                 key={`Benefit:${i}`}
                 className={classNames(
@@ -110,15 +99,10 @@ const CoursePage: NextPage = ({ data }: any) => {
               >
                 <h4 className="subtitle place-items-center text-primary font-normal mb-5 flex">
                   <p className="font-bold pr-2 lg:pr-0 text-3xl">+</p>
-                  About
+                  {item.title}
                 </h4>
                 <p className="max-w-2xl">
-                  Game Design with Gamefroot - Book a course for your venue - up
-                  to 8 students per cohort. <br />
-                  <br />
-                  Log on to Discord at 10am and meet your peers and one of the
-                  EOB tutors. The EOB tutor will work with you to create your
-                  own video.
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -132,7 +116,7 @@ const CoursePage: NextPage = ({ data }: any) => {
                   width={400}
                   height={200}
                   src={courseData.mainImage}
-                  alt='chair'
+                  alt="chair"
                 />
                 <div className="flex my-5">
                   <Icon

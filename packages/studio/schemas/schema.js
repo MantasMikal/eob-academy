@@ -28,6 +28,7 @@ import video from "./plugs/video";
 import splitPanel from "./objects/split-panel";
 import course from "./documents/course";
 import courseCategory from "./documents/course-category";
+import courseOverview from "./documents/course-overview";
 
 export default createSchema({
   name: "default",
@@ -56,6 +57,7 @@ export default createSchema({
     page,
     splitPanel,
     course,
-    courseCategory
+    courseCategory,
+    courseOverview
   ]),
 });

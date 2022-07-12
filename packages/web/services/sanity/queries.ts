@@ -40,6 +40,12 @@ export const regularPageFragment = groq`
 export const courseFragment = groq`
   _id,
   title,
+  subtitle,
+  location,
+  duration,
+  launchDate,
+  overview,
+  ages,
   slug,
   category,
   publishedAt,
