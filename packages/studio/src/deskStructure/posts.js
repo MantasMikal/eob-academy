@@ -38,7 +38,7 @@ export default S.listItem()
               .menuItems(S.documentTypeList("post").getMenuItems())
               // Only show posts with publish date earlier than now and that is not drafts
               .filter(
-                '_type == "post" && publishedAt < now() && !(_id in path("drafts.**"))'
+                '_type == "post" && !(_id in path("drafts.**"))'
               )
               .child((documentId) =>
                 S.document()
@@ -89,7 +89,7 @@ export default S.listItem()
                 S.documentList()
                   .schemaType("post")
                   .title("Post")
-                  .filter('_type == "post" && $catId in categories[]._ref')
+                  .filter('_type == "post" && $catId in category[]._ref')
                   .params({ catId })
               )
           ),
