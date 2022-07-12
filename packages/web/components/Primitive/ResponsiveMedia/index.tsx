@@ -1,4 +1,3 @@
-import { node, number } from 'prop-types'
 import classNames from 'classnames'
 import React from 'react'
 
@@ -10,17 +9,21 @@ const formatRatio = (ratio: number) => {
 
 type ResponsiveMediaProps = {
   className?: string
-  ratio?: number
+  ratio: number
   children?: React.ReactNode
 }
 
-/** 
+/**
  * Reserves a space on page for slow-loading resources, using the
  * supplied ratio. Avoids document reflow when child elements load.
  * Handles img, video as well as iframe for media
  * like embedded videos.
  */
-const ResponsiveMedia = ({ children, className, ratio }: ResponsiveMediaProps) => (
+const ResponsiveMedia = ({
+  children,
+  className,
+  ratio
+}: ResponsiveMediaProps) => (
   <div
     className={classNames(styles.ResponsiveMedia, className)}
     style={{ paddingBottom: `${formatRatio(ratio)}%` }}
@@ -28,10 +31,5 @@ const ResponsiveMedia = ({ children, className, ratio }: ResponsiveMediaProps) =
     {children}
   </div>
 )
-
-ResponsiveMedia.propTypes = {
-  children: node.isRequired,
-  ratio: number.isRequired
-}
 
 export default ResponsiveMedia

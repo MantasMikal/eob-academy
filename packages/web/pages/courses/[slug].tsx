@@ -122,7 +122,7 @@ const CoursePage: NextPage = ({ data }: any) => {
           <div className="max-w-full grid place-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 font-normal">
             {benefits.map((b, i) => (
               <div className="max-w-sm" key={`Course:${i}`}>
-                <Image
+                <SanityImage
                   width={400}
                   height={200}
                   src={courseData.mainImage}
