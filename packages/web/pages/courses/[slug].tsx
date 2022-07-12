@@ -10,8 +10,8 @@ import MainLayout from '@/components/Common/MainLayout'
 import Icon from '@/components/Primitive/Icon'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
-import Image from '@/components/Primitive/Image'
 import classNames from 'classnames'
+import SanityImage from '@/components/Common/SanityImage'
 
 const CoursePage: NextPage = ({ data }: any) => {
   const slug = data?.slug?.current
@@ -54,15 +54,9 @@ const CoursePage: NextPage = ({ data }: any) => {
   return (
     <MainLayout>
       <div className="font-semibold">
-        <PageHeader
-          title={courseData.title}
-          subtitle={courseData.excerpt}
-        />
+        <PageHeader title={courseData.title} subtitle={courseData.excerpt} />
         <section>
-          <Image 
-            image={courseData.mainImage}
-            alt={courseData.title}
-          />
+          <SanityImage src={courseData.mainImage} alt={courseData.title} />
         </section>
         <section>
           <div className="container-lg bg-primary p-10 text-white md:grid grid-cols-2 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-16 place-items-center">
@@ -132,7 +126,7 @@ const CoursePage: NextPage = ({ data }: any) => {
                   width={400}
                   height={200}
                   src={courseData.mainImage}
-                  alt='chair'
+                  alt="chair"
                 />
                 <div className="flex my-5">
                   <Icon

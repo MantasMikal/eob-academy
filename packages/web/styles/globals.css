@@ -10,10 +10,6 @@
   .subtitle {
     @apply text-xl md:text-2xl lg:text-3xl font-bold;
   }
-
-  .container-lg {
-    @apply relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
-  }
 }
 
 @layer utilities {
@@ -25,5 +21,11 @@
   }
   .trns-ease {
     @apply transition ease-in-out;
+  }
+  .container-lg {
+    @apply relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+  .container-md {
+    @apply relative max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }
 }
