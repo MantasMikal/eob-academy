@@ -22,9 +22,9 @@ const GenericPage: NextPage = ({ data, slug }: any) => {
   return (
     <MainLayout>
       <StandardMeta
-        canonical="/privacy-terms-and-conditions"
-        title="Privacy/Terms and conditions"
-        description="Privacy/Terms and conditions"
+        canonical={`/${slug}`}
+        title={pageData?.title}
+        description={pageData?.subtitle}
       />
       <PageHeader
         contentClassName="container-md"

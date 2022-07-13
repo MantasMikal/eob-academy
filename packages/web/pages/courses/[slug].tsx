@@ -14,6 +14,7 @@ import PageHeader from '@/components/Common/PageHeader'
 import Image from '@/components/Common/SanityImage'
 import classNames from 'classnames'
 import CourseGrid from '@/components/Common/CourseGrid'
+import StandardMeta from '@/components/Meta/Standard'
 
 const CoursePage: NextPage = ({ data, courses }: any) => {
   const slug = data?.slug?.current
@@ -57,6 +58,11 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
 
   return (
     <MainLayout>
+      <StandardMeta
+        canonical={`/${slug}`}
+        title={courseData?.title}
+        description={courseData?.excerpt}
+      />
       <div className="font-semibold">
         <PageHeader title={courseData.title} subtitle={courseData.excerpt} />
         <section>

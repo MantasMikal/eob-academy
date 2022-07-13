@@ -7,10 +7,6 @@ import styles from "./IframePreview.css";
 const { siteUrl } = config;
 
 export default function PagePreview(props) {
-  console.log(
-    "🚀 ~ file: PagePreview.js ~ line 10 ~ PagePreview ~ props",
-    props
-  );
   const { slug } = props;
   const { displayed } = props.document;
   const pageSlug = slug || `/${displayed?.slug?.current}`;

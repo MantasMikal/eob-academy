@@ -4,8 +4,8 @@ import type { NextPage } from 'next'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import ItemRow from '@/components/Common/ItemRow'
-import SanityImage from '@/components/Common/SanityImage'
 import Image from 'next/future/image'
+import StandardMeta from '@/components/Meta/Standard'
 
 const items = [
   {
@@ -34,6 +34,13 @@ const items = [
 const About: NextPage = () => {
   return (
     <MainLayout>
+      <StandardMeta
+        canonical="/about"
+        title="About"
+        description="EOB Academy is a place where you can explore and build video games
+        and create your own esports brand, alongside like-minded peers and
+        incredible tutors."
+      />
       {/* Intro */}
       <div className="font-semibold">
         <PageHeader

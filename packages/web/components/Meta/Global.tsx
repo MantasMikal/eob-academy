@@ -25,10 +25,8 @@ const GlobalMeta = () => {
         cardType: 'summary_large_image',
         site: twitterHandle
       }}
-      themeColor={themeColor}
       title={fullTitle}
       description={description}
-      twitterHandle={twitterHandle}
       canonical={url}
       openGraph={{
         type: 'website',

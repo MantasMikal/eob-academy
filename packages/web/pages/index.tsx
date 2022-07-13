@@ -1,4 +1,4 @@
-import CourseCard, { CourseCardProps } from '@/components/Common/CourseCard'
+import CourseCard from '@/components/Common/CourseCard'
 import Hero from '@/components/Common/Hero'
 import ItemRow from '@/components/Common/ItemRow'
 import MainLayout from '@/components/Common/MainLayout'
@@ -8,10 +8,8 @@ import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { IBlogCardProps } from '@/components/Common/BlogCard'
 import Partners from '@/components/Common/Partners'
 import {
-  getAllGalleryPosts,
   getAllSponsors,
   getHomeData,
   getRecentPosts

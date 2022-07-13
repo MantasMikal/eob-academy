@@ -3,6 +3,7 @@ import PageHeader from '@/components/Common/PageHeader'
 import Partners from '@/components/Common/Partners'
 import SanityImage from '@/components/Common/SanityImage'
 import Section from '@/components/Common/Section'
+import StandardMeta from '@/components/Meta/Standard'
 import { getAllSponsors } from '@/services/sanity/sanity'
 import React from 'react'
 
@@ -13,6 +14,7 @@ export default function Testimonials({ sponsors }: any) {
   }
   return (
     <MainLayout className="space-y-8 lg:space-y-16">
+      <StandardMeta canonical="/testimonials" title="Testimonials" />
       <PageHeader
         title="Testimonials"
         subtitle="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 

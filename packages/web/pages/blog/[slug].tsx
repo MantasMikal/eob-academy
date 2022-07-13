@@ -1,6 +1,7 @@
 import MainLayout from '@/components/Common/MainLayout'
 import PageHeader from '@/components/Common/PageHeader'
 import SanityImage from '@/components/Common/SanityImage'
+import StandardMeta from '@/components/Meta/Standard'
 import BlockContent from '@/components/Primitive/BlockContent'
 import { getPostPageDataQuery } from '@/services/sanity/queries'
 import {
@@ -23,6 +24,11 @@ const PostsPage: NextPage = ({ data }: any) => {
 
   return (
     <MainLayout>
+      <StandardMeta
+        canonical={`/${slug}`}
+        title={postData?.title}
+        description={postData?.subtitle}
+      />
       <PageHeader
         className="pb-[8vh] lg:pb-[16vh]"
         title={postData?.title}

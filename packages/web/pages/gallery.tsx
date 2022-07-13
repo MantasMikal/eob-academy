@@ -1,12 +1,14 @@
 import MainLayout from '@/components/Common/MainLayout'
 import PageHeader from '@/components/Common/PageHeader'
 import SanityImage from '@/components/Common/SanityImage'
+import StandardMeta from '@/components/Meta/Standard'
 import { getAllGalleryPosts } from '@/services/sanity/sanity'
 import { NextPage } from 'next'
 
 const GalleryPage: NextPage = ({ data: galleryItems }: any) => {
   return (
     <MainLayout className="space-y-12 lg:space-y-24">
+      <StandardMeta canonical="/gallery" title="Gallery" />
       <PageHeader
         title="Gallery"
         subtitle="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 

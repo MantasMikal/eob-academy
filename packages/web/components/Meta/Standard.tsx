@@ -8,7 +8,7 @@ const { url } = {
 
 export type StandardMetaProps = {
   title: string
-  description: string
+  description?: string
   canonical?: string
   image?: UseNextSanityImageProps
 }
@@ -23,7 +23,7 @@ const StandardMeta: React.FC<StandardMetaProps> = ({
   const ogImage = useNextSanityImage(client, image || {})
   const config = {
     title: title,
-    description: description,
+    ...(description && { description }),
     ...(canonical && { canonical: canonicalUrl }),
     openGraph: {
       title: title,
