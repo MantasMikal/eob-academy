@@ -27,6 +27,7 @@ export const sponsorFragment = groq`
   isPartner,
   quoteHeading,
   quoteBody,
+  people,
   image
   `
 
