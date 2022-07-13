@@ -34,6 +34,8 @@ export const sponsorFragment = groq`
 export const regularPageFragment = groq`
   _id,
   title,
+  subtitle,
+  slug,
   body,
   openGraph
 `
@@ -59,6 +61,7 @@ export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   _id,
   title,
   subtitle,
+  courses[]->,
   openGraph
 }`
 
@@ -88,7 +91,7 @@ export const getGalleryItemsQuery = (
   ${galleryItemFragment}
 }`
 
-export const getRegularPageDataQuery = groq`*[_id  == $id][0] {
+export const getRegularPageDataQuery = groq`*[_type == "page" && slug.current == $slug][0] {
   ${regularPageFragment}
 }`
 

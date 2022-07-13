@@ -10,9 +10,13 @@ const createFigure = (figure) => {
     height: '100%'
   }
 
-  let imgCmp = <SanityImage src={figure} alt={figure.alt || ''} />
+  let imgCmp = (
+    <SanityImage className="!m-0 rounded" src={figure} alt={figure.alt || ''} />
+  )
   if (asset.mimeType === 'image/gif') {
-    imgCmp = <img src={asset.url} alt={alt || ''} style={styles} />
+    imgCmp = (
+      <img className="rounded" src={asset.url} alt={alt || ''} style={styles} />
+    )
   }
 
   return (

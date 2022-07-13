@@ -8,6 +8,7 @@ import PagePreview from "../components/previews/page/PagePreview";
 import posts from "./posts";
 import sponsors from "./sponsors";
 import courses from "./courses";
+import pages from "./pages";
 
 const hiddenTypes = [
   "category",
@@ -105,23 +106,6 @@ export default () =>
 
                 .icon(MdInfoOutline),
               S.listItem()
-                .title("Terms And Conditions")
-                .child(
-                  S.editor()
-                    .id("termsAndConditionsPage")
-                    .schemaType("page")
-                    .documentId("termsAndConditionsPage")
-                    .views([
-                      S.view.form().icon(FaEdit),
-                      S.view
-                        .component(() =>
-                          PagePreview({ slug: "/terms-and-conditions" })
-                        )
-                        .icon(FaEye)
-                        .title("Preview"),
-                    ])
-                ),
-              S.listItem()
                 .title("Cookie policiy")
                 .child(
                   S.editor()
@@ -141,6 +125,7 @@ export default () =>
             ])
         )
         .icon(GrDocumentText),
+      pages,
       sponsors,
       posts,
       gallery,

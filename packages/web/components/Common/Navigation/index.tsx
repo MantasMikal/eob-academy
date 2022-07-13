@@ -46,7 +46,10 @@ export default function Navigation() {
           <div className="flex items-center justify-between h-14">
             <div className="flex items-center">
               <div className="flex-shrink-0 w-full">
-                <SmartLink to="/" className="block relative w-12">
+                <SmartLink
+                  to="/"
+                  className="block relative w-12 hover:scale-105 hover:-rotate-3 active:scale-98 transition-transform"
+                >
                   <Image
                     src={logo}
                     priority
@@ -67,7 +70,7 @@ export default function Navigation() {
                     <SmartLink
                       key={link.label}
                       href={link.href}
-                      className="bg-primary-white hover:bg-gray-100 text-black px-3 py-2 rounded-md text-sm font-medium"
+                      className="bg-primary-white hover:bg-gray-100 text-slate-700 px-3 py-2 rounded-md text-sm font-medium"
                     >
                       {link.label}
                     </SmartLink>
@@ -127,7 +130,7 @@ export default function Navigation() {
                         key={link.href}
                         className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                       >
-                        <span className="ml-3 text-base font-medium text-gray-900">
+                        <span className="ml-3 text-base font-medium text-slate-700">
                           {link.label}
                         </span>
                       </SmartLink>

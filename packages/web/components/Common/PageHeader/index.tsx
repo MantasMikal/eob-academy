@@ -6,10 +6,17 @@ export type PageHeaderProps = {
   title: string
   subtitle: string
   className?: string
+  contentClassName?: string
   date?: string
 }
 
-function PageHeader({ title, subtitle, date, className }: PageHeaderProps) {
+function PageHeader({
+  title,
+  subtitle,
+  date,
+  className,
+  contentClassName
+}: PageHeaderProps) {
   return (
     <section
       className={cn(
@@ -17,7 +24,12 @@ function PageHeader({ title, subtitle, date, className }: PageHeaderProps) {
         className
       )}
     >
-      <div className="container-lg space-y-6 md:space-y-8 text-secondary">
+      <div
+        className={cn(
+          'container-lg space-y-6 md:space-y-8 text-secondary',
+          contentClassName
+        )}
+      >
         <p className="ml-1 pb-28">
           <strong>EOB</strong> - {title}
         </p>

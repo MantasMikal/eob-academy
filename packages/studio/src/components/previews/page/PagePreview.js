@@ -6,11 +6,19 @@ import styles from "./IframePreview.css";
 
 const { siteUrl } = config;
 
-export default function PagePreview({ slug }) {
+export default function PagePreview(props) {
+  console.log(
+    "🚀 ~ file: PagePreview.js ~ line 10 ~ PagePreview ~ props",
+    props
+  );
+  const { slug } = props;
+  const { displayed } = props.document;
+  const pageSlug = slug || `/${displayed?.slug?.current}`;
+
   const url =
     process.env.NODE_ENV === "production"
-      ? `${siteUrl}${slug}?preview=true`
-      : `http://localhost:3000${slug}?preview=true`;
+      ? `${siteUrl}${pageSlug}?preview=true`
+      : `http://localhost:3000${pageSlug}?preview=true`;
 
   return (
     <div className={styles.componentWrapper}>

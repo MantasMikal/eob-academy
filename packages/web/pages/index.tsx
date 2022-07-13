@@ -42,37 +42,25 @@ const aboutItems = [
     icon: 'purpose'
   },
   {
-    title: 'Purpose',
-    subtitle: `Offering the neurodiverse opportunities to enable maximum
-  capabilities and confidence through learning video game design -
-  Education without boundaries.`,
-    a11yText: 'Purpose',
-    icon: 'purpose'
+    title: 'Mission',
+    subtitle: `Offering the neurodiverse opportunities to enable 
+    maximum capabilities and 
+    confidence through 
+    learning video game 
+    design - Education without 
+    boundaries..`,
+    a11yText: 'Mission',
+    icon: 'mission'
   },
   {
-    title: 'Purpose',
+    title: 'Vision',
     subtitle: `Offering the neurodiverse opportunities to enable maximum
   capabilities and confidence through learning video game design -
   Education without boundaries.`,
-    a11yText: 'Purpose',
-    icon: 'purpose'
-  },
-  {
-    title: 'Purpose',
-    subtitle: `Offering the neurodiverse opportunities to enable maximum
-  capabilities and confidence through learning video game design -
-  Education without boundaries.`,
-    a11yText: 'Purpose',
-    icon: 'purpose'
+    a11yText: 'Vision',
+    icon: 'vision'
   }
 ]
-
-const latestBlogPosts: IBlogCardProps[] = Array(5).fill({
-  title: 'Beating the Crunch Out of Crunch With EOB Academy',
-  publishedAt: '2020-01-01',
-  image: 'https://picsum.photos/id/1/400/400',
-  href: '/blog/beating-the-crunch-out-of-crunch-with-eob-academy'
-})
 
 const industryRoles = [
   {
@@ -149,89 +137,15 @@ const industryRoles = [
   }
 ]
 
-const featuredCourses: CourseCardProps[] = [
-  {
-    title: "The Hero's Journey",
-    href: '/courses/the-heros-journey',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-      veniam provident, error dolores fuga minima vitae a officia
-      doloremque quae explicabo repellendus iste, commodi ab ut fugit
-      quod! Accusamus, cum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-      veniam provident, error dolores fuga minima vitae a officia
-      doloremque quae explicabo repellendus iste, commodi ab ut fugit
-      quod! Accusamus, cum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-      veniam provident, error dolores fuga minima vitae a officia
-      doloremque quae explicabo repellendus iste, commodi ab ut fugit
-      quod! Accusamus, cum?`,
-    image: {
-      src: `https://picsum.photos/id/${100}/400/400`
-    },
-    category: {
-      title: 'FE Video Game Design College Courses',
-      href: '#'
-    },
-    startDate: new Date().toString(),
-    ageGroup: '14-20'
-  },
-  {
-    title: "The Hero's Journey",
-    href: '/courses/the-heros-journey',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-      veniam provident, error dolores fuga minima vitae a officia
-      doloremque quae explicabo repellendus iste, commodi ab ut fugit
-      quod! Accusamus, cum?`,
-    image: {
-      src: `https://picsum.photos/id/${100}/400/400`
-    },
-    category: {
-      title: 'FE Video Game Design College Courses',
-      href: '#'
-    },
-    startDate: new Date().toString(),
-    ageGroup: '14-20'
-  },
-  {
-    title: "The Hero's Journey",
-    href: '/courses/the-heros-journey',
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-    veniam provident, error dolores fuga minima vitae a officia
-    doloremque quae explicabo repellendus iste, commodi ab ut fugit
-    quod! Accusamus, cum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-    veniam provident, error dolores fuga minima vitae a officia
-    doloremque quae explicabo repellendus iste, commodi ab ut fugit
-    quod! Accusamus, cum?`,
-    image: {
-      src: `https://picsum.photos/id/${100}/400/400`
-    },
-    category: {
-      title: 'FE Video Game Design College Courses',
-      href: '#'
-    },
-    startDate: new Date().toString(),
-    ageGroup: '14-20'
-  },
-  {
-    title: "The Hero's Journey",
-    href: '/courses/the-heros-journey',
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid, corrupti. Corporis architecto rerum possimus earum reiciendis incidunt ut corrupti quisquam unde maiores doloremque quae sapiente, suscipit sit consectetur optio quod delectus molestias, magnam officiis dolores vel iste inventore odio. In doloribus tempore numquam totam. Et nostrum adipisci ratione totam tempora.`,
-    image: {
-      src: `https://picsum.photos/id/${100}/400/400`
-    },
-    category: {
-      title: 'FE Video Game Design College Courses',
-      href: '#'
-    },
-    startDate: new Date().toString(),
-    ageGroup: '14-20'
-  }
-]
-
 interface IHomePageProps {
   data: any
 }
 
 const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
+  console.log('🚀 ~ file: index.tsx ~ line 234 ~ homeData', homeData)
   const { home, sponsors, posts } = homeData
+  const { courses } = home?.home || {}
+  console.log('🚀 ~ file: index.tsx ~ line 235 ~ courses', courses)
 
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
@@ -273,7 +187,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
             quod! Accusamus, cum?
           </p>
           <div className="flex flex-col space-y-12">
-            {featuredCourses.map((item, i) => (
+            {courses.map((item: any, i: number) => (
               <CourseCard key={`CourseCard:${i}`} {...item} />
             ))}
           </div>

@@ -6,16 +6,22 @@ export function createGrid(component) {
   const gridMedia = component.gridMedia
   if (!gridMedia) return <> </>
 
-  const colTemplate = component.colTemplate && {
-    gridTemplateColumns: `${component.colTemplate}`
+  const colTemplate = {
+    gridTemplateColumns: `${
+      component.colTemplate || 'repeat(auto-fit, minmax(250px, 1fr)'
+    }`
   }
 
   const rowTemplate = component.rowTemplate && {
     gridTemplateRows: `${component.rowTemplate}`
   }
 
-  const rowGap = component.rowGap && { gridRowGap: `${component.rowGap}` }
-  const colGap = component.colGap && { gridColumnGap: `${component.colGap}` }
+  const rowGap = {
+    gridRowGap: `${component.rowGap || '1em'}`
+  }
+  const colGap = {
+    gridColumnGap: `${component.colGap || '1em'}`
+  }
   const margin = component.margin && { margin: component.margin }
   // const centered = component.centered && component.centered
 

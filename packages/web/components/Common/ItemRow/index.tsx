@@ -35,7 +35,7 @@ function ItemRow({
             width={100}
             height={100}
             a11yText={item.a11yText}
-            className={(classNames('mx-auto'), iconClassName)}
+            className={classNames('mx-auto flex items-center', iconClassName)}
           />
           <h3 className="font-bold text-primary">{item.title}</h3>
           <p>{item.subtitle && item.subtitle}</p>

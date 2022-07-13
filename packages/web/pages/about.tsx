@@ -5,6 +5,7 @@ import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import ItemRow from '@/components/Common/ItemRow'
 import SanityImage from '@/components/Common/SanityImage'
+import Image from 'next/future/image'
 
 const items = [
   {
@@ -52,7 +53,7 @@ const About: NextPage = () => {
           title="Get Involved"
           label="Apply"
           href="/apply"
-          className="bg-backgroundSecondary"
+          className="bg-slate-50 rounded"
         >
           <h4 className="subtitle font-normal py-14">
             Express your interest by clicking the button to <br />
@@ -85,15 +86,15 @@ const About: NextPage = () => {
         {/* The EOB Academy Provides: */}
         <Section
           title="The EOB Academy Provides:"
-          className="bg-backgroundSecondary"
+          className="bg-slate-50 rounded"
         >
           <div className="gap-32 md:flex lg:gap-60">
-            <img
+            <Image
               width={300}
               height={500}
               alt="Controller Hand"
               src={'/content/controllerHand.png'}
-              style={{maxHeight: '500px'}}
+              style={{ maxHeight: '500px' }}
               className="hidden md:block md:relative -top-14 left-24"
             />
             <div className="max-w-xl">
@@ -105,7 +106,7 @@ const About: NextPage = () => {
                 type="quotes-open"
                 width={24}
                 a11yText="quotes-open"
-                className="text-primary mb-5"
+                className="text-secondary mb-5"
               />
               <p className="text-md">
                 EOB Academy give young people access to learn about video game
@@ -126,9 +127,9 @@ const About: NextPage = () => {
                 type="quotes-close"
                 width={24}
                 a11yText="quotes-open"
-                className="text-primary flex ml-auto"
+                className="text-secondary flex ml-auto"
               />
-              <p className="text-primary font-normal">
+              <p className="text-secondary font-normal">
                 - Steve Godwin, Creator of the Enemy of Boredom Academy.
               </p>
             </div>
@@ -184,7 +185,7 @@ const About: NextPage = () => {
                 projects.
                 <br />
               </p>
-              <p className="font-normal text-primary">
+              <p className="font-normal text-secondary">
                 If your school or venue would like us to work with you get in
                 touch.
               </p>

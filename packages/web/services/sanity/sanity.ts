@@ -69,9 +69,9 @@ export async function getPostPageData(slug: string, preview: boolean) {
   return data
 }
 
-export async function getRegularPageData(id: string, preview: boolean) {
+export async function getRegularPageData(slug: string, preview: boolean) {
   const data = await getClient(preview).fetch(getRegularPageDataQuery, {
-    id: id
+    slug: slug
   })
   return data
 }

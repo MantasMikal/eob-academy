@@ -16,7 +16,7 @@ const GalleryPage: NextPage = ({ data: galleryItems }: any) => {
       <div className="grid gap-x-4 gap-y-4 grid-cols-1 md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3 container-lg">
         {galleryItems.map((item: any) => (
           <div className="space-y-1" key={item._id}>
-            <SanityImage src={item.image} alt="" />
+            <SanityImage className="rounded" src={item.image} alt="" />
             {item.title && <p>{item.title}</p>}
           </div>
         ))}
