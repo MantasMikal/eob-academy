@@ -1,5 +1,6 @@
 import { getCourseDataQuery } from '@/services/sanity/queries'
 import {
+  getAllCourses,
   getClient,
   getCourseData,
   usePreviewSubscription
@@ -12,9 +13,9 @@ import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import Image from '@/components/Common/SanityImage'
 import classNames from 'classnames'
-import SanityImage from '@/components/Common/SanityImage'
+import CourseGrid from '@/components/Common/CourseGrid'
 
-const CoursePage: NextPage = ({ data }: any) => {
+const CoursePage: NextPage = ({ data, courses }: any) => {
   const slug = data?.slug?.current
   const router = useRouter()
   const { data: courseData } = usePreviewSubscription(getCourseDataQuery, {
@@ -86,7 +87,6 @@ const CoursePage: NextPage = ({ data }: any) => {
             )}
           </div>
         </section>
-
         {/* Course overview */}
         <Section title="Course overview">
           <div className="max-w-full">
@@ -110,41 +110,9 @@ const CoursePage: NextPage = ({ data }: any) => {
           </div>
         </Section>
         <Section title="Other courses" href="/courses" label="All courses">
-          <div className="max-w-full grid place-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 font-normal">
-            {benefits.map((b, i) => (
-              <div className="max-w-sm" key={`Course:${i}`}>
-                <SanityImage
-                  width={400}
-                  height={200}
-                  src={courseData.mainImage}
-                  alt="chair"
-                />
-                <div className="flex my-5">
-                  <Icon
-                    type="fullPersonBlack"
-                    width={20}
-                    height={40}
-                    a11yText="Person"
-                    className="pr-10"
-                  />
-                  <p>Age: 16-18/24 (EHCP)</p>
-                </div>
-                <div>
-                  <h5 className="text-primary text-3xl mb-5">Side Quest</h5>
-                  <p>
-                    Learn how creators behind your favourite games do it,
-                    develop skills to create your own video game.
-                    <br />
-                    <br />
-                    EOB Academy will also work with you to create video gaming
-                    teams and you will have the option to travel and take part
-                    in competitions, develop your own video gaming brand and
-                    meet pro-players.
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <CourseGrid
+          courses={courses}
+        />
         </Section>
       </div>
     </MainLayout>
@@ -163,9 +131,12 @@ interface StaticProps {
 export const getStaticProps = async ({ params, preview }: StaticProps) => {
   const { slug } = params
   const courseData = await getCourseData(slug, preview)
+  const allCourses = await getAllCourses(preview)
+
   return {
     props: {
-      data: courseData || {}
+      data: courseData || {},
+      courses: allCourses || {}
     },
     revalidate: 60 * 30 // 30 minutes
   }
