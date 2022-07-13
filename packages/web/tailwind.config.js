@@ -21,14 +21,18 @@ module.exports = {
         tertiary: '#fbc87c',
         backgroundSecondary: '#F3F3F3'
       },
+      aspectRatio: {
+        landscape: '351 / 151'
+      },
       scale: {
-        '101': '1.01',
-        '98': '0.98',
+        101: '1.01',
+        98: '0.98'
       }
     }
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
     function ({ addVariant }) {
       addVariant('child', '& > *')
       addVariant('child-hover', '& > *:hover')

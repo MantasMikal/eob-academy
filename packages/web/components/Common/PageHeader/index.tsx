@@ -1,21 +1,35 @@
+import cn from 'classnames'
+import { format } from 'date-fns'
 import React from 'react'
 
 export type PageHeaderProps = {
   title: string
   subtitle: string
+  className?: string
+  date?: string
 }
 
-function PageHeader({ title, subtitle }: PageHeaderProps) {
+function PageHeader({ title, subtitle, date, className }: PageHeaderProps) {
   return (
-    <section className="py-8 px-4 lg:p-12 lg:py-16 bg-tertiary rounded-lg shadow">
-      <div className="container-lg space-y-6 md:space-y-8 text-primary">
+    <section
+      className={cn(
+        'py-8 px-4 lg:p-12 lg:py-16 bg-tertiary rounded-lg shadow',
+        className
+      )}
+    >
+      <div className="container-lg space-y-6 md:space-y-8 text-secondary">
         <p className="ml-1 pb-28">
           <strong>EOB</strong> - {title}
         </p>
-        <h2 className="heading-xlarge">{title}</h2>
-        <p className="font-bold max-w-2xl text-sm md:text-xl subtitle pt-16">
-          {subtitle}
-        </p>
+        <div className="flex align-start justify-between space-x-4">
+          <h2 className="heading-xlarge">{title}</h2>
+          {date && <time>{format(new Date(date), 'MMM dd, yyyy')}</time>}
+        </div>
+        {subtitle && (
+          <p className="font-bold max-w-2xl text-sm md:text-xl subtitle pt-16">
+            {subtitle}
+          </p>
+        )}
       </div>
     </section>
   )

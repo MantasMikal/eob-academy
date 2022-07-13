@@ -238,7 +238,6 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
     supporters: sponsors.filter((s: any) => !s.isPartner)
   }
 
-  console.log('🚀 ~ file: index.tsx ~ line 210 ~ homeData', homeData)
   return (
     <MainLayout>
       <Hero />

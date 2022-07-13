@@ -12,6 +12,7 @@ import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import Image from '@/components/Common/SanityImage'
 import classNames from 'classnames'
+import SanityImage from '@/components/Common/SanityImage'
 
 const CoursePage: NextPage = ({ data }: any) => {
   const slug = data?.slug?.current
@@ -89,7 +90,7 @@ const CoursePage: NextPage = ({ data }: any) => {
         {/* Course overview */}
         <Section title="Course overview">
           <div className="max-w-full">
-            {courseData.overview.map((item, i) => (
+            {courseData.overview.map((item: any, i:number) => (
               <div
                 key={`Benefit:${i}`}
                 className={classNames(
@@ -112,7 +113,7 @@ const CoursePage: NextPage = ({ data }: any) => {
           <div className="max-w-full grid place-items-center md:grid-cols-2 md:gap-10 lg:grid-cols-3 font-normal">
             {benefits.map((b, i) => (
               <div className="max-w-sm" key={`Course:${i}`}>
-                <Image
+                <SanityImage
                   width={400}
                   height={200}
                   src={courseData.mainImage}

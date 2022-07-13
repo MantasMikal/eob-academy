@@ -1,3 +1,7 @@
+import MainLayout from '@/components/Common/MainLayout'
+import PageHeader from '@/components/Common/PageHeader'
+import SanityImage from '@/components/Common/SanityImage'
+import BlockContent from '@/components/Primitive/BlockContent'
 import { getPostPageDataQuery } from '@/services/sanity/queries'
 import {
   getClient,
@@ -9,6 +13,7 @@ import { useRouter } from 'next/router'
 
 const PostsPage: NextPage = ({ data }: any) => {
   const slug = data?.slug?.current
+
   const router = useRouter()
   const { data: postData } = usePreviewSubscription(getPostPageDataQuery, {
     initialData: data,
@@ -16,7 +21,26 @@ const PostsPage: NextPage = ({ data }: any) => {
     enabled: router?.query?.preview !== null
   })
 
-  return <div>{JSON.stringify(postData)}</div>
+  return (
+    <MainLayout>
+      <PageHeader
+        className="pb-[8vh] lg:pb-[16vh]"
+        title={postData?.title}
+        date={postData?.publishedAt}
+        subtitle={postData?.subtitle}
+      />
+      <div className="-mt-[4vh] lg:-mt-[8vh] container-lg overflow-hidden">
+        <SanityImage
+          className="aspect-landscape object-cover rounded"
+          src={postData?.mainImage}
+          alt={postData?.title}
+        />
+      </div>
+      <article className="prose container-md mx-auto pt-8 lg:pt-12">
+        <BlockContent blocks={postData?.body} />
+      </article>
+    </MainLayout>
+  )
 }
 
 export default PostsPage
@@ -41,7 +65,6 @@ export const getStaticProps = async ({ params, preview }: StaticProps) => {
 
 export const getStaticPaths = async () => {
   const posts = await getClient(false).fetch(`*[_type == "post"].slug.current`)
-  console.log('🚀 ~ file: [slug].tsx ~ line 44 ~ getStaticPaths ~ posts', posts)
   return {
     paths: posts
       .filter(Boolean)

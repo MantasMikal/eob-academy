@@ -38,7 +38,7 @@ export default S.listItem()
               .menuItems(S.documentTypeList("course").getMenuItems())
               // Only show courses with publish date earlier than now and that is not drafts
               .filter(
-                '_type == "course" && publishedAt < now() && !(_id in path("drafts.**"))'
+                '_type == "course" && !(_id in path("drafts.**"))'
               )
               .child((documentId) =>
                 S.document()
@@ -78,10 +78,10 @@ export default S.listItem()
           ),
         S.documentTypeListItem("course").title("All courses").icon(AllIcon),
         S.listItem()
-          .title("Post by category")
+          .title("Course by category")
           .child(
             // List out all categories
-            S.documentTypeList("category")
+            S.documentTypeList("courseCategory")
               .title("Course by category")
               .child((catId) =>
                 // List out post documents where the _id for the selected
@@ -89,11 +89,11 @@ export default S.listItem()
                 S.documentList()
                   .schemaType("course")
                   .title("Course")
-                  .filter('_type == "course" && $catId in categories[]._ref')
+                  .filter('_type == "course" && $catId in category[]._ref')
                   .params({ catId })
               )
           ),
         S.divider(),
-        S.documentTypeListItem("category").title("Categories"),
+        S.documentTypeListItem("courseCategory").title("Categories"),
       ])
   );
