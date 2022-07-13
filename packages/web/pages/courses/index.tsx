@@ -8,7 +8,7 @@ import { NextPage } from 'next'
 
 const CoursesPage: NextPage = ({ data: courses }: any) => {
   return (
-    <MainLayout>
+    <MainLayout className="space-y-8 lg:space-y-16">
       <StandardMeta
         canonical="/courses"
         title="Courses"
@@ -21,7 +21,7 @@ const CoursesPage: NextPage = ({ data: courses }: any) => {
         the right level and follow your passion at EOB"
       />
       <Section title="All courses" href="/apply" label="Apply">
-        <CourseGrid courses={courses} full={true} />
+        <CourseGrid courses={courses} full />
       </Section>
     </MainLayout>
   )

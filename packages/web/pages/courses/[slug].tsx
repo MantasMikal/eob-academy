@@ -61,10 +61,10 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
       <StandardMeta
         canonical={`/${slug}`}
         title={courseData?.title}
-        description={courseData?.excerpt}
+        description={courseData?.subtitle}
       />
       <div className="font-semibold">
-        <PageHeader title={courseData.title} subtitle={courseData.excerpt} />
+        <PageHeader title={courseData.title} subtitle={courseData.subtitle} />
         <section>
           <Image src={courseData.mainImage} alt={courseData.title} />
         </section>

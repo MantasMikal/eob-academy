@@ -23,7 +23,7 @@ export type CourseCardProps = {
   }
   mainImage: UseNextSanityImageProps
   title: string
-  excerpt: string
+  subtitle: string
   category: CourseCategory
   launchDate: string
   ages: string
@@ -33,7 +33,7 @@ function CourseCard({
   slug,
   mainImage,
   title,
-  excerpt,
+  subtitle,
   launchDate,
   category,
   ages
@@ -64,7 +64,7 @@ function CourseCard({
           </h3>
         </OverlayLink>
         <p className="sm:max-w-prose group-hover:text-secondary line-clamp-4">
-          {excerpt}
+          {subtitle}
         </p>
         <SmartLink
           className="relative block text-lg font-bold z-10 hover:underline"
