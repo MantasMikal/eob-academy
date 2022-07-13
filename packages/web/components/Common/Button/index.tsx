@@ -5,6 +5,7 @@ import React from 'react'
 interface IButton extends SmartLinkProps {
   size?: 'small' | 'medium' | 'large'
   variant?: 'primary' | 'outline'
+  href?: string
   rounded?: boolean
   children: React.ReactNode
   className?: string
@@ -24,12 +25,14 @@ const variantMap = {
 function Button({
   size = 'medium',
   variant = 'primary',
+  href,
   children,
   className
 }: IButton) {
   const classNames = cn(sizeMap[size], variantMap[variant])
   return (
     <SmartLink
+      href={href && href}
       className={cn(
         'inline-flex items-center shadow-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tertiary ',
         classNames,

@@ -4,6 +4,7 @@ import type { NextPage } from 'next'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import ItemRow from '@/components/Common/ItemRow'
+import SanityImage from '@/components/Common/SanityImage'
 
 const items = [
   {
@@ -87,11 +88,12 @@ const About: NextPage = () => {
           className="bg-backgroundSecondary"
         >
           <div className="gap-32 md:flex lg:gap-60">
-            <Icon
-              type="handController"
+            <img
               width={300}
               height={500}
-              a11yText="Tasks"
+              alt="Controller Hand"
+              src={'/content/controllerHand.png'}
+              style={{maxHeight: '500px'}}
               className="hidden md:block md:relative -top-14 left-24"
             />
             <div className="max-w-xl">
