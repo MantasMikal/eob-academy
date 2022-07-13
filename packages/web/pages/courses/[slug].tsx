@@ -24,34 +24,37 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
     enabled: router?.query?.preview !== null
   })
 
+  if (!courseData) {
+    return null
+  }
+
   const infoItems = [
     {
       title: 'Location',
-      subtitle: courseData.location,
+      subtitle: courseData?.location,
       a11yText: 'location',
       icon: 'location'
     },
     {
       title: 'Launch Date',
-      subtitle: courseData.launchDate,
+      subtitle: courseData?.launchDate,
       a11yText: 'Launch',
       icon: 'launch'
     },
     {
       title: 'Duration',
-      subtitle: courseData.duration,
+      subtitle: courseData?.duration,
       a11yText: 'Circle',
       icon: 'circle'
     },
     {
       title: 'Ages',
-      subtitle: courseData.ages,
+      subtitle: courseData?.ages,
       a11yText: 'Full Person',
       icon: 'fullPerson'
     }
   ]
 
-  const benefits = [{}, {}, {}, {}, {}]
   return (
     <MainLayout>
       <div className="font-semibold">
@@ -90,7 +93,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
         {/* Course overview */}
         <Section title="Course overview">
           <div className="max-w-full">
-            {courseData.overview.map((item: any, i:number) => (
+            {courseData.overview.map((item: any, i: number) => (
               <div
                 key={`Benefit:${i}`}
                 className={classNames(
@@ -102,17 +105,13 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
                   <p className="font-bold pr-2 lg:pr-0 text-3xl">+</p>
                   {item.title}
                 </h4>
-                <p className="max-w-2xl">
-                  {item.description}
-                </p>
+                <p className="max-w-2xl">{item.description}</p>
               </div>
             ))}
           </div>
         </Section>
         <Section title="Other courses" href="/courses" label="All courses">
-        <CourseGrid
-          courses={courses}
-        />
+          <CourseGrid courses={courses} />
         </Section>
       </div>
     </MainLayout>
@@ -128,7 +127,10 @@ interface StaticProps {
   preview: boolean
 }
 
-export const getStaticProps = async ({ params, preview }: StaticProps) => {
+export const getStaticProps = async ({
+  params,
+  preview = false
+}: StaticProps) => {
   const { slug } = params
   const courseData = await getCourseData(slug, preview)
   const allCourses = await getAllCourses(preview)

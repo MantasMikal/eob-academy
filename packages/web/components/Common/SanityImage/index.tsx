@@ -11,7 +11,6 @@ export interface ISanityImage extends ImageProps {
 
 const SanityImage: React.FC<ISanityImage> = ({ src, alt, ...other }) => {
   const imageProps = useNextSanityImage(client, src || {})
-  console.log('🚀 ~ file: index.tsx ~ line 14 ~ imageProps', imageProps)
   return <NextImage {...imageProps} alt={alt} {...other} />
 }
 
