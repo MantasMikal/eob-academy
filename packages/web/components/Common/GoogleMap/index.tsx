@@ -26,7 +26,7 @@ const Map = ({
   return (
     <LoadScript
       id="script-loader"
-      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS}
+      googleMapsApiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS || ''}
     >
       <GoogleMap
         id={mapId || 'untitled-map'}
