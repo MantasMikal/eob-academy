@@ -39,7 +39,7 @@ const ContactPage: NextPage = ({ data }: any) => {
       )}
       <div className="container-md mx-auto space-y-6 lg:space-y-12">
         <SectionTitle title="Addresses" />
-        <div className="space-y-6 lg:space-y-16">
+        <div className="divide-y-2">
           <div className="flex flex-col md:flex-row justify-between gap-4">
             <div className="basis-1/2 space-y-4">
               <p className="text-lg">
@@ -56,7 +56,7 @@ const ContactPage: NextPage = ({ data }: any) => {
               </div>
             </div>
             <div className="flex flex-col justify-between space-y-3">
-              <div>
+              <div className="text-lg">
                 <p>
                   <b>Number</b>
                 </p>
@@ -67,7 +67,7 @@ const ContactPage: NextPage = ({ data }: any) => {
               </Button>
             </div>
           </div>
-          <div className="flex flex-col md:flex-row justify-between gap-4">
+          <div className="pt-6 mt-6 lg:mt-12 lg:pt-12 flex flex-col md:flex-row justify-between gap-4">
             <div className="basis-1/2 space-y-4">
               <p className="text-lg">
                 <b>Address</b>
@@ -83,7 +83,7 @@ const ContactPage: NextPage = ({ data }: any) => {
               </div>
             </div>
             <div className="flex flex-col justify-between space-y-3">
-              <div>
+              <div className="text-lg">
                 <p>
                   <b>Number</b>
                 </p>
