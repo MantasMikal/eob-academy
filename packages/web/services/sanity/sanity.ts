@@ -13,7 +13,8 @@ import {
   getApplyPageDataQuery,
   getContactPageDataQuery,
   getAllCoursesByCategoryQuery,
-  getCourseCategoryQuery
+  getCourseCategoryQuery,
+  getPostCategoriesQuery
 } from './queries'
 import {
   SanityProjectDetails,
@@ -106,6 +107,11 @@ export async function getCourseCategory(slug: string, preview: boolean) {
   const data = await getClient(preview).fetch(getCourseCategoryQuery, {
     slug
   })
+  return data
+}
+
+export async function getAllPostCategories(preview: boolean) {
+  const data = await getClient(preview).fetch(getPostCategoriesQuery)
   return data
 }
 

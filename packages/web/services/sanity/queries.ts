@@ -139,6 +139,8 @@ export const getPostPageDataQuery = groq`*[_type == "post" && slug.current == $s
   ${postFragment}
 }`
 
+export const getPostCategoriesQuery = groq`*[_type == "category"]`
+
 export const getHomeDataQuery = groq`{
   "home": ${getHomePageDataQuery},
 }`

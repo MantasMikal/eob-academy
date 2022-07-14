@@ -19,10 +19,7 @@ function PageHeader({
 }: PageHeaderProps) {
   return (
     <section
-      className={cn(
-        'py-8 px-4 lg:p-12 lg:py-16 bg-tertiary rounded-lg shadow',
-        className
-      )}
+      className={cn('py-8 lg:py-16 bg-tertiary rounded-lg shadow', className)}
     >
       <div
         className={cn(
