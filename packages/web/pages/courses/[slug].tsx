@@ -12,9 +12,9 @@ import Icon from '@/components/Primitive/Icon'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import Image from '@/components/Common/SanityImage'
-import classNames from 'classnames'
 import CourseGrid from '@/components/Common/CourseGrid'
 import StandardMeta from '@/components/Meta/Standard'
+import Accordion from '@/components/Common/Accordion'
 
 const CoursePage: NextPage = ({ data, courses }: any) => {
   const slug = data?.slug?.current
@@ -98,23 +98,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
         </section>
         {/* Course overview */}
         <Section title="Course overview">
-          <div className="max-w-full">
-            {courseData.overview.map((item: any, i: number) => (
-              <div
-                key={`Benefit:${i}`}
-                className={classNames(
-                  'p-5 sm:p-10 lg:p-20',
-                  i === 3 && 'bg-backgroundSecondary'
-                )}
-              >
-                <h4 className="subtitle place-items-center text-primary font-normal mb-5 flex">
-                  <p className="font-bold pr-2 lg:pr-0 text-3xl">+</p>
-                  {item.title}
-                </h4>
-                <p className="max-w-2xl">{item.description}</p>
-              </div>
-            ))}
-          </div>
+          <Accordion items={courseData.overview} />
         </Section>
         <Section title="Other courses" href="/courses" label="All courses">
           <CourseGrid courses={courses} />
