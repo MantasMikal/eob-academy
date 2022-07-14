@@ -9,7 +9,9 @@ import {
   getGalleryItemsQuery,
   getRegularPageDataQuery,
   getAllCoursesQuery,
-  getCourseDataQuery
+  getCourseDataQuery,
+  getApplyPageDataQuery,
+  getContactPageDataQuery
 } from './queries'
 import {
   SanityProjectDetails,
@@ -73,6 +75,16 @@ export async function getRegularPageData(slug: string, preview: boolean) {
   const data = await getClient(preview).fetch(getRegularPageDataQuery, {
     slug: slug
   })
+  return data
+}
+
+export async function getApplyPageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getApplyPageDataQuery)
+  return data
+}
+
+export async function getContactPageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getContactPageDataQuery)
   return data
 }
 

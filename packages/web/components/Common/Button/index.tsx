@@ -18,7 +18,7 @@ const sizeMap = {
 }
 
 const variantMap = {
-  primary: 'bg-primary-white hover:bg-primary-light',
+  primary: 'bg-secondary hover:bg-primary-light text-white',
   outline: 'border border-secondary text-secondary bg-white hover:bg-gray-50'
 }
 
@@ -34,7 +34,7 @@ function Button({
     <SmartLink
       href={href && href}
       className={cn(
-        'inline-flex items-center shadow-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tertiary ',
+        'rounded inline-flex items-center justify-center shadow-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-tertiary ',
         classNames,
         className
       )}

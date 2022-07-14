@@ -105,6 +105,23 @@ export default () =>
                 )
 
                 .icon(MdInfoOutline),
+                S.listItem()
+                .title("Apply")
+                .child(
+                  S.editor()
+                    .id("applyPage")
+                    .schemaType("applyPage")
+                    .documentId("applyPage")
+                    .views([
+                      S.view.form().icon(FaEdit),
+                      S.view
+                        .component(() => PagePreview({ slug: "/apply" }))
+                        .icon(FaEye)
+                        .title("Preview"),
+                    ])
+                )
+
+                .icon(MdInfoOutline),
               S.listItem()
                 .title("Cookie policiy")
                 .child(

@@ -29,6 +29,7 @@ import splitPanel from "./objects/split-panel";
 import course from "./documents/course";
 import courseCategory from "./documents/course-category";
 import courseOverview from "./documents/course-overview";
+import apply from "./pages/apply";
 
 export default createSchema({
   name: "default",
@@ -58,6 +59,7 @@ export default createSchema({
     splitPanel,
     course,
     courseCategory,
-    courseOverview
+    courseOverview,
+    apply
   ]),
 });

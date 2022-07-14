@@ -40,6 +40,22 @@ export const regularPageFragment = groq`
   openGraph
 `
 
+export const applyPageFragment = groq`
+  _id,
+  title,
+  subtitle,
+  body,
+  openGraph
+`
+
+export const contactPageFragment = groq`
+  _id,
+  title,
+  subtitle,
+  body,
+  openGraph
+`
+
 export const courseFragment = groq`
   _id,
   title,
@@ -93,6 +109,14 @@ export const getGalleryItemsQuery = (
 
 export const getRegularPageDataQuery = groq`*[_type == "page" && slug.current == $slug][0] {
   ${regularPageFragment}
+}`
+
+export const getApplyPageDataQuery = groq`*[_id == "applyPage"][0] {
+  ${applyPageFragment}
+}`
+
+export const getContactPageDataQuery = groq`*[_id == "applyPage"][0] {
+  ${applyPageFragment}
 }`
 
 export const getPostPageDataQuery = groq`*[_type == "post" && slug.current == $slug][0]{

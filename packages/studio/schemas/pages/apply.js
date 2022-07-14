@@ -1,6 +1,6 @@
 export default {
-  name: "contactPage",
-  title: "Contact Page",
+  name: "applyPage",
+  title: "Apply Page",
   type: "document",
   fields: [
     {
@@ -17,12 +17,12 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent",
-    },
+    }
   ],
   preview: {
     prepare() {
       return {
-        title: "Contact",
+        title: "About",
       };
     },
   },
