@@ -5,16 +5,15 @@ import {
   CalendarIcon,
   UserIcon
 } from '@heroicons/react/outline'
-import { isValid } from 'date-fns'
-import format from 'date-fns/format'
 import { UseNextSanityImageProps } from 'next-sanity-image'
-import Image, { ImageProps } from 'next/image'
 import React from 'react'
 import SanityImage from '../SanityImage'
 
 export type CourseCategory = {
   title: string
-  href: string
+  slug: {
+    current: string
+  }
 }
 
 export type CourseCardProps = {
@@ -68,9 +67,9 @@ function CourseCard({
         </p>
         <SmartLink
           className="relative block text-lg font-bold z-10 hover:underline"
-          href={category.href}
+          href={`/courses/category/${category?.slug?.current}`}
         >
-          {category.title}
+          {category?.title}
         </SmartLink>
         <ArrowRightIcon className="absolute hidden lg:block text-secondary right-6 top-2 w-8 h-8 cursor-pointer group-hover:translate-x-2 trns-ease" />
       </div>

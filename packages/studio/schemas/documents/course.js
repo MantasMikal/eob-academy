@@ -58,8 +58,8 @@ export default {
       title: "Categories",
       description:
         "Can be more than one. First you have to create categories (Sidebar -> Categories)",
-      type: "array",
-      of: [{ type: "reference", to: { type: "courseCategory" } }],
+      type: "reference",
+      to: [{ type: "courseCategory" }],
     },
     {
       name: "publishedAt",

@@ -140,11 +140,9 @@ interface IHomePageProps {
 }
 
 const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
-  console.log('🚀 ~ file: index.tsx ~ line 234 ~ homeData', homeData)
   const { home, sponsors, posts } = homeData
   const { courses } = home?.home || {}
-  console.log('🚀 ~ file: index.tsx ~ line 235 ~ courses', courses)
-
+  console.log('🚀 ~ file: index.tsx ~ line 145 ~ courses', courses)
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)

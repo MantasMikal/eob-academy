@@ -11,7 +11,9 @@ import {
   getAllCoursesQuery,
   getCourseDataQuery,
   getApplyPageDataQuery,
-  getContactPageDataQuery
+  getContactPageDataQuery,
+  getAllCoursesByCategoryQuery,
+  getCourseCategoryQuery
 } from './queries'
 import {
   SanityProjectDetails,
@@ -90,6 +92,20 @@ export async function getContactPageData(preview: boolean) {
 
 export async function getAllCourses(preview: boolean) {
   const data = await getClient(preview).fetch(getAllCoursesQuery)
+  return data
+}
+
+export async function getAllCoursesByCategory(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getAllCoursesByCategoryQuery, {
+    slug
+  })
+  return data
+}
+
+export async function getCourseCategory(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getCourseCategoryQuery, {
+    slug
+  })
   return data
 }
 

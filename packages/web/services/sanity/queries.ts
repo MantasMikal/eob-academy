@@ -40,12 +40,31 @@ export const regularPageFragment = groq`
   openGraph
 `
 
+export const courseFragment = groq`
+  _id,
+  title,
+  subtitle,
+  location,
+  duration,
+  launchDate,
+  overview,
+  ages,
+  slug,
+  category->,
+  publishedAt,
+  excerpt,
+  mainImage,
+  openGraph
+`
+
 export const applyPageFragment = groq`
   _id,
   title,
   subtitle,
   body,
-  courses[]->,
+  courses[]->{
+    ${courseFragment}
+  },
   openGraph
 `
 
@@ -57,28 +76,13 @@ export const contactPageFragment = groq`
   openGraph
 `
 
-export const courseFragment = groq`
-  _id,
-  title,
-  subtitle,
-  location,
-  duration,
-  launchDate,
-  overview,
-  ages,
-  slug,
-  category,
-  publishedAt,
-  excerpt,
-  mainImage,
-  openGraph
-`
-
 export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   _id,
   title,
   subtitle,
-  courses[]->,
+  courses[]->{
+    ${courseFragment}
+  },
   openGraph
 }`
 
@@ -94,8 +98,19 @@ export const getAllCoursesQuery = groq`*[_type == "course"] {
   ${courseFragment}
 }`
 
+export const getAllCoursesByCategoryQuery = groq`*[_type == "course" && category->.slug.current == $slug] {
+  ${courseFragment}
+}`
+
 export const getCourseDataQuery = groq`*[_type == "course" && slug.current == $slug][0] {
   ${courseFragment}
+}`
+
+export const getCourseCategoryQuery = groq`*[_type == "courseCategory" && slug.current == $slug][0] {
+  slug,
+  title,
+  subtitle,
+  description
 }`
 
 export const getAllGalleryItemsQuery = groq`*[_type == "gallery"] {
