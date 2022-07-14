@@ -57,7 +57,7 @@ function CourseCard({
             <div className="text-sm">{ages}</div>
           </div>
         </div>
-        <OverlayLink to={`courses/${slug}`} className="">
+        <OverlayLink to={`/courses/${slug}`} className="">
           <h3 className="text-2xl font-bold sm:text-2xl lg:text-3xl group-hover:text-secondary ">
             {title}
           </h3>
