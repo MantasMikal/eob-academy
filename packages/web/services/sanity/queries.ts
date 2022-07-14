@@ -45,6 +45,7 @@ export const applyPageFragment = groq`
   title,
   subtitle,
   body,
+  courses[]->,
   openGraph
 `
 

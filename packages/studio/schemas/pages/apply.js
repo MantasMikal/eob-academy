@@ -17,6 +17,12 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent",
+    },
+    {
+      name: "courses",
+      title: "Featured Courses",
+      type: "array",
+      of: [{ type: "reference", to: { type: "course" } }],
     }
   ],
   preview: {

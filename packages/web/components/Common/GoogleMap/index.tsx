@@ -1,6 +1,5 @@
 import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
-import lightStyles from './lightStyles'
 
 export type GooglaMapsProps = {
   style?: React.CSSProperties
@@ -31,8 +30,7 @@ const Map = ({
       <GoogleMap
         id={mapId || 'untitled-map'}
         mapContainerStyle={style}
-        options={{ styles: lightStyles }}
-        zoom={8}
+        zoom={9.5}
         center={center ? center : locations[0]}
       >
         {locations &&
