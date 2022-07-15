@@ -9,7 +9,6 @@ import about from "./pages/about";
 import blockContent from "./objects/blockContent";
 import blockText from "./objects/blockText";
 import category from "./documents/category";
-import companyInfo from "./documents/companyInfo";
 import contact from "./pages/contact";
 import contentBlock from "./objects/contentBlock";
 import figure from "./plugs/figure";
@@ -22,7 +21,6 @@ import mainImage from "./plugs/mainImage";
 import openGraph from "./objects/openGraph";
 import page from "./pages/page";
 import post from './documents/post'
-import siteSettings from "./documents/siteSettings";
 import sponsor from './documents/sponsor'
 import video from "./plugs/video";
 import splitPanel from "./objects/split-panel";
@@ -39,10 +37,8 @@ export default createSchema({
     blockContent,
     blockText,
     category,
-    companyInfo,
     figure,
     mainImage,
-    siteSettings,
     video,
     contentBlock,
     grid,

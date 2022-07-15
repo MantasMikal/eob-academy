@@ -1,6 +1,7 @@
 import { FaPhone, FaEdit, FaEye } from "react-icons/fa";
 import { GrDocumentText } from "react-icons/gr";
 import { MdSettings, MdHome, MdInfoOutline, MdBusiness } from "react-icons/md";
+import {RiFileCodeFill} from "react-icons/ri";
 import S from "@sanity/desk-tool/structure-builder";
 
 import gallery from "./gallery";
@@ -18,6 +19,7 @@ const hiddenTypes = [
   "contactPage",
   "homePage",
   "blogPost",
+  "applyPage",
   "galleryPost",
   "about",
   "sponsor",
@@ -25,36 +27,19 @@ const hiddenTypes = [
   "gallery",
   "page",
   "course",
+  "courseOverview",
   "courseCategory",
 ];
 
 export default () =>
   S.list()
-    .title("IRL")
+    .title("EOB Academy")
     .items([
       S.listItem()
-        .title("Site Settings")
-        .child(
-          S.editor()
-            .id("siteSettings")
-            .schemaType("siteSettings")
-            .documentId("siteSettings")
-        )
-        .icon(MdSettings),
-      S.listItem()
-        .title("Company Info")
-        .child(
-          S.editor()
-            .id("companyInfo")
-            .schemaType("companyInfo")
-            .documentId("companyInfo")
-        )
-        .icon(MdBusiness),
-      S.listItem()
-        .title("Pages")
+        .title("Custom Pages")
         .child(
           S.list()
-            .title("Pages")
+            .title("Custom Pages")
             .items([
               S.listItem()
                 .title("Home")
@@ -141,12 +126,12 @@ export default () =>
                 ),
             ])
         )
-        .icon(GrDocumentText),
+        .icon(RiFileCodeFill),
       pages,
+      courses,
       sponsors,
       posts,
       gallery,
-      courses,
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

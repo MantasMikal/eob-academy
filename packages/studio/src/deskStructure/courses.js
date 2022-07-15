@@ -9,12 +9,12 @@ import {
   GoArchive as AllIcon,
 } from "react-icons/go";
 import { FaEdit, FaEye } from "react-icons/fa";
-import { GiMoebiusTriangle as BlogIcon } from "react-icons/gi";
+import { HiAcademicCap as DocumentIcon } from "react-icons/hi";
 import PostPreview from "../components/previews/postPreview/PostPreview";
 import { toPlainText } from 'part:social-preview/utils'
 
 export const icons = {
-  BlogIcon,
+  DocumentIcon,
   ApprovedIcon,
   ReviewIcon,
   RejectedIcon,
@@ -23,7 +23,7 @@ export const icons = {
 
 export default S.listItem()
   .title("Courses")
-  .icon(BlogIcon)
+  .icon(DocumentIcon)
   .child(
     S.list()
       .title("Content")
@@ -31,7 +31,7 @@ export default S.listItem()
         S.listItem()
           .title("Published courses")
           .schemaType("course")
-          .icon(BlogIcon)
+          .icon(DocumentIcon)
           .child(
             S.documentList("course")
               .title("Published courses")

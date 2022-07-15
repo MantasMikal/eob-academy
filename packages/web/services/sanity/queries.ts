@@ -131,7 +131,7 @@ export const getApplyPageDataQuery = groq`*[_id == "applyPage"][0] {
   ${applyPageFragment}
 }`
 
-export const getContactPageDataQuery = groq`*[_id == "applyPage"][0] {
+export const getContactPageDataQuery = groq`*[_id == "contactPage"][0] {
   ${applyPageFragment}
 }`
 

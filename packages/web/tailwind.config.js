@@ -9,7 +9,9 @@ module.exports = {
     screens: {
       xs: '475px',
       xxl: '1400px',
-      ...defaultTheme.screens
+      ...defaultTheme.screens,
+      // Overwritten
+      xl: '1224px'
     },
     extend: {
       colors: {

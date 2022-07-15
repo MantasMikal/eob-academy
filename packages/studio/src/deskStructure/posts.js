@@ -9,7 +9,7 @@ import {
   GoArchive as AllIcon,
 } from "react-icons/go";
 import { FaEdit, FaEye } from "react-icons/fa";
-import { GiMoebiusTriangle as BlogIcon } from "react-icons/gi";
+import { RiArticleLine as BlogIcon } from "react-icons/ri";
 import PostPreview from "../components/previews/postPreview/PostPreview";
 import { toPlainText } from 'part:social-preview/utils'
 
@@ -22,7 +22,7 @@ export const icons = {
 };
 
 export default S.listItem()
-  .title("Posts")
+  .title("Blog Posts")
   .icon(BlogIcon)
   .child(
     S.list()

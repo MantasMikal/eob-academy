@@ -9,12 +9,12 @@ import {
   GoArchive as AllIcon,
 } from "react-icons/go";
 import { FaEdit, FaEye } from "react-icons/fa";
-import { GiMoebiusTriangle as BlogIcon } from "react-icons/gi";
+import { RiPagesLine as PageIcon } from "react-icons/ri";
 import { toPlainText } from 'part:social-preview/utils'
 import PagePreview from "../components/previews/page/PagePreview";
 
 export const icons = {
-  BlogIcon,
+  PageIcon,
   ApprovedIcon,
   ReviewIcon,
   RejectedIcon,
@@ -23,7 +23,7 @@ export const icons = {
 
 export default S.listItem()
   .title("Regular Pages")
-  .icon(BlogIcon)
+  .icon(PageIcon)
   .child(
     S.list()
       .title("Content")
@@ -31,7 +31,7 @@ export default S.listItem()
         S.listItem()
           .title("Published pages")
           .schemaType("page")
-          .icon(BlogIcon)
+          .icon(PageIcon)
           .child(
             S.documentList("page")
               .title("Published pages")
