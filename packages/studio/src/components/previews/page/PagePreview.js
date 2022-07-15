@@ -8,7 +8,7 @@ const { siteUrl } = config;
 
 export default function PagePreview(props) {
   const { slug } = props;
-  const { displayed } = props.document;
+  const { displayed } = props?.document || {};
   const pageSlug = slug || `/${displayed?.slug?.current}`;
 
   const url =
