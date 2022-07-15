@@ -15,6 +15,7 @@ import Image from '@/components/Common/SanityImage'
 import CourseGrid from '@/components/Common/CourseGrid'
 import StandardMeta from '@/components/Meta/Standard'
 import Accordion from '@/components/Common/Accordion'
+import Button from '@/components/Common/Button'
 
 const CoursePage: NextPage = ({ data, courses }: any) => {
   const slug = data?.slug?.current
@@ -66,17 +67,17 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
       <div className="font-semibold">
         <PageHeader title={courseData.title} subtitle={courseData.subtitle} />
         <section>
-          <Image src={courseData.mainImage} alt={courseData.title} />
+          <Image className='aspect-landscape object-center object-cover' src={courseData.mainImage} alt={courseData.title} />
         </section>
         <section>
-          <div className="container-lg bg-secondary p-10 text-white md:grid grid-cols-3 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-16 place-items-center">
+          <div style={{ maxWidth: '1216px' }} className="mx-auto lg:-mb-11 relative bg-secondary rounded-lg p-10 text-white md:grid grid-cols-3 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-12 place-items-center">
             {infoItems.map((item, i) => (
               <div
                 key={`InfoItem:${i}`}
                 className="mb-11 mx-auto"
-                style={{ maxWidth: '200px' }}
+                style={{ maxWidth: '170px' }}
               >
-                <div className="flex mb-5">
+                <div className="flex mb-2 place-items-center text-center">
                   <Icon
                     type={item.icon}
                     width={20}
@@ -85,20 +86,20 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
                   />
                   <p className="text-tertiary text-2xl ml-2">{item.title}</p>
                 </div>
-                <p>{item.subtitle}</p>
+                <p className="mr-1">{item.subtitle}</p>
               </div>
             ))}
-            <button className="bg-tertiary text-secondary text-3xl px-11 py-1 mb-11 md:w-40 md:h-12">
+            <Button className="bg-tertiary text-secondary text-3xl px-11 py-1 mb-4 md:w-40 md:h-12">
               Apply
-            </button>
+            </Button>
             {courseData.subtitle && (
-              <p className="col-span-3">{courseData.subtitle}</p>
+              <p className="col-span-3 pr-20">{courseData.subtitle}</p>
             )}
           </div>
         </section>
         {/* Course overview */}
         <Section title="Course overview">
-          <Accordion items={courseData.overview} />
+          <Accordion className="pb-10" items={courseData.overview} />
         </Section>
         <Section title="Other courses" href="/courses" label="All courses">
           <CourseGrid courses={courses} />
