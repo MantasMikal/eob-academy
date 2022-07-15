@@ -1,6 +1,5 @@
 import { FaPhone, FaEdit, FaEye } from "react-icons/fa";
-import { GrDocumentText } from "react-icons/gr";
-import { MdSettings, MdHome, MdInfoOutline, MdBusiness } from "react-icons/md";
+import { MdHome, MdInfoOutline } from "react-icons/md";
 import {RiFileCodeFill} from "react-icons/ri";
 import S from "@sanity/desk-tool/structure-builder";
 
@@ -108,7 +107,7 @@ export default () =>
 
                 .icon(MdInfoOutline),
               S.listItem()
-                .title("Cookie policiy")
+                .title("Cookie policy")
                 .child(
                   S.editor()
                     .id("cookiePolicyPage")
