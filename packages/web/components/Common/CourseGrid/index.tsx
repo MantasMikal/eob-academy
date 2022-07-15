@@ -34,7 +34,7 @@ const CourseGrid = ({ courses, full = false }: CourseGridProps) => {
                 <div className="text-sm">{course.ages}</div>
               </div>
             </div>
-            <OverlayLink to={`courses/${course.slug.current}`} className="">
+            <OverlayLink to={`/courses/${course.slug.current}`} className="">
               <h3 className="text-2xl font-bold sm:text-2xl lg:text-3xl group-hover:text-secondary ">
                 {course.title}
               </h3>
