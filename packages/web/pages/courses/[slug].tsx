@@ -8,14 +8,14 @@ import {
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import MainLayout from '@/components/Common/MainLayout'
-import Icon from '@/components/Primitive/Icon'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import Image from '@/components/Common/SanityImage'
 import CourseGrid from '@/components/Common/CourseGrid'
 import StandardMeta from '@/components/Meta/Standard'
-import Accordion from '@/components/Common/Accordion'
+import CourseOverview from '@/components/Common/CourseOverview'
 import Button from '@/components/Common/Button'
+import { FaCalendar, FaClock, FaLocationArrow, FaUsers } from 'react-icons/fa'
 
 const CoursePage: NextPage = ({ data, courses }: any) => {
   const slug = data?.slug?.current
@@ -35,25 +35,25 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
       title: 'Location',
       subtitle: courseData?.location,
       a11yText: 'location',
-      icon: 'location'
+      icon: FaLocationArrow
     },
     {
       title: 'Launch Date',
       subtitle: courseData?.launchDate,
       a11yText: 'Launch',
-      icon: 'launch'
+      icon: FaCalendar
     },
     {
       title: 'Duration',
       subtitle: courseData?.duration,
       a11yText: 'Circle',
-      icon: 'circle'
+      icon: FaClock
     },
     {
       title: 'Ages',
       subtitle: courseData?.ages,
       a11yText: 'Full Person',
-      icon: 'fullPerson'
+      icon: FaUsers
     }
   ]
 
@@ -66,44 +66,50 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
       />
       <div className="font-semibold">
         <PageHeader title={courseData.title} subtitle={courseData.subtitle} />
-        <section>
-          <Image className='aspect-landscape object-center object-cover' src={courseData.mainImage} alt={courseData.title} />
-        </section>
-        <section>
-          <div style={{ maxWidth: '1216px' }} className="mx-auto lg:-mb-11 relative bg-secondary rounded-lg p-10 text-white md:grid grid-cols-3 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-12 place-items-center">
-            {infoItems.map((item, i) => (
-              <div
-                key={`InfoItem:${i}`}
-                className="mb-11 mx-auto"
-                style={{ maxWidth: '170px' }}
-              >
-                <div className="flex mb-2 place-items-center text-center">
-                  <Icon
-                    type={item.icon}
-                    width={20}
-                    height={20}
-                    a11yText={item.a11yText}
-                  />
-                  <p className="text-tertiary text-2xl ml-2">{item.title}</p>
-                </div>
-                <p className="mr-1">{item.subtitle}</p>
+
+        <Image
+          className="aspect-slim object-center object-cover"
+          src={courseData.mainImage}
+          alt={courseData.title}
+        />
+
+        <section className="container-lg lg:-mb-11 -top-6 lg:-top-20">
+          <div className="rounded-lg text-white bg-secondary">
+            <div className="p-6 md:p-10 lg:p-16 space-y-6 lg:space-y-10">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-start justify-center">
+                {infoItems.map((item, i) => (
+                  <div key={`InfoItem:${i}`} className="">
+                    <div className="flex items-center mb-2 space-x-1 text-left text-md xs:text-xl lg:text-2xl lg:space-x-2">
+                      <item.icon />
+                      <div>{item.title}</div>
+                    </div>
+                    <div className="text-sm xs:text-md lg:text-lg">
+                      {item.subtitle}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-            <Button className="bg-tertiary text-secondary text-3xl px-11 py-1 mb-4 md:w-40 md:h-12">
-              Apply
-            </Button>
-            {courseData.subtitle && (
-              <p className="col-span-3 pr-20">{courseData.subtitle}</p>
-            )}
+              <div className="flex flex-col-reverse md:flex-row gap-8 items-start">
+                <Button href="/apply" size="large" variant="outline">
+                  Apply
+                </Button>
+                {courseData.subtitle && (
+                  <p className="text-md">{courseData.subtitle}</p>
+                )}
+              </div>
+            </div>
           </div>
         </section>
+
         {/* Course overview */}
-        <Section title="Course overview">
-          <Accordion className="pb-10" items={courseData.overview} />
-        </Section>
-        <Section title="Other courses" href="/courses" label="All courses">
-          <CourseGrid courses={courses} />
-        </Section>
+        <div className="space-y-8 pt-4">
+          <Section title="Course overview">
+            <CourseOverview className="" items={courseData.overview} />
+          </Section>
+          <Section title="Other courses" href="/courses" label="All courses">
+            <CourseGrid courses={courses} />
+          </Section>
+        </div>
       </div>
     </MainLayout>
   )

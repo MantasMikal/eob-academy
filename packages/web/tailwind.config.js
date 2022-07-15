@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     screens: {
       xs: '475px',
+      xxl: '1400px',
       ...defaultTheme.screens
     },
     extend: {
@@ -18,11 +19,15 @@ module.exports = {
           dark: '#bb1473'
         },
         secondary: '#e82569',
-        tertiary: '#fbc87c',
+        tertiary: {
+          DEFAULT: '#fbc87c',
+          dark: '#f9c876'
+        },
         backgroundSecondary: '#F3F3F3'
       },
       aspectRatio: {
-        landscape: '351 / 151'
+        landscape: '351 / 151',
+        slim: '5 / 2'
       },
       scale: {
         101: '1.01',

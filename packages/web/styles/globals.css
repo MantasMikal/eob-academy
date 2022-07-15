@@ -26,6 +26,11 @@
   .trns-ease {
     @apply transition ease-in-out;
   }
+
+  .container-xl {
+    @apply relative max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+
   .container-lg {
     @apply relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }

@@ -14,7 +14,7 @@ function Section({ title, label, href, className, children }: SectionProps) {
   return (
     <section
       className={classNames(
-        'container-lg pb-14 space-y-8 md:space-y-14',
+        'container-lg pb-8 md:pb-16 space-y-8 md:space-y-16',
         className
       )}
     >
