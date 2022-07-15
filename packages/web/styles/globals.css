@@ -10,6 +10,10 @@
   .subtitle {
     @apply text-xl md:text-2xl lg:text-3xl font-bold;
   }
+
+  .tag {
+    @apply border-2 border-transparent text-xs text-slate-700 font-semibold mr-2 px-[0.8em] py-[0.3em] rounded transition-all;
+  }
 }
 
 @layer utilities {

@@ -12,10 +12,6 @@ const navigation = {
       href: '/contact'
     },
     {
-      name: 'Jobs',
-      href: '/jobs'
-    },
-    {
       name: 'Privacy / Terms and Conditions',
       href: '/privacy-terms-and-conditions'
     }

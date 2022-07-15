@@ -5,3 +5,4 @@ type RequireAtLeastOne<T, Keys extends keyof T = keyof T> =
     }[Keys]
 
 declare module '@sanity/block-content-to-react';
+declare module 'react-hubspot-form';

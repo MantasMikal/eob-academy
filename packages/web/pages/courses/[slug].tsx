@@ -69,7 +69,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
           <Image src={courseData.mainImage} alt={courseData.title} />
         </section>
         <section>
-          <div className="container-lg bg-primary p-10 text-white md:grid grid-cols-3 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-16 place-items-center">
+          <div className="container-lg bg-secondary p-10 text-white md:grid grid-cols-3 lg:grid-cols-4 -top-6 lg:-top-20 lg:p-16 place-items-center">
             {infoItems.map((item, i) => (
               <div
                 key={`InfoItem:${i}`}
@@ -88,7 +88,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
                 <p>{item.subtitle}</p>
               </div>
             ))}
-            <button className="bg-tertiary text-primary text-3xl px-11 py-1 mb-11 md:w-40 md:h-12">
+            <button className="bg-tertiary text-secondary text-3xl px-11 py-1 mb-11 md:w-40 md:h-12">
               Apply
             </button>
             {courseData.subtitle && (

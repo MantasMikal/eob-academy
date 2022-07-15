@@ -9,7 +9,12 @@ import {
   getGalleryItemsQuery,
   getRegularPageDataQuery,
   getAllCoursesQuery,
-  getCourseDataQuery
+  getCourseDataQuery,
+  getApplyPageDataQuery,
+  getContactPageDataQuery,
+  getAllCoursesByCategoryQuery,
+  getCourseCategoryQuery,
+  getPostCategoriesQuery
 } from './queries'
 import {
   SanityProjectDetails,
@@ -76,8 +81,37 @@ export async function getRegularPageData(slug: string, preview: boolean) {
   return data
 }
 
+export async function getApplyPageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getApplyPageDataQuery)
+  return data
+}
+
+export async function getContactPageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getContactPageDataQuery)
+  return data
+}
+
 export async function getAllCourses(preview: boolean) {
   const data = await getClient(preview).fetch(getAllCoursesQuery)
+  return data
+}
+
+export async function getAllCoursesByCategory(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getAllCoursesByCategoryQuery, {
+    slug
+  })
+  return data
+}
+
+export async function getCourseCategory(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getCourseCategoryQuery, {
+    slug
+  })
+  return data
+}
+
+export async function getAllPostCategories(preview: boolean) {
+  const data = await getClient(preview).fetch(getPostCategoriesQuery)
   return data
 }
 

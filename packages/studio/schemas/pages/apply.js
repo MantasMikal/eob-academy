@@ -1,6 +1,6 @@
 export default {
-  name: "contactPage",
-  title: "Contact Page",
+  name: "applyPage",
+  title: "Apply Page",
   type: "document",
   fields: [
     {
@@ -18,11 +18,17 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      name: "courses",
+      title: "Featured Courses",
+      type: "array",
+      of: [{ type: "reference", to: { type: "course" } }],
+    }
   ],
   preview: {
     prepare() {
       return {
-        title: "Contact",
+        title: "About",
       };
     },
   },
