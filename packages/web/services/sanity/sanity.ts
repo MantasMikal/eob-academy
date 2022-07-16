@@ -9,6 +9,7 @@ import {
   getGalleryItemsQuery,
   getRegularPageDataQuery,
   getAllCoursesQuery,
+  getAboutPageDataQuery,
   getCourseDataQuery,
   getApplyPageDataQuery,
   getContactPageDataQuery,
@@ -124,5 +125,10 @@ export async function getCourseData(slug: string, preview: boolean) {
 
 export async function getAllSponsors(preview: boolean) {
   const data = await getClient(preview).fetch(getAllSponsorsQuery)
+  return data
+}
+
+export async function getAboutPageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getAboutPageDataQuery)
   return data
 }

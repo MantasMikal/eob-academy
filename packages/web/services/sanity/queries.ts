@@ -76,6 +76,13 @@ export const contactPageFragment = groq`
   openGraph
 `
 
+export const aboutPageFragment = groq`
+  _id,
+  title,
+  body,
+  openGraph
+`
+
 export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   _id,
   title,
@@ -140,6 +147,10 @@ export const getPostPageDataQuery = groq`*[_type == "post" && slug.current == $s
 }`
 
 export const getPostCategoriesQuery = groq`*[_type == "category"]`
+
+export const getAboutPageDataQuery = groq`*[_id == "aboutPage"][0] {
+  ${aboutPageFragment}
+}`
 
 export const getHomeDataQuery = groq`{
   "home": ${getHomePageDataQuery},

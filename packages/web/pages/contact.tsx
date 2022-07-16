@@ -23,8 +23,8 @@ const ContactPage: NextPage = ({ data }: any) => {
     <MainLayout className="space-y-8 lg:space-y-16">
       <StandardMeta
         canonical={`/contact`}
-        title={pageData?.title}
-        description={pageData?.subtitle}
+        title={pageData?.openGraph?.title}
+        description={pageData?.openGraph?.description}
       />
       <PageHeader
         contentClassName="container-lg"

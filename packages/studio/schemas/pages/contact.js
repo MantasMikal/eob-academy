@@ -18,6 +18,13 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      title: "Open graph",
+      name: "openGraph",
+      description:
+        "SEO Optimisation",
+      type: "openGraph",
+    },
   ],
   preview: {
     prepare() {

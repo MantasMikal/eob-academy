@@ -29,7 +29,14 @@ export default {
       title: "Featured Courses",
       type: "array",
       of: [{ type: "reference", to: { type: "course" } }],
-    }
+    },
+    {
+      title: "Open graph",
+      name: "openGraph",
+      description:
+        "SEO Optimisation",
+      type: "openGraph",
+    },
   ],
   preview: {
     select: {

@@ -38,7 +38,7 @@ const PostsPage: NextPage = ({ data: posts, categories }: any) => {
           <div className="flex justify-end items-center gap-3">
             <div className="text-md font-semibold">Filter by tag</div>
             <div className="flex flex-wrap items-center">
-              {categories.map((category: any) => (
+              {categories.map((category: any, i: number) => (
                 <button
                   onClick={() => handleCategoryChange(category.title)}
                   style={{
@@ -52,7 +52,7 @@ const PostsPage: NextPage = ({ data: posts, categories }: any) => {
                     'tag',
                     category.title === selectedCat ? '!text-white' : ''
                   )}
-                  key={category.id}
+                  key={`${category.id}:${i}`}
                 >
                   {category.title}
                 </button>
