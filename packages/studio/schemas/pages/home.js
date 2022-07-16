@@ -13,11 +13,13 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "subtitle",
       title: "Subtitle",
       type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "body",
