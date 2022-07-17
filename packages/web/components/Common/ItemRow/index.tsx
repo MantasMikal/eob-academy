@@ -25,7 +25,7 @@ function ItemRow({
       {items.map((item: any, i: number) => (
         <div
           className={classNames(
-            'flex flex-col p-6 lg:px-5 lg:py-6 bg-white rounded-lg shadow space-y-4 flex-auto',
+            'flex flex-col p-6 lg:px-5 lg:py-6 bg-white rounded-lg border shadow space-y-4 flex-auto',
             cardClassName
           )}
           key={`About:${i}`}
