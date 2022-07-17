@@ -20,5 +20,11 @@ export default {
       name: "description",
       type: "blockContent",
     },
+    {
+      title: "Roles",
+      name: "roles",
+      type: "array",
+      of: [{ type: "industryRole" }],
+    },
   ],
 };

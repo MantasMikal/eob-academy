@@ -42,7 +42,7 @@ const PostsPage: NextPage = ({ data }: any) => {
           alt={postData?.title}
         />
       </div>
-      <article className="prose prose-blockquote:text-lg prose-blockquote:font-normal container-md mx-auto pt-8 lg:pt-12">
+      <article className="prose prose-blockquote:text-lg prose-blockquote:font-normal container-prose mx-auto pt-8 lg:pt-12">
         <BlockContent blocks={postData?.body} />
       </article>
     </MainLayout>

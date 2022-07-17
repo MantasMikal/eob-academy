@@ -7,7 +7,6 @@ import BlogCarousel from '@/components/Common/BlogCarousel'
 import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
-import Image from 'next/image'
 import Partners from '@/components/Common/Partners'
 import {
   getAllSponsors,
@@ -16,81 +15,7 @@ import {
 } from '@/services/sanity/sanity'
 import StandardMeta from '@/components/Meta/Standard'
 import BlockContent from '@/components/Primitive/BlockContent'
-
-const industryRolesData = [
-  {
-    title: 'Game animator',
-    icon: '/content/industry-roles/animator.svg'
-  },
-  {
-    title: 'Game audio engineer',
-    icon: '/content/industry-roles/audio-engineer.svg'
-  },
-  {
-    title: 'Game designer',
-    icon: '/content/industry-roles/game-designer.svg'
-  },
-  {
-    title: 'Creative game director',
-    icon: '/content/industry-roles/creative-director.svg'
-  },
-  {
-    title: 'Game artist',
-    icon: '/content/industry-roles/artist.svg'
-  },
-  {
-    title: 'Game PR & marketing',
-    icon: '/content/industry-roles/pr-marketing.svg'
-  },
-  {
-    title: 'QA Game tester',
-    icon: '/content/industry-roles/qa.svg'
-  },
-  {
-    title: 'Video game system designer',
-    icon: '/content/industry-roles/systems-designer.svg'
-  },
-  {
-    title: 'Analyst',
-    icon: '/content/industry-roles/analyst.svg'
-  },
-  {
-    title: 'Sales / partnership manager',
-    icon: '/content/industry-roles/sales.svg'
-  },
-  {
-    title: 'Business management',
-    icon: '/content/industry-roles/business-management.svg'
-  },
-  {
-    title: 'PR / marketing executive',
-    icon: '/content/industry-roles/pr.svg'
-  },
-  {
-    title: 'Professional player',
-    icon: '/content/industry-roles/player.svg'
-  },
-  {
-    title: 'Coach',
-    icon: '/content/industry-roles/coach.svg'
-  },
-  {
-    title: 'Production crew',
-    icon: '/content/industry-roles/production-crew.svg'
-  },
-  {
-    title: '3D modeller',
-    icon: '/content/industry-roles/3d-modeller.svg'
-  },
-  {
-    title: 'Coder',
-    icon: '/content/industry-roles/coders.svg'
-  },
-  {
-    title: 'Broadcasting',
-    icon: '/content/industry-roles/broadcasting.svg'
-  }
-]
+import SanityImage from '@/components/Common/SanityImage'
 
 interface IHomePageProps {
   data: any
@@ -195,19 +120,20 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
           />
 
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
-            {industryRolesData.map((item, i) => (
-              <div
+            {industryRoles?.roles?.map((item: any, i: number) => (
+              <SmartLink
+                to={item.url}
                 className="group flex space-x-4 items-center p-3 pl-6 rounded border hover:cursor-pointer"
                 key={`IndustryRole:${i}`}
               >
-                <Image
+                <SanityImage
                   src={item.icon}
                   alt={item.title}
                   width={40}
                   height={40}
                 />
                 <p className="py-5 group-hover:text-secondary">{item.title}</p>
-              </div>
+              </SmartLink>
             ))}
           </div>
         </section>

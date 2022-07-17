@@ -32,6 +32,7 @@ import apply from "./pages/apply";
 import missionStatement from "./objects/missionStatement";
 import industryRoles from "./objects/industryRoles";
 import featuredCourses from "./objects/featuredCourses";
+import industryRole from "./objects/industryRole";
 
 export default createSchema({
   name: "default",
@@ -64,6 +65,7 @@ export default createSchema({
     apply,
     missionStatement,
     industryRoles,
+    industryRole,
     featuredCourses
   ]),
 });

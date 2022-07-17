@@ -84,7 +84,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
                       <div>{item.title}</div>
                     </div>
                     <div className="text-sm xs:text-md lg:text-lg">
-                      {courseData.description}
+                      {item.subtitle}
                     </div>
                   </div>
                 ))}
@@ -104,7 +104,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
         {/* Course overview */}
         <div className="space-y-8 pt-4">
           <Section title="Course overview">
-            <CourseOverview items={courseData.overview} />
+            <CourseOverview className="px-2" items={courseData.overview} />
           </Section>
           <Section title="Other courses" href="/courses" label="All courses">
             <CourseGrid courses={courses} />

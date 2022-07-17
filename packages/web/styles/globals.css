@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  overflow-x: hidden;
+}
+
 @layer components {
   .heading-xlarge {
     @apply text-3xl md:text-5xl lg:text-8xl font-bold;
@@ -36,5 +40,8 @@
   }
   .container-md {
     @apply relative max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+  .container-prose {
+    @apply relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
   }
 }

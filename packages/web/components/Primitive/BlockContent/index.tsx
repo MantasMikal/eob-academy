@@ -5,6 +5,7 @@ import SmartLink from '@/components/Primitive/SmartLink'
 import createFigure from './components/createFigure'
 import createGrid from './components/createGrid'
 import createMediaComponent from './components/createMedia'
+import Button from '@/components/Common/Button'
 
 // TODO: MIGRATE TO https://github.com/portabletext/react-portabletext/blob/main/MIGRATING.md
 
@@ -13,6 +14,15 @@ import createMediaComponent from './components/createMedia'
  */
 const serializers = () => ({
   marks: {
+    button: ({ mark, children }: any) => {
+      return (
+        children[0] && (
+          <Button target={mark.blank && '_blank'} href={mark.href}>
+            {children}
+          </Button>
+        )
+      )
+    },
     link: ({ mark, children }: any) => {
       return (
         children[0] && (
@@ -27,12 +37,20 @@ const serializers = () => ({
     block(props: any) {
       switch (props.node.style) {
         case 'h2':
-          return <h2 className="text-secondary">{props.children}</h2>
+          return (
+            <h2 className="text-2xl md:text-3xl text-secondary">
+              {props.children}
+            </h2>
+          )
         case 'h3':
-          return <h3 className="text-secondary">{props.children}</h3>
+          return (
+            <h3 className="text-xl md:text-2xl text-secondary">
+              {props.children}
+            </h3>
+          )
 
         case 'h4':
-          return <h4 className="text-secondary">{props.children}</h4>
+          return <h4 className="text-xl text-secondary">{props.children}</h4>
 
         case 'baseLarge':
           return <p className="text-xl md:text-3xl">{props.children}</p>
