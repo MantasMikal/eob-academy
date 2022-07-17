@@ -41,7 +41,7 @@ const serializers = () => ({
           return <p className="text-md md:text-xl">{props.children}</p>
 
         case 'small':
-          return <p className="text-sm ">{props.children}</p>
+          return <p className="text-sm">{props.children}</p>
 
         case 'blockquote':
           return <blockquote>{props.children}</blockquote>
