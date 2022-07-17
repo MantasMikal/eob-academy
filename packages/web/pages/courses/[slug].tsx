@@ -135,7 +135,15 @@ export const getStaticProps = async ({
   return {
     props: {
       data: courseData || {},
-      courses: allCourses || {}
+      courses:
+        allCourses
+          // Shuffle
+          ?.map((value: any) => ({ value, sort: Math.random() }))
+          ?.sort((a: any, b: any) => a.sort - b.sort)
+          ?.map(({ value }: any) => value)
+          // Remove current and clip to 3
+          ?.filter((c: any) => courseData.slug.current !== c.slug.current)
+          ?.slice(0, 3) || {}
     },
     revalidate: 60 * 30 // 30 minutes
   }
