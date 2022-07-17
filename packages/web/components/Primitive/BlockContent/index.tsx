@@ -34,8 +34,17 @@ const serializers = () => ({
         case 'h4':
           return <h4 className="text-secondary">{props.children}</h4>
 
+        case 'baseLarge':
+          return <p className="text-xl md:text-3xl">{props.children}</p>
+
+        case 'baseMedium':
+          return <p className="text-md md:text-xl">{props.children}</p>
+
+        case 'small':
+          return <p className="text-sm ">{props.children}</p>
+
         case 'blockquote':
-          return <p>{props.children}</p> // TODO
+          return <blockquote>{props.children}</blockquote>
 
         default:
           return <p>{props.children}</p>

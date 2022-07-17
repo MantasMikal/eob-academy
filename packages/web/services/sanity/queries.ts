@@ -96,10 +96,16 @@ export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   _id,
   title,
   subtitle,
+  body,
   missionStatement,
+  industryRoles,
   mainCourses[]->,
-  fullTimeCourses[]->{
-    ${courseFragment}
+  featuredCourses{
+    title,
+    description,
+    courses[]->{
+      ${courseFragment}
+    }
   },
   openGraph
 }`

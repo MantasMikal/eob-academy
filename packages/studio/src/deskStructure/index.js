@@ -17,7 +17,7 @@ const hiddenTypes = [
   "post",
   "siteSettings",
   "contactPage",
-  "testimonialsPage",
+  "testimonialPage",
   "homePage",
   "blogPost",
   "applyPage",

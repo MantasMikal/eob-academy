@@ -32,7 +32,11 @@ function PageHeader({
         </p>
         <div className="flex align-start justify-between space-x-4">
           <h2 className="heading-xlarge">{title}</h2>
-          {date && <time>{format(new Date(date), 'MMM dd, yyyy')}</time>}
+          {date && (
+            <time className="whitespace-nowrap font-semibold">
+              {format(new Date(date), 'MMM dd, yyyy')}
+            </time>
+          )}
         </div>
         {subtitle && (
           <p className="font-bold max-w-2xl text-sm md:text-xl subtitle pt-16">

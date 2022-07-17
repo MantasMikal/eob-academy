@@ -9,12 +9,21 @@ import { useRouter } from 'next/router'
 const PostsPage: NextPage = ({ data: posts, categories }: any) => {
   const router = useRouter()
   const { category: selectedCat } = router.query
+  console.log('🚀 ~ file: index.tsx ~ line 12 ~ router.query', router.query)
+  console.log('🚀 ~ file: index.tsx ~ line 12 ~ selectedCat', selectedCat)
 
   const handleCategoryChange = (category: string) => {
     if (category === selectedCat) {
       router.push(`/blog`, undefined, { shallow: true })
     } else {
-      router.push(`/blog?category=${category}`, undefined, { shallow: true })
+      router.push(
+        {
+          pathname: '/blog',
+          query: { category }
+        },
+        undefined,
+        { shallow: true }
+      )
     }
   }
 

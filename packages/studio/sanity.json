@@ -14,8 +14,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "social-preview",
-    "@sanity/color-input",
-    "seo-tools"
+    "@sanity/color-input"
   ],
   "env": {
     "development": {
