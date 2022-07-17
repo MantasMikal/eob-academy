@@ -27,28 +27,9 @@ export default {
       type: "blockContent",
     },
     {
-      type: "object",
+      type: "missionStatement",
       name: "missionStatement",
-      fields: [
-        {
-          title: "Purpose",
-          name: "purpose",
-          type: "text",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Mission",
-          name: "mission",
-          type: "text",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Vision",
-          name: "vision",
-          type: "text",
-          validation: (Rule) => Rule.required(),
-        },
-      ],
+      title: "Mission Statement",
     },
     {
       name: "mainCourses",
@@ -60,53 +41,13 @@ export default {
     {
       name: "industryRoles",
       title: "Industry roles",
-      type: "object",
-      fields: [
-        {
-          title: "Title",
-          name: "title",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: 'Industry break down page url',
-          name: 'url',
-          type: 'string',
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          title: "Body",
-          name: "description",
-          type: "blockContent",
-        },
-      ],
+      type: "industryRoles",
     },
     {
       name: "featuredCourses",
       title: "Featured courses",
-      type: "object",
-      fields: [
-        {
-          name: "title",
-          title: "Title",
-          type: "string",
-          validation: (Rule) => Rule.required(),
-        },
-        {
-          name: "description",
-          title: "Description",
-          type: "text",
-        },
-        {
-          name: "courses",
-          title: "Courses",
-          type: "array",
-          of: [{ type: "reference", to: { type: "course" } }],
-          validation: (Rule) => Rule.required(),
-        },
-      ],
+      type: "featuredCourses",
     },
-
     {
       title: "Open graph",
       name: "openGraph",

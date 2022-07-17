@@ -29,6 +29,9 @@ import courseCategory from "./documents/course-category";
 import courseOverview from "./documents/course-overview";
 import testimonials from "./pages/testimonials";
 import apply from "./pages/apply";
+import missionStatement from "./objects/missionStatement";
+import industryRoles from "./objects/industryRoles";
+import featuredCourses from "./objects/featuredCourses";
 
 export default createSchema({
   name: "default",
@@ -58,6 +61,9 @@ export default createSchema({
     course,
     courseCategory,
     courseOverview,
-    apply
+    apply,
+    missionStatement,
+    industryRoles,
+    featuredCourses
   ]),
 });
