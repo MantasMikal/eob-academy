@@ -53,6 +53,10 @@ export const getStaticPaths = async () => {
   const coursesCategories = await getClient(false).fetch(
     `*[_type == "courseCategory"].slug.current`
   )
+  console.log(
+    '🚀 ~ file: [slug].tsx ~ line 56 ~ getStaticPaths ~ coursesCategories',
+    coursesCategories
+  )
 
   return {
     paths: coursesCategories

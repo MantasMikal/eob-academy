@@ -25,8 +25,35 @@ export default {
       type: "blockContent",
     },
     {
-      name: "courses",
-      title: "Featured Courses",
+      type: 'object',
+      name: 'missionStatement',
+      fields: [
+        {
+          title: 'Purpose',
+          name: 'purpose',
+          type: 'text',
+        },
+        {
+          title: 'Mission',
+          name: 'mission',
+          type: 'text',
+        },
+        {
+          title: 'Vision',
+          name: 'vision',
+          type: 'text',
+        },
+      ]
+    },
+    {
+      name: "mainCourses",
+      title: "Main courses",
+      type: "array",
+      of: [{ type: "reference", to: { type: "courseCategory" } }],
+    },
+    {
+      name: "fullTimeCourses",
+      title: "Full-time & Short Courses",
       type: "array",
       of: [{ type: "reference", to: { type: "course" } }],
     }

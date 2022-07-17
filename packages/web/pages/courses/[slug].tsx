@@ -69,7 +69,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
 
         <Image
           className="aspect-slim object-center object-cover"
-          src={courseData.mainImage}
+          src={courseData.heroImage}
           alt={courseData.title}
         />
 
@@ -84,7 +84,7 @@ const CoursePage: NextPage = ({ data, courses }: any) => {
                       <div>{item.title}</div>
                     </div>
                     <div className="text-sm xs:text-md lg:text-lg">
-                      {item.subtitle}
+                      {courseData.description}
                     </div>
                   </div>
                 ))}

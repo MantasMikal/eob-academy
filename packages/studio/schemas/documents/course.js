@@ -13,7 +13,30 @@ export default {
     },
     {
       name: "subtitle",
+      description: "Will be used on the thumbnail and page title",
       title: "Subtitle",
+      type: "text",
+    },
+    {
+      name: "category",
+      title: "Course category",
+      type: "reference",
+      to: [{ type: "courseCategory" }],
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description:
+        "Some frontend will require a slug to be set to be able to show the post",
+      options: {
+        source: "title",
+        maxLength: 96,
+      },
+    },
+    {
+      name: "description",
+      title: "Description",
       type: "text",
     },
     {
@@ -36,30 +59,12 @@ export default {
       title: "Ages",
       type: "string",
     },
-    {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
-      description:
-        "Some frontend will require a slug to be set to be able to show the post",
-      options: {
-        source: "title",
-        maxLength: 96,
-      },
-    },
+
     {
       name: "overview",
       title: "Overview",
       type: 'array',
       of: [{ type: "courseOverview" }]
-    },
-    {
-      name: "category",
-      title: "Categories",
-      description:
-        "Can be more than one. First you have to create categories (Sidebar -> Categories)",
-      type: "reference",
-      to: [{ type: "courseCategory" }],
     },
     {
       name: "publishedAt",
@@ -69,14 +74,15 @@ export default {
       type: "datetime",
     },
     {
-      name: "excerpt",
-      title: "Excerpt",
-      type: "text",
-    },
-    {
       name: "mainImage",
       description: 'Will be used on thumbnails',
       title: "Main image",
+      type: "image",
+    },
+    {
+      name: "heroImage",
+      description: 'Will be used on the course page',
+      title: "Hero image",
       type: "image",
     },
     {

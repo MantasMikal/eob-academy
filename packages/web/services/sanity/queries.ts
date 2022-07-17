@@ -43,6 +43,7 @@ export const regularPageFragment = groq`
 export const courseFragment = groq`
   _id,
   title,
+  description,
   subtitle,
   location,
   duration,
@@ -52,8 +53,8 @@ export const courseFragment = groq`
   slug,
   category->,
   publishedAt,
-  excerpt,
   mainImage,
+  heroImage,
   openGraph
 `
 
@@ -80,7 +81,9 @@ export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   _id,
   title,
   subtitle,
-  courses[]->{
+  missionStatement,
+  mainCourses[]->,
+  fullTimeCourses[]->{
     ${courseFragment}
   },
   openGraph

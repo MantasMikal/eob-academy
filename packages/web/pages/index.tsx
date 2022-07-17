@@ -15,51 +15,6 @@ import {
   getRecentPosts
 } from '@/services/sanity/sanity'
 
-const courseCategories = [
-  {
-    title: 'FE Video Game Design College Courses',
-    href: '#'
-  },
-  {
-    title: 'Alternative Schools Pathway Video Game Design Course',
-    href: '#'
-  },
-  {
-    title: 'Online Video Game Design Courses',
-    href: '#'
-  }
-]
-
-const aboutItems = [
-  {
-    title: 'Purpose',
-    subtitle: `Offering the neurodiverse opportunities to enable maximum
-  capabilities and confidence through learning video game design -
-  Education without boundaries.`,
-    a11yText: 'Purpose',
-    icon: 'purpose'
-  },
-  {
-    title: 'Mission',
-    subtitle: `Offering the neurodiverse opportunities to enable 
-    maximum capabilities and 
-    confidence through 
-    learning video game 
-    design - Education without 
-    boundaries..`,
-    a11yText: 'Mission',
-    icon: 'mission'
-  },
-  {
-    title: 'Vision',
-    subtitle: `Offering the neurodiverse opportunities to enable maximum
-  capabilities and confidence through learning video game design -
-  Education without boundaries.`,
-    a11yText: 'Vision',
-    icon: 'vision'
-  }
-]
-
 const industryRoles = [
   {
     title: 'Game animator',
@@ -141,12 +96,33 @@ interface IHomePageProps {
 
 const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
   const { home, sponsors, posts } = homeData
-  const { courses } = home?.home || {}
-  console.log('🚀 ~ file: index.tsx ~ line 145 ~ courses', courses)
+  const { missionStatement, mainCourses, fullTimeCourses } = home?.home || {}
+  console.log("🚀 ~ file: index.tsx ~ line 100 ~ fullTimeCourses", fullTimeCourses)
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)
   }
+
+  const aboutItems = [
+    {
+      title: 'Purpose',
+      subtitle: missionStatement?.purpose,
+      a11yText: 'Purpose',
+      icon: 'purpose'
+    },
+    {
+      title: 'Mission',
+      subtitle: missionStatement?.mission,
+      a11yText: 'Mission',
+      icon: 'mission'
+    },
+    {
+      title: 'Vision',
+      subtitle: missionStatement?.vision,
+      a11yText: 'Vision',
+      icon: 'vision'
+    }
+  ]
 
   return (
     <MainLayout>
@@ -156,11 +132,11 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
         <section className="container-lg py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
           <div className="space-y-6 md:space-y-8 text-white">
             <h2 className="relative heading-xlarge left-1">Main courses</h2>
-            {courseCategories.map((course) => (
+            {mainCourses.map((course: any) => (
               <SmartLink
                 className="flex items-center subtitle hover:underline"
                 key={course.title}
-                href={course.href}
+                href={`/courses/category/${course.slug.current}`}
               >
                 <ChevronRightIcon className="flex-shrink-0 h-10 w-10 text-tertiary" />
                 {course.title}
@@ -183,7 +159,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
             quod! Accusamus, cum?
           </p>
           <div className="flex flex-col space-y-12">
-            {courses.map((item: any, i: number) => (
+            {fullTimeCourses.map((item: any, i: number) => (
               <CourseCard key={`CourseCard:${i}`} {...item} />
             ))}
           </div>

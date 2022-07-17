@@ -25,19 +25,19 @@ function ItemRow({
       {items.map((item: any, i: number) => (
         <div
           className={classNames(
-            'flex flex-col p-6 lg:px-3 lg:py-6 bg-white rounded-lg shadow space-y-4 flex-auto',
+            'flex flex-col p-6 lg:px-5 lg:py-6 bg-white rounded-lg shadow space-y-4 flex-auto',
             cardClassName
           )}
           key={`About:${i}`}
         >
           <Icon
             type={item.icon}
-            width={100}
-            height={100}
+            width={80}
+            height={80}
             a11yText={item.a11yText}
             className={classNames('mx-auto flex items-center', iconClassName)}
           />
-          <h3 className="font-bold text-primary">{item.title}</h3>
+          <h3 className="font-bold text-secondary">{item.title}</h3>
           <p>{item.subtitle && item.subtitle}</p>
         </div>
       ))}
