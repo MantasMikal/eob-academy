@@ -128,6 +128,8 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
     {
       title: 'Vision',
       subtitle: missionStatement?.vision,
+      height: 70,
+      className: 'my-2',
       a11yText: 'Vision',
       icon: 'vision'
     }
