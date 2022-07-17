@@ -11,19 +11,29 @@ export type SectionProps = {
   children: React.ReactNode
 }
 
-function Section({ title, label, href, diffBg = false, className, children }: SectionProps) {
+function Section({
+  title,
+  label,
+  href,
+  diffBg = false,
+  className,
+  children
+}: SectionProps) {
   return (
-    <div className={classNames("w-screen", diffBg && 'bg-backgroundSecondary')}>
+    <div className={classNames('w-screen', diffBg && 'bg-backgroundSecondary')}>
       <section
         className={classNames(
-          'container-lg pb-8 md:pb-16 space-y-8 md:space-y-16',
+          'relative container-lg pb-8 md:pb-16 space-y-8 md:space-y-16 z-[1]',
           className
         )}
       >
-        <SectionTitle title={title} label={label && label} href={href && href} />
+        <SectionTitle
+          title={title}
+          label={label && label}
+          href={href && href}
+        />
         {children}
       </section>
-
     </div>
   )
 }

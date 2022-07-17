@@ -7,7 +7,10 @@ import ItemRow from '@/components/Common/ItemRow'
 import Image from 'next/future/image'
 import { useRouter } from 'next/router'
 import StandardMeta from '@/components/Meta/Standard'
-import { getAboutPageData, usePreviewSubscription } from '@/services/sanity/sanity'
+import {
+  getAboutPageData,
+  usePreviewSubscription
+} from '@/services/sanity/sanity'
 import { getAboutPageDataQuery } from '@/services/sanity/queries'
 
 const items = [
@@ -63,12 +66,7 @@ const About: NextPage = ({ data }: any) => {
           iconClassName="items-left"
         />
         {/* Get Involved */}
-        <Section
-          title="Get Involved"
-          label="Apply"
-          href="/apply"
-          diffBg={true}
-        >
+        <Section title="Get Involved" label="Apply" href="/apply" diffBg={true}>
           <h4 className="subtitle font-normal py-14">
             Express your interest by clicking the button to <br />
             get to our contact page - then email us.
@@ -99,17 +97,18 @@ const About: NextPage = ({ data }: any) => {
         </Section>
         {/* The EOB Academy Provides: */}
         <Section
+          className="overflow-hidden"
           title="The EOB Academy Provides:"
           diffBg={true}
         >
           <div className="gap-32 md:flex lg:gap-60">
             <Image
-              width={300}
+              width={400}
               height={500}
               alt="Controller Hand"
               src={'/content/controllerHand.png'}
               style={{ maxHeight: '500px' }}
-              className="hidden md:block md:relative -top-16 left-24"
+              className="z-[-1] object-contain relative block mx-auto -mt-28 md:mt-0 md:relative md:-top-16 md:left-24"
             />
             <div className="max-w-xl">
               <h4 className="subtitle font-normal mb-11">

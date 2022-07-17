@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-  <path id="Path_70" data-name="Path 70" d="M1317.73,1148.75v88.66h-88.66v-88.66h88.66m5.67-5.67h-100v100h100Z" transform="translate(-1223.4 -1143.08)" fill="#c8167c"/>
-  <line id="Line_13" data-name="Line 13" x2="45.83" transform="translate(35.68 27.08)" fill="none" stroke="#c8167c" stroke-miterlimit="10" stroke-width="5.67"/>
-  <line id="Line_14" data-name="Line 14" x2="45.83" transform="translate(35.68 50)" fill="none" stroke="#c8167c" stroke-miterlimit="10" stroke-width="5.67"/>
-  <line id="Line_15" data-name="Line 15" x2="45.83" transform="translate(35.68 72.91)" fill="none" stroke="#c8167c" stroke-miterlimit="10" stroke-width="5.67"/>
-  <line id="Line_16" data-name="Line 16" x2="11.46" transform="translate(18.49 27.08)" fill="none" stroke="#c8167c" stroke-miterlimit="10" stroke-width="5.67"/>
-  <line id="Line_17" data-name="Line 17" x2="11.46" transform="translate(18.49 50)" fill="none" stroke="#c8167c" stroke-miterlimit="10" stroke-width="5.67"/>
-  <line id="Line_18" data-name="Line 18" x2="11.46" transform="translate(18.49 72.91)" fill="none" stroke="#c8167c" stroke-miterlimit="10" stroke-width="5.67"/>
+  <path id="Path_70" data-name="Path 70" d="M1317.73,1148.75v88.66h-88.66v-88.66h88.66m5.67-5.67h-100v100h100Z" transform="translate(-1223.4 -1143.08)" fill="#e82569"/>
+  <line id="Line_13" data-name="Line 13" x2="45.83" transform="translate(35.68 27.08)" fill="none" stroke="#e82569" stroke-miterlimit="10" stroke-width="5.67"/>
+  <line id="Line_14" data-name="Line 14" x2="45.83" transform="translate(35.68 50)" fill="none" stroke="#e82569" stroke-miterlimit="10" stroke-width="5.67"/>
+  <line id="Line_15" data-name="Line 15" x2="45.83" transform="translate(35.68 72.91)" fill="none" stroke="#e82569" stroke-miterlimit="10" stroke-width="5.67"/>
+  <line id="Line_16" data-name="Line 16" x2="11.46" transform="translate(18.49 27.08)" fill="none" stroke="#e82569" stroke-miterlimit="10" stroke-width="5.67"/>
+  <line id="Line_17" data-name="Line 17" x2="11.46" transform="translate(18.49 50)" fill="none" stroke="#e82569" stroke-miterlimit="10" stroke-width="5.67"/>
+  <line id="Line_18" data-name="Line 18" x2="11.46" transform="translate(18.49 72.91)" fill="none" stroke="#e82569" stroke-miterlimit="10" stroke-width="5.67"/>
 </svg>
