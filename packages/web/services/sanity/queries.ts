@@ -114,7 +114,7 @@ export const getAllSponsorsQuery = groq`*[_type == "sponsor"]{
     ${sponsorFragment}
   }`
 
-export const getAllPostsQuery = groq`*[_type == "post"] {
+export const getAllPostsQuery = groq`*[_type == "post" && hidden == false] {
   ${postFragment}
 }`
 

@@ -204,7 +204,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
                   width={40}
                   height={40}
                 />
-                <p className='py-5 group-hover:text-secondary'>{item.title}</p>
+                <p className="py-5 group-hover:text-secondary">{item.title}</p>
               </div>
             ))}
           </div>
