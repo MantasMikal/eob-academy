@@ -66,9 +66,9 @@ export default function Navigation() {
                   />
                 </SmartLink>
               </div>
-              <div className=" sm:block sm:ml-6"></div>
+              <div className="md:block md:ml-6"></div>
             </div>
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden md:ml-6 md:block">
               <div className="flex items-center">
                 <div className="flex space-x-4">
                   {links.map((link) => (
@@ -88,7 +88,7 @@ export default function Navigation() {
                 </div>
               </div>
             </div>
-            <div className="-mr-2 flex sm:hidden">
+            <div className="-mr-2 flex md:hidden">
               {/* Mobile menu button */}
               <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                 <span className="sr-only">Open menu</span>
