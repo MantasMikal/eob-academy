@@ -15,8 +15,9 @@ import {
   getRecentPosts
 } from '@/services/sanity/sanity'
 import StandardMeta from '@/components/Meta/Standard'
+import BlockContent from '@/components/Primitive/BlockContent'
 
-const industryRoles = [
+const industryRolesData = [
   {
     title: 'Game animator',
     icon: '/content/industry-roles/animator.svg'
@@ -97,8 +98,14 @@ interface IHomePageProps {
 
 const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
   const { home, sponsors, posts } = homeData
-  const { missionStatement, mainCourses, fullTimeCourses, openGraph } =
-    home?.home || {}
+  const {
+    missionStatement,
+    mainCourses,
+    featuredCourses,
+    body,
+    industryRoles,
+    openGraph
+  } = home?.home || {}
 
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
@@ -152,41 +159,41 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
           </div>
         </section>
         {/* About */}
+        {body && (
+          <section className="container-lg">
+            <BlockContent className="prose" blocks={body} />
+          </section>
+        )}
         <ItemRow items={aboutItems} cardClassName="items-center text-center" />
         <section className="container-lg space-y-8 md:space-y-16">
           <SectionTitle
-            title="Full-time & Short Courses"
+            title={featuredCourses?.title}
             label="All courses"
             href="/courses"
           />
           <p className=" max-w-3xl text-xl md:text-3xl text-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            veniam provident, error dolores fuga minima vitae a officia
-            doloremque quae explicabo repellendus iste, commodi ab ut fugit
-            quod! Accusamus, cum?
+            {featuredCourses?.description}
           </p>
           <div className="flex flex-col space-y-12">
-            {fullTimeCourses?.map((item: any, i: number) => (
+            {featuredCourses?.courses?.map((item: any, i: number) => (
               <CourseCard key={`CourseCard:${i}`} {...item} />
             ))}
           </div>
         </section>
         <section className="container-lg space-y-8 md:space-y-16">
           <SectionTitle
-            title="Gaming industry roles"
+            title={industryRoles?.title}
             label="Industry Brakedown"
-            href="/"
+            href={industryRoles?.url}
           />
-          <p className=" max-w-3xl text-xl md:text-3xl text-black">
-            There are many gaming career options to choose from, both on the
-            technical and creative sides of the field.
-          </p>
-          <p>
-            If you have the commitment, skills and drive to immerse yourself in
-            the world of video games, the possibilities are endless.
-          </p>
+          <div className="max-w-3xl prose text-slate-800">
+            <BlockContent
+              className="prose"
+              blocks={industryRoles?.description}
+            />
+          </div>
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
-            {industryRoles.map((item, i) => (
+            {industryRolesData.map((item, i) => (
               <div
                 className="group flex space-x-4 items-center p-3 pl-6 rounded border hover:cursor-pointer"
                 key={`IndustryRole:${i}`}

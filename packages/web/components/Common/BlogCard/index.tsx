@@ -42,7 +42,7 @@ const BlogCard = ({
         sizes="(max-width: 600px) 50vw, 33vw"
       />
       <div className="flex flex-col h-full px-4 py-2 space-y-1">
-        <h3 className="font-semibold text-slate-700">{title}</h3>
+        <h3 className="text-lg font-bold text-slate-700">{title}</h3>
         <p>{excerpt}</p>
         <div className="text-secondary">
           {format(new Date(publishedAt), 'MMMM dd, yyyy')}
