@@ -13,11 +13,13 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "subtitle",
       title: "Subtitle",
       type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "body",
@@ -56,7 +58,14 @@ export default {
       title: "Full-time & Short Courses",
       type: "array",
       of: [{ type: "reference", to: { type: "course" } }],
-    }
+    },
+    {
+      title: "Open graph",
+      name: "openGraph",
+      description:
+        "SEO Optimisation",
+      type: "openGraph",
+    },
   ],
   preview: {
     select: {

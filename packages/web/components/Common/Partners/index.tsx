@@ -24,11 +24,11 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
       />
       <div className="space-y-8">
         <div className="flex flex-wrap justify-start items-center border-b-2 pb-8 border-secondary">
-          {partners.map((partner) => (
+          {partners.map((partner, i: number) => (
             <SmartLink
               href={partner.url}
               target="_blank"
-              key={partner.title}
+              key={`${partner.title}:${i}`}
               className="max-w-[80px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[140px] hover:scale-101 active:scale-98 transition-all"
             >
               <SanityImage src={partner.image as any} alt={partner.title} />
@@ -36,11 +36,11 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
           ))}
         </div>
         <div className="flex flex-wrap justify-start items-center">
-          {supporters.map((supporter) => (
+          {supporters.map((supporter, i:number) => (
             <SmartLink
               href={supporter.url}
               target="_blank"
-              key={supporter.title}
+              key={`${supporter.title}:${i}`}
               className="max-w-[60px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[120px] hover:scale-101 active:scale-98 transition-all"
             >
               <SanityImage src={supporter.image as any} alt={supporter.title} />

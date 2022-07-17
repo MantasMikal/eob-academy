@@ -7,8 +7,8 @@ import BlockContent from '@/components/Primitive/BlockContent'
 const CourseOverview = ({ items, className }: any) => {
   return (
     <dl className={cn('space-y-6 divide-y-2 divide-slate-200', className)}>
-      {items.map((item: any) => (
-        <Disclosure as="div" key={item.question} className="pt-6">
+      {items.map((item: any, i: number) => (
+        <Disclosure as="div" key={`${item.question}:${i}`} className="pt-6">
           {({ open }) => (
             <>
               <dt className="text-lg">

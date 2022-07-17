@@ -27,13 +27,13 @@ const ApplyPage: NextPage = ({ data }: any) => {
     <MainLayout className="space-y-8 lg:space-y-16">
       <StandardMeta
         canonical={`/apply`}
-        title={pageData?.title}
-        description={pageData?.subtitle}
+        title={pageData?.openGraph?.title}
+        description={pageData?.openGraph?.description}
       />
       <PageHeader
         contentClassName="container-md"
-        title={pageData?.title}
-        subtitle={pageData?.subtitle}
+        title={pageData?.openGraph?.title || pageData?.openGraph?.title}
+        subtitle={pageData?.openGraph?.title || pageData?.subtitle}
       />
       {pageData?.body?.length > 0 && (
         <article className="prose container-md mx-auto">

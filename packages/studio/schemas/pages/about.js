@@ -7,12 +7,20 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "body",
       title: "Body",
       type: "blockContent",
-    }
+    },
+    {
+      title: "Open graph",
+      name: "openGraph",
+      description:
+        "SEO Optimisation",
+      type: "openGraph",
+    },
   ],
   preview: {
     prepare() {

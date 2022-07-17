@@ -27,6 +27,7 @@ import splitPanel from "./objects/split-panel";
 import course from "./documents/course";
 import courseCategory from "./documents/course-category";
 import courseOverview from "./documents/course-overview";
+import testimonials from "./pages/testimonials";
 import apply from "./pages/apply";
 
 export default createSchema({
@@ -49,6 +50,7 @@ export default createSchema({
     about,
     post,
     sponsor,
+    testimonials,
     gallery,
     itemGallery,
     page,

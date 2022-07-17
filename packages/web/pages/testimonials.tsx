@@ -4,22 +4,43 @@ import Partners from '@/components/Common/Partners'
 import SanityImage from '@/components/Common/SanityImage'
 import Section from '@/components/Common/Section'
 import StandardMeta from '@/components/Meta/Standard'
-import { getAllSponsors } from '@/services/sanity/sanity'
+import { useRouter } from 'next/router'
+import {
+  getAllSponsors,
+  getAllTestimonialData,
+  usePreviewSubscription
+} from '@/services/sanity/sanity'
 import React from 'react'
+import { getTestimonialPageDataQuery } from '@/services/sanity/queries'
+import BlockContent from '@/components/Primitive/BlockContent'
 
-export default function Testimonials({ sponsors }: any) {
+export default function Testimonials({ sponsors, data }: any) {
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)
   }
+  const router = useRouter()
+  const { data: pageData } = usePreviewSubscription(
+    getTestimonialPageDataQuery,
+    {
+      initialData: data,
+      enabled: router?.query?.preview !== null
+    }
+  )
+
   return (
     <MainLayout className="space-y-8 lg:space-y-16">
-      <StandardMeta canonical="/testimonials" title="Testimonials" />
-      <PageHeader
-        title="Testimonials"
-        subtitle="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
-        diam nonummy nibh euismod tincidunt ut laoreet dolore magna"
+      <StandardMeta
+        canonical="/testimonials"
+        title={pageData?.openGraph?.title}
+        description={pageData?.openGraph?.description}
       />
+      <PageHeader title={pageData?.title} subtitle={pageData?.subtitle} />
+      {pageData?.body?.length > 0 && (
+        <article className="prose container-md mx-auto">
+          <BlockContent blocks={pageData?.body} />
+        </article>
+      )}
       <section className="container-lg md:flex gap-3 lg:gap-10">
         <div className="m-auto w-full">
           <iframe
@@ -77,10 +98,12 @@ export default function Testimonials({ sponsors }: any) {
 
 export const getStaticProps = async ({ preview = false }) => {
   const sponsors = await getAllSponsors(preview)
+  const testimonialPageData = await getAllTestimonialData(preview)
 
   return {
     props: {
-      sponsors
+      sponsors,
+      data: testimonialPageData
     },
     revalidate: 60 * 30 // 30 minutes
   }

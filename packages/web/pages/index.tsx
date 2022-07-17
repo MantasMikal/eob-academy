@@ -14,6 +14,7 @@ import {
   getHomeData,
   getRecentPosts
 } from '@/services/sanity/sanity'
+import StandardMeta from '@/components/Meta/Standard'
 
 const industryRoles = [
   {
@@ -96,8 +97,9 @@ interface IHomePageProps {
 
 const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
   const { home, sponsors, posts } = homeData
-  const { missionStatement, mainCourses, fullTimeCourses } = home?.home || {}
-  console.log("🚀 ~ file: index.tsx ~ line 100 ~ fullTimeCourses", fullTimeCourses)
+  const { missionStatement, mainCourses, fullTimeCourses, openGraph } =
+    home?.home || {}
+
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)
@@ -127,6 +129,11 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
   return (
     <MainLayout>
       <Hero />
+      <StandardMeta
+        canonical={`/`}
+        title={openGraph?.title}
+        description={openGraph?.description}
+      />
       {/* Intro */}
       <div className="space-y-12 lg:space-y-24">
         <section className="container-lg py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">

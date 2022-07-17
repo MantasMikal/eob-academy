@@ -5,7 +5,10 @@ import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import ItemRow from '@/components/Common/ItemRow'
 import Image from 'next/future/image'
+import { useRouter } from 'next/router'
 import StandardMeta from '@/components/Meta/Standard'
+import { getAboutPageData, usePreviewSubscription } from '@/services/sanity/sanity'
+import { getAboutPageDataQuery } from '@/services/sanity/queries'
 
 const items = [
   {
@@ -31,15 +34,19 @@ const items = [
   }
 ]
 
-const About: NextPage = () => {
+const About: NextPage = ({ data }: any) => {
+  const router = useRouter()
+  const { data: pageData } = usePreviewSubscription(getAboutPageDataQuery, {
+    initialData: data,
+    enabled: router?.query?.preview !== null
+  })
+
   return (
     <MainLayout>
       <StandardMeta
         canonical="/about"
-        title="About"
-        description="EOB Academy is a place where you can explore and build video games
-        and create your own esports brand, alongside like-minded peers and
-        incredible tutors."
+        title={pageData?.openGraph?.title}
+        description={pageData?.openGraph?.description}
       />
       {/* Intro */}
       <div className="font-semibold">
@@ -215,3 +222,13 @@ const About: NextPage = () => {
 }
 
 export default About
+
+export const getStaticProps = async () => {
+  const pageData = await getAboutPageData(false)
+  return {
+    props: {
+      data: pageData || {}
+    },
+    revalidate: 60 * 30 // 30 minutes
+  }
+}

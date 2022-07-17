@@ -1,4 +1,5 @@
 import { FaPhone, FaEdit, FaEye } from "react-icons/fa";
+import { GiConversation } from "react-icons/gi"
 import { MdHome, MdInfoOutline } from "react-icons/md";
 import {RiFileCodeFill} from "react-icons/ri";
 import S from "@sanity/desk-tool/structure-builder";
@@ -16,6 +17,7 @@ const hiddenTypes = [
   "post",
   "siteSettings",
   "contactPage",
+  "testimonialsPage",
   "homePage",
   "blogPost",
   "applyPage",
@@ -106,6 +108,23 @@ export default () =>
                 )
 
                 .icon(MdInfoOutline),
+                S.listItem()
+                .title("Testimonials")
+                .child(
+                  S.editor()
+                    .id("testimonialPage")
+                    .schemaType("testimonialPage")
+                    .documentId("testimonialPage")
+                    .views([
+                      S.view.form().icon(FaEdit),
+                      S.view
+                        .component(() => PagePreview({ slug: "/testimonials" }))
+                        .icon(FaEye)
+                        .title("Preview"),
+                    ])
+                )
+
+                .icon(GiConversation),
               S.listItem()
                 .title("Cookie policy")
                 .child(

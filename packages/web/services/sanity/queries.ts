@@ -77,6 +77,21 @@ export const contactPageFragment = groq`
   openGraph
 `
 
+export const aboutPageFragment = groq`
+  _id,
+  title,
+  body,
+  openGraph
+`
+
+export const testimonialPageFragment = groq`
+  _id,
+  title,
+  subtitle,
+  body,
+  openGraph
+`
+
 export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   _id,
   title,
@@ -135,7 +150,7 @@ export const getApplyPageDataQuery = groq`*[_id == "applyPage"][0] {
 }`
 
 export const getContactPageDataQuery = groq`*[_id == "contactPage"][0] {
-  ${applyPageFragment}
+  ${contactPageFragment}
 }`
 
 export const getPostPageDataQuery = groq`*[_type == "post" && slug.current == $slug][0]{
@@ -144,6 +159,14 @@ export const getPostPageDataQuery = groq`*[_type == "post" && slug.current == $s
 
 export const getPostCategoriesQuery = groq`*[_type == "category"]`
 
+export const getAboutPageDataQuery = groq`*[_id == "aboutPage"][0] {
+  ${aboutPageFragment}
+}`
+
 export const getHomeDataQuery = groq`{
   "home": ${getHomePageDataQuery},
+}`
+
+export const getTestimonialPageDataQuery = groq`*[_id == "testimonialPage"][0] {
+  ${testimonialPageFragment}
 }`

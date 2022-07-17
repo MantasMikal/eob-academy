@@ -1,6 +1,6 @@
 export default {
-  name: "contactPage",
-  title: "Contact Page",
+  name: "testimonialPage",
+  title: "Testimonials Page",
   type: "document",
   fields: [
     {
@@ -31,7 +31,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: "Contact",
+        title: "Testimonials",
       };
     },
   },
