@@ -11,8 +11,8 @@ import Image from 'next/image'
 import Partners from '@/components/Common/Partners'
 import {
   getAllSponsors,
-  getHomeData,
-  getRecentPosts
+  getFeaturedPosts,
+  getHomeData
 } from '@/services/sanity/sanity'
 import StandardMeta from '@/components/Meta/Standard'
 import BlockContent from '@/components/Primitive/BlockContent'
@@ -206,7 +206,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
                   width={40}
                   height={40}
                 />
-                <p className='py-5 group-hover:text-secondary'>{item.title}</p>
+                <p className="py-5 group-hover:text-secondary">{item.title}</p>
               </div>
             ))}
           </div>
@@ -232,7 +232,7 @@ export default Home
 export const getStaticProps = async ({ preview = false }) => {
   const homePageData = await getHomeData(preview)
   const sponsors = await getAllSponsors(preview)
-  const posts = await getRecentPosts(preview)
+  const posts = await getFeaturedPosts(preview)
   return {
     props: {
       data: {

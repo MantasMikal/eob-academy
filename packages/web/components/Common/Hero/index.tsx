@@ -22,7 +22,7 @@ function Hero({}: Props) {
         <h1 className="heading-xlarge">
           Like video games? <br /> Come and make one.
         </h1>
-        <p className="text-xl font-semibold max-w-prose">
+        <p className="text-xl md:text-2xl font-semibold max-w-prose">
           Recruiting now for full-time college courses - September 2022 - grab
           your experience!
         </p>

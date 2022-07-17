@@ -29,6 +29,12 @@ export default {
       type: "boolean",
     },
     {
+      name: "hidden",
+      title: "Is hidden",
+      description: "Will not show the post on the website. (The post will still be visible)",
+      type: "boolean",
+    },
+    {
       name: "category",
       title: "Categories",
       description:
@@ -91,6 +97,9 @@ export default {
       ],
     },
   ],
+  initialValue: {
+    hidden: false
+  },
   preview: {
     select: {
       title: "title",
