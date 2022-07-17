@@ -67,7 +67,7 @@ const About: NextPage = ({ data }: any) => {
           title="Get Involved"
           label="Apply"
           href="/apply"
-          className="bg-slate-50 rounded"
+          diffBg={true}
         >
           <h4 className="subtitle font-normal py-14">
             Express your interest by clicking the button to <br />
@@ -100,7 +100,7 @@ const About: NextPage = ({ data }: any) => {
         {/* The EOB Academy Provides: */}
         <Section
           title="The EOB Academy Provides:"
-          className="bg-slate-50 rounded"
+          diffBg={true}
         >
           <div className="gap-32 md:flex lg:gap-60">
             <Image
@@ -109,7 +109,7 @@ const About: NextPage = ({ data }: any) => {
               alt="Controller Hand"
               src={'/content/controllerHand.png'}
               style={{ maxHeight: '500px' }}
-              className="hidden md:block md:relative -top-14 left-24"
+              className="hidden md:block md:relative -top-16 left-24"
             />
             <div className="max-w-xl">
               <h4 className="subtitle font-normal mb-11">

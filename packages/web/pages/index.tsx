@@ -166,7 +166,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
             quod! Accusamus, cum?
           </p>
           <div className="flex flex-col space-y-12">
-            {fullTimeCourses.map((item: any, i: number) => (
+            {fullTimeCourses?.map((item: any, i: number) => (
               <CourseCard key={`CourseCard:${i}`} {...item} />
             ))}
           </div>
@@ -188,16 +188,16 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
             {industryRoles.map((item, i) => (
               <div
-                className="flex space-x-4 items-center p-3 rounded border"
+                className="group flex space-x-4 items-center p-3 pl-6 rounded border hover:cursor-pointer"
                 key={`IndustryRole:${i}`}
               >
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  width={60}
-                  height={60}
+                  width={40}
+                  height={40}
                 />
-                <p>{item.title}</p>
+                <p className='py-5 group-hover:text-secondary'>{item.title}</p>
               </div>
             ))}
           </div>

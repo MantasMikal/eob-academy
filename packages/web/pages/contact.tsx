@@ -49,7 +49,7 @@ const ContactPage: NextPage = ({ data }: any) => {
               </div>
             </div>
             <div className="flex flex-col justify-between text-lg">
-              <dl className="space-y-2">
+              <dl className="space-y-2 w-96">
                 <div className="space-y-1">
                   <dt className="font-bold">Address</dt>
                   <dd>
@@ -93,7 +93,7 @@ const ContactPage: NextPage = ({ data }: any) => {
               </div>
             </div>
             <div className="flex flex-col justify-between text-lg">
-              <dl className="space-y-2">
+              <dl className="space-y-2 w-96">
                 <div className="space-y-1">
                   <dt className="font-bold">Address</dt>
                   <dd>
