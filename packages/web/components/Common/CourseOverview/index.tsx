@@ -8,7 +8,12 @@ const CourseOverview = ({ items, className }: any) => {
   return (
     <dl className={cn('space-y-6 divide-y-2 divide-slate-200', className)}>
       {items.map((item: any, i: number) => (
-        <Disclosure as="div" key={`${item.question}:${i}`} className="pt-6">
+        <Disclosure
+          defaultOpen
+          as="div"
+          key={`${item.question}:${i}`}
+          className="pt-6"
+        >
           {({ open }) => (
             <>
               <dt className="text-lg">
@@ -36,9 +41,10 @@ const CourseOverview = ({ items, className }: any) => {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel as="dd" className="mt-3">
-                  <dd className="text-base max-w-screen-md">
-                    <BlockContent blocks={item.description} />
-                  </dd>
+                  <BlockContent
+                    className="text-base max-w-screen-md"
+                    blocks={item.description}
+                  />
                 </Disclosure.Panel>
               </Transition>
             </>
