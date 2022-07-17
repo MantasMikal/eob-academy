@@ -36,9 +36,9 @@ const GlobalMeta = () => {
         site_name: title,
         images: [
           {
-            url: '/og-image.jpg',
+            url: '/og-image.png',
             width: 1200,
-            height: 628,
+            height: 630,
             alt: 'EOB Academy'
           }
         ]
@@ -53,8 +53,8 @@ const GlobalMeta = () => {
         {
           rel: 'icon',
           type: 'image/png',
-          sizes: '16x16',
-          href: '/icons/favicon.svg'
+          sizes: '192x192',
+          href: '/icons/favicon.png'
         },
         {
           rel: 'manifest',
