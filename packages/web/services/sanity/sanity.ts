@@ -16,7 +16,8 @@ import {
   getAllCoursesByCategoryQuery,
   getCourseCategoryQuery,
   getPostCategoriesQuery,
-  getTestimonialPageDataQuery
+  getTestimonialPageDataQuery,
+  getFeaturedPostsQuery
 } from './queries'
 import {
   SanityProjectDetails,
@@ -56,6 +57,11 @@ export async function getRecentPosts(preview: boolean) {
 
 export async function getAllPosts(preview: boolean) {
   const data = await getClient(preview).fetch(getAllPostsQuery)
+  return data
+}
+
+export async function getFeaturedPosts(preview: boolean) {
+  const data = await getClient(preview).fetch(getFeaturedPostsQuery)
   return data
 }
 

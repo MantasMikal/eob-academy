@@ -118,6 +118,10 @@ export const getAllPostsQuery = groq`*[_type == "post"] {
   ${postFragment}
 }`
 
+export const getFeaturedPostsQuery = groq`*[_type == "post" && isFeatured == true] {
+  ${postFragment}
+}`
+
 export const getAllCoursesQuery = groq`*[_type == "course"] {
   ${courseFragment}
 }`
