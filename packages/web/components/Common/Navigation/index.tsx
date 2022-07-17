@@ -2,8 +2,10 @@
 import SmartLink from '@/components/Primitive/SmartLink'
 import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { Fragment } from 'react'
+import classNames from 'classnames'
 
 const logo = require('@/assets/img/logo.png')
 
@@ -39,6 +41,9 @@ const links = [
 ]
 
 export default function Navigation() {
+  const { asPath } = useRouter()
+  const path = asPath.replace('/', '')
+
   return (
     <Popover as="nav" className=" bg-white fixed z-50 w-full top-0 shadow">
       <>
@@ -66,13 +71,18 @@ export default function Navigation() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex items-center">
                 <div className="flex space-x-4">
-                  {links.map((link) => (
+                  {links.map((link, i: number) => (
                     <SmartLink
                       key={link.label}
                       href={link.href}
-                      className="bg-primary-white hover:bg-gray-100 text-slate-700 px-3 py-2 rounded-md text-sm font-medium"
+                      className={classNames(
+                        'group bg-primary-white hover:bg-gray-100 text-slate-700 px-3 py-2 rounded-md text-sm font-medium',
+                        link.label.toLowerCase() === path && 'bg-gray-100'
+                      )}
                     >
-                      {link.label}
+                      <p className="group-hover:scale-105 group-hover:-rotate-3 group-active:scale-98 transition-transform">
+                        {link.label}
+                      </p>
                     </SmartLink>
                   ))}
                 </div>

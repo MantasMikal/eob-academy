@@ -32,12 +32,11 @@ function ItemRow({
         >
           <Icon
             type={item.icon}
-            width={80}
             height={80}
             a11yText={item.a11yText}
             className={classNames('mx-auto flex items-center', iconClassName)}
           />
-          <h3 className="font-bold text-secondary">{item.title}</h3>
+          <h3 className="font-bold text-lg text-black">{item.title}</h3>
           <p>{item.subtitle && item.subtitle}</p>
         </div>
       ))}
