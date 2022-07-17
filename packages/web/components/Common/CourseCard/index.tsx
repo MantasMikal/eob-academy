@@ -38,7 +38,7 @@ function CourseCard({
   ages
 }: CourseCardProps) {
   return (
-    <div className="group relative flex flex-col items-start sm:flex-row sm:space-x-3 lg:space-x-6 bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease">
+    <div className="group relative flex flex-col items-start border sm:flex-row sm:space-x-3 lg:space-x-6 bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease">
       <div className="relative flex-auto aspect-video w-full sm:max-w-sm sm:min-w-[250px] sm:m-3">
         <SanityImage
           src={mainImage}

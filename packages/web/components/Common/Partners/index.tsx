@@ -29,19 +29,19 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
               href={partner.url}
               target="_blank"
               key={`${partner.title}:${i}`}
-              className="max-w-[80px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[70px] hover:scale-101 active:scale-98 transition-all"
+              className="max-w-[60px] md:max-w-[80px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[70px] hover:scale-101 active:scale-98 transition-all"
             >
               <SanityImage src={partner.image as any} alt={partner.title} />
             </SmartLink>
           ))}
         </div>
         <div className="flex flex-wrap justify-start items-center">
-          {supporters.map((supporter, i:number) => (
+          {supporters.map((supporter, i: number) => (
             <SmartLink
               href={supporter.url}
               target="_blank"
               key={`${supporter.title}:${i}`}
-              className="max-w-[60px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[60px] hover:scale-101 active:scale-98 transition-all"
+              className="max-w-[50px] my-2 mx-3 lg:my-4 lg:mx-5 lg:max-w-[60px] hover:scale-101 active:scale-98 transition-all"
             >
               <SanityImage src={supporter.image as any} alt={supporter.title} />
             </SmartLink>

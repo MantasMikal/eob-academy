@@ -72,14 +72,16 @@ export default function Testimonials({ sponsors, data }: any) {
             .map((sponsor: any, i: number) => (
               <div
                 key={`Sponsor:${i}-${sponsor.name}`}
-                className={`py-14 border-b-2 border-secondary text-center`}
+                className={`py-10 border-b-2 border-secondary text-center`}
               >
                 <SanityImage
                   className="w-auto h-24 m-auto"
                   src={sponsor.image}
                   alt={sponsor.name}
                 />
-                <p className="py-11">{sponsor.name}</p>
+                <p className="font-semibold pb-3 text-xl pt-6 md:pt-10">
+                  {sponsor.name}
+                </p>
                 <p>{sponsor.quoteBody}</p>
                 <p className="text-secondary pb-2">{sponsor.people}</p>
               </div>
