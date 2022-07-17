@@ -161,7 +161,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
         {/* About */}
         {body && (
           <section className="container-lg">
-            <BlockContent className="prose" blocks={body} />
+            <BlockContent className="prose !max-w-xl" blocks={body} />
           </section>
         )}
         <ItemRow items={aboutItems} cardClassName="items-center text-center" />
@@ -171,7 +171,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
             label="All courses"
             href="/courses"
           />
-          <p className=" max-w-3xl text-xl md:text-3xl text-black">
+          <p className="max-w-3xl text-xl md:text-3xl text-black">
             {featuredCourses?.description}
           </p>
           <div className="flex flex-col space-y-12">
@@ -186,12 +186,12 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
             label="Industry Brakedown"
             href={industryRoles?.url}
           />
-          <div className="max-w-3xl prose text-slate-800">
-            <BlockContent
-              className="prose"
-              blocks={industryRoles?.description}
-            />
-          </div>
+
+          <BlockContent
+            className="prose max-w-3xl"
+            blocks={industryRoles?.description}
+          />
+
           <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
             {industryRolesData.map((item, i) => (
               <div
