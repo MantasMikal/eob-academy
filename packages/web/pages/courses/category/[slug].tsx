@@ -19,7 +19,7 @@ const CoursesCategoryPage: NextPage = ({ data: courses, category }: any) => {
         title={`${title} - Courses`}
         description={subtitle}
       />
-      <PageHeader title={`${title} - Courses`} subtitle={subtitle} />
+      <PageHeader title={`${title}`} subtitle={subtitle} />
       <Section title={title} href="/apply" label="Apply">
         <CourseGrid courses={courses} full />
       </Section>
