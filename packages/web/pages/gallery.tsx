@@ -3,10 +3,21 @@ import PageHeader from '@/components/Common/PageHeader'
 import SanityImage from '@/components/Common/SanityImage'
 import StandardMeta from '@/components/Meta/Standard'
 import Zoomable from '@/components/Primitive/Zoomable'
-import { getAllGalleryPosts } from '@/services/sanity/sanity'
+import { getAllGalleryItemsQuery } from '@/services/sanity/queries'
+import {
+  getAllGalleryPosts,
+  usePreviewSubscription
+} from '@/services/sanity/sanity'
 import { NextPage } from 'next'
 
-const GalleryPage: NextPage = ({ data: galleryItems }: any) => {
+const GalleryPage: NextPage = ({ data, preview }: any) => {
+  const { data: galleryItems } = usePreviewSubscription(
+    getAllGalleryItemsQuery,
+    {
+      initialData: data,
+      enabled: preview
+    }
+  )
   return (
     <MainLayout className="space-y-12 lg:space-y-24">
       <StandardMeta canonical="/gallery" title="Gallery" />
@@ -36,11 +47,12 @@ interface StaticProps {
   preview: boolean
 }
 
-export const getStaticProps = async ({ preview }: StaticProps) => {
+export const getStaticProps = async ({ preview = false }: StaticProps) => {
   const postsData = await getAllGalleryPosts(preview)
   return {
     props: {
-      data: postsData || []
+      data: postsData || [],
+      preview
     },
     revalidate: 60 * 1 // 30 minutes
   }

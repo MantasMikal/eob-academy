@@ -10,16 +10,13 @@ import {
   usePreviewSubscription
 } from '@/services/sanity/sanity'
 import { NextPage } from 'next'
-import { useRouter } from 'next/router'
 
-const PostsPage: NextPage = ({ data }: any) => {
+const PostsPage: NextPage = ({ data, preview }: any) => {
   const slug = data?.slug?.current
-
-  const router = useRouter()
   const { data: postData } = usePreviewSubscription(getPostPageDataQuery, {
     initialData: data,
     params: { slug },
-    enabled: router?.query?.preview !== null
+    enabled: preview
   })
 
   return (
@@ -58,18 +55,22 @@ interface StaticProps {
   preview: boolean
 }
 
-export const getStaticProps = async ({ params, preview }: StaticProps) => {
+export const getStaticProps = async ({
+  params,
+  preview = false
+}: StaticProps) => {
   const { slug } = params
   const postData = await getPostPageData(slug, preview)
   return {
     props: {
-      data: postData || {}
+      data: postData || {},
+      preview
     },
     revalidate: 60 * 1 // 30 minutes
   }
 }
 
-export const getStaticPaths = async () => {
+export const getStaticPaths = async ({}) => {
   const posts = await getClient(false).fetch(`*[_type == "post"].slug.current`)
   return {
     paths: posts

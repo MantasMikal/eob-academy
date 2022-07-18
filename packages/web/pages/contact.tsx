@@ -10,13 +10,11 @@ import {
   usePreviewSubscription
 } from '@/services/sanity/sanity'
 import { NextPage } from 'next'
-import { useRouter } from 'next/router'
 
-const ContactPage: NextPage = ({ data }: any) => {
-  const router = useRouter()
+const ContactPage: NextPage = ({ data, preview }: any) => {
   const { data: pageData } = usePreviewSubscription(getContactPageDataQuery, {
     initialData: data,
-    enabled: router?.query?.preview !== null
+    enabled: preview
   })
 
   return (
@@ -134,11 +132,12 @@ const ContactPage: NextPage = ({ data }: any) => {
 
 export default ContactPage
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ preview = false }) => {
   const pageData = await getContactPageData(false)
   return {
     props: {
-      data: pageData || {}
+      data: pageData || {},
+      preview
     },
     revalidate: 60 * 1 // 30 minutes
   }

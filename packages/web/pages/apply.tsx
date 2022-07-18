@@ -11,14 +11,12 @@ import {
   usePreviewSubscription
 } from '@/services/sanity/sanity'
 import { NextPage } from 'next'
-import { useRouter } from 'next/router'
 import HubspotForm from 'react-hubspot-form'
 
-const ApplyPage: NextPage = ({ data }: any) => {
-  const router = useRouter()
+const ApplyPage: NextPage = ({ data, preview }: any) => {
   const { data: pageData } = usePreviewSubscription(getApplyPageDataQuery, {
     initialData: data,
-    enabled: router?.query?.preview !== null
+    enabled: preview
   })
 
   const { courses } = pageData || {}
@@ -74,11 +72,12 @@ const ApplyPage: NextPage = ({ data }: any) => {
 
 export default ApplyPage
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ preview = false }) => {
   const pageData = await getApplyPageData(false)
   return {
     props: {
-      data: pageData || {}
+      data: pageData || {},
+      preview
     },
     revalidate: 60 * 1 // 30 minutes
   }

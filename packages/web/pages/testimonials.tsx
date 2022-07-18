@@ -4,7 +4,6 @@ import Partners from '@/components/Common/Partners'
 import SanityImage from '@/components/Common/SanityImage'
 import Section from '@/components/Common/Section'
 import StandardMeta from '@/components/Meta/Standard'
-import { useRouter } from 'next/router'
 import {
   getAllSponsors,
   getAllTestimonialData,
@@ -14,17 +13,16 @@ import React from 'react'
 import { getTestimonialPageDataQuery } from '@/services/sanity/queries'
 import BlockContent from '@/components/Primitive/BlockContent'
 
-export default function Testimonials({ sponsors, data }: any) {
+export default function Testimonials({ sponsors, data, preview }: any) {
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)
   }
-  const router = useRouter()
   const { data: pageData } = usePreviewSubscription(
     getTestimonialPageDataQuery,
     {
       initialData: data,
-      enabled: router?.query?.preview !== null
+      enabled: preview
     }
   )
 
@@ -105,7 +103,8 @@ export const getStaticProps = async ({ preview = false }) => {
   return {
     props: {
       sponsors,
-      data: testimonialPageData
+      data: testimonialPageData,
+      preview
     },
     revalidate: 60 * 1 // 30 minutes
   }

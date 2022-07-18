@@ -11,18 +11,25 @@ import Partners from '@/components/Common/Partners'
 import {
   getAllSponsors,
   getFeaturedPosts,
-  getHomeData
+  getHomeData,
+  usePreviewSubscription
 } from '@/services/sanity/sanity'
 import StandardMeta from '@/components/Meta/Standard'
 import BlockContent from '@/components/Primitive/BlockContent'
 import SanityImage from '@/components/Common/SanityImage'
+import { getHomePageDataQuery } from '@/services/sanity/queries'
 
 interface IHomePageProps {
   data: any
 }
 
-const Home: NextPage<IHomePageProps> = ({ data: homeData }) => {
-  const { home, sponsors, posts } = homeData
+const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
+  const { home: homePageData, sponsors, posts } = homeData
+  const { data: home } = usePreviewSubscription(getHomePageDataQuery, {
+    initialData: homePageData,
+    enabled: preview
+  })
+
   const {
     missionStatement,
     mainCourses,
@@ -164,7 +171,8 @@ export const getStaticProps = async ({ preview = false }) => {
       data: {
         home: homePageData,
         sponsors,
-        posts
+        posts,
+        preview
       }
     },
     revalidate: 60 * 1 // 30 minutes

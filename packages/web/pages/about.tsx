@@ -5,7 +5,6 @@ import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import ItemRow from '@/components/Common/ItemRow'
 import Image from 'next/future/image'
-import { useRouter } from 'next/router'
 import StandardMeta from '@/components/Meta/Standard'
 import {
   getAboutPageData,
@@ -37,11 +36,10 @@ const items = [
   }
 ]
 
-const About: NextPage = ({ data }: any) => {
-  const router = useRouter()
+const About: NextPage = ({ data, preview }: any) => {
   const { data: pageData } = usePreviewSubscription(getAboutPageDataQuery, {
     initialData: data,
-    enabled: router?.query?.preview !== null
+    enabled: preview
   })
 
   return (
@@ -222,11 +220,12 @@ const About: NextPage = ({ data }: any) => {
 
 export default About
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({ preview = false }) => {
   const pageData = await getAboutPageData(false)
   return {
     props: {
-      data: pageData || {}
+      data: pageData || {},
+      preview
     },
     revalidate: 60 * 1 // 30 minutes
   }
