@@ -40,7 +40,7 @@ const CourseOverview = ({ items, className }: any) => {
                 leaveFrom="transform scale-100 opacity-100"
                 leaveTo="transform scale-95 opacity-0"
               >
-                <Disclosure.Panel as="dd" className="mt-3">
+                <Disclosure.Panel as="dd" className="mt-3 prose">
                   <BlockContent
                     className="text-base max-w-screen-md"
                     blocks={item.description}

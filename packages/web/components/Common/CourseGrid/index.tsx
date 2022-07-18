@@ -11,13 +11,13 @@ interface CourseGridProps {
 const CourseGrid = ({ courses, full = false }: CourseGridProps) => {
   const formattedCourses = full ? courses : courses.slice(0, 3)
   return (
-    <div className="grid gap-x-4 gap-y-4 grid-cols-1 md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid items-start gap-x-4 gap-y-4 grid-cols-1 md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
       {formattedCourses?.map((course: any) => (
         <div
           className="group relative flex flex-col items-start bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease"
           key={course._id}
         >
-          <div className="relative flex-auto aspect-video w-full">
+          <div className="relative aspect-video w-full">
             <SanityImage
               src={course.mainImage}
               alt={course.title}
