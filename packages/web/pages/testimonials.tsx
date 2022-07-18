@@ -39,7 +39,7 @@ export default function Testimonials({ sponsors, data, preview }: any) {
           <BlockContent blocks={pageData?.body} />
         </article>
       )}
-      <section className="container-lg md:flex gap-3 lg:gap-10">
+      {/* <section className="container-lg md:flex gap-3 lg:gap-10">
         <div className="m-auto w-full">
           <iframe
             className="mx-auto w-full h-full aspect-video"
@@ -62,7 +62,7 @@ export default function Testimonials({ sponsors, data, preview }: any) {
           />
           <p className="mt-6">Helena Watson from Riot Games</p>
         </div>
-      </section>
+      </section> */}
       <Section title="Testimonials">
         <div className="grid gap-x-4 gap-y-4 grid-cols-1 md:gap-y-8 md:gap-x-8 md:grid-cols-2 lg:grid-cols-3">
           {sponsors
