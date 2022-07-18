@@ -10,8 +10,8 @@ import {
 } from "react-icons/go";
 import { FaEdit, FaEye } from "react-icons/fa";
 import { HiAcademicCap as DocumentIcon } from "react-icons/hi";
-import PostPreview from "../components/previews/postPreview/PostPreview";
 import { toPlainText } from 'part:social-preview/utils'
+import CoursePreview from "../components/previews/coursePreview/CoursePreview";
 
 export const icons = {
   DocumentIcon,
@@ -47,7 +47,7 @@ export default S.listItem()
                   .views([
                     S.view.form().icon(FaEdit),
                     S.view
-                      .component(PostPreview)
+                      .component(CoursePreview)
                       .icon(FaEye)
                       .title("Web Preview"),
                     S.view
@@ -66,7 +66,7 @@ export default S.listItem()
                             return {
                               title: openGraph?.title || title || 'Untitled',
                               description: excerpt || toPlainText(openGraph?.description || []),
-                              siteUrl: `${config.siteUrl}/course/${slug.current}`,
+                              siteUrl: `${config.siteUrl}/course/${slug.current}?preview=true`,
                               ogImage: openGraph?.image || mainImage,
                             };
                           },
