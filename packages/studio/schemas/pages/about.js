@@ -10,6 +10,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: "subtitle",
+      title: "Subtitle",
+      type: "string",
+      validation: Rule => Rule.required()
+    },
+    {
       name: "body",
       title: "Body",
       type: "blockContent",

@@ -28,6 +28,7 @@ export const sponsorFragment = groq`
   quoteHeading,
   quoteBody,
   people,
+  isHidden,
   image
   `
 
@@ -80,6 +81,7 @@ export const contactPageFragment = groq`
 export const aboutPageFragment = groq`
   _id,
   title,
+  subtitle,
   body,
   openGraph
 `
