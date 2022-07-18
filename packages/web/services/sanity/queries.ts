@@ -64,8 +64,12 @@ export const applyPageFragment = groq`
   title,
   subtitle,
   body,
-  courses[]->{
-    ${courseFragment}
+  featuredCourses{
+    title,
+    description,
+    courses[]->{
+      ${courseFragment}
+    }
   },
   openGraph
 `

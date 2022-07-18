@@ -1,6 +1,7 @@
 .OverlayLink {
   color: inherit;
   text-decoration: inherit;
+  z-index: 1;
 
   &::after {
     content: '';

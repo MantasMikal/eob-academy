@@ -19,7 +19,7 @@ const ApplyPage: NextPage = ({ data, preview }: any) => {
     enabled: preview
   })
 
-  const { courses } = pageData || {}
+  const { featuredCourses } = pageData || {}
 
   return (
     <MainLayout className="space-y-8 lg:space-y-16">
@@ -46,26 +46,19 @@ const ApplyPage: NextPage = ({ data, preview }: any) => {
           loading={<Spinner />}
         />
       </div>
-      {courses?.length > 0 && (
-        <section className="container-md space-y-8 md:space-y-16">
-          <SectionTitle
-            title="Full-time & Short Courses"
-            label="All courses"
-            href="/courses"
-          />
-          <p className="max-w-3xl text-xl md:text-3xl text-black">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-            veniam provident, error dolores fuga minima vitae a officia
-            doloremque quae explicabo repellendus iste, commodi ab ut fugit
-            quod! Accusamus, cum?
-          </p>
-          <div className="flex flex-col space-y-12">
-            {courses.map((item: any, i: number) => (
-              <CourseCard key={`CourseCard:${i}`} {...item} />
-            ))}
-          </div>
-        </section>
-      )}
+      <section className="container-md space-y-8 md:space-y-16">
+        <SectionTitle
+          title={featuredCourses?.title}
+          label="All courses"
+          href="/courses"
+        />
+        <p className="max-w-3xl">{featuredCourses?.description}</p>
+        <div className="flex flex-col space-y-12">
+          {featuredCourses?.courses?.map((item: any, i: number) => (
+            <CourseCard key={`CourseCard:${i}`} {...item} />
+          ))}
+        </div>
+      </section>
     </MainLayout>
   )
 }

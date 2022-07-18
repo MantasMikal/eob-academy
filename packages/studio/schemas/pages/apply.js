@@ -21,10 +21,9 @@ export default {
       type: "blockContent",
     },
     {
-      name: "courses",
-      title: "Featured Courses",
-      type: "array",
-      of: [{ type: "reference", to: { type: "course" } }],
+      name: "featuredCourses",
+      title: "Featured courses",
+      type: "featuredCourses",
     },
     {
       title: "Open graph",
@@ -37,7 +36,7 @@ export default {
   preview: {
     prepare() {
       return {
-        title: "About",
+        title: "Apply",
       };
     },
   },
