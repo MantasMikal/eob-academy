@@ -16,14 +16,14 @@ export default function CoursePreview(props) {
 
   const baseUrl =
     window.location.hostname === "localhost" ? localUrl : remoteUrl;
-  const previewUrl = new URL(baseUrl);
-  previewUrl.pathname = `/api/preview`;
-  previewUrl.searchParams.append(`slug`, `/courses/${slug}` ?? `/`);
+
+  const formattedSlug = `courses/${slug}`;
+  const previewUrl = `${baseUrl}/api/preview?slug=${formattedSlug}`;
 
   return (
     <div className={styles.componentWrapper}>
       <div className={styles.iframeContainer}>
-        <iframe title="preview" src={previewUrl.toString()} frameBorder={"0"} />
+        <iframe title="preview" src={previewUrl} frameBorder={"0"} />
       </div>
     </div>
   );
