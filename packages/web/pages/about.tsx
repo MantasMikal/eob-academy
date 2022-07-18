@@ -200,7 +200,7 @@ const About: NextPage = ({ data, preview }: any) => {
               </p>
             </div>
             <iframe
-              className="shrink-0 aspect-video w-full md:w-2/5 h-auto"
+              className="shrink-0 aspect-video w-full md:w-2/5 h-auto radius-md"
               src="https://www.youtube.com/embed/SqFOpSwqUsg"
               title="YouTube video player"
               frameBorder="0"
@@ -235,7 +235,7 @@ const About: NextPage = ({ data, preview }: any) => {
                 </p>
               </div>
               <iframe
-                className="shrink-0 aspect-video w-full md:w-2/5 h-auto"
+                className="shrink-0 aspect-video w-full md:w-2/5 h-auto radius-md"
                 src="https://www.youtube.com/embed/7zxEi66DLPs"
                 title="YouTube video player"
                 frameBorder="0"

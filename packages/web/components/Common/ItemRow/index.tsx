@@ -18,7 +18,7 @@ function ItemRow({
   return (
     <section
       className={classNames(
-        `container-lg grid sm:grid-cols-2 lg:grid-cols-${items.length} gap-4 lg:gap-6 gap-y-12`,
+        `container-lg text-center grid sm:grid-cols-2 lg:grid-cols-${items.length} gap-4 lg:gap-6 gap-y-12`,
         className
       )}
     >
