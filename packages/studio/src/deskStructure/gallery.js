@@ -1,8 +1,6 @@
 import { FaEdit, FaEye, FaImage as GalleryIcon } from "react-icons/fa";
 import S from "@sanity/desk-tool/structure-builder";
-
-import PagePreview from "../components/previews/page/PagePreview";
-
+import PagePreview from "../components/previews/pagePreview/PagePreview";
 export const icons = {
   GalleryIcon,
 };

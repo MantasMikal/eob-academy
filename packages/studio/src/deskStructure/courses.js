@@ -11,7 +11,7 @@ import {
 import { FaEdit, FaEye } from "react-icons/fa";
 import { HiAcademicCap as DocumentIcon } from "react-icons/hi";
 import { toPlainText } from 'part:social-preview/utils'
-import CoursePreview from "../components/previews/coursePreview/CoursePreview";
+import GeneralPreview from "../components/previews/generalPreview/GeneralPreview";
 
 export const icons = {
   DocumentIcon,
@@ -47,7 +47,7 @@ export default S.listItem()
                   .views([
                     S.view.form().icon(FaEdit),
                     S.view
-                      .component(CoursePreview)
+                      .component((props) => GeneralPreview(props, "courses"))
                       .icon(FaEye)
                       .title("Web Preview"),
                     S.view

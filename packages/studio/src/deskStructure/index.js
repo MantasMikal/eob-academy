@@ -5,11 +5,11 @@ import {RiFileCodeFill} from "react-icons/ri";
 import S from "@sanity/desk-tool/structure-builder";
 
 import gallery from "./gallery";
-import PagePreview from "../components/previews/page/PagePreview";
 import posts from "./posts";
 import sponsors from "./sponsors";
 import courses from "./courses";
 import pages from "./pages";
+import PagePreview from "../components/previews/pagePreview/PagePreview";
 
 const hiddenTypes = [
   "category",
@@ -52,7 +52,7 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "/" }))
+                        .component(() => PagePreview({ slug: "" }))
                         .icon(FaEye)
                         .title("Preview"),
                     ])
@@ -68,7 +68,7 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "/contact" }))
+                        .component(() => PagePreview({ slug: "contact" }))
                         .icon(FaEye)
                         .title("Preview"),
                     ])
@@ -84,7 +84,7 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "/about" }))
+                        .component(() => PagePreview({ slug: "about" }))
                         .icon(FaEye)
                         .title("Preview"),
                     ])
@@ -101,7 +101,7 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "/apply" }))
+                        .component(() => PagePreview({ slug: "apply" }))
                         .icon(FaEye)
                         .title("Preview"),
                     ])
@@ -118,7 +118,7 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "/testimonials" }))
+                        .component(() => PagePreview({ slug: "testimonials" }))
                         .icon(FaEye)
                         .title("Preview"),
                     ])

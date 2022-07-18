@@ -7,7 +7,7 @@ import styles from "./IframePreview.css";
 const { siteUrl: remoteUrl } = config;
 const localUrl = "http://localhost:3000";
 
-export default function CoursePreview(props) {
+export default function GeneralPreview(props, baseSlug) {
   const { displayed } = props?.document || {};
   const slug = displayed?.slug?.current;
   if (!slug) {
@@ -17,7 +17,7 @@ export default function CoursePreview(props) {
   const baseUrl =
     window.location.hostname === "localhost" ? localUrl : remoteUrl;
 
-  const formattedSlug = `courses/${slug}`;
+  const formattedSlug = `${baseSlug ? baseSlug + "/" : ""}${slug}`;
   const previewUrl = `${baseUrl}/api/preview?slug=${formattedSlug}`;
 
   return (

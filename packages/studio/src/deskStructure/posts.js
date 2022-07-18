@@ -10,8 +10,8 @@ import {
 } from "react-icons/go";
 import { FaEdit, FaEye } from "react-icons/fa";
 import { RiArticleLine as BlogIcon } from "react-icons/ri";
-import PostPreview from "../components/previews/postPreview/PostPreview";
 import { toPlainText } from 'part:social-preview/utils'
+import GeneralPreview from "../components/previews/generalPreview/GeneralPreview";
 
 export const icons = {
   BlogIcon,
@@ -47,7 +47,7 @@ export default S.listItem()
                   .views([
                     S.view.form().icon(FaEdit),
                     S.view
-                      .component(PostPreview)
+                      .component((props) => GeneralPreview(props, "blog"))
                       .icon(FaEye)
                       .title("Web Preview"),
                     S.view

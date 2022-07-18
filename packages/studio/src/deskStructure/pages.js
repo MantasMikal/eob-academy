@@ -11,7 +11,7 @@ import {
 import { FaEdit, FaEye } from "react-icons/fa";
 import { RiPagesLine as PageIcon } from "react-icons/ri";
 import { toPlainText } from 'part:social-preview/utils'
-import PagePreview from "../components/previews/page/PagePreview";
+import GeneralPreview from "../components/previews/generalPreview/GeneralPreview";
 
 export const icons = {
   PageIcon,
@@ -47,7 +47,7 @@ export default S.listItem()
                   .views([
                     S.view.form().icon(FaEdit),
                     S.view
-                      .component(PagePreview)
+                      .component((props) => GeneralPreview(props, ''))
                       .icon(FaEye)
                       .title("Web Preview"),
                     S.view
