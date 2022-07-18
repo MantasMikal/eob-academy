@@ -6,7 +6,12 @@ import BlockContent from '@/components/Primitive/BlockContent'
 
 const CourseOverview = ({ items, className }: any) => {
   return (
-    <dl className={cn('space-y-6 divide-y-2 divide-slate-200', className)}>
+    <dl
+      className={cn(
+        'font-medium space-y-6 divide-y-2 divide-slate-200',
+        className
+      )}
+    >
       {items.map((item: any, i: number) => (
         <Disclosure
           defaultOpen
