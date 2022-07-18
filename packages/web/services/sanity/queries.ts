@@ -122,11 +122,11 @@ export const getFeaturedPostsQuery = groq`*[_type == "post" && isFeatured == tru
   ${postFragment}
 }`
 
-export const getAllCoursesQuery = groq`*[_type == "course"] {
+export const getAllCoursesQuery = groq`*[_type == "course" && !(_id in path("drafts.**"))] {
   ${courseFragment}
 }`
 
-export const getAllCoursesByCategoryQuery = groq`*[_type == "course" && category->.slug.current == $slug] {
+export const getAllCoursesByCategoryQuery = groq`*[_type == "course" && !(_id in path("drafts.**")) && category->.slug.current == $slug] {
   ${courseFragment}
 }`
 
