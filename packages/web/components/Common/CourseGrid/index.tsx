@@ -1,4 +1,5 @@
 import OverlayLink from '@/components/Primitive/OverlayLink'
+import SmartLink from '@/components/Primitive/SmartLink'
 import { CalendarIcon, UserIcon } from '@heroicons/react/outline'
 import SanityImage from '../SanityImage'
 
@@ -42,6 +43,12 @@ const CourseGrid = ({ courses, full = false }: CourseGridProps) => {
             <p className="sm:max-w-prose group-hover:text-secondary line-clamp-4">
               {course.subtitle}
             </p>
+            <SmartLink
+              className="relative block text-lg font-bold z-10 hover:underline"
+              href={`/courses/category/${course?.category?.slug?.current}`}
+            >
+              {course?.category?.title}
+            </SmartLink>
           </div>
         </div>
       ))}
