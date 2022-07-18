@@ -4,7 +4,8 @@ import config from "../../../../config";
 
 import styles from "./IframePreview.css";
 
-const { siteUrl } = config;
+const { siteUrl: remoteUrl } = config;
+const localUrl = "http://localhost:3000";
 
 export default function CoursePreview(props) {
   const { displayed } = props?.document || {};
@@ -12,15 +13,17 @@ export default function CoursePreview(props) {
   if (!slug) {
     return <div>The post needs a slug before it can be previewed.</div>;
   }
-  const url =
-    process.env.NODE_ENV === "production"
-      ? `${siteUrl}/courses/${slug}?preview`
-      : `http://localhost:3000/courses/${slug}?preview=true`;
+
+  const baseUrl =
+    window.location.hostname === "localhost" ? localUrl : remoteUrl;
+  const previewUrl = new URL(baseUrl);
+  previewUrl.pathname = `/api/preview`;
+  previewUrl.searchParams.append(`slug`, `/courses/${slug}` ?? `/`);
 
   return (
     <div className={styles.componentWrapper}>
       <div className={styles.iframeContainer}>
-        <iframe src={url} frameBorder={"0"} />
+        <iframe title="preview" src={previewUrl.toString()} frameBorder={"0"} />
       </div>
     </div>
   );

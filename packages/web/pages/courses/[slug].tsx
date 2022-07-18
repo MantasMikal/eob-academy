@@ -6,7 +6,6 @@ import {
   usePreviewSubscription
 } from '@/services/sanity/sanity'
 import { NextPage } from 'next'
-import { useRouter } from 'next/router'
 import MainLayout from '@/components/Common/MainLayout'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
@@ -17,13 +16,12 @@ import CourseOverview from '@/components/Common/CourseOverview'
 import Button from '@/components/Common/Button'
 import { FaCalendar, FaClock, FaLocationArrow, FaUsers } from 'react-icons/fa'
 
-const CoursePage: NextPage = ({ data, courses }: any) => {
+const CoursePage: NextPage = ({ data, courses, preview }: any) => {
   const slug = data?.slug?.current
-  const router = useRouter()
   const { data: courseData } = usePreviewSubscription(getCourseDataQuery, {
     initialData: data,
     params: { slug },
-    enabled: router?.query?.preview !== null
+    enabled: preview
   })
 
   if (!courseData) {
@@ -134,6 +132,7 @@ export const getStaticProps = async ({
 
   return {
     props: {
+      preview,
       data: courseData || {},
       courses:
         allCourses
