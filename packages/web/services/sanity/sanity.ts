@@ -19,14 +19,12 @@ import {
   getTestimonialPageDataQuery,
   getFeaturedPostsQuery
 } from './queries'
-import {
-  SanityProjectDetails,
-  SanityImageSource
-} from '@sanity/image-url/lib/types/types'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-const config: SanityProjectDetails = {
+const config = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
+  token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN as string
 }
 
 export const imageBuilder = (source: SanityImageSource) =>
