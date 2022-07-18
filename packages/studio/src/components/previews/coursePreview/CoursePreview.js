@@ -14,8 +14,8 @@ export default function CoursePreview(props) {
   }
   const url =
     process.env.NODE_ENV === "production"
-      ? `${siteUrl}/course/${slug}?preview`
-      : `http://localhost:3000/course/${slug}?preview=true`;
+      ? `${siteUrl}/courses/${slug}?preview`
+      : `http://localhost:3000/courses/${slug}?preview=true`;
 
   return (
     <div className={styles.componentWrapper}>
