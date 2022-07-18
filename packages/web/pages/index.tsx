@@ -105,7 +105,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
             label="All courses"
             href="/courses"
           />
-          <p className="max-w-3xl text-xl md:text-3xl text-black">
+          <p className="max-w-3xl text-xl md:text-3xl text-slate-800">
             {featuredCourses?.description}
           </p>
           <div className="flex flex-col space-y-12">

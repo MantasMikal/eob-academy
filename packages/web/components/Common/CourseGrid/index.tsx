@@ -14,7 +14,7 @@ const CourseGrid = ({ courses, full = false }: CourseGridProps) => {
     <div className="grid items-start gap-x-4 gap-y-4 grid-cols-1 md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
       {formattedCourses?.map((course: any) => (
         <div
-          className="group relative flex flex-col items-start bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease"
+          className="relative flex flex-col items-start bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease"
           key={course._id}
         >
           <div className="relative aspect-video w-full">
@@ -35,12 +35,15 @@ const CourseGrid = ({ courses, full = false }: CourseGridProps) => {
                 <div className="text-sm">{course.ages}</div>
               </div>
             </div>
-            <OverlayLink to={`/courses/${course.slug.current}`} className="">
-              <h3 className="text-2xl font-bold sm:text-2xl lg:text-3xl group-hover:text-secondary ">
+            <OverlayLink
+              to={`/courses/${course.slug.current}`}
+              className="hover:text-secondary hover:underline transition-colors"
+            >
+              <h3 className="text-2xl font-bold sm:text-2xl lg:text-3xl  ">
                 {course.title}
               </h3>
             </OverlayLink>
-            <p className="sm:max-w-prose group-hover:text-secondary line-clamp-4">
+            <p className="sm:max-w-prose font-normal hover:text-secondary line-clamp-4">
               {course.subtitle}
             </p>
             <SmartLink

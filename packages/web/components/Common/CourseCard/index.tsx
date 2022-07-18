@@ -38,7 +38,7 @@ function CourseCard({
   ages
 }: CourseCardProps) {
   return (
-    <div className="group relative flex flex-col items-start border sm:flex-row sm:space-x-3 lg:space-x-6 bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease">
+    <div className="relative flex flex-col items-start border sm:flex-row sm:space-x-3 lg:space-x-6 bg-white rounded-lg shadow hover:shadow-md active:shadow-sm active:scale-[0.993] trns-ease child:trns-ease">
       <div className="relative flex-auto aspect-video w-full sm:max-w-sm sm:min-w-[250px] sm:m-3">
         <SanityImage
           src={mainImage}
@@ -57,14 +57,13 @@ function CourseCard({
             <div className="text-sm">{ages}</div>
           </div>
         </div>
-        <OverlayLink to={`/courses/${slug.current}`} className="">
-          <h3 className="font-bold text-2xl lg:text-3xl group-hover:text-secondary ">
-            {title}
-          </h3>
+        <OverlayLink
+          to={`/courses/${slug.current}`}
+          className="hover:underline hover:text-secondary transition-colors"
+        >
+          <h3 className="font-bold text-2xl lg:text-3xl  ">{title}</h3>
         </OverlayLink>
-        <p className="sm:max-w-prose group-hover:text-secondary line-clamp-4">
-          {subtitle}
-        </p>
+        <p className="sm:max-w-prose  line-clamp-4">{subtitle}</p>
         <SmartLink
           className="relative block text-lg font-bold z-10 hover:underline"
           href={`/courses/category/${category?.slug?.current}`}

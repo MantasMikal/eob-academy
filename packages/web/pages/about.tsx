@@ -51,7 +51,7 @@ const About: NextPage = ({ data, preview }: any) => {
         description={pageData?.openGraph?.description}
       />
       {/* Intro */}
-      <div className="font-semibold space-y-8 lg:space-y-14">
+      <div className="space-y-8 lg:space-y-14">
         <PageHeader title={pageData?.title} subtitle={pageData?.subtitle} />
         {/* About */}
         <ItemRow
@@ -60,7 +60,7 @@ const About: NextPage = ({ data, preview }: any) => {
           iconClassName="items-left"
         />
         <div className="container-lg prose max-w-xl">
-          <div className="prose max-w-xl text-black">
+          <div className="prose max-w-xl text-slate-800">
             <BlockContent className="" blocks={pageData?.body} />
           </div>
         </div>
@@ -74,13 +74,13 @@ const About: NextPage = ({ data, preview }: any) => {
         </Section>
         {/* EOB Academy & The Cohort */}
         <Section title="EOB Academy & The Cohort">
-          <div>
-            <h4 className="subtitle font-normal max-w-xl pb-4">
+          <div className="">
+            <h4 className="text-slate-900 subtitle font-normal max-w-xl pb-4">
               If you love video games and esports, there is a place for you
               here.
             </h4>
-            <div className="md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max text-black">
-              <p className="">
+            <div className="text-slate-900 prose-p:font-normal md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max">
+              <p>
                 EOB Academy give young people access to learn about video game
                 creation and esports from fantastic tutors in great environments
                 - be it online through Discord or at one of our physical
@@ -140,10 +140,10 @@ const About: NextPage = ({ data, preview }: any) => {
               className="z-[-1] object-contain relative block mx-auto -mt-28 md:mt-0 md:relative md:-top-16 md:left-24"
             />
             <div className="max-w-xl">
-              <h4 className="subtitle font-normal mb-11">
+              <h3 className="subtitle font-normal mb-11">
                 If you love video games and esports, there is a place for you
                 here.
-              </h4>
+              </h3>
               <Icon
                 type="quotes-open"
                 width={24}
@@ -198,22 +198,22 @@ const About: NextPage = ({ data, preview }: any) => {
               touch.
             </p>
           </div>
-          <div className="relative" style={{ paddingTop: '56.25%' }}>
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/SqFOpSwqUsg"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+
+          <iframe
+            className="aspect-video w-full"
+            src="https://www.youtube.com/embed/SqFOpSwqUsg"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+
           <div className="gap-32 md:flex lg:gap-60">
             <div className="max-w-xl">
-              <h4 className="subtitle font-normal mb-11">
+              <h3 className="subtitle font-normal mb-11">
                 EOB Academy & Sutton and District <br /> Training. Courses in
                 Letchworth
-              </h4>
+              </h3>
               <p className="text-md pb-11">
                 Helping more young people succeed with our full-time study
                 programme.
@@ -233,16 +233,15 @@ const About: NextPage = ({ data, preview }: any) => {
               </p>
             </div>
           </div>
-          <div className="relative" style={{ paddingTop: '56.25%' }}>
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/7zxEi66DLPs"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+
+          <iframe
+            className="aspect-video w-full"
+            src="https://www.youtube.com/embed/7zxEi66DLPs"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </Section>
       </div>
     </MainLayout>

@@ -5,6 +5,7 @@
 @layer base {
   html {
     font-family: 'Lexend', sans-serif;
+    color: theme('colors.slate.900');
     overflow-x: hidden;
   }
 }

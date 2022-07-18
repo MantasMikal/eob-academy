@@ -62,52 +62,51 @@ const CoursePage: NextPage = ({ data, courses, preview }: any) => {
         title={courseData?.title}
         description={courseData?.subtitle}
       />
-      <div className="font-semibold">
-        <PageHeader title={courseData.title} subtitle={courseData.subtitle} />
 
-        <Image
-          className="aspect-slim object-center object-cover"
-          src={courseData.heroImage}
-          alt={courseData.title}
-        />
+      <PageHeader title={courseData.title} subtitle={courseData.subtitle} />
 
-        <section className="container-lg lg:-mb-11 -top-6 lg:-top-20">
-          <div className="rounded-lg text-white bg-secondary">
-            <div className="p-6 md:p-10 lg:p-16 space-y-6 lg:space-y-10">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-start justify-center">
-                {infoItems.map((item, i) => (
-                  <div key={`InfoItem:${i}`} className="">
-                    <div className="flex items-center mb-2 space-x-1 text-left text-md xs:text-xl lg:text-2xl lg:space-x-2">
-                      <item.icon />
-                      <div>{item.title}</div>
-                    </div>
-                    <div className="text-sm xs:text-md lg:text-lg">
-                      {item.subtitle}
-                    </div>
+      <Image
+        className="aspect-slim object-center object-cover"
+        src={courseData.heroImage}
+        alt={courseData.title}
+      />
+
+      <section className="font-medium container-lg lg:-mb-11 -top-6 lg:-top-20">
+        <div className="rounded-lg text-white bg-secondary">
+          <div className="p-6 md:p-10 lg:p-16 space-y-6 lg:space-y-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-start justify-center">
+              {infoItems.map((item, i) => (
+                <div key={`InfoItem:${i}`} className="">
+                  <div className="flex items-center mb-2 space-x-1 text-left text-md xs:text-xl lg:text-2xl lg:space-x-2">
+                    <item.icon />
+                    <div>{item.title}</div>
                   </div>
-                ))}
-              </div>
-              <div className="flex flex-col-reverse md:flex-row gap-8 items-start">
-                <Button href="/apply" size="large" variant="outline">
-                  Apply
-                </Button>
-                {courseData.subtitle && (
-                  <p className="text-md">{courseData.subtitle}</p>
-                )}
-              </div>
+                  <div className="text-sm xs:text-md lg:text-lg">
+                    {item.subtitle}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col-reverse md:flex-row gap-8 items-start">
+              <Button href="/apply" size="large" variant="outline">
+                Apply
+              </Button>
+              {courseData.subtitle && (
+                <p className="text-md">{courseData.subtitle}</p>
+              )}
             </div>
           </div>
-        </section>
-
-        {/* Course overview */}
-        <div className="space-y-8 pt-4">
-          <Section title="Course overview">
-            <CourseOverview className="px-2" items={courseData.overview} />
-          </Section>
-          <Section title="Other courses" href="/courses" label="All courses">
-            <CourseGrid courses={courses} />
-          </Section>
         </div>
+      </section>
+
+      {/* Course overview */}
+      <div className="space-y-8 pt-4">
+        <Section title="Course overview">
+          <CourseOverview className="px-2" items={courseData.overview} />
+        </Section>
+        <Section title="Other courses" href="/courses" label="All courses">
+          <CourseGrid courses={courses} />
+        </Section>
       </div>
     </MainLayout>
   )

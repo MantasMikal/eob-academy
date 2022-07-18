@@ -27,7 +27,7 @@ function PageHeader({
           contentClassName
         )}
       >
-        <p className="ml-1 pb-14 md:pb-20 lg:pb-28">
+        <p className="ml-1 pb-14 md:pb-20">
           <strong>EOB</strong> - {title}
         </p>
         <div className="flex flex-col gap-2 md:flex-row align-start justify-between md:gap-4">

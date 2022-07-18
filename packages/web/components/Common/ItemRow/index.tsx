@@ -40,7 +40,7 @@ function ItemRow({
               item.className
             )}
           />
-          <h3 className="font-bold text-lg text-black">{item.title}</h3>
+          <h3 className="font-bold text-lg text-slate-800">{item.title}</h3>
           <p>{item.subtitle && item.subtitle}</p>
         </div>
       ))}
