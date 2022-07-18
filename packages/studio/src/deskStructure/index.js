@@ -125,23 +125,6 @@ export default () =>
                 )
 
                 .icon(GiConversation),
-              S.listItem()
-                .title("Cookie policy")
-                .child(
-                  S.editor()
-                    .id("cookiePolicyPage")
-                    .schemaType("page")
-                    .documentId("cookiePolicyPage")
-                    .views([
-                      S.view.form().icon(FaEdit),
-                      S.view
-                        .component(() =>
-                          PagePreview({ slug: "/cookie-policy" })
-                        )
-                        .icon(FaEye)
-                        .title("Preview"),
-                    ])
-                ),
             ])
         )
         .icon(RiFileCodeFill),

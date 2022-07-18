@@ -52,7 +52,7 @@ const About: NextPage = ({ data }: any) => {
         description={pageData?.openGraph?.description}
       />
       {/* Intro */}
-      <div className="font-semibold">
+      <div className="font-semibold space-y-8 lg:space-y-14">
         <PageHeader
           title="About"
           subtitle="EOB Academy is a place where you can explore and build video games
@@ -62,7 +62,7 @@ const About: NextPage = ({ data }: any) => {
         {/* About */}
         <ItemRow
           items={items}
-          cardClassName="shadow-none my-20 items-start text-left"
+          cardClassName="shadow-none items-start text-left"
           iconClassName="items-left"
         />
         {/* Get Involved */}
