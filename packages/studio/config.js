@@ -1,3 +1,3 @@
 export default {
-  siteUrl: 'https://www.eobacademy.com'
+  siteUrl: 'https://eobacademy-app.herokuapp.com'
 }
