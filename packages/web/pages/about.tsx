@@ -56,7 +56,7 @@ const About: NextPage = ({ data, preview }: any) => {
         {/* About */}
         <ItemRow
           items={items}
-          cardClassName="shadow-none items-start text-left"
+          cardClassName="shadow-none items-center text-left"
           iconClassName="items-left"
         />
         <div className="container-lg prose max-w-xl">
@@ -179,69 +179,71 @@ const About: NextPage = ({ data, preview }: any) => {
         </Section>
         {/* Partners: */}
         <Section title="Partners" label="Get in touch" href="/contact">
-          <div className="max-w-xl">
-            <h4 className="subtitle font-normal mb-11">
-              EOB Academy & Prince’s Trust. <br /> Courses Nationwide.
-            </h4>
-            <p className="text-md pb-11">
-              Helping more young people succeed through Prince’s Trust courses.{' '}
-              <br />
-              <br />
-              EOB Academy’s partnership with the Prince’s Trust has been in
-              action since 2017. <br />
-              <br />
-              We have up-skilled over 1000 young people nationwide through our 5
-              day, Game Design course and our Esports Team Creation course.
-            </p>
-            <p className="font-normal">
-              If your school or venue would like us to work with you get in
-              touch.
-            </p>
-          </div>
-
-          <iframe
-            className="aspect-video w-full"
-            src="https://www.youtube.com/embed/SqFOpSwqUsg"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-
-          <div className="gap-32 md:flex lg:gap-60">
-            <div className="max-w-xl">
-              <h3 className="subtitle font-normal mb-11">
-                EOB Academy & Sutton and District <br /> Training. Courses in
-                Letchworth
-              </h3>
+          <div className="flex flex-col gap-4 md:flex-row md:gap-8 md:justify-between md:items-center">
+            <div className="basis-1/2">
+              <h4 className="subtitle font-normal mb-11">
+                EOB Academy & Prince’s Trust. <br /> Courses Nationwide.
+              </h4>
               <p className="text-md pb-11">
-                Helping more young people succeed with our full-time study
-                programme.
+                Helping more young people succeed through Prince’s Trust
+                courses. <br />
                 <br />
+                EOB Academy’s partnership with the Prince’s Trust has been in
+                action since 2017. <br />
                 <br />
-                EOB Academy&apos;s partnership with Sutton & District Training
-                started in 2018 and it has allowed the Academy to hit new
-                heights by offering full-time Game Design study programmes by 60
-                young people each year, aged 16-18 (24 - with an EHCP). We have
-                a great synergy with the team and look forward to future
-                projects.
-                <br />
+                We have up-skilled over 1000 young people nationwide through our
+                5 day, Game Design course and our Esports Team Creation course.
               </p>
-              <p className="font-normal text-secondary">
+              <p className="font-normal">
                 If your school or venue would like us to work with you get in
                 touch.
               </p>
             </div>
+            <iframe
+              className="shrink-0 aspect-video w-full md:w-2/5 h-auto"
+              src="https://www.youtube.com/embed/SqFOpSwqUsg"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
           </div>
 
-          <iframe
-            className="aspect-video w-full"
-            src="https://www.youtube.com/embed/7zxEi66DLPs"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+          <div className="gap-32 md:flex lg:gap-60">
+            <div className="flex flex-col gap-4 md:flex-row md:gap-8 md:justify-between md:items-center">
+              <div className="basis-1/2">
+                <h3 className="subtitle font-normal mb-11">
+                  EOB Academy & Sutton and District <br /> Training. Courses in
+                  Letchworth
+                </h3>
+                <p className="text-md pb-11">
+                  Helping more young people succeed with our full-time study
+                  programme.
+                  <br />
+                  <br />
+                  EOB Academy&apos;s partnership with Sutton & District Training
+                  started in 2018 and it has allowed the Academy to hit new
+                  heights by offering full-time Game Design study programmes by
+                  60 young people each year, aged 16-18 (24 - with an EHCP). We
+                  have a great synergy with the team and look forward to future
+                  projects.
+                  <br />
+                </p>
+                <p className="font-normal text-secondary">
+                  If your school or venue would like us to work with you get in
+                  touch.
+                </p>
+              </div>
+              <iframe
+                className="shrink-0 aspect-video w-full md:w-2/5 h-auto"
+                src="https://www.youtube.com/embed/7zxEi66DLPs"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
         </Section>
       </div>
     </MainLayout>
