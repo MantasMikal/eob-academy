@@ -77,19 +77,21 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
       />
       {/* Intro */}
       <div className="space-y-12 lg:space-y-24">
-        <section className="container-lg py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
-          <div className="space-y-6 md:space-y-8 text-white">
-            <h2 className="relative heading-xlarge left-1">Main courses</h2>
-            {mainCourses.map((course: any) => (
-              <SmartLink
-                className="flex items-center subtitle hover:underline"
-                key={course.title}
-                href={`/courses/category/${course.slug.current}`}
-              >
-                <ChevronRightIcon className="flex-shrink-0 h-10 w-10 text-tertiary" />
-                {course.title}
-              </SmartLink>
-            ))}
+        <section className="container-lg">
+          <div className="py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
+            <div className="space-y-6 md:space-y-8 text-white">
+              <h2 className="relative heading-xlarge left-1">Main courses</h2>
+              {mainCourses.map((course: any) => (
+                <SmartLink
+                  className="flex items-center subtitle hover:underline"
+                  key={course.title}
+                  href={`/courses/category/${course.slug.current}`}
+                >
+                  <ChevronRightIcon className="flex-shrink-0 h-10 w-10 text-tertiary" />
+                  {course.title}
+                </SmartLink>
+              ))}
+            </div>
           </div>
         </section>
         {/* About */}
