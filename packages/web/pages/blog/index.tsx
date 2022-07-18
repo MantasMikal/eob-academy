@@ -97,6 +97,6 @@ export const getStaticProps = async ({ preview }: StaticProps) => {
       data: postsData || [],
       categories: categories || []
     },
-    revalidate: 60 * 30 // 30 minutes
+    revalidate: 60 * 1 // 30 minutes
   }
 }

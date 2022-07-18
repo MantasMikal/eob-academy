@@ -107,6 +107,6 @@ export const getStaticProps = async ({ preview = false }) => {
       sponsors,
       data: testimonialPageData
     },
-    revalidate: 60 * 30 // 30 minutes
+    revalidate: 60 * 1 // 30 minutes
   }
 }

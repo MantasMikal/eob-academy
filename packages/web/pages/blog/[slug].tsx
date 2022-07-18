@@ -65,7 +65,7 @@ export const getStaticProps = async ({ params, preview }: StaticProps) => {
     props: {
       data: postData || {}
     },
-    revalidate: 60 * 30 // 30 minutes
+    revalidate: 60 * 1 // 30 minutes
   }
 }
 

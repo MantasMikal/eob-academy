@@ -36,7 +36,8 @@ export const client = createClient(config)
 
 export const previewClient = createClient({
   ...config,
-  useCdn: false,
+  apiVersion: 'v2021-10-21',
+  useCdn: process.env.NODE_ENV === 'production',
   token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN
 })
 

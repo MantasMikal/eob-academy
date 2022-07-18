@@ -145,7 +145,7 @@ export const getStaticProps = async ({
           ?.filter((c: any) => courseData.slug.current !== c.slug.current)
           ?.slice(0, 3) || {}
     },
-    revalidate: 60 * 30 // 30 minutes
+    revalidate: 60 * 1 // 30 minutes
   }
 }
 
