@@ -50,7 +50,7 @@ export default S.listItem()
                       .component(Iframe)
                       .options({
                         url: (doc) =>
-                          resolvePreviewUrl(`courses/${doc?.current?.slug}`),
+                          resolvePreviewUrl(`courses/${doc?.displayed?.slug?.current}`),
                           reload: {
                             button: true,
                             revision: true,
