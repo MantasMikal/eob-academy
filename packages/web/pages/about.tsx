@@ -81,23 +81,17 @@ const About: NextPage = ({ data, preview }: any) => {
             </h4>
             <div className="text-slate-900 prose-p:font-normal md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max">
               <p>
-                Enemy Of Boredom Academy is a place for young people to come and
-                feel comfortable while learning together and learning from each
-                other, using video gaming and esports to build futures.
+                EOB Academy give young people access to learn about video game
+                creation and esports from fantastic tutors in great environments
+                - be it online through Discord or at one of our physical
+                locations in Bracknell or Letchworth.
               </p>
 
               <p>
-                It’s a place where ideas are shared, and individuals can explore
-                their passions with the support of trainers and industry
-                professionals.
-              </p>
-
-              <p> Our courses have an open door policy to EHCP students.</p>
-
-              <p>
-                We also offer English and Maths as part of our full-time course
-                and have many ‘Life Skills and Enrichment’ classes to help
-                confidence building.
+                Our courses have an open door policy to EHCP students. We also
+                offer English and Maths as part of our full-time course and have
+                many ‘Life Skills and Enrichment’ classes to help confidence
+                building.
               </p>
 
               <p>
@@ -156,18 +150,15 @@ const About: NextPage = ({ data, preview }: any) => {
                 className="text-secondary mb-5"
               />
               <p className="text-md">
-                EOB Academy give young people access to learn about video game
-                creation and esports from fantastic tutors in great environments
-                - be it online through Discord or at one of our physical
-                locations in Bracknell or Letchworth.
+                Enemy Of Boredom Academy is a place for young people to come and
+                feel comfortable while learning together and learning from each
+                other, using video gaming and esports to build futures.
               </p>
               <br />
-              <p> Our courses have an open door policy to EHCP students.</p>
-              <br />
               <p>
-                We also offer English and Maths as part of our full-time course
-                and have many ‘Life Skills and Enrichment’ classes to help
-                confidence building.
+                It’s a place where ideas are shared, and individuals can explore
+                their passions with the support of trainers and industry
+                professionals.
               </p>
               <br />
               <Icon
