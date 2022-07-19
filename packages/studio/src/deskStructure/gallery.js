@@ -1,6 +1,7 @@
 import { FaEdit, FaEye, FaImage as GalleryIcon } from "react-icons/fa";
 import S from "@sanity/desk-tool/structure-builder";
-import PagePreview from "../components/previews/pagePreview/PagePreview";
+import Iframe from "sanity-plugin-iframe-pane";
+import resolvePreviewUrl from "../resolvePreviewUrl";
 export const icons = {
   GalleryIcon,
 };
@@ -18,7 +19,15 @@ const gallery = S.listItem()
           .views([
             S.view.form().icon(FaEdit),
             S.view
-              .component(() => PagePreview({ slug: "/gallery" }))
+              .component(Iframe)
+              .options({
+                url: () =>
+                  resolvePreviewUrl(`gallery`),
+                  reload: {
+                    button: true,
+                    revision: true,
+                  },
+              })
               .icon(FaEye)
               .title("Web Preview"),
           ])

@@ -1,7 +1,7 @@
 import { FaPhone, FaEdit, FaEye } from "react-icons/fa";
-import { GiConversation } from "react-icons/gi"
+import { GiConversation } from "react-icons/gi";
 import { MdHome, MdInfoOutline } from "react-icons/md";
-import {RiFileCodeFill} from "react-icons/ri";
+import { RiFileCodeFill } from "react-icons/ri";
 import S from "@sanity/desk-tool/structure-builder";
 
 import gallery from "./gallery";
@@ -9,7 +9,8 @@ import posts from "./posts";
 import sponsors from "./sponsors";
 import courses from "./courses";
 import pages from "./pages";
-import PagePreview from "../components/previews/pagePreview/PagePreview";
+import resolvePreviewUrl from "../resolvePreviewUrl";
+import Iframe from "sanity-plugin-iframe-pane";
 
 const hiddenTypes = [
   "category",
@@ -52,7 +53,14 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "" }))
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(``),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
                         .icon(FaEye)
                         .title("Preview"),
                     ])
@@ -68,7 +76,14 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "contact" }))
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(`contact`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
                         .icon(FaEye)
                         .title("Preview"),
                     ])
@@ -84,14 +99,21 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "about" }))
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(`about`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
                         .icon(FaEye)
                         .title("Preview"),
                     ])
                 )
 
                 .icon(MdInfoOutline),
-                S.listItem()
+              S.listItem()
                 .title("Apply")
                 .child(
                   S.editor()
@@ -101,14 +123,21 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "apply" }))
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(`apply`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
                         .icon(FaEye)
                         .title("Preview"),
                     ])
                 )
 
                 .icon(MdInfoOutline),
-                S.listItem()
+              S.listItem()
                 .title("Testimonials")
                 .child(
                   S.editor()
@@ -118,7 +147,14 @@ export default () =>
                     .views([
                       S.view.form().icon(FaEdit),
                       S.view
-                        .component(() => PagePreview({ slug: "testimonials" }))
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(`testimonials`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
                         .icon(FaEye)
                         .title("Preview"),
                     ])

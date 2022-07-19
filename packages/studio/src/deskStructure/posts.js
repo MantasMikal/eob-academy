@@ -11,7 +11,8 @@ import {
 import { FaEdit, FaEye } from "react-icons/fa";
 import { RiArticleLine as BlogIcon } from "react-icons/ri";
 import { toPlainText } from 'part:social-preview/utils'
-import GeneralPreview from "../components/previews/generalPreview/GeneralPreview";
+import resolvePreviewUrl from "../resolvePreviewUrl";
+import Iframe from "sanity-plugin-iframe-pane";
 
 export const icons = {
   BlogIcon,
@@ -47,7 +48,16 @@ export default S.listItem()
                   .views([
                     S.view.form().icon(FaEdit),
                     S.view
-                      .component((props) => GeneralPreview(props, "blog"))
+                    .component(Iframe)
+                    .options({
+                      url: (doc) =>
+                        resolvePreviewUrl(`blog/${doc?.current?.slug}`),
+                        reload: {
+                          button: true,
+                          revision: true,
+                        },
+                    })
+                    
                       .icon(FaEye)
                       .title("Web Preview"),
                     S.view

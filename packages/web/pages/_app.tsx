@@ -11,7 +11,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="z-10 fixed bottom-0 w-full bg-blue-600">
           <div className="container-lg text-sm py-1 text-white">
             You&apos;re watching a preview.{' '}
-            <SmartLink className="underline" href="/api/exit-preview">
+            <SmartLink
+              prefetch={false}
+              className="underline"
+              href="/api/exit-preview"
+            >
               Exit preview mode
             </SmartLink>
           </div>

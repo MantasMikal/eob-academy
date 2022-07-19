@@ -6,6 +6,7 @@ export interface SmartLinkProps extends React.HTMLAttributes<HTMLElement> {
   disabled?: boolean
   href?: string
   to?: string
+  prefetch?: boolean
   target?: string
   setRef?: any
   type?: 'button' | 'reset' | 'submit'
@@ -31,6 +32,7 @@ const SmartLink: React.FC<SmartLinkProps> = ({
   setRef,
   to,
   target,
+  prefetch,
   type = 'button',
   ...other
 }) => {
@@ -54,7 +56,7 @@ const SmartLink: React.FC<SmartLinkProps> = ({
   // Internal link, use third-party `Link` component from router module
   if (to) {
     return (
-      <Link href={to} {...other}>
+      <Link {...(prefetch && { prefetch })} href={to} {...other}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a className={className}>{children}</a>
       </Link>

@@ -10,8 +10,10 @@ import {
 } from "react-icons/go";
 import { FaEdit, FaEye } from "react-icons/fa";
 import { HiAcademicCap as DocumentIcon } from "react-icons/hi";
-import { toPlainText } from 'part:social-preview/utils'
-import GeneralPreview from "../components/previews/generalPreview/GeneralPreview";
+import { toPlainText } from "part:social-preview/utils";
+import GeneralPreview from "../resolvePreviewUrl";
+import Iframe from "sanity-plugin-iframe-pane";
+import resolvePreviewUrl from "../resolvePreviewUrl";
 
 export const icons = {
   DocumentIcon,
@@ -37,9 +39,7 @@ export default S.listItem()
               .title("Published courses")
               .menuItems(S.documentTypeList("course").getMenuItems())
               // Only show courses with publish date earlier than now and that is not drafts
-              .filter(
-                '_type == "course" && !(_id in path("drafts.**"))'
-              )
+              .filter('_type == "course" && !(_id in path("drafts.**"))')
               .child((documentId) =>
                 S.document()
                   .documentId(documentId)
@@ -47,7 +47,15 @@ export default S.listItem()
                   .views([
                     S.view.form().icon(FaEdit),
                     S.view
-                      .component((props) => GeneralPreview(props, "courses"))
+                      .component(Iframe)
+                      .options({
+                        url: (doc) =>
+                          resolvePreviewUrl(`courses/${doc?.current?.slug}`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                      })
                       .icon(FaEye)
                       .title("Web Preview"),
                     S.view
@@ -64,8 +72,10 @@ export default S.listItem()
                             } /* this object is the currently active document */
                           ) => {
                             return {
-                              title: openGraph?.title || title || 'Untitled',
-                              description: excerpt || toPlainText(openGraph?.description || []),
+                              title: openGraph?.title || title || "Untitled",
+                              description:
+                                excerpt ||
+                                toPlainText(openGraph?.description || []),
                               siteUrl: `${config.siteUrl}/course/${slug.current}?preview=true`,
                               ogImage: openGraph?.image || mainImage,
                             };
