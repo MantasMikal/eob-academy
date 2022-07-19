@@ -12,9 +12,9 @@ export default function preview(req: NextApiRequest, res: NextApiResponse) {
   //   return res.status(401).json({ message: 'Invalid secret token' })
   // }
 
-  // if (!req.query.slug) {
-  //   return res.status(401).json({ message: 'No slug' })
-  // }
+  if (!req.query.slug) {
+    return res.status(401).json({ message: 'No slug' })
+  }
 
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({})

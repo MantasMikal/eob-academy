@@ -4,7 +4,7 @@ import GlobalMeta from '@/components/Meta/Global'
 import SmartLink from '@/components/Primitive/SmartLink'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const isPreview = pageProps?.preview
+  const isPreview = pageProps?.preview === true
   return (
     <>
       {isPreview && (
