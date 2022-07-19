@@ -81,10 +81,15 @@ const About: NextPage = ({ data, preview }: any) => {
             </h4>
             <div className="text-slate-900 prose-p:font-normal md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max">
               <p>
-                EOB Academy give young people access to learn about video game
-                creation and esports from fantastic tutors in great environments
-                - be it online through Discord or at one of our physical
-                locations in Bracknell or Letchworth.
+                Enemy Of Boredom Academy is a place for young people to come and
+                feel comfortable while learning together and learning from each
+                other, using video gaming and esports to build futures.
+              </p>
+
+              <p>
+                It’s a place where ideas are shared, and individuals can explore
+                their passions with the support of trainers and industry
+                professionals.
               </p>
 
               <p> Our courses have an open door policy to EHCP students.</p>
@@ -182,21 +187,17 @@ const About: NextPage = ({ data, preview }: any) => {
           <div className="flex flex-col gap-4 md:flex-row md:gap-8 md:justify-between md:items-center">
             <div className="basis-1/2">
               <h4 className="subtitle font-normal mb-11">
-                EOB Academy & Prince’s Trust. <br /> Courses Nationwide.
+                EOB Academy & Prince’s Trust. Trust. <br /> Courses Nationwide.
               </h4>
               <p className="text-md pb-11">
                 Helping more young people succeed through Prince’s Trust
-                courses. <br />
+                courses.. <br />
                 <br />
                 EOB Academy’s partnership with the Prince’s Trust has been in
                 action since 2017. <br />
                 <br />
                 We have up-skilled over 1000 young people nationwide through our
-                5 day, Game Design course and our Esports Team Creation course.
-              </p>
-              <p className="font-normal">
-                If your school or venue would like us to work with you get in
-                touch.
+                Game Design course and our Esports Team Creation course.
               </p>
             </div>
             <iframe
@@ -223,8 +224,8 @@ const About: NextPage = ({ data, preview }: any) => {
                   <br />
                   EOB Academy&apos;s partnership with Sutton & District Training
                   started in 2018 and it has allowed the Academy to hit new
-                  heights by offering full-time Game Design study programmes by
-                  60 young people each year, aged 16-18 (24 - with an EHCP). We
+                  heights by offering full-time Game Design study programmes for
+                  40 young people each year, aged 16-18 (24 - with an EHCP). We
                   have a great synergy with the team and look forward to future
                   projects.
                   <br />
