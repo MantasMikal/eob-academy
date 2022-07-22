@@ -2,6 +2,7 @@ export default {
   name: "testimonialPage",
   title: "Testimonials Page",
   type: "document",
+  liveEdit: true,
   fields: [
     {
       name: "title",

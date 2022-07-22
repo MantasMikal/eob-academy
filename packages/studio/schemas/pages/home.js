@@ -5,6 +5,7 @@ export default {
   title: "Home Page",
   type: "document",
   icon: MdMenu,
+  liveEdit: true,
   options: {
     hotspot: true,
   },

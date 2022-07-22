@@ -2,6 +2,7 @@ export default {
   name: "contactPage",
   title: "Contact Page",
   type: "document",
+  liveEdit: true,
   fields: [
     {
       name: "title",

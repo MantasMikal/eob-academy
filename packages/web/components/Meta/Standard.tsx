@@ -34,7 +34,7 @@ const StandardMeta: React.FC<StandardMetaProps> = ({
           url: ogImage.src,
           width: ogImage.width,
           height: ogImage.height,
-          alt: 'In Real Life'
+          alt: 'EOB Academy'
         }
       ]
     }

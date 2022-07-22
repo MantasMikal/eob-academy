@@ -2,6 +2,7 @@ export default {
   name: "applyPage",
   title: "Apply Page",
   type: "document",
+  liveEdit: true,
   fields: [
     {
       name: "title",

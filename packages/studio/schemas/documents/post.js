@@ -5,6 +5,7 @@ export default {
   title: "Blog Post",
   type: "document",
   icon: FiFileText,
+  liveEdit: true,
   fields: [
     {
       name: "title",

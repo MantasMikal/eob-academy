@@ -4,6 +4,7 @@ export default {
   name: "course",
   title: "Course",
   type: "document",
+  liveEdit: true,
   icon: FiFileText,
   fields: [
     {
