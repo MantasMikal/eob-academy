@@ -23,9 +23,7 @@ const GalleryPage: NextPage = ({ data, preview }: any) => {
       <StandardMeta canonical="/gallery" title="Gallery" />
       <PageHeader
         title="Gallery"
-        subtitle="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
-        diam nonummy nibh euismod tincidunt ut laorreet dolore magna 
-        aliquam erat volutpat. Ut wisi enim ad minim veniam."
+        subtitle="See Enemy Of Boredom in pictures from our past, present and future!"
       />
       <div className="grid gap-x-4 gap-y-4 grid-cols-1 md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3 container-lg">
         {galleryItems.map((item: any) => (
