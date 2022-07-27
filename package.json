@@ -1,28 +1,28 @@
 {
-  "private": false,
+  "private": true,
   "name": "eob-academy",
   "version": "1.0.0",
-  "author": "Mantas Mikalauskas <mantas.mikalauskas@clock.co.uk",
-  "engines": {
-    "node": "12.x"
-  },
+  "description": "EOB Academy monorepo",
+  "main": "index.js",
+  "repository": "git@github.com:MantasMikal/eob-academy.git",
+  "author": "MantasMikal <mantas.codes@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "clean": "lerna clean",
-    "deploy": "lerna run deploy",
-    "empty-cache": "lerna run empty-cache",
-    "init": "cd studio && sanity init && lerna run graphql-deploy",
-    "format": "lerna run format",
-    "graphql-deploy": "lerna run graphql-deploy",
-    "lint": "lerna run lint",
-    "now-deploy": "now && now alias",
-    "postinstall": "lerna bootstrap",
-    "sanity-deploy": "lerna run sanity-deploy",
-    "start": "lerna run empty-cache && lerna run start --parallel",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "yarn workspace web run start",
+    "dev": "yarn workspace web run dev",
+    "build": "yarn workspace web run build",
+    "deploy": "cd packages/studio && sanity deploy && sanity graphql deploy && cd ../..",
+    "rm": "rm -rf node_modules packages/web/node_modules packages/studio/node_modules"
   },
-  "devDependencies": {
-    "lerna": "^3.20.2",
-    "rimraf": "^3.0.2"
+  "workspaces": {
+    "packages": [
+      "packages/studio",
+      "packages/web"
+    ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@tailwindcss/typography": "^0.5.4",
+    "sass": "^1.53.0"
+  }
 }

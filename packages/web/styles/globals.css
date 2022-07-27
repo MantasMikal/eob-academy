@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Lexend', sans-serif;
+    color: theme('colors.slate.900');
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .heading-xlarge {
+    @apply text-3xl md:text-5xl lg:text-8xl font-bold;
+  }
+
+  .subtitle {
+    @apply text-xl md:text-2xl lg:text-3xl font-bold;
+  }
+
+  .tag {
+    @apply border-2 border-transparent text-xs text-slate-700 font-semibold mr-2 px-[0.8em] py-[0.3em] rounded transition-all;
+  }
+}
+
+@layer utilities {
+  .bg-polka-dots {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='polka-dots' x='0' y='0' width='3' height='3' patternUnits='userSpaceOnUse'%3E%3Ccircle fill='%231E1E1E' shape-rendering='geometricPrecision'%0Acx='2' cy='2' r='1' /%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' width='100%25' height='100%25' fill='url(%23polka-dots)' /%3E%3C/svg%3E");
+  }
+  .decoration-inherit {
+    text-decoration: inherit;
+  }
+  .trns-ease {
+    @apply transition ease-in-out;
+  }
+
+  .container-xl {
+    @apply relative max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+
+  .container-lg {
+    @apply relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+  .container-md {
+    @apply relative max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+  .container-prose {
+    @apply relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full;
+  }
+}
