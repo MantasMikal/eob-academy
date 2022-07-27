@@ -35,9 +35,7 @@ const PostsPage: NextPage = ({ data: posts, categories }: any) => {
     <MainLayout className="space-y-6 lg:space-y-12">
       <PageHeader
         title="Blog"
-        subtitle="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed 
-      diam nonummy nibh euismod tincidunt ut laoreet dolore magna 
-      aliquam erat volutpat. Ut wisi enim ad minim veniam."
+        subtitle="Find out about the latest Enemy Of Boredom happenings, hear from our students, read our finding from industry and facts from our partners."
       />
       <section className="container-lg space-y-4">
         <div className="flex justify-between flex-wrap gap-4">
