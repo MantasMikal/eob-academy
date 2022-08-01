@@ -2,12 +2,17 @@
 const path = require('path')
 const withPlugins = require('next-compose-plugins')
 const isDev = process.env.NODE_ENV === 'development'
+const { fetchSanityRedirects } = require('./services/fetch-redirects')
 
 const nextConfig = {
+  async redirects() {
+    console.log('redirects........')
+    return await fetchSanityRedirects()
+  },
   experimental: {
     images: {
-      allowFutureImage: true,
-    },
+      allowFutureImage: true
+    }
   },
   poweredByHeader: false,
   useFileSystemPublicRoutes: true,

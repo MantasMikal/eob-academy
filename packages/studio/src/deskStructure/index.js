@@ -11,6 +11,7 @@ import courses from "./courses";
 import pages from "./pages";
 import resolvePreviewUrl from "../resolvePreviewUrl";
 import Iframe from "sanity-plugin-iframe-pane";
+import redirects from "./redirects";
 
 const hiddenTypes = [
   "category",
@@ -31,6 +32,7 @@ const hiddenTypes = [
   "course",
   "courseOverview",
   "courseCategory",
+  "redirect"
 ];
 
 export default () =>
@@ -169,6 +171,7 @@ export default () =>
       sponsors,
       posts,
       gallery,
+      redirects,
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),
