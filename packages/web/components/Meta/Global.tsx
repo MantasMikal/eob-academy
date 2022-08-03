@@ -14,8 +14,11 @@ const { title, fullTitle, description, themeColor, twitterHandle, url } = {
 const GlobalMeta = () => {
   const optional: { [key: string]: string } = {
     'application-name': fullTitle,
-    viewport: 'width=device-width, initial-scale=1, viewport-fit=cover',
-    'theme-color': themeColor
+    'theme-color': themeColor,
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': fullTitle,
+    viewport: 'width=device-width, initial-scale=1, viewport-fit=cover'
   }
 
   return (
