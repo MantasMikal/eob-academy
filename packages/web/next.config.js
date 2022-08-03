@@ -5,6 +5,7 @@ const withPlugins = require('next-compose-plugins')
 const isDev = process.env.NODE_ENV === 'development'
 const { fetchSanityRedirects } = require('./services/fetch-redirects')
 const runtimeCaching = require('next-pwa/cache')
+
 const nextConfig = {
   async redirects() {
     console.log('redirects........')
@@ -56,9 +57,10 @@ module.exports = withPlugins(
       withPWA,
       {
         pwa: {
+          register: true,
           dest: 'public',
           runtimeCaching,
-          disable: process.env.NODE_ENV === 'development',
+          // disable: process.env.NODE_ENV === 'development',
           publicExcludes: ['!robots.txt', '!sitemap.xml.gz']
         }
       }

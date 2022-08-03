@@ -29,7 +29,7 @@ const GenericPage: NextPage = ({ data, slug, preview }: any) => {
         title={pageData?.title}
         subtitle={pageData?.subtitle}
       />
-      <article className="prose container-md mx-auto pt-8 lg:pt-12">
+      <article className="pt-8 mx-auto prose container-md lg:pt-12">
         <BlockContent blocks={pageData?.body} />
       </article>
     </MainLayout>
@@ -67,6 +67,6 @@ export const getStaticPaths = async () => {
     paths: posts
       .filter(Boolean)
       .map((slug: any) => ({ params: { slug: slug } })),
-    fallback: 'blocking'
+    fallback: false
   }
 }
