@@ -11,6 +11,7 @@ const nextConfig = {
     console.log('redirects........')
     return await fetchSanityRedirects()
   },
+  // reactStrictMode: true,
   experimental: {
     images: {
       allowFutureImage: true
@@ -58,10 +59,11 @@ module.exports = withPlugins(
       {
         pwa: {
           register: true,
+          skipWaiting: true,
           dest: 'public',
           runtimeCaching,
           // disable: process.env.NODE_ENV === 'development',
-          publicExcludes: ['!robots.txt', '!sitemap.xml.gz']
+          buildExcludes: [/middleware-manifest.json$/]
         }
       }
     ],
