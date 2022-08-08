@@ -30,15 +30,15 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
         subtitle={pageData?.subtitle}
       />
       {pageData?.body?.length > 0 && (
-        <article className="prose container-lg mx-auto">
+        <article className="mx-auto prose container-lg">
           <BlockContent blocks={pageData?.body} />
         </article>
       )}
-      <div className="container-lg mx-auto space-y-6 lg:space-y-12">
+      <div className="mx-auto space-y-6 container-lg lg:space-y-12">
         <SectionTitle title="Our locations" />
         <div className="divide-y-2">
-          <div className="flex flex-col md:flex-row justify-between gap-4">
-            <div className="basis-1/2 space-y-4">
+          <div className="flex flex-col justify-between gap-4 md:flex-row">
+            <div className="space-y-4 basis-1/2">
               <div className="aspect-video">
                 <Map
                   style={{ height: '100%' }}
@@ -51,8 +51,8 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                 <div className="space-y-1">
                   <dt className="font-bold">Address</dt>
                   <dd>
-                    EOB Academy, The Court House, Broadway, Town Square,
-                    Bracknell, RG12 1AE
+                    Garden Square Shopping Centre Eastcheap House, Central
+                    Approach Letchworth, Herts, SG6 3DP
                   </dd>
                 </div>
                 <div className="space-y-1">
@@ -60,9 +60,9 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                   <dd>
                     <a
                       className="hover:text-secondary hover:underline"
-                      href="tel:07961994000"
+                      href="tel:07947521211"
                     >
-                      07961994000
+                      07947521211
                     </a>
                   </dd>
                 </div>
@@ -81,8 +81,8 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
             </div>
           </div>
 
-          <div className="pt-6 mt-6 lg:mt-12 lg:pt-12 flex flex-col md:flex-row justify-between gap-4">
-            <div className="basis-1/2 space-y-4">
+          <div className="flex flex-col justify-between gap-4 pt-6 mt-6 lg:mt-12 lg:pt-12 md:flex-row">
+            <div className="space-y-4 basis-1/2">
               <div className="aspect-video">
                 <Map
                   style={{ height: '100%' }}
@@ -104,9 +104,9 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                   <dd>
                     <a
                       className="hover:text-secondary hover:underline"
-                      href="tel:07961994000"
+                      href="tel:01344304978"
                     >
-                      07961994000
+                      01344304978
                     </a>
                   </dd>
                 </div>
