@@ -60,9 +60,9 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                   <dd>
                     <a
                       className="hover:text-secondary hover:underline"
-                      href="tel:07947521211"
+                      href="tel:01344304978"
                     >
-                      07947521211
+                      01344304978
                     </a>
                   </dd>
                 </div>
