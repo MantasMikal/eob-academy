@@ -51,8 +51,8 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                 <div className="space-y-1">
                   <dt className="font-bold">Address</dt>
                   <dd>
-                    Garden Square Shopping Centre Eastcheap House, Central
-                    Approach Letchworth, Herts, SG6 3DP
+                    Head Office The Court House Town Square Broadway, Bracknell
+                    RG12 1AE
                   </dd>
                 </div>
                 <div className="space-y-1">
@@ -95,8 +95,8 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                 <div className="space-y-1">
                   <dt className="font-bold">Address</dt>
                   <dd>
-                    EOB Academy, Letchworth Town Hall, Broadway, Letchworth
-                    Garden City SG6 3BF
+                    Garden Square Shopping Centre Eastcheap House, Central
+                    Approach Letchworth, Herts, SG6 3DP
                   </dd>
                 </div>
                 <div className="space-y-1">
@@ -104,9 +104,9 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
                   <dd>
                     <a
                       className="hover:text-secondary hover:underline"
-                      href="tel:01344304978"
+                      href="tel:07947521211"
                     >
-                      01344304978
+                      07947521211
                     </a>
                   </dd>
                 </div>
