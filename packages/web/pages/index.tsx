@@ -8,6 +8,7 @@ import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
 import Partners from '@/components/Common/Partners'
+import cn from 'classnames'
 import {
   getAllSponsors,
   getFeaturedPosts,
@@ -79,7 +80,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
       <div className="space-y-12 lg:space-y-24">
         <section className="container-lg">
           <div className="py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
-            <div className="space-y-6 md:space-y-8 text-white">
+            <div className="space-y-6 text-white md:space-y-8">
               <h2 className="relative heading-xlarge left-1">Main courses</h2>
               {mainCourses.map((course: any) => (
                 <SmartLink
@@ -87,7 +88,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
                   key={course.title}
                   href={`/courses/category/${course.slug.current}`}
                 >
-                  <ChevronRightIcon className="flex-shrink-0 h-10 w-10 text-tertiary" />
+                  <ChevronRightIcon className="flex-shrink-0 w-10 h-10 text-tertiary" />
                   {course.title}
                 </SmartLink>
               ))}
@@ -101,7 +102,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
           </section>
         )}
         <ItemRow items={aboutItems} cardClassName="items-center text-center" />
-        <section className="container-lg space-y-8 md:space-y-16">
+        <section className="space-y-8 container-lg md:space-y-16">
           <SectionTitle
             title={featuredCourses?.title}
             label="All courses"
@@ -116,7 +117,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
             ))}
           </div>
         </section>
-        <section className="container-lg space-y-8 md:space-y-16">
+        <section className="space-y-8 container-lg md:space-y-16">
           <SectionTitle
             title={industryRoles?.title}
             label="Industry Brakedown"
@@ -124,15 +125,18 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
           />
 
           <BlockContent
-            className="prose max-w-3xl"
+            className="max-w-3xl prose"
             blocks={industryRoles?.description}
           />
 
-          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 xs:grid-cols-2 md:grid-cols-3">
             {industryRoles?.roles?.map((item: any, i: number) => (
               <SmartLink
                 to={item.url}
-                className="group flex space-x-4 items-center p-3 pl-6 rounded border hover:cursor-pointer"
+                className={cn(
+                  'flex items-start p-3 py-5 pl-6 space-x-4 border rounded group hover:cursor-pointer',
+                  !item.description && 'items-center'
+                )}
                 key={`IndustryRole:${i}`}
               >
                 <SanityImage
@@ -141,12 +145,21 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
                   width={40}
                   height={40}
                 />
-                <p className="py-5 group-hover:text-secondary">{item.title}</p>
+                <div className="flex flex-col space-y-0">
+                  <h3 className="text-base font-semibold md:text-lg group-hover:text-secondary">
+                    {item.title}
+                  </h3>
+                  {item.description && (
+                    <p className="text-sm md:text-base text-slate-800 group-hover:text-secondary">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
               </SmartLink>
             ))}
           </div>
         </section>
-        <section className="bg-slate-50 pb-16">
+        <section className="pb-16 bg-slate-50">
           <div className="container-lg">
             <BlogCarousel items={posts} />
           </div>
