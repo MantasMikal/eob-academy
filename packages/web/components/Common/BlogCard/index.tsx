@@ -31,10 +31,10 @@ const BlogCard = ({
   return (
     <SmartLink
       to={`/blog/${slug.current}`}
-      className="flex flex-col justify-start space-y-2 bg-white rounded border shadow hover:shadow-md hover:scale-101 active:scale-98 transition-all"
+      className="flex flex-col justify-start space-y-2 transition-all bg-white border rounded shadow hover:shadow-md hover:scale-101 active:scale-98"
     >
       <SanityImage
-        className="rounded aspect-video object-cover"
+        className="object-cover rounded aspect-video"
         src={mainImage}
         alt={title}
         width={500}
@@ -44,16 +44,18 @@ const BlogCard = ({
       <div className="flex flex-col h-full px-4 py-2 space-y-1">
         <h3 className="text-lg font-bold text-slate-800">{title}</h3>
         <p>{excerpt}</p>
-        <div className="text-secondary">
-          {format(new Date(publishedAt), 'MMMM dd, yyyy')}
-        </div>
+        {publishedAt && (
+          <div className="text-secondary">
+            {format(new Date(publishedAt), 'MMMM dd, yyyy')}
+          </div>
+        )}
         <div className="!mt-auto py-2 flex flex-wrap gap-2">
           {category &&
             category?.length > 0 &&
             category.map((item: any) => (
               <span
                 style={{ backgroundColor: item?.color?.hex }}
-                className="tag text-white"
+                className="text-white tag"
                 key={item.title}
               >
                 {item.title}

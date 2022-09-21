@@ -1,10 +1,10 @@
-import { FiFileText } from "react-icons/fi";
+import { FiBriefcase } from "react-icons/fi";
 
 export default {
-  name: "post",
-  title: "Blog Post",
+  name: "job",
+  title: "Job",
   type: "document",
-  icon: FiFileText,
+  icon: FiBriefcase,
   liveEdit: false,
   fields: [
     {
@@ -24,24 +24,10 @@ export default {
       },
     },
     {
-      name: "isFeatured",
-      title: "Is Featured",
-      description: "Will add post to the Featured Posts widget",
-      type: "boolean",
-    },
-    {
       name: "hidden",
       title: "Is hidden",
       description: "Will not show the post on the website. (The post will still be visible)",
       type: "boolean",
-    },
-    {
-      name: "category",
-      title: "Categories",
-      description:
-        "Can be more than one. First you have to create categories (Sidebar -> Categories)",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
     },
     {
       name: "publishedAt",

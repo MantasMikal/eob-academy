@@ -12,6 +12,7 @@ import pages from "./pages";
 import resolvePreviewUrl from "../resolvePreviewUrl";
 import Iframe from "sanity-plugin-iframe-pane";
 import redirects from "./redirects";
+import jobs from "./jobs";
 
 const hiddenTypes = [
   "category",
@@ -32,7 +33,8 @@ const hiddenTypes = [
   "course",
   "courseOverview",
   "courseCategory",
-  "redirect"
+  "redirect",
+  "job",
 ];
 
 export default () =>
@@ -172,6 +174,7 @@ export default () =>
       posts,
       gallery,
       redirects,
+      jobs,
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

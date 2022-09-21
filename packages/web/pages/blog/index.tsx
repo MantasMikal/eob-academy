@@ -37,11 +37,11 @@ const PostsPage: NextPage = ({ data: posts, categories }: any) => {
         title="Blog"
         subtitle="Find out about the latest Enemy Of Boredom happenings, hear from our students, read our finding from industry and facts from our partners."
       />
-      <section className="container-lg space-y-4">
-        <div className="flex justify-between flex-wrap gap-4">
-          <h2 className="text-2xl text-slate-700 font-semibold">All posts</h2>
-          <div className="flex justify-end items-center gap-3">
-            <div className="text-md font-semibold">Filter by tag</div>
+      <section className="space-y-4 container-lg">
+        <div className="flex flex-wrap justify-between gap-4">
+          <h2 className="text-2xl font-semibold text-slate-700">All posts</h2>
+          <div className="flex items-center justify-end gap-3">
+            <div className="font-semibold text-md">Filter by tag</div>
             <div className="flex flex-wrap items-center">
               {categories.map((category: any, i: number) => (
                 <button
@@ -65,13 +65,13 @@ const PostsPage: NextPage = ({ data: posts, categories }: any) => {
             </div>
           </div>
         </div>
-        <div className="grid gap-x-4 gap-y-4 grid-cols-1 items-start md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start grid-cols-1 gap-x-4 gap-y-4 md:gap-x-8 md:gap-y-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((item: any) => (
               <BlogCard {...item} key={item._id} />
             ))
           ) : (
-            <div className="text-md text-slate-700 text-left">
+            <div className="text-left text-md text-slate-700">
               No posts found
             </div>
           )}

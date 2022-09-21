@@ -14,6 +14,18 @@ export const postFragment = groq`
   openGraph
 `
 
+export const jobFragment = groq`
+  _id,
+  title,
+  slug,
+  excerpt,
+  publishedAt,
+  mainImage,
+  headerImage,
+  body,
+  openGraph
+`
+
 export const galleryItemFragment = groq`
   _id,
   title,
@@ -124,6 +136,10 @@ export const getAllPostsQuery = groq`*[_type == "post" && hidden == false] {
   ${postFragment}
 }`
 
+export const getAllJobsQuery = groq`*[_type == "job" && hidden == false] {
+  ${jobFragment}
+}`
+
 export const getFeaturedPostsQuery = groq`*[_type == "post" && isFeatured == true] {
   ${postFragment}
 }`
@@ -171,6 +187,10 @@ export const getContactPageDataQuery = groq`*[_id == "contactPage"][0] {
 
 export const getPostPageDataQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   ${postFragment}
+}`
+
+export const getJobPageDataQuery = groq`*[_type == "job" && slug.current == $slug][0]{
+  ${jobFragment}
 }`
 
 export const getPostCategoriesQuery = groq`*[_type == "category"]`

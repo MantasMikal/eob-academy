@@ -34,6 +34,7 @@ import industryRoles from "./objects/industryRoles";
 import featuredCourses from "./objects/featuredCourses";
 import industryRole from "./objects/industryRole";
 import redirect from "./documents/redirect";
+import job from "./documents/job";
 
 export default createSchema({
   name: "default",
@@ -68,6 +69,7 @@ export default createSchema({
     industryRoles,
     industryRole,
     featuredCourses,
-    redirect
+    redirect,
+    job
   ]),
 });

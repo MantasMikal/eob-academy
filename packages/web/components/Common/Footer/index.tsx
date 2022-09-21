@@ -8,6 +8,10 @@ type IFooterProps = {
 const navigation = {
   main: [
     {
+      name: 'Careers',
+      href: '/careers'
+    },
+    {
       name: 'Contact',
       href: '/contact'
     },
@@ -43,35 +47,35 @@ const navigation = {
 const Footer = ({ className }: IFooterProps) => {
   return (
     <footer className={cn('bg-slate-50', className)}>
-      <div className="container-lg mx-auto py-8 md:py-12 px-4 space-y-8 overflow-hidden sm:px-6 lg:px-8">
+      <div className="px-4 py-8 mx-auto space-y-8 overflow-hidden container-lg md:py-12 sm:px-6 lg:px-8">
         <nav
-          className="-mx-5 -my-2 flex flex-wrap justify-start"
+          className="flex flex-wrap justify-start -mx-5 -my-2"
           aria-label="Footer"
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="px-5 py-2">
               <a
                 href={item.href}
-                className="text-base text-slate-700 font-semibold hover:text-gray-900"
+                className="text-base font-semibold text-slate-700 hover:text-gray-900"
               >
                 {item.name}
               </a>
             </div>
           ))}
         </nav>
-        <div className="flex justify-between flex-wrap">
-          <p className="order-2 my-2 md:order-1 text-center text-base text-gray-600">
+        <div className="flex flex-wrap justify-between">
+          <p className="order-2 my-2 text-base text-center text-gray-600 md:order-1">
             &copy; {new Date().getFullYear()} EOB Academy. All rights reserved.
           </p>
-          <div className="order-1 my-2 md:order-2 flex items-center justify-center space-x-6">
+          <div className="flex items-center justify-center order-1 my-2 space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-500 hover:text-secondary transition-all"
+                className="text-gray-500 transition-all hover:text-secondary"
               >
                 <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
+                <item.icon className="w-6 h-6" aria-hidden="true" />
               </a>
             ))}
           </div>

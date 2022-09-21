@@ -17,7 +17,9 @@ import {
   getCourseCategoryQuery,
   getPostCategoriesQuery,
   getTestimonialPageDataQuery,
-  getFeaturedPostsQuery
+  getFeaturedPostsQuery,
+  getAllJobsQuery,
+  getJobPageDataQuery
 } from './queries'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
@@ -59,6 +61,11 @@ export async function getAllPosts(preview: boolean) {
   return data
 }
 
+export async function getAllJobs(preview: boolean) {
+  const data = await getClient(preview).fetch(getAllJobsQuery)
+  return data
+}
+
 export async function getFeaturedPosts(preview: boolean) {
   const data = await getClient(preview).fetch(getFeaturedPostsQuery)
   return data
@@ -76,6 +83,13 @@ export async function getGalleryPosts(count: number, preview: boolean) {
 
 export async function getPostPageData(slug: string, preview: boolean) {
   const data = await getClient(preview).fetch(getPostPageDataQuery, {
+    slug: slug
+  })
+  return data
+}
+
+export async function getJobPageData(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getJobPageDataQuery, {
     slug: slug
   })
   return data

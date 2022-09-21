@@ -34,7 +34,7 @@ const BlogCarousel: React.FC<IBlogCarouselProps> = ({ title, items }) => {
   return (
     <div className="space-y-8 md:space-y-16">
       <SectionTitle title={title || 'Blog'} href="/blog" label="All posts" />
-      <div className="overflow-hidden  py-2">
+      <div className="py-2 overflow-hidden">
         <div ref={refCallback} className="keen-slider !overflow-visible">
           {items.map((item) => (
             <div
