@@ -14,7 +14,7 @@ interface IButton extends SmartLinkProps {
 const sizeMap = {
   small: 'px-3 py-1.5 text-base',
   medium: 'px-3 py-2 text-lg',
-  large: 'px-5 py-3 lg:px-6 lg:py-3 text-2xl'
+  large: 'px-5 py-3 lg:px-6 lg:py-3 text-2xl border-2'
 }
 
 const variantMap = {
