@@ -11,6 +11,7 @@ module.exports = {
       xxl: '1400px',
       ...defaultTheme.screens,
       // Overwritten
+      md: '868px',
       xl: '1224px'
     },
     extend: {
