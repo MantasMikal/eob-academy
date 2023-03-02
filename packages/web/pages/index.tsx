@@ -37,7 +37,9 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
     featuredCourses,
     body,
     industryRoles,
-    openGraph
+    openGraph,
+    title,
+    subtitle
   } = home?.home || {}
 
   const partnersAndSupporters = {
@@ -70,7 +72,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
 
   return (
     <MainLayout>
-      <Hero />
+      <Hero title={title} subtitle={subtitle} />
       <StandardMeta
         canonical={`/`}
         title={openGraph?.title}
@@ -179,6 +181,10 @@ export default Home
 
 export const getStaticProps = async ({ preview = false }) => {
   const homePageData = await getHomeData(preview)
+  console.log(
+    '🚀 ~ file: index.tsx:182 ~ getStaticProps ~ homePageData:',
+    homePageData
+  )
   const sponsors = await getAllSponsors(preview)
   const posts = await getFeaturedPosts(preview)
   return {

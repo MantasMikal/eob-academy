@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
-const withPWA = require('next-pwa')
 // const withPlugins = require('next-compose-plugins')
 // const isDev = process.env.NODE_ENV === 'development'
 const { fetchSanityRedirects } = require('./services/fetch-redirects')
@@ -50,13 +49,7 @@ const nextConfig = {
   }
 }
 
-module.exports = withBundleAnalyzer(
-  withPWA(nextConfig, {
-    pwa: {
-      dest: 'public'
-    }
-  })
-)
+module.exports = withBundleAnalyzer(nextConfig)
 
 // module.exports = withPlugins(
 //   [

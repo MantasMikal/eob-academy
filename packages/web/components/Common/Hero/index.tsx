@@ -1,8 +1,11 @@
 import React from 'react'
 
-type Props = {}
+type Props = {
+  title: string
+  subtitle: string
+}
 
-function Hero({}: Props) {
+function Hero({ title, subtitle }: Props) {
   return (
     <div className="relative flex items-center overflow-hidden min-h-[500px] md:min-h-screen max-h-screen w-full">
       <video
@@ -19,12 +22,9 @@ function Hero({}: Props) {
         className="absolute top-0 left-0 w-full h-full bg-black opacity-30 bg-polka-dots"
       />
       <div className="container-lg space-y-3 text-white">
-        <h1 className="heading-xlarge">
-          Like video games? <br /> Come and make one.
-        </h1>
+        <h1 className="heading-xlarge">{title}</h1>
         <p className="text-xl md:text-2xl font-semibold max-w-prose">
-          Recruiting now for full-time college courses - September 2022 - grab
-          your experience!
+          {subtitle}
         </p>
       </div>
     </div>
