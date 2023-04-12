@@ -132,7 +132,7 @@ export const getAllSponsorsQuery = groq`*[_type == "sponsor"]{
     ${sponsorFragment}
   }`
 
-export const getAllPostsQuery = groq`*[_type == "post" && hidden == false] {
+export const getAllPostsQuery = groq`*[_type == "post" && hidden == false] | order(publishedAt desc) {
   ${postFragment}
 }`
 
@@ -140,7 +140,7 @@ export const getAllJobsQuery = groq`*[_type == "job" && hidden == false] {
   ${jobFragment}
 }`
 
-export const getFeaturedPostsQuery = groq`*[_type == "post" && isFeatured == true] {
+export const getFeaturedPostsQuery = groq`*[_type == "post" && isFeatured == true] | order(publishedAt desc) {
   ${postFragment}
 }`
 
