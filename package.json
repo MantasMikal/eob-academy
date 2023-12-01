@@ -22,9 +22,6 @@
     ]
   },
   "dependencies": {
-    "@headlessui/react": "^1.6.6",
-    "@tailwindcss/typography": "^0.5.4",
-    "heroku-ssl-redirect": "^0.1.1",
-    "sass": "^1.53.0"
+    "heroku-ssl-redirect": "^0.1.1"
   }
 }

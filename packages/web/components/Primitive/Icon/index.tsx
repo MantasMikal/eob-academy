@@ -26,7 +26,7 @@ type Props = {
   width?: number
   height?: number
   a11yText?: string
-  vAlign?: typeof vAligns[number]
+  vAlign?: (typeof vAligns)[number]
   className?: string
 }
 

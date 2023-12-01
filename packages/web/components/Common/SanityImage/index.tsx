@@ -9,7 +9,7 @@ export interface ISanityImage extends ImageProps {
   alt?: string
 }
 
-const SanityImage: React.FC<ISanityImage> = ({ src, alt, ...other }) => {
+const SanityImage = ({ src, alt, ...other }: ISanityImage) => {
   const imageProps = useNextSanityImage(client, src || {})
   return <NextImage {...imageProps} alt={alt} {...other} />
 }

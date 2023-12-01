@@ -15,13 +15,7 @@ export type GooglaMapsProps = {
   }
 }
 
-const Map = ({
-  locations,
-  mapId,
-  center,
-  style,
-  className
-}: GooglaMapsProps) => {
+const Map = ({ locations, mapId, center, style }: GooglaMapsProps) => {
   return (
     <LoadScript
       id="script-loader"
