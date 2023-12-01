@@ -1,9 +1,6 @@
 import React from "react";
 
-import {
-  FaExternalLinkAlt,
-  FaExternalLinkSquareAlt,
-} from "react-icons/fa";
+import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from "react-icons/fa";
 
 const displayFontRender = (props) => {
   return (
@@ -14,13 +11,25 @@ const displayFontRender = (props) => {
 };
 
 const baseLargeFontRender = (props) => {
-  return <span style={{ fontSize: "20px", fontWeight: "normal" }}>{props.children}</span>;
+  return (
+    <span style={{ fontSize: "20px", fontWeight: "normal" }}>
+      {props.children}
+    </span>
+  );
 };
 const baseMediumFontRender = (props) => {
-  return <span style={{ fontSize: "18px", fontWeight: "normal" }}>{props.children}</span>;
+  return (
+    <span style={{ fontSize: "18px", fontWeight: "normal" }}>
+      {props.children}
+    </span>
+  );
 };
 const baseSmallFontRender = (props) => {
-  return <span style={{ fontSize: "14px", fontWeight: "normal" }}>{props.children}</span>;
+  return (
+    <span style={{ fontSize: "14px", fontWeight: "normal" }}>
+      {props.children}
+    </span>
+  );
 };
 /**
  * This is the schema definition for the rich text fields used for
@@ -152,6 +161,9 @@ export default {
     },
     {
       type: "splitPanel",
+    },
+    {
+      type: "pdfGrid",
     },
   ],
 };

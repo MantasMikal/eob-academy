@@ -2,15 +2,15 @@ import MainLayout from '@/components/Common/MainLayout'
 import PageHeader from '@/components/Common/PageHeader'
 import StandardMeta from '@/components/Meta/Standard'
 import BlockContent from '@/components/Primitive/BlockContent'
-import { getRegularPageDataQuery } from '@/services/sanity/queries'
+import { getProtectedPageDataQuery } from '@/services/sanity/queries'
 import {
-  getRegularPageData,
+  getProtectedPageData,
   usePreviewSubscription
 } from '@/services/sanity/sanity'
 import { NextPage } from 'next'
 
-const GenericPage: NextPage = ({ data, slug, preview }: any) => {
-  const { data: pageData } = usePreviewSubscription(getRegularPageDataQuery, {
+const ProtectedPage: NextPage = ({ data, slug, preview }: any) => {
+  const { data: pageData } = usePreviewSubscription(getProtectedPageDataQuery, {
     initialData: data,
     params: { slug },
     enabled: preview
@@ -35,7 +35,7 @@ const GenericPage: NextPage = ({ data, slug, preview }: any) => {
   )
 }
 
-export default GenericPage
+export default ProtectedPage
 
 interface StaticProps {
   params: {
@@ -49,7 +49,7 @@ export const getServerSideProps = async ({
   preview = false
 }: StaticProps) => {
   const { slug } = params
-  const pageData = await getRegularPageData(slug, false)
+  const pageData = await getProtectedPageData(slug, false)
   return {
     props: {
       data: pageData || {},
@@ -58,13 +58,3 @@ export const getServerSideProps = async ({
     }
   }
 }
-
-// export const getStaticPaths = async () => {
-//   const posts = await getClient(false).fetch(`*[_type == "page"].slug.current`)
-//   return {
-//     paths: posts
-//       .filter(Boolean)
-//       .map((slug: any) => ({ params: { slug: slug } })),
-//     fallback: false
-//   }
-// }

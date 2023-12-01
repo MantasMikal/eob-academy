@@ -10,6 +10,7 @@
   "scripts": {
     "start": "yarn workspace web run start",
     "dev": "yarn workspace web run dev",
+    "studio": "yarn workspace studio run start",
     "build": "yarn workspace web run build",
     "deploy": "cd packages/studio && sanity deploy && sanity graphql deploy && cd ../..",
     "rm": "rm -rf node_modules packages/web/node_modules packages/studio/node_modules"

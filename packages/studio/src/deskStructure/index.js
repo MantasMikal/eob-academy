@@ -13,6 +13,7 @@ import resolvePreviewUrl from "../resolvePreviewUrl";
 import Iframe from "sanity-plugin-iframe-pane";
 import redirects from "./redirects";
 import jobs from "./jobs";
+import protectedPages from "./protectedPages";
 
 const hiddenTypes = [
   "category",
@@ -30,11 +31,13 @@ const hiddenTypes = [
   "aboutPage",
   "gallery",
   "page",
+  "protectedPage",
   "course",
   "courseOverview",
   "courseCategory",
   "redirect",
   "job",
+  "pdf"
 ];
 
 export default () =>
@@ -169,6 +172,7 @@ export default () =>
         )
         .icon(RiFileCodeFill),
       pages,
+      protectedPages,
       courses,
       sponsors,
       posts,

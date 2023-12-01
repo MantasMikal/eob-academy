@@ -6,6 +6,7 @@ import createFigure from './components/createFigure'
 import createGrid from './components/createGrid'
 import createMediaComponent from './components/createMedia'
 import Button from '@/components/Common/Button'
+import { PDFGrid } from '@/components/Common/PDFGrid'
 
 // TODO: MIGRATE TO https://github.com/portabletext/react-portabletext/blob/main/MIGRATING.md
 
@@ -76,6 +77,9 @@ const serializers = () => ({
     },
     video(props: any) {
       return createMediaComponent(props.node)
+    },
+    pdfGrid(props: any) {
+      return <PDFGrid items={props.node.pdfs} />
     }
   }
 })

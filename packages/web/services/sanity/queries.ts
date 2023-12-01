@@ -177,6 +177,10 @@ export const getRegularPageDataQuery = groq`*[_type == "page" && slug.current ==
   ${regularPageFragment}
 }`
 
+export const getProtectedPageDataQuery = groq`*[_type == "protectedPage" && slug.current == $slug][0] {
+  ${regularPageFragment}
+}`
+
 export const getApplyPageDataQuery = groq`*[_id == "applyPage"][0] {
   ${applyPageFragment}
 }`

@@ -20,6 +20,7 @@ import location from "./plugs/location";
 import mainImage from "./plugs/mainImage";
 import openGraph from "./objects/openGraph";
 import page from "./pages/page";
+import protectedPage from "./pages/protected-page";
 import post from './documents/post'
 import sponsor from './documents/sponsor'
 import video from "./plugs/video";
@@ -35,6 +36,8 @@ import featuredCourses from "./objects/featuredCourses";
 import industryRole from "./objects/industryRole";
 import redirect from "./documents/redirect";
 import job from "./documents/job";
+import pdfGrid from "./objects/pdfGrid";
+import pdf from "./documents/pdf";
 
 export default createSchema({
   name: "default",
@@ -60,6 +63,7 @@ export default createSchema({
     gallery,
     itemGallery,
     page,
+    protectedPage,
     splitPanel,
     course,
     courseCategory,
@@ -70,6 +74,8 @@ export default createSchema({
     industryRole,
     featuredCourses,
     redirect,
-    job
+    job,
+    pdfGrid,
+    pdf
   ]),
 });

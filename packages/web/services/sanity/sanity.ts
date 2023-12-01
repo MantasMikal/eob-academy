@@ -19,11 +19,12 @@ import {
   getTestimonialPageDataQuery,
   getFeaturedPostsQuery,
   getAllJobsQuery,
-  getJobPageDataQuery
+  getJobPageDataQuery,
+  getProtectedPageDataQuery
 } from './queries'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-const config = {
+export const config = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
   token: process.env.NEXT_PUBLIC_SANITY_API_TOKEN as string
@@ -97,6 +98,13 @@ export async function getJobPageData(slug: string, preview: boolean) {
 
 export async function getRegularPageData(slug: string, preview: boolean) {
   const data = await getClient(preview).fetch(getRegularPageDataQuery, {
+    slug: slug
+  })
+  return data
+}
+
+export async function getProtectedPageData(slug: string, preview: boolean) {
+  const data = await getClient(preview).fetch(getProtectedPageDataQuery, {
     slug: slug
   })
   return data
