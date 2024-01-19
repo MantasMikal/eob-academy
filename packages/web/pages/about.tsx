@@ -174,7 +174,7 @@ const About: NextPage = ({ data, preview }: any) => {
           </div>
         </Section>
         {/* Partners: */}
-        <Section title="Partners" label="Get in touch" href="/contact">
+        {/* <Section title="Partners" label="Get in touch" href="/contact">
           <div className="flex flex-col gap-4 md:flex-row md:gap-8 md:justify-between md:items-center">
             <div className="basis-1/2">
               <h4 className="subtitle font-normal mb-11">
@@ -236,7 +236,7 @@ const About: NextPage = ({ data, preview }: any) => {
               />
             </div>
           </div>
-        </Section>
+        </Section> */}
       </div>
     </MainLayout>
   )
