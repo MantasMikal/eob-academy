@@ -16,8 +16,7 @@ import BlockContent from '@/components/Primitive/BlockContent'
 const items = [
   {
     title: 'What',
-    subtitle: `An Academy that offers small class sizes, creates video games and
-    grassroots esports teams.`,
+    subtitle: `An Academy that offers small class sizes creating video games.`,
     a11yText: 'Controller',
     icon: 'controller'
   },
@@ -30,8 +29,7 @@ const items = [
   },
   {
     title: 'The Content',
-    subtitle: `Video game creation, 3D character design, esports team creation,
-    industry masterclasses.`,
+    subtitle: `Video game creation, 3D character design, industry masterclasses.`,
     a11yText: 'Tasks',
     icon: 'tasks'
   }
@@ -76,15 +74,14 @@ const About: NextPage = ({ data, preview }: any) => {
         <Section title="EOB Academy & The Cohort">
           <div className="">
             <h4 className="text-slate-900 subtitle font-normal max-w-xl pb-4">
-              If you love video games and esports, there is a place for you
-              here.
+              If you love video games there is a place for you here.
             </h4>
             <div className="text-slate-900 prose-p:font-normal md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max">
               <p>
                 EOB Academy give young people access to learn about video game
-                creation and esports from fantastic tutors in great environments
-                - be it online through Discord or at one of our physical
-                locations in Bracknell or Letchworth.
+                creation from fantastic tutors in great environments - be it
+                online through Discord or at one of our physical locations in
+                Bracknell or Letchworth.
               </p>
 
               <p>

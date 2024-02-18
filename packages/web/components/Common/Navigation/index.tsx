@@ -18,14 +18,14 @@ const links = [
     label: 'Courses',
     href: '/courses'
   },
-  {
-    label: 'Gallery',
-    href: '/gallery'
-  },
-  {
-    label: 'Blog',
-    href: '/blog'
-  },
+  // {
+  //   label: 'Gallery',
+  //   href: '/gallery'
+  // },
+  // {
+  //   label: 'Blog',
+  //   href: '/blog'
+  // },
   {
     label: 'Testimonials',
     href: '/testimonials'
@@ -37,11 +37,11 @@ const links = [
   {
     label: 'Apply',
     href: '/apply'
-  },
-  {
-    label: 'Careers',
-    href: '/careers'
   }
+  // {
+  //   label: 'Careers',
+  //   href: '/careers'
+  // }
 ]
 
 export default function Navigation() {
