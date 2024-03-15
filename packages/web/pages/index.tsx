@@ -3,7 +3,7 @@ import Hero from '@/components/Common/Hero'
 import ItemRow from '@/components/Common/ItemRow'
 import MainLayout from '@/components/Common/MainLayout'
 import SectionTitle from '@/components/Common/SectionTitle'
-import BlogCarousel from '@/components/Common/BlogCarousel'
+// import BlogCarousel from '@/components/Common/BlogCarousel'
 import SmartLink from '@/components/Primitive/SmartLink'
 import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
 import type { NextPage } from 'next'
@@ -161,11 +161,11 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
             ))}
           </div>
         </section>
-        <section className="pb-16 bg-slate-50">
+        {/* <section className="pb-16 bg-slate-50">
           <div className="container-lg">
             <BlogCarousel items={posts} />
           </div>
-        </section>
+        </section> */}
         <section className="container-lg">
           <Partners
             partners={partnersAndSupporters.partners}
