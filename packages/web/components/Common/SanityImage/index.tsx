@@ -1,7 +1,7 @@
 import { client } from '@/services/sanity/sanity'
 import { useNextSanityImage, UseNextSanityImageProps } from 'next-sanity-image'
-import { ImageProps } from 'next/future/image'
-import NextImage from 'next/future/image'
+import { ImageProps } from 'next/image'
+import NextImage from 'next/image'
 import React from 'react'
 
 export interface ISanityImage extends ImageProps {

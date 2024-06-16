@@ -3,5 +3,9 @@ module.exports = {
   "singleQuote": true,
   "trailingComma": "none",
   "tabWidth": 2,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "importOrderSeparation": true,
+  "importOrder": ["^@/(.*)$", "^[./]"],
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

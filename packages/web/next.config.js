@@ -10,15 +10,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig = {
   async redirects() {
-    console.log('redirects........')
     return await fetchSanityRedirects()
   },
   // reactStrictMode: true,
-  experimental: {
-    images: {
-      allowFutureImage: true
-    }
-  },
   poweredByHeader: false,
   useFileSystemPublicRoutes: true,
   // reactStrictMode: true,

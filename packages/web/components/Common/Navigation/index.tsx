@@ -1,11 +1,19 @@
 // import cn from 'classnames'
-import SmartLink from '@/components/Primitive/SmartLink'
-import { Popover, Transition } from '@headlessui/react'
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  Transition
+} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import { useRouter } from 'next/router'
-import Image from 'next/image'
-import { Fragment } from 'react'
 import classNames from 'classnames'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import { Fragment } from 'react'
+
+import SmartLink from '@/components/Primitive/SmartLink'
+
+// import { Transition } from '@headlessui/react'
 
 const logo = require('@/assets/img/logo.png')
 
@@ -94,16 +102,15 @@ export default function Navigation() {
             </div>
             <div className="flex -mr-2 md:hidden">
               {/* Mobile menu button */}
-              <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
+              <PopoverButton className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
                 <span className="sr-only">Open menu</span>
                 <MenuIcon className="w-6 h-6" aria-hidden="true" />
-              </Popover.Button>
+              </PopoverButton>
             </div>
           </div>
         </div>
 
         <Transition
-          as={Fragment}
           enter="duration-200 ease-out"
           enterFrom="opacity-0 scale-95"
           enterTo="opacity-100 scale-100"
@@ -111,7 +118,7 @@ export default function Navigation() {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <Popover.Panel
+          <PopoverPanel
             focus
             className="absolute inset-x-0 top-0 p-2 transition origin-top-right transform"
           >
@@ -130,10 +137,10 @@ export default function Navigation() {
                     />
                   </SmartLink>
                   <div className="-mr-2">
-                    <Popover.Button className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
+                    <PopoverButton className="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary">
                       <span className="sr-only">Close menu</span>
                       <XIcon className="w-6 h-6" aria-hidden="true" />
-                    </Popover.Button>
+                    </PopoverButton>
                   </div>
                 </div>
                 <div className="mt-6">
@@ -153,7 +160,7 @@ export default function Navigation() {
                 </div>
               </div>
             </div>
-          </Popover.Panel>
+          </PopoverPanel>
         </Transition>
       </>
     </Popover>

@@ -4,7 +4,7 @@ import type { NextPage } from 'next'
 import Section from '@/components/Common/Section'
 import PageHeader from '@/components/Common/PageHeader'
 import ItemRow from '@/components/Common/ItemRow'
-import Image from 'next/future/image'
+import Image from 'next/image'
 import StandardMeta from '@/components/Meta/Standard'
 import {
   getAboutPageData,

@@ -56,9 +56,9 @@ const SmartLink: React.FC<SmartLinkProps> = ({
   // Internal link, use third-party `Link` component from router module
   if (to) {
     return (
-      <Link {...(prefetch && { prefetch })} href={to} {...other}>
+      <Link className={className} {...(prefetch && { prefetch })} href={to} {...other}>
         {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={className}>{children}</a>
+        {children}
       </Link>
     )
   }
