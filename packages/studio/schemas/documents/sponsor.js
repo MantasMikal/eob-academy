@@ -10,6 +10,21 @@ export default {
       type: "string",
     },
     {
+      name: "category",
+      title: "Category",
+      type: 'string',
+      options: {
+        list: [
+          { title: "Student Voices", value: "student-voices" },
+          {
+            title: "Parent and Career Voices",
+            value: "parent-and-career-voices",
+          },
+          { title: "Professional Voices", value: "professional-voices" },
+        ],
+      },
+    },
+    {
       name: "url",
       title: "URL",
       type: "string",

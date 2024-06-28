@@ -1,23 +1,63 @@
+import React, { useState } from 'react'
+
+import Button from '@/components/Common/Button'
 import MainLayout from '@/components/Common/MainLayout'
 import PageHeader from '@/components/Common/PageHeader'
 import Partners from '@/components/Common/Partners'
 import SanityImage from '@/components/Common/SanityImage'
 import Section from '@/components/Common/Section'
 import StandardMeta from '@/components/Meta/Standard'
+import BlockContent from '@/components/Primitive/BlockContent'
+import { getTestimonialPageDataQuery } from '@/services/sanity/queries'
 import {
   getAllSponsors,
   getAllTestimonialData,
   usePreviewSubscription
 } from '@/services/sanity/sanity'
-import React from 'react'
-import { getTestimonialPageDataQuery } from '@/services/sanity/queries'
-import BlockContent from '@/components/Primitive/BlockContent'
+
+const Testimonial = ({ image, name, quoteBody, people }: any) => {
+  const [open, setOpen] = React.useState(false)
+  const shouldTruncate = quoteBody.length > 300
+  const truncatedQuote = !open ? quoteBody.slice(0, 300) + '...' : quoteBody
+
+  return (
+    <div className={`py-10 border-b-2 border-secondary text-center`}>
+      <SanityImage className="w-auto h-24 m-auto" src={image} alt={name} />
+      <p className="font-semibold pb-3 text-xl pt-6 md:pt-10">{name}</p>
+      <div className="pb-2">
+        <p className="inline">{truncatedQuote}</p>
+        {shouldTruncate && !open && (
+          <>
+            &nbsp;
+            <button
+              onClick={() => setOpen(!open)}
+              className="inline font-bold text-secondary underline"
+            >
+              (read more)
+            </button>
+          </>
+        )}
+      </div>
+      <p className="text-secondary pb-2">{people}</p>
+    </div>
+  )
+}
+
+const categoryMap = {
+    'professional-voices': 'Professional Voices',
+  'student-voices': 'Student Voices',
+  'parent-and-career-voices': 'Parent and Career Voices',
+
+}
 
 export default function Testimonials({ sponsors, data, preview }: any) {
   const partnersAndSupporters = {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)
   }
+
+  console.log('🚀 ~ Testimonials ~ sponsors:', sponsors)
+
   const { data: pageData } = usePreviewSubscription(
     getTestimonialPageDataQuery,
     {
@@ -25,6 +65,9 @@ export default function Testimonials({ sponsors, data, preview }: any) {
       enabled: preview
     }
   )
+
+  const [activeCategory, setActiveCategory] = useState('professional-voices')
+  console.log("🚀 ~ Testimonials ~ activeCategory:", activeCategory)
 
   return (
     <MainLayout className="space-y-8 lg:space-y-16">
@@ -64,25 +107,26 @@ export default function Testimonials({ sponsors, data, preview }: any) {
         </div>
       </section> */}
       <Section title="Testimonials">
+        <div className="flex flex-row gap-4 flex-wrap">
+          {Object.keys(categoryMap).map((category) => (
+            <Button
+              key={category}
+              variant={activeCategory === category ? 'secondary' : 'outline'}
+              onClick={() => {
+                console.log("🚀 ~ Testimonials ~ onClick ~ category", category)
+                setActiveCategory(category)
+              }}
+            >
+              {categoryMap[category as keyof typeof categoryMap]}
+            </Button>
+          ))}
+        </div>
         <div className="grid gap-x-4 gap-y-4 grid-cols-1 md:gap-y-8 md:gap-x-8 md:grid-cols-2 lg:grid-cols-3">
           {sponsors
+            .filter((s: any) => s.category === activeCategory)
             .filter((s: any) => s.quoteBody)
             .map((sponsor: any, i: number) => (
-              <div
-                key={`Sponsor:${i}-${sponsor.name}`}
-                className={`py-10 border-b-2 border-secondary text-center`}
-              >
-                <SanityImage
-                  className="w-auto h-24 m-auto"
-                  src={sponsor.image}
-                  alt={sponsor.name}
-                />
-                <p className="font-semibold pb-3 text-xl pt-6 md:pt-10">
-                  {sponsor.name}
-                </p>
-                <p>{sponsor.quoteBody}</p>
-                <p className="text-secondary pb-2">{sponsor.people}</p>
-              </div>
+              <Testimonial key={`Sponsor:${i}-${sponsor.name}`} {...sponsor} />
             ))}
         </div>
       </Section>

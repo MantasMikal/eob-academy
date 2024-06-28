@@ -20,7 +20,9 @@ import {
   getFeaturedPostsQuery,
   getAllJobsQuery,
   getJobPageDataQuery,
-  getProtectedPageDataQuery
+  getProtectedPageDataQuery,
+  getHomePageDataQuery,
+  getHowWeOperatePageDataQuery
 } from './queries'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
@@ -158,6 +160,12 @@ export async function getAllSponsors(preview: boolean) {
 
 export async function getAboutPageData(preview: boolean) {
   const data = await getClient(preview).fetch(getAboutPageDataQuery)
+  return data
+}
+
+
+export async function getHowWeOperatePageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getHowWeOperatePageDataQuery)
   return data
 }
 

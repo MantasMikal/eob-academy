@@ -24,8 +24,8 @@ function Hero({ title, subtitle }: Props) {
         className="absolute top-0 left-0 w-full h-full bg-black opacity-70 bg-polka-dots"
       />
       <div className="container-lg space-y-3 pt-12 pb-24 text-white">
-        <h1 className="text-3xl md:text-5xl font-bold">{title}</h1>
-        <p className="md:text-xl max-w-prose">
+        <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold">{title}</h1>
+        <p className="md:text-xl lg:text-2xl max-w-prose">
           {subtitle}
         </p>
       </div>

@@ -36,6 +36,7 @@ export const sponsorFragment = groq`
   _id,
   name,
   url,
+  category,
   isPartner,
   quoteHeading,
   quoteBody,
@@ -68,6 +69,7 @@ export const courseFragment = groq`
   publishedAt,
   mainImage,
   heroImage,
+  body,
   openGraph
 `
 
@@ -102,6 +104,14 @@ export const aboutPageFragment = groq`
   openGraph
 `
 
+export const howWeOperatePageFragment = groq`
+  _id,
+  title,
+  subtitle,
+  body,
+  openGraph
+`
+
 export const testimonialPageFragment = groq`
   _id,
   title,
@@ -116,7 +126,6 @@ export const getHomePageDataQuery = groq`*[_type == "homePage"][0] {
   subtitle,
   body,
   missionStatement,
-  industryRoles,
   mainCourses[]->,
   featuredCourses{
     title,
@@ -201,6 +210,10 @@ export const getPostCategoriesQuery = groq`*[_type == "category"]`
 
 export const getAboutPageDataQuery = groq`*[_id == "aboutPage"][0] {
   ${aboutPageFragment}
+}`
+
+export const getHowWeOperatePageDataQuery = groq`*[_id == "howWeOperatePage"][0] {
+  ${howWeOperatePageFragment}
 }`
 
 export const getHomeDataQuery = groq`{

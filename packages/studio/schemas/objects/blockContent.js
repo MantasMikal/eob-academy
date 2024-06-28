@@ -165,5 +165,8 @@ export default {
     {
       type: "pdfGrid",
     },
+    {
+      type: 'industryRoles'
+    }
   ],
 };

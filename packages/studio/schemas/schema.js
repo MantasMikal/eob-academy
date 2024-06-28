@@ -6,6 +6,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // We import object and document schemas
 import about from "./pages/about";
+import howWeOperate from "./pages/how-we-operate";
 import blockContent from "./objects/blockContent";
 import blockText from "./objects/blockText";
 import category from "./documents/category";
@@ -57,6 +58,7 @@ export default createSchema({
     home,
     openGraph,
     about,
+    howWeOperate,
     post,
     sponsor,
     testimonials,

@@ -39,6 +39,10 @@ const links = [
     href: '/testimonials'
   },
   {
+    label: 'How we operate',
+    href: '/how-we-operate'
+  },
+  {
     label: 'Contact',
     href: '/contact'
   },

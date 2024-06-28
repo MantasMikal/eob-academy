@@ -87,6 +87,11 @@ export default {
       type: "image",
     },
     {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    },
+    {
       title: "Open graph",
       name: "openGraph",
       description:

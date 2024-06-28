@@ -120,6 +120,30 @@ export default () =>
                 )
 
                 .icon(MdInfoOutline),
+                S.listItem()
+                .title("How We Operate")
+                .child(
+                  S.editor()
+                    .id("howWeOperatePage")
+                    .schemaType("howWeOperatePage")
+                    .documentId("howWeOperatePage")
+                    .views([
+                      S.view.form().icon(FaEdit),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(`how-we-operate`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .icon(FaEye)
+                        .title("Preview"),
+                    ])
+                )
+
+                .icon(MdInfoOutline),
               S.listItem()
                 .title("Apply")
                 .child(

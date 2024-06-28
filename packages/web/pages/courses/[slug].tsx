@@ -1,3 +1,15 @@
+import { NextPage } from 'next'
+import { FaCalendar, FaClock, FaLocationArrow, FaUsers } from 'react-icons/fa'
+
+import Button from '@/components/Common/Button'
+import CourseGrid from '@/components/Common/CourseGrid'
+import CourseOverview from '@/components/Common/CourseOverview'
+import MainLayout from '@/components/Common/MainLayout'
+import PageHeader from '@/components/Common/PageHeader'
+import Image from '@/components/Common/SanityImage'
+import Section from '@/components/Common/Section'
+import StandardMeta from '@/components/Meta/Standard'
+import BlockContent from '@/components/Primitive/BlockContent'
 import { getCourseDataQuery } from '@/services/sanity/queries'
 import {
   getAllCourses,
@@ -5,16 +17,6 @@ import {
   getCourseData,
   usePreviewSubscription
 } from '@/services/sanity/sanity'
-import { NextPage } from 'next'
-import MainLayout from '@/components/Common/MainLayout'
-import Section from '@/components/Common/Section'
-import PageHeader from '@/components/Common/PageHeader'
-import Image from '@/components/Common/SanityImage'
-import CourseGrid from '@/components/Common/CourseGrid'
-import StandardMeta from '@/components/Meta/Standard'
-import CourseOverview from '@/components/Common/CourseOverview'
-import Button from '@/components/Common/Button'
-import { FaCalendar, FaClock, FaLocationArrow, FaUsers } from 'react-icons/fa'
 
 const CoursePage: NextPage = ({ data, courses, preview }: any) => {
   const slug = data?.slug?.current
@@ -28,6 +30,7 @@ const CoursePage: NextPage = ({ data, courses, preview }: any) => {
     return null
   }
 
+  console.log('🚀 ~ courseData:', courseData)
   const infoItems = [
     {
       title: 'Location',
@@ -119,6 +122,13 @@ const CoursePage: NextPage = ({ data, courses, preview }: any) => {
             </Button>
           </div>
         </Section>
+
+        {courseData.body && (
+          <div className="container-lg">
+            <BlockContent blocks={courseData.body} />{' '}
+          </div>
+        )}
+
         <Section title="Other courses" href="/courses" label="All courses">
           <CourseGrid courses={courses} />
         </Section>

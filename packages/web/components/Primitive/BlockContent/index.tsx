@@ -7,6 +7,7 @@ import createGrid from './components/createGrid'
 import createMediaComponent from './components/createMedia'
 import Button from '@/components/Common/Button'
 import { PDFGrid } from '@/components/Common/PDFGrid'
+import { IndustryRoles } from '@/components/Common/IndustryRoles'
 
 // TODO: MIGRATE TO https://github.com/portabletext/react-portabletext/blob/main/MIGRATING.md
 
@@ -80,6 +81,9 @@ const serializers = () => ({
     },
     pdfGrid(props: any) {
       return <PDFGrid items={props.node.pdfs} />
+    },
+    industryRoles(props: any) {
+      return <IndustryRoles industryRoles={props.node} />
     }
   }
 })

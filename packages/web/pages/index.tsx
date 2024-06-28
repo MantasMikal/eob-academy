@@ -1,24 +1,21 @@
+import type { NextPage } from 'next'
+
 import CourseCard from '@/components/Common/CourseCard'
 import Hero from '@/components/Common/Hero'
 import ItemRow from '@/components/Common/ItemRow'
 import MainLayout from '@/components/Common/MainLayout'
-import SectionTitle from '@/components/Common/SectionTitle'
-// import BlogCarousel from '@/components/Common/BlogCarousel'
-import SmartLink from '@/components/Primitive/SmartLink'
-import ChevronRightIcon from '@heroicons/react/solid/ChevronRightIcon'
-import type { NextPage } from 'next'
 import Partners from '@/components/Common/Partners'
-import cn from 'classnames'
+import SectionTitle from '@/components/Common/SectionTitle'
+import StandardMeta from '@/components/Meta/Standard'
+import BlockContent from '@/components/Primitive/BlockContent'
+import { getHomePageDataQuery } from '@/services/sanity/queries'
 import {
   getAllSponsors,
   getFeaturedPosts,
   getHomeData,
   usePreviewSubscription
 } from '@/services/sanity/sanity'
-import StandardMeta from '@/components/Meta/Standard'
-import BlockContent from '@/components/Primitive/BlockContent'
-import SanityImage from '@/components/Common/SanityImage'
-import { getHomePageDataQuery } from '@/services/sanity/queries'
+import Button from '@/components/Common/Button'
 
 interface IHomePageProps {
   data: any
@@ -33,7 +30,6 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
 
   const {
     missionStatement,
-    mainCourses,
     featuredCourses,
     body,
     industryRoles,
@@ -80,7 +76,28 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
       />
       {/* Intro */}
       <div className="space-y-12 lg:space-y-24">
-        <section className="container-lg">
+        <section className="bg-secondary text-white py-8 md:py-24">
+          <div className="container-lg flex flex-col gap-4 md:flex-row md:justify-between md:gap-8">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold md:basis-[40%]">
+              This is where Enemy of Boredom steps in…
+            </h2>
+            <div className="flex flex-col gap-4 text-lg md:text-xl lg:text-2xl md:basis-[60%]">
+              Our mission is to change the perception of school as a place of
+              confusion and fear for SEN students into one of acceptance,
+              engagement, learning, happiness and potential. By creating an
+              inclusive learning environment, specifically designed for SEN
+              students, we rebuild their confidence, working with SENCOs to
+              create a pathway back into mainstream education, or preparing the
+              student to graduate and move into work.
+
+              <Button className='mr-auto' href='/about' variant='outline' color=''>
+                Find out more
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="container-lg">
           <div className="py-8 px-4 lg:p-12 lg:py-16 mt-[-5rem] bg-secondary rounded-lg shadow">
             <div className="space-y-6 text-white md:space-y-8">
               <h2 className="relative heading-xlarge left-1">Main courses</h2>
@@ -96,7 +113,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
         {/* About */}
         {body && (
           <section className="container-lg">
@@ -119,7 +136,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
             ))}
           </div>
         </section>
-        <section className="space-y-8 container-lg md:space-y-16">
+        {/* <section className="space-y-8 container-lg md:space-y-16">
           <SectionTitle
             title={industryRoles?.title}
             label="Industry Brakedown"
@@ -130,37 +147,7 @@ const Home: NextPage<IHomePageProps> = ({ data: homeData, preview }: any) => {
             className="max-w-3xl prose"
             blocks={industryRoles?.description}
           />
-
-          <div className="grid grid-cols-1 gap-8 xs:grid-cols-2 md:grid-cols-3">
-            {industryRoles?.roles?.map((item: any, i: number) => (
-              <SmartLink
-                to={item.url}
-                className={cn(
-                  'flex items-start p-3 py-5 pl-6 space-x-4 border rounded group hover:cursor-pointer',
-                  !item.description && 'items-center'
-                )}
-                key={`IndustryRole:${i}`}
-              >
-                <SanityImage
-                  src={item.icon}
-                  alt={item.title}
-                  width={40}
-                  height={40}
-                />
-                <div className="flex flex-col space-y-0">
-                  <h3 className="text-base font-semibold md:text-lg group-hover:text-secondary">
-                    {item.title}
-                  </h3>
-                  {item.description && (
-                    <p className="text-sm md:text-base text-slate-800 group-hover:text-secondary">
-                      {item.description}
-                    </p>
-                  )}
-                </div>
-              </SmartLink>
-            ))}
-          </div>
-        </section>
+        </section> */}
         {/* <section className="pb-16 bg-slate-50">
           <div className="container-lg">
             <BlogCarousel items={posts} />
