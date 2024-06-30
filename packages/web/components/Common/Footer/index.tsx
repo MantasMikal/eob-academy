@@ -28,7 +28,7 @@ const navigation = {
     },
     {
       name: 'Youtube',
-      href: 'https://www.youtube.com/channel/UC1q2-7FQrgne_cKFemMXWYA/featured',
+      href: 'https://www.youtube.com/channel/UCQDSMwMzOW0wrW7x9YwInPA',
       icon: FaYoutube
     },
     {

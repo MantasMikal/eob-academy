@@ -30,10 +30,10 @@ const links = [
   //   label: 'Gallery',
   //   href: '/gallery'
   // },
-  // {
-  //   label: 'Blog',
-  //   href: '/blog'
-  // },
+  {
+    label: 'Blog',
+    href: '/blog'
+  },
   {
     label: 'Voices',
     href: '/voices'
