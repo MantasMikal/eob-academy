@@ -100,7 +100,8 @@ const About: NextPage = ({ data, preview }: any) => {
           <div className="flex flex-col gap-8 md:gap-12">
             <div>
               <h4 className="text-slate-900 subtitle font-normal max-w-xl pb-4">
-                If you love video games there is a place for you here.
+                SEN and Alternative learning students feel accepted and reach
+                their full potential.
               </h4>
               <div className="text-slate-900 prose-p:font-normal md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max">
                 <p>
