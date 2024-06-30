@@ -44,7 +44,7 @@ const Testimonial = ({ image, name, quoteBody, people }: any) => {
 }
 
 const categoryMap = {
-    'professional-voices': 'Professional Voices',
+  'professional-voices': 'Professional Voices',
   'student-voices': 'Student Voices',
   'parent-and-career-voices': 'Parent and Career Voices',
 
@@ -55,8 +55,6 @@ export default function Testimonials({ sponsors, data, preview }: any) {
     partners: sponsors.filter((s: any) => s.isPartner),
     supporters: sponsors.filter((s: any) => !s.isPartner)
   }
-
-  console.log('🚀 ~ Testimonials ~ sponsors:', sponsors)
 
   const { data: pageData } = usePreviewSubscription(
     getTestimonialPageDataQuery,

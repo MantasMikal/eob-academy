@@ -46,23 +46,57 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
               </h4>
               <div className="text-slate-900 prose-p:font-normal md:columns-2 gap-x-8 lg:gap-x-16 prose max-w-max">
                 <p>
-                  At EOB we build one united workforce around the young person
-                  to support all of their educational and emotional needs.
-                  Autistic Spectrum Disorder is the most common condition behind
-                  an ECHP. For those receiving SEN support without an
-                  EHCP,speech, language and communication needs are to the fore
+                  We’ve created a learning environment where neurodiverse
+                  students flourish and reach their potential.
                 </p>
                 <p>
-                  <b>
-                    Often we find that the simplest and most effective therapy
-                    is to let the child be themselves.
-                  </b>{' '}
-                  If they need to stand and turn five times before starting
-                  their work, we encourage them. The freedom to do this without
-                  provoking conflict is often the first in a series of acts that
-                  make them feel accepted and instantly releases the intense
-                  pressure to behave in a prescribed way. With their anxieties
-                  quietened, they can then focus on the learning.
+                  Our environments are designed to be intimate, calm, quiet,
+                  with small student numbers to reduce noise and ‘clutter’. They
+                  are designed with sensory needs in mind so the colours and
+                  lighting are tranquil and soothing.
+                </p>
+                <p>
+                  We have a maximum of five students per class. With smaller
+                  class sizes, relationships are built quickly; students feel
+                  closer to their tutor group and have the benefit of a greater
+                  adult-to-student ratio to enable them to learn the social
+                  skills that are often underdeveloped in young people with
+                  additional needs
+                </p>
+                <p>
+                  As a basic physiological need, water is important on many
+                  levels. We know that dehydration will affect cognitive
+                  performances as water accounts for 75% of brain mass. We
+                  provide free bottles of water as well as snacks high in
+                  carbohydrates to set them off on their daily learning journey.
+                </p>
+                <p>
+                  Whilst we believe in certain standards of behaviour and some
+                  common ‘rules’, students are not tied to a behavioural system
+                  that will judge or risk creating a downward spiral of
+                  perceived negative self-worth. Instead, we operate on a more
+                  individual basis. Tutors have a strong, solid relationship
+                  with the students built on mutual respect which involves them
+                  getting to know the individual and their triggers. This
+                  results in the students being supported to identify when a
+                  break or change of approach may be needed. We have seen this
+                  approach lead to the building of greater self-esteem and
+                  confidence, an increased motivation to learn and willingness
+                  to focus.
+                </p>
+                <p>
+                  We have designated areas so at any point, if a student is
+                  struggling to process or contain their emotions, they know
+                  that they have a safe space where they can decompress and
+                  recompose themselves. Extra support for tough days is always
+                  on hand if needed.
+                </p>
+                <p>
+                  Students are encouraged to be themselves and embrace
+                  authenticity, without having to conform to an anxiety-creating
+                  paradigm. They are supported to make progress at their pace
+                  and there is a relaxed vibe designed to maintain their
+                  well-being.
                 </p>
               </div>
             </div>
@@ -71,7 +105,7 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
 
         <Section
           className="overflow-hidden"
-          title="What people say about us"
+          title="Words from a SENCO"
           diffBg={true}
         >
           <div className="gap-32 md:flex lg:gap-60">
@@ -84,10 +118,6 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
               className="z-[-1] object-contain relative block mx-auto -mt-28 md:mt-0 md:relative md:-top-16 md:left-24"
             />
             <div className="max-w-xl">
-              <h3 className="subtitle font-normal mb-11">
-                If you love video games and esports, there is a place for you
-                here.
-              </h3>
               <Icon
                 type="quotes-open"
                 width={24}

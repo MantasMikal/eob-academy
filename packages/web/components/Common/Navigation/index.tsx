@@ -35,8 +35,8 @@ const links = [
   //   href: '/blog'
   // },
   {
-    label: 'Testimonials',
-    href: '/testimonials'
+    label: 'Voices',
+    href: '/voices'
   },
   {
     label: 'How we operate',
