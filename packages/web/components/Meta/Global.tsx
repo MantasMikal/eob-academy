@@ -3,9 +3,9 @@ import React from 'react'
 
 const { title, fullTitle, description, themeColor, twitterHandle, url } = {
   title: 'EOB Academy',
-  fullTitle: 'EOB Esports Academy - EOB Academy',
+  fullTitle: 'Enemy Of Boredom Academy',
   description:
-    'EOB Academy is a place where you can explore and build video games and create your own esports brand, alongside like-minded peers and incredible tutors. Sign up to start your experience... ',
+    'Enemy Of Boredom Academy a place of learning for young people that think differently. Creative education for the neurodiverse. ',
   themeColor: '#fff',
   url: 'https://www.eobacademy.com',
   twitterHandle: '@EOBAcademy'
