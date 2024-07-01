@@ -46,7 +46,7 @@ const Testimonial = ({ image, name, quoteBody, people }: any) => {
 const categoryMap = {
   'professional-voices': 'Professional Voices',
   'student-voices': 'Student Voices',
-  'parent-and-career-voices': 'Parent and Career Voices',
+  'parent-and-career-voices': 'Parent and Carer Voices',
 
 }
 

@@ -17,7 +17,7 @@ export default {
         list: [
           { title: "Student Voices", value: "student-voices" },
           {
-            title: "Parent and Career Voices",
+            title: "Parent and Carer Voices",
             value: "parent-and-career-voices",
           },
           { title: "Professional Voices", value: "professional-voices" },
