@@ -26,34 +26,35 @@ const links = [
     label: 'Courses',
     href: '/courses'
   },
-  // {
-  //   label: 'Gallery',
-  //   href: '/gallery'
-  // },
   {
-    label: 'Blog',
-    href: '/blog'
+    label: 'How we operate',
+    href: '/how-we-operate'
   },
   {
     label: 'Voices',
     href: '/voices'
   },
   {
-    label: 'How we operate',
-    href: '/how-we-operate'
+    label: 'Blog',
+    href: '/blog'
   },
+    // {
+  //   label: 'Team',
+  //   href: '/team'
+  // },
   {
-    label: 'Team',
-    href: '/team'
+    label: 'Apply',
+    href: '/apply'
   },
+
   {
     label: 'Contact',
     href: '/contact'
   },
-  {
-    label: 'Apply',
-    href: '/apply'
-  }
+  // {
+  //   label: 'Gallery',
+  //   href: '/gallery'
+  // },
   // {
   //   label: 'Careers',
   //   href: '/careers'

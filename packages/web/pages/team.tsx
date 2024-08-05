@@ -36,7 +36,7 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
         </div>
 
         <Section title="Meet the team">
-          <div className="grid grid-cols-1 gap-6 xs:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {teamMembers.map((member: any) => (
               <TeamMemberCard
                 key={member._id}
