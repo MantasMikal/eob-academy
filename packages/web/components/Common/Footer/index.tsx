@@ -1,6 +1,7 @@
 import cn from 'classnames'
 import React from 'react'
-import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 type IFooterProps = {
   className?: string
 }
@@ -34,7 +35,7 @@ const navigation = {
     {
       name: 'Twitter',
       href: 'https://twitter.com/EOBAcademy',
-      icon: FaTwitter
+      icon: FaXTwitter
     },
     {
       name: 'Facebook',

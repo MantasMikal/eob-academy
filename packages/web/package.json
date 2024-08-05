@@ -10,7 +10,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@headlessui/react": "^2.0.4",
+    "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^1.0.6",
     "@next/bundle-analyzer": "^14.2.4",
     "@react-google-maps/api": "^2.19.3",

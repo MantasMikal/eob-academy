@@ -12,14 +12,15 @@ import {
   usePreviewSubscription
 } from '@/services/sanity/sanity'
 
-const HowWeOperate: NextPage = ({ data, preview }: any) => {
+const Team: NextPage = ({ data, preview }: any) => {
   const { data: pageData } = usePreviewSubscription(getTeamPageDataQuery, {
     initialData: data,
     enabled: preview
   })
-
+  console.log("🚀 ~ pageData:", pageData)
   const teamMembers = pageData?.teamMembers || []
   return (
+
     <MainLayout>
       <StandardMeta
         canonical="/about"
@@ -36,13 +37,15 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
         </div>
 
         <Section title="Meet the team">
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="grid grid-cols-1 xs:grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
             {teamMembers.map((member: any) => (
               <TeamMemberCard
                 key={member._id}
                 title={member.name}
                 image={member.image}
                 bio={member.bio}
+                role={member.role}
+                shortBio={member.shortBio}
                 socials={{
                   linkedIn: member.linkedIn,
                   twitter: member.twitter,
@@ -57,7 +60,7 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
   )
 }
 
-export default HowWeOperate
+export default Team
 
 export const getStaticProps = async ({ preview = false }) => {
   const pageData = await getTeamPageData(false)
