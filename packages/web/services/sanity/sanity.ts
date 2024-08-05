@@ -1,30 +1,32 @@
-import { createClient, createPreviewSubscriptionHook } from 'next-sanity'
 import createImageUrlBuilder from '@sanity/image-url'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { createClient, createPreviewSubscriptionHook } from 'next-sanity'
+
 import {
-  getHomeDataQuery,
-  getAllPostsQuery,
-  getPostPageDataQuery,
-  getAllGalleryItemsQuery,
-  getAllSponsorsQuery,
-  getGalleryItemsQuery,
-  getRegularPageDataQuery,
-  getAllCoursesQuery,
   getAboutPageDataQuery,
-  getCourseDataQuery,
+  getAllCoursesByCategoryQuery,
+  getAllCoursesQuery,
+  getAllGalleryItemsQuery,
+  getAllJobsQuery,
+  getAllPostsQuery,
+  getAllSponsorsQuery,
   getApplyPageDataQuery,
   getContactPageDataQuery,
-  getAllCoursesByCategoryQuery,
   getCourseCategoryQuery,
-  getPostCategoriesQuery,
-  getTestimonialPageDataQuery,
+  getCourseDataQuery,
   getFeaturedPostsQuery,
-  getAllJobsQuery,
-  getJobPageDataQuery,
-  getProtectedPageDataQuery,
+  getGalleryItemsQuery,
+  getHomeDataQuery,
   getHomePageDataQuery,
-  getHowWeOperatePageDataQuery
+  getHowWeOperatePageDataQuery,
+  getJobPageDataQuery,
+  getPostCategoriesQuery,
+  getPostPageDataQuery,
+  getProtectedPageDataQuery,
+  getRegularPageDataQuery,
+  getTeamPageDataQuery,
+  getTestimonialPageDataQuery
 } from './queries'
-import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 export const config = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
@@ -163,9 +165,13 @@ export async function getAboutPageData(preview: boolean) {
   return data
 }
 
-
 export async function getHowWeOperatePageData(preview: boolean) {
   const data = await getClient(preview).fetch(getHowWeOperatePageDataQuery)
+  return data
+}
+
+export async function getTeamPageData(preview: boolean) {
+  const data = await getClient(preview).fetch(getTeamPageDataQuery)
   return data
 }
 

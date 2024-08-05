@@ -39,6 +39,8 @@ import redirect from "./documents/redirect";
 import job from "./documents/job";
 import pdfGrid from "./objects/pdfGrid";
 import pdf from "./documents/pdf";
+import teamMember from "./documents/team-member";
+import team from "./pages/team";
 
 export default createSchema({
   name: "default",
@@ -65,6 +67,7 @@ export default createSchema({
     gallery,
     itemGallery,
     page,
+    teamMember,
     protectedPage,
     splitPanel,
     course,
@@ -78,6 +81,7 @@ export default createSchema({
     redirect,
     job,
     pdfGrid,
-    pdf
+    pdf,
+    team,
   ]),
 });

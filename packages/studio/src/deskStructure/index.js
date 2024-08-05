@@ -2,6 +2,8 @@ import { FaPhone, FaEdit, FaEye } from "react-icons/fa";
 import { GiConversation } from "react-icons/gi";
 import { MdHome, MdInfoOutline } from "react-icons/md";
 import { RiFileCodeFill } from "react-icons/ri";
+import { AiOutlineTeam } from "react-icons/ai";
+
 import S from "@sanity/desk-tool/structure-builder";
 
 import gallery from "./gallery";
@@ -14,6 +16,7 @@ import Iframe from "sanity-plugin-iframe-pane";
 import redirects from "./redirects";
 import jobs from "./jobs";
 import protectedPages from "./protectedPages";
+import team from "./team";
 
 const hiddenTypes = [
   "category",
@@ -22,6 +25,7 @@ const hiddenTypes = [
   "siteSettings",
   "contactPage",
   "testimonialPage",
+  "howWeOperatePage",
   "homePage",
   "blogPost",
   "applyPage",
@@ -37,7 +41,9 @@ const hiddenTypes = [
   "courseCategory",
   "redirect",
   "job",
-  "pdf"
+  "teamMember",
+  "pdf",
+  'teamPage',
 ];
 
 export default () =>
@@ -120,7 +126,7 @@ export default () =>
                 )
 
                 .icon(MdInfoOutline),
-                S.listItem()
+              S.listItem()
                 .title("How We Operate")
                 .child(
                   S.editor()
@@ -192,6 +198,30 @@ export default () =>
                 )
 
                 .icon(GiConversation),
+              S.listItem()
+                .title("Team")
+                .child(
+                  S.editor()
+                    .id("teamPage")
+                    .schemaType("teamPage")
+                    .documentId("teamPage")
+                    .views([
+                      S.view.form().icon(FaEdit),
+                      S.view
+                        .component(Iframe)
+                        .options({
+                          url: () => resolvePreviewUrl(`team`),
+                          reload: {
+                            button: true,
+                            revision: true,
+                          },
+                        })
+                        .icon(FaEye)
+                        .title("Preview"),
+                    ])
+                )
+
+                .icon(AiOutlineTeam),
             ])
         )
         .icon(RiFileCodeFill),
@@ -203,6 +233,7 @@ export default () =>
       gallery,
       redirects,
       jobs,
+      team,
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),

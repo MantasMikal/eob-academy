@@ -43,6 +43,10 @@ const links = [
     href: '/how-we-operate'
   },
   {
+    label: 'Team',
+    href: '/team'
+  },
+  {
     label: 'Contact',
     href: '/contact'
   },

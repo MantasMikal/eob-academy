@@ -112,6 +112,15 @@ export const howWeOperatePageFragment = groq`
   openGraph
 `
 
+export const teamPageFragment = groq`
+  _id,
+  title,
+  subtitle,
+  teamMembers[]->,
+  body,
+  openGraph
+`
+
 export const testimonialPageFragment = groq`
   _id,
   title,
@@ -214,6 +223,10 @@ export const getAboutPageDataQuery = groq`*[_id == "aboutPage"][0] {
 
 export const getHowWeOperatePageDataQuery = groq`*[_id == "howWeOperatePage"][0] {
   ${howWeOperatePageFragment}
+}`
+
+export const getTeamPageDataQuery = groq`*[_id == "teamPage"][0] {
+  ${teamPageFragment}
 }`
 
 export const getHomeDataQuery = groq`{
