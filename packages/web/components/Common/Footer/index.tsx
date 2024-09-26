@@ -17,8 +17,9 @@ const navigation = {
       href: '/contact'
     },
     {
-      name: 'Privacy / Terms and Conditions',
-      href: '/privacy-terms-and-conditions'
+      name: 'Policies',
+      href: '/privacy-terms-and-conditions',
+      newTab: true
     }
   ],
   social: [
@@ -58,6 +59,7 @@ const Footer = ({ className }: IFooterProps) => {
               <a
                 href={item.href}
                 className="text-base font-semibold text-slate-700 hover:text-gray-900"
+                target={item.newTab ? '_blank' : '_self'}
               >
                 {item.name}
               </a>
@@ -74,6 +76,7 @@ const Footer = ({ className }: IFooterProps) => {
                 key={item.name}
                 href={item.href}
                 className="text-gray-500 transition-all hover:text-secondary"
+
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="w-6 h-6" aria-hidden="true" />
