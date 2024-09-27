@@ -17,8 +17,18 @@ const navigation = {
       href: '/contact'
     },
     {
-      name: 'Policies',
+      name: 'Privacy / Terms & Conditons',
       href: '/privacy-terms-and-conditions',
+      newTab: true
+    },
+    {
+      name: 'Privacy / Terms & Conditons',
+      href: '/privacy-terms-and-conditions',
+      newTab: true
+    },
+    {
+      name: 'Policies',
+      href: 'our-policies',
       newTab: true
     }
   ],
