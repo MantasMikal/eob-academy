@@ -86,7 +86,7 @@ const ContactPage: NextPage = ({ data, preview }: any) => {
               <div className="aspect-video">
                 <Map
                   style={{ height: '100%' }}
-                  locations={[{ lat: 51.416039, lng: -0.23164 }]}
+                  locations={[{ lat: 51.9782137, lng: -0.2299838 }]}
                 />
               </div>
             </div>
