@@ -73,6 +73,13 @@ export const courseFragment = groq`
   openGraph
 `
 
+export const departmentFragment = groq`
+  _id,
+  title,
+  description,
+  teamMembers[]->
+`
+
 export const applyPageFragment = groq`
   _id,
   title,
@@ -116,7 +123,9 @@ export const teamPageFragment = groq`
   _id,
   title,
   subtitle,
-  teamMembers[]->,
+  departments[]->{
+    ${departmentFragment}
+  },
   body,
   openGraph
 `

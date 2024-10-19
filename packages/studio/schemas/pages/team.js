@@ -16,11 +16,17 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "teamMembers",
-      title: "Team Members",
+      name: "departments",
+      title: "Departments",
       type: "array",
-      of: [{ type: "reference", to: { type: "teamMember" } }],
+      of: [{ type: "reference", to: { type: "department" } }],
     },
+    // {
+    //   name: "teamMembers",
+    //   title: "Team Members",
+    //   type: "array",
+    //   of: [{ type: "reference", to: { type: "teamMember" } }],
+    // },
     {
       name: "body",
       title: "Body",

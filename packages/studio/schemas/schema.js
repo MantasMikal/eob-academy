@@ -42,6 +42,7 @@ import pdfGrid from "./objects/pdfGrid";
 import pdf from "./documents/pdf";
 import teamMember from "./documents/team-member";
 import team from "./pages/team";
+import department from "./documents/department";
 
 export default createSchema({
   name: "default",
@@ -84,6 +85,7 @@ export default createSchema({
     pdfGrid,
     pdf,
     team,
+    department,
     section,
   ]),
 });

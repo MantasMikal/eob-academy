@@ -17,10 +17,9 @@ const Team: NextPage = ({ data, preview }: any) => {
     initialData: data,
     enabled: preview
   })
-  console.log("🚀 ~ pageData:", pageData)
-  const teamMembers = pageData?.teamMembers || []
-  return (
 
+  const departments = pageData?.departments || []
+  return (
     <MainLayout>
       <StandardMeta
         canonical="/about"
@@ -30,31 +29,32 @@ const Team: NextPage = ({ data, preview }: any) => {
       {/* Intro */}
       <div className="space-y-8 lg:space-y-14">
         <PageHeader title={pageData?.title} subtitle={pageData?.subtitle} />
-        <div className="container-lg prose max-w-xl">
-          <div className="prose max-w-xl text-slate-800">
-            <BlockContent className="" blocks={pageData?.body} />
-          </div>
+        <div className="container-lg">
+          <BlockContent className="" blocks={pageData?.body} />
         </div>
 
-        <Section title="Meet the team">
-          <div className="grid grid-cols-1 xs:grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-            {teamMembers.map((member: any) => (
-              <TeamMemberCard
-                key={member._id}
-                title={member.name}
-                image={member.image}
-                bio={member.bio}
-                role={member.role}
-                shortBio={member.shortBio}
-                socials={{
-                  linkedIn: member.linkedIn,
-                  twitter: member.twitter,
-                  instagram: member.instagram
-                }}
-              />
-            ))}
-          </div>
-        </Section>
+        {departments.length > 0 &&
+          departments.map((department: any) => (
+            <Section title={department.title}>
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+                {(department.teamMembers || []).map((member: any) => (
+                  <TeamMemberCard
+                    key={member._id}
+                    title={member.name}
+                    image={member.image}
+                    bio={member.bio}
+                    role={member.role}
+                    shortBio={member.shortBio}
+                    socials={{
+                      linkedIn: member.linkedIn,
+                      twitter: member.twitter,
+                      instagram: member.instagram
+                    }}
+                  />
+                ))}
+              </div>
+            </Section>
+          ))}
       </div>
     </MainLayout>
   )
