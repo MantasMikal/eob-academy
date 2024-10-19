@@ -29,10 +29,8 @@ const About: NextPage = ({ data, preview }: any) => {
       {/* Intro */}
       <div className="space-y-8 lg:space-y-14">
         <PageHeader title={pageData?.title} subtitle={pageData?.subtitle} />
-        <div className="container-lg prose max-w-xl">
-          <div className="prose max-w-xl text-slate-800">
-            <BlockContent className="" blocks={pageData?.body} />
-          </div>
+        <div className="container-lg max-w-xl">
+          <BlockContent className="" blocks={pageData?.body} />
         </div>
 
         <Section title="Who we are" diffBg={true}>

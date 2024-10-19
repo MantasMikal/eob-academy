@@ -1,13 +1,16 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import classNames from 'classnames'
+
+import Button from '@/components/Common/Button'
+import { IndustryRoles } from '@/components/Common/IndustryRoles'
+import { PDFGrid } from '@/components/Common/PDFGrid'
 import SmartLink from '@/components/Primitive/SmartLink'
 
+import createContentBlock from './components/createContentBlock'
 import createFigure from './components/createFigure'
 import createGrid from './components/createGrid'
 import createMediaComponent from './components/createMedia'
-import Button from '@/components/Common/Button'
-import { PDFGrid } from '@/components/Common/PDFGrid'
-import { IndustryRoles } from '@/components/Common/IndustryRoles'
+import createSection from './components/createSection'
 
 // TODO: MIGRATE TO https://github.com/portabletext/react-portabletext/blob/main/MIGRATING.md
 
@@ -84,6 +87,12 @@ const serializers = () => ({
     },
     industryRoles(props: any) {
       return <IndustryRoles industryRoles={props.node} />
+    },
+    section(props: any) {
+      return createSection(props.node)
+    },
+    contentBlock(props: any) {
+      return createContentBlock(props.node)
     }
   }
 })

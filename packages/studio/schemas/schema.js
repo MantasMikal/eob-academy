@@ -13,6 +13,7 @@ import category from "./documents/category";
 import contact from "./pages/contact";
 import contentBlock from "./objects/contentBlock";
 import figure from "./plugs/figure";
+import section from "./plugs/section";
 import gallery from './documents/gallery'
 import grid from "./plugs/grid";
 import home from "./pages/home";
@@ -83,5 +84,6 @@ export default createSchema({
     pdfGrid,
     pdf,
     team,
+    section,
   ]),
 });

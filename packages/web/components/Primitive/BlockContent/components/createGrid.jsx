@@ -25,25 +25,25 @@ export function createGrid(component) {
   const margin = component.margin && { margin: component.margin }
   // const centered = component.centered && component.centered
 
-  const styles = {
-    ...colTemplate,
-    ...rowTemplate,
-    ...rowGap,
-    ...colGap,
-    ...margin,
-    marginBottom: '10px'
-  }
-
-  const gridComponents = gridMedia.map((item) => {
-    return createMedia(item)
-  })
-
   return (
-    gridComponents && (
-      <div className="grid" style={styles} key={component._key}>
-        {gridComponents}
-      </div>
-    )
+    <div
+      className="grid"
+      key={component._key + 'grid'}
+      style={{
+        ...colTemplate,
+        ...rowTemplate,
+        ...rowGap,
+        ...colGap,
+        ...margin,
+        marginBottom: '10px'
+      }}
+    >
+      {gridMedia.map((item) => (
+        <div className="prose max-w-full !m-0" key={item._key}>
+          {createMedia(item)}
+        </div>
+      ))}
+    </div>
   )
 }
 

@@ -20,7 +20,7 @@ function Section({
   children
 }: SectionProps) {
   return (
-    <div className={classNames('w-screen', diffBg && 'bg-backgroundSecondary')}>
+    <div className={classNames('w-full', diffBg && 'bg-backgroundSecondary')}>
       <section
         className={classNames(
           'relative container-lg pb-8 md:pb-16 space-y-8 md:space-y-16 z-[1]',

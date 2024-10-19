@@ -9,7 +9,7 @@ const createContentBlock = (block) => {
 
   const styles = Object.assign({}, padding, margin, border, { width: '100%' })
   return (
-    <div key={block._key} style={styles}>
+    <div key={block._key} className="prose max-w-full" style={styles}>
       <BlockContent blocks={block.contentBlock} />
     </div>
   )

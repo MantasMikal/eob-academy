@@ -2,7 +2,7 @@ export default {
   name: "sponsor",
   title: "Sponsor",
   type: "document",
-  liveEdit: true,
+  liveEdit: false,
   fields: [
     {
       name: "name",
