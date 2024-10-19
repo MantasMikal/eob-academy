@@ -80,7 +80,7 @@ export default {
     },
     prepare({ description = "", colTemplate = "Untitled" }) {
       return {
-        title: description + " " + colTemplate,
+        title: "Grid: " + description + " " + colTemplate,
         media: FiGrid,
       };
     },
