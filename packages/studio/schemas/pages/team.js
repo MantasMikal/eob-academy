@@ -16,6 +16,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    },
+    {
       name: "departments",
       title: "Departments",
       type: "array",
@@ -27,11 +32,6 @@ export default {
     //   type: "array",
     //   of: [{ type: "reference", to: { type: "teamMember" } }],
     // },
-    {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
-    },
     {
       title: "Open graph",
       name: "openGraph",
