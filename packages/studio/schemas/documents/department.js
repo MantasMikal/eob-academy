@@ -15,11 +15,6 @@ export default {
       type: "string",
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
-    },
-    {
       name: "teamMembers",
       title: "Team members",
       type: "array",
