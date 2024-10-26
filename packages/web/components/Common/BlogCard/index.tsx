@@ -54,7 +54,7 @@ const BlogCard = ({
             category?.length > 0 &&
             category.map((item: any) => (
               <span
-                style={{ backgroundColor: item?.color?.hex }}
+                style={{ backgroundColor: item?.color?.hex || '#dedede' }}
                 className="text-white tag"
                 key={item.title}
               >

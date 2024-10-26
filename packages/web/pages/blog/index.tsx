@@ -47,10 +47,10 @@ const PostsPage: NextPage = ({ data: posts, categories }: any) => {
                 <button
                   onClick={() => handleCategoryChange(category.title)}
                   style={{
-                    borderColor: category.color.hex,
+                    borderColor: category.color?.hex || '#dedede',
                     backgroundColor:
                       category.title === selectedCat
-                        ? category.color.hex
+                        ? category.color?.hex || '#dedede'
                         : 'transparent'
                   }}
                   className={cn(
@@ -90,6 +90,7 @@ interface StaticProps {
 export const getStaticProps = async ({ preview }: StaticProps) => {
   const postsData = await getAllPosts(preview)
   const categories = await getAllPostCategories(preview)
+  console.log("🚀 ~ getStaticProps ~ getAllPostCategories:", getAllPostCategories)
   return {
     props: {
       data: postsData || [],
