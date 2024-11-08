@@ -56,12 +56,11 @@ const HowWeOperate: NextPage = ({ data, preview }: any) => {
                   lighting are tranquil and soothing.
                 </p>
                 <p>
-                  We have a maximum of five students per staff member. With
-                  smaller class sizes, relationships are built quickly; students
-                  feel closer to their tutor group and have the benefit of a
-                  greater staff-to-student ratio to enable them to learn the
-                  social skills that are often underdeveloped in young people
-                  with additional needs.
+                  With smaller class sizes, relationships are built quickly;
+                  students feel closer to their tutor group and have the benefit
+                  of a greater staff-to-student ratio to enable them to learn
+                  the social skills that are often underdeveloped in young
+                  people with additional needs.
                 </p>
                 <p>
                   As a basic physiological need, water is important on many
