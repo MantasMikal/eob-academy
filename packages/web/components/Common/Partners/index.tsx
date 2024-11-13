@@ -21,7 +21,7 @@ const Partners = ({ partners, supporters }: IPartnersProps) => {
       <SectionTitle
         title="Partners & supporters"
         label="Testimonials"
-        href="/testimonials"
+        href="/voices"
       />
       <div className="space-y-8">
         <div className="flex flex-wrap justify-start items-center border-b-2 pb-8 border-secondary">
