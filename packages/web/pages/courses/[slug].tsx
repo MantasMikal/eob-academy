@@ -69,7 +69,7 @@ const CoursePage: NextPage = ({ data, courses, preview }: any) => {
       <PageHeader title={courseData.title} subtitle={courseData.subtitle} />
 
       <Image
-        className="object-cover object-center aspect-slim"
+        className="object-cover object-center aspect-slim w-full"
         src={courseData.heroImage}
         alt={courseData.title}
       />
